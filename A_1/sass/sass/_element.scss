@@ -271,7 +271,7 @@ img.img-responsive {
                 left: 35px;
                 text-align: right;
             }
-            &[href$="doc"]:after {
+            &[href$="doc"]:after,&[href$="docx"]:after {
                 background: url(../images/basic/icon_doc.jpg);
             }
             &[href$="odf"]:after {
@@ -283,10 +283,10 @@ img.img-responsive {
             &[href$="pdf"]:after {
                 background: url(../images/basic/icon_pdf.jpg);
             }
-            &[href$="xls"]:after {
+            &[href$="xls"]:after,&[href$="xlsx"]:after {
                 background: url(../images/basic/icon_xls.jpg);
             }
-            &[href$="ppt"]:after {
+            &[href$="ppt"]:after,&[href$="pptx"]:after {
                 background: url(../images/basic/icon_ppt.jpg);
             }
             &[href$="jpg"]:after {

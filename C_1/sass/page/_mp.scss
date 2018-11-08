@@ -119,7 +119,7 @@
             .accordion-content {
                 position: relative;
                 padding: 1em 1em 2em 1em;
-                background: #DEDEDE;
+                background: #FFF;
                 line-height: 1.65em;
             }
         }
@@ -403,7 +403,7 @@
 }
 // fast_link
 .fastlink {
-    background: RGBA(0, 0, 0, .8);
+    background: RGBA(0, 0, 0, .6);
     width: 50px;
     min-height: 200px;
     position: fixed;
@@ -412,6 +412,7 @@
     top: 20%;
     margin: 0;
     padding: 0 !important;
+    @include border-radius(6px 0 0 6px);
     ul {
         @include li-reset;
         li {
@@ -422,22 +423,22 @@
                 padding: 0;
                 height: 50px;
                 position: relative;
+                font-weight: bold;
+                transition: .3s ease-out;
                 &:before {
                     position: absolute;
                     content: attr(title);
                     width: 10em;
-                    text-align: center;
-                    right: 0;
-                    padding: 0 3em 0 1em;
+                    text-align: left;
+                    right: -10em;
+                    padding: 0 1em 0 1em;
                     height: 50px;
                     line-height: 50px;
-                    background: RGBA(0, 0, 0, 1);
+                    background: $secondaryColor;
                     color: #FFF;
-                    display: block;
                     font-size: .938em;
                     @include box-sizing;
                     @include text-overflow;
-                    opacity: 0;
                     display: none;
                     transition: .3s ease-out;
                 }
@@ -445,7 +446,7 @@
                 &:focus {
                     &:before {
                         display: block;
-                        opacity: 1;
+                        right: 0;
                     }
                 }
             }
