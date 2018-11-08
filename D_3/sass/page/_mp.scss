@@ -2,9 +2,11 @@
 // 首頁模組
 .slick-prev {
     left: 0;
+    box-shadow: none;
 }
 .slick-next {
     right: 0;
+    box-shadow: none;
 }
 %paragraph {
     font-size: .938em;
@@ -104,13 +106,16 @@
                 position: relative;
                 &:hover,
                 &:focus {
+                    color: #FFF;
                     background: url(../images/icon_plus.png) no-repeat right 12px lighten($secondaryColor, 5);
                     box-shadow: none;
                 }
                 &.active {
+                    color: #FFF;
                     background: url(../images/icon_minus.png) no-repeat right 12px lighten($primaryColor, 10);
                     &:hover,
                     &:focus {
+                        color: #FFF;
                         background: url(../images/icon_minus.png) no-repeat right 12px lighten($secondaryColor, 5);
                         box-shadow: none;
                     }
@@ -121,6 +126,10 @@
                 padding: 1em 1em 2em 1em;
                 background: #FFF;
                 line-height: 1.65em;
+                color: $color-word;
+                p {
+                    color: $color-word;
+                }
             }
         }
     }
@@ -221,7 +230,7 @@
                 height: 100px;
                 margin: 0 auto 1em;
                 @include border-radius(50%);
-                background: $primaryColor;
+                background: #888;
                 img {
                     margin: 20px auto 0;
                     width: 60px;
@@ -298,7 +307,12 @@
                 display: block;
                 padding: 0px 1em 0px 4.5em;
                 line-height: 4em;
+                color: $aColor;
+                background: #FFF;
                 @include text-overflow;
+                &:hover, &:focus {
+                    color: $aHover;
+                }
                 .pic {
                     position: absolute;
                     width: 4em;
@@ -355,6 +369,9 @@
                 height: 100%;
                 padding-bottom: 1em;
                 background: #FFF;
+                h3 {
+                    color: #222;
+                }
                 &:hover,
                 &:focus {
                     background: $secondaryColor;
@@ -494,11 +511,9 @@
             bottom: .15em;
             @include gradient($color-red, $color-yellow, horizontal);
         }
-
         &:after {
             display: none;
         }
-
         @include screen('mobile') {
             font-size: 2em;
         }
@@ -753,7 +768,7 @@
 }
 // 活動花絮
 .single_photo {
-    background: #FFF;
+    // background: #FFF;
     padding-bottom: .5em;
     .pic {
         @include aspect-ratio(4, 3);
@@ -773,9 +788,6 @@
                     color: darken($secondaryColor, 10);
                 }
             }
-        }
-        &~p {
-            @extend %paragraph;
         }
     }
 }
@@ -845,8 +857,8 @@
 }
 // 影音專區
 .single_video {
-    background: #FFF;
     padding-bottom: .5em;
+    background:#FFF;
     .youtube {
         @include aspect-ratio(4, 3);
         width: 100%;
@@ -871,6 +883,7 @@
         }
     }
     p {
+        color: $color-word;
         @extend %paragraph;
     }
 }
@@ -955,6 +968,7 @@
         background-size: 16px;
         width: 20px !important;
         height: 20px !important;
+        box-shadow: none;
         &:hover,
         &:focus {
             opacity: 1;
@@ -976,6 +990,7 @@
         height: 20px !important;
         background: url(../vendor/slick/icon_arrow_up_s.png) no-repeat center center;
         background-size: 16px;
+        box-shadow: none;
         &:hover,
         &:focus {
             opacity: 1;
@@ -994,7 +1009,11 @@
         line-height: 40px;
         margin-right: 3em;
         font-weight: bold;
+        color: #333 !important;
         @include text-overflow;
+        &:hover, &:focus {
+            color: $aHover;
+        }
     }
 }
 // mp_banner (首頁大輪播區塊)
@@ -1071,6 +1090,11 @@
     a.more {
         @extend %more_color;
     }
+    h2.title {
+        &:after {
+            border-bottom: 1px solid #FFF;
+        }
+    }
 }
 // text_link (大事記)
 .text_link {
@@ -1079,7 +1103,7 @@
         li {
             text-align: left;
             display: block;
-            border-bottom: 1px dashed #BBB;
+            border-bottom: 1px dashed #999;
             a {
                 display: block;
                 padding: .5em .5em .5em 1.2em;
@@ -1090,7 +1114,7 @@
                     height: 4px;
                     top: 1em;
                     left: .2em;
-                    border: 2px solid #999;
+                    border: 2px solid #666;
                     border-left: none;
                     border-bottom: none;
                     transform: rotate(45deg);
@@ -1413,7 +1437,7 @@
         padding: 0;
         position: relative;
         text-align: left;
-        border-bottom: 1px #CCC dashed;
+        border-bottom: 1px #999 dashed;
         @include screen('mobile') {
             @include text-overflow();
         }
@@ -1478,7 +1502,6 @@
             p {
                 margin-top: .3em;
                 font-size: .938em;
-                color: #444;
             }
             span {
                 display: inline-block;
@@ -1751,4 +1774,19 @@
             }
         }
     }
+}
+.bg_style {
+    background: #fff100 !important;
+    // color: #FFF;
+    // overflow: hidden;
+    // padding: 3em 0;
+    // h2, h2.title, h3, p {
+    //     color: #FFF;
+    // }
+    // a {
+    //     color: #FFF;
+    //     &:hover, &:focus {
+    //         color: lighten($aHover, 10);
+    //     }
+    // }
 }

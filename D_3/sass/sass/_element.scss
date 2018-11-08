@@ -110,7 +110,7 @@ a.more {
     &:focus,
     &.active {
         border: 1px solid $more;
-        color: white;
+        color: white !important;
         &:before {
             -webkit-transform: scale(1);
             transform: scale(1);

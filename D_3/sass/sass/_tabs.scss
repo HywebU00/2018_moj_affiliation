@@ -1,7 +1,6 @@
 .tabSet {
     max-width: 100%;
     margin: 0px $grid-gutter-width/2 1.5em;
-
     overflow: hidden;
     @include clearfix;
     @include screen('mobile') {
@@ -11,7 +10,6 @@
         margin: 1.5em auto;
     }
 }
-
 .tabs {
     position: relative;
     @include screen('mobile') {
@@ -44,17 +42,18 @@
             padding: 16px 0 14px;
             text-align: center;
             background-color: $secondaryColor;
-            color: #fff;
             text-decoration: none;
             @include text-overflow();
             @include box-sizing();
+            font-weight: bold;   
+            color: #FFF;
             &:hover {
+                color: #FFF;
                 background: lighten($primaryColor, 10);
             }
         }
     }
 }
-
 //多組 可設定差異
 .example-2 {
     .tabItem>a:hover {
@@ -64,12 +63,10 @@
         background: $secondaryColor;
     }
 }
-
 // 顯示content
 .active+.tabContent {
     display: block;
 }
-
 .tabContent {
     position: absolute;
     background: #f6f6f6;
@@ -82,7 +79,6 @@
     @include screen('mobile') {
         position: static;
     }
-
     ul {
         list-style-type: none;
         margin: 0;
@@ -103,12 +99,19 @@
             width: 80%;
             text-align: left;
             display: block;
-                    @include screen('mobile') {
-                        width: 75%;
-                    }
+            color:#333;
+            &:hover,&:focus{
+                color:#aHover;
+            }
+            @include screen('mobile') {
+                width: 75%;
+            }
+            &.more{
+                color:#333 !important;
+            }
         }
         time {
-            display:block;
+            display: block;
             margin: 0 0 0 1em;
             font-size: .813em;
             text-align: center;
@@ -121,7 +124,8 @@
                 text-align: right;
             }
         }
-    } // .more {
+    }
+    // .more {
     //     text-align: right;
     //     @include screen('mobile') {
     //         text-align: center;

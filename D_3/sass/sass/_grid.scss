@@ -1,8 +1,8 @@
 // 預設格線
 // 底色
-.bg_style {
-    background: #F2F2F2;
-}
+// .bg_style {
+//     background: #F2F2F2;
+// }
 
 [class^="col"] {
     text-align: left;
@@ -15,7 +15,7 @@
             content: "";
             position:absolute;
             bottom:0;
-            border-bottom: 3px solid $baseline;
+            border-bottom: 1px solid $baseline;
             width: 100%;
             left: 0%;
             margin-left: 0%;
@@ -31,7 +31,7 @@
     h2.title {
         &:after {
             content: "";
-            border-bottom: 3px solid $baseline;
+            border-bottom: 1px solid $baseline;
             width: 50%;
             left: 50%;
             margin-left: -25%;

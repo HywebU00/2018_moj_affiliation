@@ -2,9 +2,11 @@
 // 首頁模組
 .slick-prev {
     left: 0;
+    box-shadow: none;
 }
 .slick-next {
     right: 0;
+    box-shadow: none;
 }
 %paragraph {
     font-size: .938em;
@@ -98,20 +100,21 @@
             border-bottom: 1px solid #FFF;
             a {
                 display: block;
-                background: url(../images/icon_plus.png) no-repeat right 12px lighten($primaryColor, 10);
+                background: url(../images/icon_plus.png) no-repeat right 12px lighten($primaryColor, 0);
                 padding: 1em;
                 color: #FFF;
                 position: relative;
+                font-weight: bold;
                 &:hover,
                 &:focus {
-                    background: url(../images/icon_plus.png) no-repeat right 12px lighten($secondaryColor, 5);
+                    background: url(../images/icon_plus.png) no-repeat right 12px darken($primaryColor, 10);
                     box-shadow: none;
                 }
                 &.active {
-                    background: url(../images/icon_minus.png) no-repeat right 12px lighten($primaryColor, 10);
+                    background: url(../images/icon_minus.png) no-repeat right 12px lighten($primaryColor, 5);
                     &:hover,
                     &:focus {
-                        background: url(../images/icon_minus.png) no-repeat right 12px lighten($secondaryColor, 5);
+                        background: url(../images/icon_minus.png) no-repeat right 12px darken($primaryColor, 10);
                         box-shadow: none;
                     }
                 }
@@ -157,10 +160,10 @@
                 &:hover,
                 &:focus {
                     .pic {
-                        background: darken($secondaryColor, 5);
+                        background: darken($primaryColor, 5);
                     }
                     h3 a {
-                        color: $secondaryColor;
+                        color: $primaryColor;
                     }
                 }
             }
@@ -208,10 +211,10 @@
                 &:hover,
                 &:focus {
                     .pic {
-                        background: $secondaryColor;
+                        background: $primaryColor;
                     }
                     h3 a {
-                        color: $secondaryColor;
+                        color: $primaryColor;
                     }
                 }
             }
@@ -221,7 +224,7 @@
                 height: 100px;
                 margin: 0 auto 1em;
                 @include border-radius(50%);
-                background: $primaryColor;
+                background: $secondaryColor;
                 img {
                     margin: 20px auto 0;
                     width: 60px;
@@ -494,11 +497,9 @@
             bottom: .15em;
             @include gradient($color-red, $color-yellow, horizontal);
         }
-
         &:after {
             display: none;
         }
-
         @include screen('mobile') {
             font-size: 2em;
         }
@@ -767,10 +768,10 @@
             margin: .5em auto;
             line-height: 1.5em;
             a {
-                color: $secondaryColor;
+                color: $primaryColor;
                 &:hover,
                 &:focus {
-                    color: darken($secondaryColor, 10);
+                    color: darken($primaryColor, 10);
                 }
             }
         }
@@ -799,11 +800,11 @@
                     height: 3em;
                     margin: .5em auto;
                     line-height: 1.5em;
-                    color: $secondaryColor;
+                    color: $primaryColor;
                     &:hover,
                     &:focus {
                         h3 {
-                            color: darken($secondaryColor, 10);
+                            color: darken($primaryColor, 10);
                         }
                     }
                 }
@@ -863,10 +864,10 @@
         margin: .5em auto;
         line-height: 1.5em;
         a {
-            color: $secondaryColor;
+            color: $primaryColor;
             &:hover,
             &:focus {
-                color: darken($secondaryColor, 10);
+                color: darken($primaryColor, 10);
             }
         }
     }
@@ -875,6 +876,10 @@
     }
 }
 .multi_video {
+    .slick-slider {
+        padding-bottom: 2em;
+    }
+    @include clearfix;
     ul {
         @include li-reset;
         li {
@@ -893,10 +898,10 @@
                 margin: .5em auto;
                 line-height: 1.5em;
                 a {
-                    color: $secondaryColor;
+                    color: $primaryColor;
                     &:hover,
                     &:focus {
-                        color: darken($secondaryColor, 10);
+                        color: darken($primaryColor, 10);
                     }
                 }
             }
@@ -955,6 +960,7 @@
         background-size: 16px;
         width: 20px !important;
         height: 20px !important;
+        box-shadow: none;
         &:hover,
         &:focus {
             opacity: 1;
@@ -976,6 +982,7 @@
         height: 20px !important;
         background: url(../vendor/slick/icon_arrow_up_s.png) no-repeat center center;
         background-size: 16px;
+        box-shadow: none;
         &:hover,
         &:focus {
             opacity: 1;
@@ -1062,14 +1069,27 @@
 // text_block (文字區塊 聲請最高上訴)
 .text_block {
     text-align: left;
-    background: darken($primaryColor, 20);
+    background: #1aaebb;
     color: #FFF;
     padding: .5em 1em 1em;
+    h2.title {
+        &:after {
+            border-bottom: 1px solid #FFF !important;
+        }
+    }
     p {
         font-size: .938em;
     }
     a.more {
         @extend %more_color;
+        background:RGBA(0,0,0,.1);
+        border:1px solid #FFF;
+        &:hover,&:focus{
+            border:1px solid $primaryColor;
+            &:before{
+                border:none;
+            }
+        }
     }
 }
 // text_link (大事記)
@@ -1468,10 +1488,10 @@
                 margin-top: 0;
                 margin-bottom: 1em;
                 a {
-                    color: $secondaryColor;
+                    color: $primaryColor;
                     &:hover,
                     &:focus {
-                        color: darken($secondaryColor, 10);
+                        color: darken($primaryColor, 10);
                     }
                 }
             }
@@ -1582,10 +1602,10 @@
             overflow: hidden;
             display: block;
             a {
-                color: $secondaryColor;
+                color: $primaryColor;
                 &:hover,
                 &:focus {
-                    color: darken($secondaryColor, 10);
+                    color: darken($primaryColor, 10);
                 }
             }
         }

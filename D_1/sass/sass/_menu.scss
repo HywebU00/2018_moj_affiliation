@@ -9,19 +9,19 @@
         padding: 0;
         display:none;
     }
-    &:before {
-        height: 1px;
-        background: #CCC;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        width: 100%;
-        content: "";
-        @include screen('tablet') {
-            display: none;
-        }
-    }
+    // &:before {
+    //     height: 1px;
+    //     background: #CCC;
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     right: 0;
+    //     width: 100%;
+    //     content: "";
+    //     @include screen('tablet') {
+    //         display: none;
+    //     }
+    // }
     >ul {
         text-align: center;
         margin: 0;
@@ -54,17 +54,18 @@
             display: none;
             overflow: visible;
             width: 200px;
-            background: rgba(0, 0, 0, .8);
+            background: darken($primaryColor,10);
             padding: 0;
             z-index: 999999;
             position: absolute;
             top: auto;
-            left: 0;
             list-style: none;
             text-align: left;
+            animation: showMenu .3s ease-out;
             ul {
                 top: 0;
                 left: 170px;
+                animation:none;
             }
         }
     } // 預設選單 li
@@ -78,7 +79,7 @@
         li {
             float: none;
             a {
-                padding: 1em 1.2em;
+                padding: .8em 1.2em;
                 color: #FFF;
                 &:hover,
                 &:focus {

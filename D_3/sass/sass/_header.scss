@@ -96,7 +96,7 @@
             @extend %mobileCtrlBtn;
             width: 60px;
             height: 60px;
-            background: $aHover;
+            background: $primaryColor;
             border-radius: none !important;
 
             &:before {
@@ -114,7 +114,7 @@
             }
 
             &:after {
-                background: $aHover;
+                background: $primaryColor;
                 position: absolute;
                 content: "";
                 width: 100%;
@@ -128,19 +128,17 @@
 
     h1 {
         float: left;
-        width: 500px;
+        width: 420px;
         height: 80px;
         margin: 0;
         padding: 0;
         @include box-sizing;
-
         a {
             display: inline-block;
         }
-
         img {
             display: block;
-            max-width: 500px;
+            max-width: 420px;
             max-height: 80px;
             margin-top: 5px;
         }
@@ -170,7 +168,7 @@
         width: auto;
         padding-right: 150px;
         margin-bottom: .5em;
-        min-width: 400px;
+        min-width: 300px;
         width: 57%;
         float: right;
         position: relative;

@@ -4,27 +4,21 @@ footer {
     font-size: 0.813em;
     padding: 2em 0 1em;
     background: $footer-color;
-    color: #FFF;
     clear: both;
-
     .container {
         @include gutter();
-
         >div {
             padding-bottom: 1em;
         }
     }
-
     a {
         text-decoration: none;
         color: $primaryColor;
-
         &:hover,
         &:focus {
             color: darken($primaryColor, 10);
         }
     }
-
     .location {
         @include make-xs-column(12);
         @include make-sm-column(6);
@@ -36,27 +30,22 @@ footer {
         position: relative;
         min-height: 100px;
         font-size: 1rem;
-
         a {
             font-size: 1em;
             margin-bottom: .5em;
             color: #FFF;
-
             &:hover,
             &:focus {
                 color: lighten($secondaryColor, 10);
             }
         }
-
         * {
             position: relative;
             z-index: 1;
         }
-
         p {
             line-height: 1.75em;
         }
-
         &:after {
             content: "";
             width: 96%;
@@ -66,13 +55,13 @@ footer {
             margin-left: -48%;
             background: #888;
             top: 2%;
-            background: url(../images/icon_office.png) no-repeat left top $fatfooter-color;
+            background: url(../images/icon_office.png) no-repeat left top;
+            filter: invert(90%);
             background-size: 80px;
             @include border-radius(10px);
             z-index: 0;
         }
     }
-
     .contact {
         @include make-xs-column(12);
         @include make-sm-column(6);
@@ -85,27 +74,22 @@ footer {
         position: relative;
         padding-left: 100px;
         font-size: 1rem;
-
         a[href^="tel"] {
             font-size: 1em;
             margin-bottom: .5em;
-            color: #FFF;
-
+            color: $aHover;
             &:hover,
             &:focus {
                 color: lighten($secondaryColor, 10);
             }
         }
-
         * {
             position: relative;
             z-index: 1;
         }
-
         p {
             line-height: 1.75em;
         }
-
         &:after {
             content: "";
             width: 96%;
@@ -115,25 +99,23 @@ footer {
             margin-left: -48%;
             background: #888;
             top: 2%;
-            background: url(../images/icon_tel.png) no-repeat left top $fatfooter-color;
+            filter: invert(90%);
+            background: url(../images/icon_tel.png) no-repeat left top;
             background-size: 80px;
             @include border-radius(10px);
             z-index: 0;
         }
     }
-
     .qrcode {
         @include make-xs-column(8);
         @include make-sm-column(1);
         @include make-md-column(1);
         @include make-lg-column(1);
         @include gutter();
-
         img {
             max-width: 75px;
         }
     }
-
     .footer_info {
         @include make-xs-column(12);
         @include make-sm-column(6);
@@ -141,75 +123,66 @@ footer {
         @include make-lg-column(6);
         @include gutter();
     }
-
     .footer_icon {
         @include make-xs-column(12);
         @include make-sm-column(5);
         @include make-md-column(5);
         @include make-lg-column(5);
         @include gutter();
-
         span {
             display: block;
         }
-
         img {
             max-height: 40px;
         }
-
         a {
             margin-right: .5em;
         }
     }
-
     // 版權連結
     .footer_link {
         @include li-reset();
         @include clearfix();
-
         li {
             float: left;
             display: block;
             margin: 0px 15px 5px 0px;
-
             a {
                 display: block; // padding: .5em 1em;
-                color: #FFF;
+                color: $aHover;
                 @include border-radius(3px);
                 @include transition(all, .3s, ease-out);
-
                 &:hover,
                 &:focus {
-                    color: $aHover;
+                    color: lighten($aHover,10);
                 }
             }
         }
     }
-
     p {
         line-height: 1.65em;
+        margin: .3em 0;
     }
-
     .update,
     .counter {
         display: inline-block;
         margin-right: 5px;
-
         em {
             font-style: normal;
             color: $lightColor;
             padding: 0 .5em;
         }
     }
-
     .footer_icon {
         a {
             display: inline-block;
             vertical-align: top;
         }
-
         img {
             max-width: 120px;
         }
+    }
+    hr {
+        border-top: 1px solid RGBA(0, 0, 0, .1);
     }
 }

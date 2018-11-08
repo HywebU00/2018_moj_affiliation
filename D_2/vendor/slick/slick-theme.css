@@ -141,6 +141,7 @@
     border: 0;
     outline: none;
     background: transparent;
+    box-shadow:none;
 }
 
 .slick-dots li button:hover,
@@ -151,7 +152,7 @@
 .slick-dots li button:hover:before,
 .slick-dots li button:focus:before {
     opacity: 1;
-    background: #21baff;
+    background: #f77b35;
 }
 .slick-dots li button:before {
     font-size: 0em;
@@ -164,7 +165,7 @@
     background: black;
     content: '';
     text-align: center;
-    opacity: .5;
+    opacity: .3;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -172,5 +173,5 @@
 .slick-dots li.slick-active button:before {
     opacity: .9;
     color: black;
-    background: #21baff;
+    background: #f77b35;
 }
