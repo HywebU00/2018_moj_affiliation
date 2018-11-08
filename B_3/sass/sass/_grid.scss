@@ -1,0 +1,146 @@
+// 預設格線
+// 底色
+.bg_style {
+    background: #E1E1E1;
+}
+
+[class^="col"] {
+    text-align: left;
+}
+
+%h2_fluid {
+    h2.title {
+    	position:relative;
+        &:after {
+            content: "";
+            position:absolute;
+            bottom:0;
+            border-bottom: 3px solid $baseline;
+            width: 100%;
+            left: 0%;
+            margin-left: 0%;
+        }
+    }
+}
+
+.col-12 {
+    @include make-xs-column(12);
+    @include make-sm-column(12);
+    @include make-md-column(12);
+    @include make-lg-column(12);
+    h2.title {
+        &:after {
+            content: "";
+            border-bottom: 3px solid $baseline;
+            width: 50%;
+            left: 50%;
+            margin-left: -25%;
+            position: absolute;
+            bottom: 0;
+        }
+    }
+}
+
+.col-8-4 {
+    .col:nth-child(odd) {
+        @include make-xs-column(12);
+        @include make-sm-column(8);
+        @include make-md-column(8);
+        @include make-lg-column(8);
+        @include gutter;
+    }
+    .col:nth-child(even) {
+        @include make-xs-column(12);
+        @include make-sm-column(4);
+        @include make-md-column(4);
+        @include make-lg-column(4);
+        @include gutter;
+    }
+    @extend %h2_fluid;
+}
+
+.col-4-8 {
+    .col:nth-child(odd) {
+        @include make-xs-column(12);
+        @include make-sm-column(4);
+        @include make-md-column(4);
+        @include make-lg-column(4);
+        @include gutter;
+    }
+    .col:nth-child(even) {
+        @include make-xs-column(12);
+        @include make-sm-column(8);
+        @include make-md-column(8);
+        @include make-lg-column(8);
+        @include gutter;
+    }
+    @extend %h2_fluid;
+}
+.col-3-9 {
+    .col:nth-child(odd) {
+        @include make-xs-column(12);
+        @include make-sm-column(3);
+        @include make-md-column(3);
+        @include make-lg-column(3);
+        @include gutter;
+    }
+    .col:nth-child(even) {
+        @include make-xs-column(12);
+        @include make-sm-column(9);
+        @include make-md-column(9);
+        @include make-lg-column(9);
+        @include gutter;
+    }
+    @extend %h2_fluid;
+}
+.col-9-3 {
+    .col:nth-child(odd) {
+        @include make-xs-column(12);
+        @include make-sm-column(9);
+        @include make-md-column(9);
+        @include make-lg-column(9);
+        @include gutter;
+    }
+    .col:nth-child(even) {
+        @include make-xs-column(12);
+        @include make-sm-column(3);
+        @include make-md-column(3);
+        @include make-lg-column(3);
+        @include gutter;
+    }
+    @extend %h2_fluid;
+}
+
+.col-6-6 {
+    .col {
+        @include make-xs-column(12);
+        @include make-sm-column(6);
+        @include make-md-column(6);
+        @include make-lg-column(6);
+        @include gutter;
+    }
+    @extend %h2_fluid;
+}
+
+
+.col-4-4-4 {
+    .col {
+        @include make-xs-column(12);
+        @include make-sm-column(4);
+        @include make-md-column(4);
+        @include make-lg-column(4);
+        @include gutter;
+    }
+    @extend %h2_fluid;
+}
+
+.col-3-3-3-3 {
+    .col {
+        @include make-xs-column(12);
+        @include make-sm-column(3);
+        @include make-md-column(3);
+        @include make-lg-column(3);
+        @include gutter;
+    }
+    @extend %h2_fluid;
+}

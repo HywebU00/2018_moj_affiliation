@@ -1,0 +1,30 @@
+.sp {
+    clear: both;
+}
+
+.error {
+    width: 90%;
+    padding: 1em 420px 1em 2em;
+    min-height: 400px;
+    position: relative;
+    background: url(../images/error.png) no-repeat right bottom #F1F1F1;
+    margin: 0px auto 1em;
+    @include border-radius(6px);
+    @include box-sizing;
+    h3 {
+        font-size: 1.25em;
+        line-height: 1.65em;
+        margin-bottom: 2em;
+        color:$aHover;
+        small {
+            display: block;
+            color:#666;
+            line-height:1.45em;
+        }
+    }
+    @include screen('mobile') {
+    	text-align: center;
+    	padding:1em 1em 350px;
+    	background: url(../images/error.png) no-repeat center bottom #F1F1F1;
+    }
+}

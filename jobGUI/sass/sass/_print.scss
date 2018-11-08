@@ -1,0 +1,53 @@
+// 列印樣式
+@media print {
+    body {
+        padding: 0;
+        margin: 0;
+        font-size: .938em;
+        background: none;
+        font-family: "標楷體", DFKai-sb;
+    }
+    .login_wrapper {
+        width: 90%;
+        position: relative;
+        height: auto;
+        min-height: auto;
+        margin: 0 auto;
+        min-height: auto;
+        &.inner_head {
+            height: auto;
+            h1 {
+                margin: 1em auto 0;
+                width: 30%;
+                height: auto;
+            }
+        }
+    }
+    .content {
+        width: 100%;
+        max-width: 100%;
+        border: none;
+        margin: 0em auto;
+        padding: 0;
+        h2 {
+            color: #111;
+            &:before {
+                display: none;
+            }
+        }
+    }
+    .sign_block {
+        margin-top: .5em;
+        h3 {
+            font-size: 1em;
+            line-height: 1.45em;
+            margin-bottom: 1em;
+        }
+        p {
+            margin-bottom: 1.25em;
+        }
+    }
+    .btn_grp {
+        display: none;
+    }
+}

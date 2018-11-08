@@ -1,0 +1,262 @@
+@charset "utf-8";
+body {
+    background: #646464;
+    overflow-x: hidden;
+}
+.login_wrapper {
+    background: url(../images/login_bg.jpg) no-repeat center bottom #f4f4f4;
+    width: 100%;
+    height: 550px;
+    position: relative;
+    &.inner_head {
+        background: url(../images/login_bg.jpg) no-repeat center -130px #f4f4f4;
+        background-size: 80%;
+        min-height: 1000px;
+        height: auto;
+        @include screen('desktop') {
+        	background: url(../images/login_bg.jpg) no-repeat center -170px #f4f4f4;
+
+        }
+        @include screen('mobile') {
+            background: #f4f4f4;
+        }
+        ~footer {
+            clear: both;
+            display: none;
+        }
+        h1 {
+            margin: 5px 0 0 50px;
+            width: 460px;
+            @include screen('tablet') {
+                width: 360px;
+                margin: 20px auto 0 0;
+            }
+            @include screen('mobile') {
+                width: 80%;
+                margin: 20px auto;
+            }
+             @include screen('desktop') {
+                width: 360px;
+                margin-top: 30px;
+            }
+        }
+    }
+    @include screen('mobile') {
+        position: relative;
+        height: 600px;
+        background: url(../images/login_bg.jpg) no-repeat center bottom #f4f4f4;
+    }
+    &:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 150px;
+        bottom: -150px;
+        left: 0;
+        @include background-image(linear-gradient(top, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 100%));
+        @include screen('mobile') {
+            display: none;
+        }
+    }
+    h1 {
+        margin: 25px 0 0 150px;
+        width: 560px;
+        height: 140px;
+        img {
+            width: 100%;
+        }
+        @include screen('mobile') {
+            max-width: 70%;
+            width: 70%;
+            height: auto;
+            margin: 1em auto .5em 0;
+        }
+        @include screen('xs_mobile') {
+            max-width: 90%;
+            width: 90%;
+        }
+    }
+    .container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        @include screen('mobile') {
+        	position:relative;
+        }
+    }
+    .login_block {
+        background: rgba(236, 122, 20, .9);
+        position: absolute;
+        top: 210px;
+        width: 45%;
+        min-width: 560px;
+        height: 360px;
+        left: 200px;
+        @include box-sizing;
+        padding: 1.5em 1em 1em;
+        @include screen('mobile') {
+            position: relative;
+            top: auto;
+            width: 100%;
+            margin: 0px auto 1em;
+            left: auto;
+            height: auto;
+            min-width: auto;
+        }
+        label {
+            color: #FFF;
+            font-weight: bold;
+            text-align: right;
+            margin-bottom: 0;
+            @include screen('mobile') {
+                text-align: left;
+            }
+        }
+        .form_grp {
+            border-bottom: none;
+            margin-bottom: 15px;
+            padding: 0;
+            @include screen('mobile') {
+                margin-bottom: 5px;
+            }
+        }
+        .form_content {
+            padding-top: .2em;
+            padding-bottom: .2em;
+        }
+        .form_title {
+            text-shadow: 1px 1px 2px RGBA(0, 0, 0, .8);
+            @include screen('mobile') {
+                margin-bottom: 0;
+            }
+        }
+        .form_inline {
+            input[type="text"] {
+                width: 120px;
+                vertical-align: top;
+                margin-right: 5px;
+                @include screen('mobile') {
+                    width: 100%;
+                    margin-right: 0;
+                    margin-bottom: .5em;
+                }
+                &~a {
+                    height: 40px;
+                    width: 40px;
+                    margin: 0px 5px 0;
+                    text-align: center;
+                    @include box-sizing;
+                    border: 1px solid #DDD;
+                    display: inline-block;
+                    vertical-align: top;
+                    @include border-radius(6px);
+                    &:hover {
+                        background: rgba(0, 0, 0, .2);
+                    }
+                    img {
+                        margin: 6px auto;
+                        width: 24px;
+                        height: 24px;
+                    }
+                }
+                &~img {
+                    width: 100px;
+                    height: 40px;
+                    margin-right: 5px;
+                }
+            }
+        }
+        .btn_grp {
+            button {
+                @include screen('mobile') {
+                    width: 80%;
+                }
+            }
+        }
+        abbr.necessary {
+            color: #FFF;
+        }
+    }
+}
+.content {
+    h2 {
+        color: $primaryColor;
+        font-size: 2em;
+        &:before {
+        	content:"";
+        	display:inline-block;
+        	vertical-align:top;
+        	margin-right: 10px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 9px 0 9px 10px;
+            border-color: transparent transparent transparent #080808;
+        }
+    }
+    background: #FFF;
+    box-shadow: 1px 1px solid RGBA(0, 0, 0, .5);
+    max-width: 960px;
+    margin: 6em auto 3em;
+    padding: 1em 2em;
+    @include box-sizing;
+    min-height: 600px;
+    border-top: 8px solid $primaryColor;
+    @include clearfix;
+    @include screen('tablet') {
+    	margin-top: 2em;
+    }
+    @include screen('mobile') {
+        margin-top: 2em;
+    }
+    table {
+        th {
+            span.red {
+                display: block;
+                color: red;
+                word-break: break-all;
+                font-size: .75em;
+                text-align: center;
+            }
+        }
+    }
+    .btn_grp {
+        margin: 2em 0;
+        @include screen('mobile') {
+            .btn {
+                width: 80%;
+                display: block;
+                margin: 0px auto .6em;
+            }
+        }
+    }
+    .table_wrapper {
+        @include screen('mobile') {
+            border: 1px solid #DDD;
+        }
+    }
+}
+.result{
+	table{
+		span{
+			font-weight: bold;
+		}
+		table{
+			th,td{
+				text-align: center;
+				span{
+					margin-left: 5px;
+					margin-right: 5px;
+				}
+			}
+		}
+	}
+}
+.sign_block{
+	margin: 2em auto 5em;
+	p{
+		margin-bottom: 1em;
+	}
+}
