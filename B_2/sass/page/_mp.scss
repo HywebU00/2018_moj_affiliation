@@ -468,42 +468,43 @@
             li {
                 width: 33.3333%;
                 margin: 0;
-                background: lighten($third-color, 5);
+                background: darken($primaryColor, 0);
                 height: 8em;
                 box-shadow: none;
                 transition: .3s ease-out;
                 line-height: 8em;
                 &:nth-child(2) {
-                    background: darken($third-color, 5);
+                    background: darken($primaryColor, 3);
                 }
                 &:nth-child(3) {
-                    background: darken($third-color, 12);
+                    background: darken($primaryColor, 5);
                 }
                 &:nth-child(4) {
-                    background: lighten($primaryColor, 10);
+                    background: darken($primaryColor, 7);
                 }
                 &:nth-child(5) {
-                    background: lighten($primaryColor, 4);
+                    background: darken($primaryColor, 9);
                 }
                 &:nth-child(6) {
-                    background: darken($primaryColor, 10);
+                    background: darken($primaryColor, 11);
                 }
                 &:hover,
                 &:focus {
+                     background: lighten($primaryColor, 5);
                     &:nth-child(2) {
-                        background: darken($third-color, 10);
+                        background: lighten($primaryColor, 4);
                     }
                     &:nth-child(3) {
-                        background: darken($third-color, 15);
+                        background: lighten($primaryColor, 3);
                     }
                     &:nth-child(4) {
-                        background: darken($primaryColor, 4);
+                        background: lighten($primaryColor, 2);
                     }
                     &:nth-child(5) {
-                        background: darken($primaryColor, 8);
+                        background: lighten($primaryColor, 7);
                     }
                     &:nth-child(6) {
-                        background: darken($primaryColor, 17);
+                        background: lighten($primaryColor, 0);
                     }
                 }
                 a {
@@ -1017,7 +1018,8 @@
     position: relative;
     @include border-radius(6px);
     box-shadow: 0px 2px 5px rgba(0, 0, 0, .2) inset;
-    @include gradient(#E1E1E1, #FEFEFE, vertical);
+    // @include gradient(#E1E1E1, #FEFEFE, vertical);
+    background: darken($primaryColor, 5);
     @include gutter;
     ul {
         @include li-reset;
@@ -1029,11 +1031,12 @@
         right: 0px !important;
         top: 1px !important;
         left: auto;
-        opacity: .5;
+        opacity: .8;
         background: url(../vendor/slick/icon_arrow_up_s.png) no-repeat center center;
         background-size: 16px;
         width: 20px !important;
         height: 20px !important;
+        filter: invert(100%);
         box-shadow: none;
         &:hover,
         &:focus {
@@ -1051,12 +1054,13 @@
         right: 0px !important;
         top: 22px !important;
         left: auto;
-        opacity: .5;
+        opacity: .8;
         width: 20px !important;
         height: 20px !important;
         background: url(../vendor/slick/icon_arrow_up_s.png) no-repeat center center;
         background-size: 16px;
         box-shadow: none;
+        filter: invert(100%);
         &:hover,
         &:focus {
             opacity: 1;
@@ -1075,7 +1079,11 @@
         line-height: 40px;
         margin-right: 3em;
         font-weight: bold;
+        color: #FFF;
         @include text-overflow;
+        &:hover, &:focus {
+            color: $color-yellow;
+        }
     }
 }
 // mp_banner (首頁大輪播區塊)

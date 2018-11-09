@@ -1,6 +1,6 @@
 // 自行加入的JS請寫在這裡
 $(function() {
-  // 最新消息 列表
+    // 最新消息 列表
     var newsList_len = 300; // 超過300個字以"..."取代
     $(".news_list p").each(function(i) {
         if ($(this).text().length > newsList_len) {
@@ -50,8 +50,6 @@ $(function() {
         var linkTitle = $(this).attr('title');
         // console.log(linkTitle);
     });
-
-
     // 大廣告輪播 
     $('.mp_slider').slick({
         dots: true,
@@ -126,7 +124,6 @@ $(function() {
         //              slidesToScroll: 2,
         //              vertical: false,
         //              verticalSwiping: false
-
         //          }
         //      }, {
         //          breakpoint: 480,
@@ -331,7 +328,6 @@ $(function() {
         slidesToScroll: 3,
         autoplay: true,
         autoplaySpeed: 1500,
-
         speed: 1000,
         // centerMode: true,
         focusOnSelect: true,
@@ -348,7 +344,6 @@ $(function() {
         //              slidesToScroll: 2,
         //              vertical: false,
         //              verticalSwiping: false
-
         //          }
         //      }, {
         //          breakpoint: 480,
@@ -360,7 +355,7 @@ $(function() {
         //          }
         //      }]
     })
-     $('.Slider-for').on('init reInit afterChange', function(event, slick, currentSlide) {
+    $('.Slider-for').on('init reInit afterChange', function(event, slick, currentSlide) {
         var i = (currentSlide ? currentSlide : 0) + 1;
         $('.controls').html(i + '/' + slick.slideCount);
     });
@@ -396,13 +391,14 @@ $(function() {
                     }
                 });
                 $(cellDiv1, this).height(highestBox);
+                $('.main_banner').height(highestBox);
             });
         } else {
             $(".main_banner .col").each(function() {
                 $(this).removeAttr('style');
             });
+            $('.main_banner').removeAttr('style');
         }
-
     }
     //設定resize 計時器
     var menuResize;
@@ -424,18 +420,17 @@ $(function() {
     $('.font-size').find('.size-s').click(function(event) {
         $('.main').removeClass('large-fontsize');
         $('.main').addClass('small-fontsize');
-
+         colHeight();
     });
     $('.font-size').find('.size-m').click(function(event) {
         $('.main').removeClass('small-fontsize').removeClass('large-fontsize');
-
+         colHeight();
     });
     $('.font-size').find('.size-l').click(function(event) {
         $('.main').removeClass('small-fontsize');
         $('.main').addClass('large-fontsize');
-
+         colHeight();
     });
-
     // 進階搜尋
     $('.advanced_search').hide();
     $('.btn_advanced_search').off().click(function(event) {
@@ -446,5 +441,4 @@ $(function() {
     $('.advance_search button').off().click(function(e) {
         $('.advance_block').stop(true, true).slideToggle();
     });
-
 });

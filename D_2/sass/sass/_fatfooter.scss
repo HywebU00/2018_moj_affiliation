@@ -25,13 +25,14 @@ $fatTextColor: #333; //fatFooter 連結顏色
         font-size: .813em;
         cursor: pointer;
         display: inline-block;
-        width: 80px;
+        width: 140px;
         color: #FFF;
         border: none;
         background: $footer-btn;
         position: absolute;
         right: 1%;
         z-index: 990;
+        top:.5em;
         @include border-radius(4px);
         &:hover,
         &:focus {

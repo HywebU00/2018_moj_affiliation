@@ -30,8 +30,8 @@ footer {
         padding-left: 113px;
         position: relative;
         min-height: 100px;
-        font-size:1rem;
-      a {
+        font-size: 1rem;
+        a {
             font-size: 1em;
             margin-bottom: .5em;
             color: lighten($aHover, 0);
@@ -44,7 +44,7 @@ footer {
             position: relative;
             z-index: 1;
         }
-         p {
+        p {
             line-height: 1.75em;
         }
         &:after {
@@ -60,7 +60,6 @@ footer {
             background-size: 80px;
             @include border-radius(10px);
             z-index: 0;
-
         }
     }
     .contact {
@@ -74,13 +73,13 @@ footer {
         padding-left: 128px;
         position: relative;
         padding-left: 100px;
-        font-size:1rem;
+        font-size: 1rem;
         a[href^="tel"] {
             font-size: 1em;
             margin-bottom: .5em;
             color: #333;
-            &:hover,&:focus {
-                color:darken($secondaryColor,10);
+            &:hover, &:focus {
+                color: darken($secondaryColor, 10);
             }
         }
         * {
@@ -88,7 +87,7 @@ footer {
             z-index: 1;
         }
         p {
-             line-height: 1.75em;
+            line-height: 1.75em;
         }
         &:after {
             content: "";
@@ -111,8 +110,8 @@ footer {
         @include make-md-column(1);
         @include make-lg-column(1);
         @include gutter();
-              img{
-            max-width:75px;
+        img {
+            max-width: 75px;
         }
     }
     .footer_info {
@@ -137,7 +136,8 @@ footer {
         a {
             margin-right: .5em;
         }
-    } // 版權連結
+    }
+    // 版權連結
     .footer_link {
         @include li-reset();
         @include clearfix();
@@ -150,11 +150,11 @@ footer {
                 color: #333;
                 @include border-radius(3px);
                 @include transition(all, .3s, ease-out);
-                padding:.3em .5em;
+                padding: .3em .5em;
                 background: #E1E1E1;
                 &:hover,
                 &:focus {
-                    color:#FFF;
+                    color: #FFF;
                     background: $aHover;
                 }
             }
@@ -162,6 +162,7 @@ footer {
     }
     p {
         line-height: 1.65em;
+        margin: .3em 0;
     }
     .update,
     .counter {
@@ -169,7 +170,7 @@ footer {
         margin-right: 5px;
         em {
             font-style: normal;
-            color: darken($aHover,5);
+            color: darken($aHover, 5);
             padding: .4em 1em;
         }
     }
@@ -182,5 +183,4 @@ footer {
             max-width: 120px;
         }
     }
-
 }

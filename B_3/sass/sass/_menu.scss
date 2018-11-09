@@ -62,9 +62,11 @@
             left: 0;
             list-style: none;
             text-align: left;
+            animation:showMenu .3s ease-out;
             ul {
                 top: 0;
                 left: 170px;
+                animation:none;
             }
         }
     } // 預設選單 li

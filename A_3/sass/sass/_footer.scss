@@ -57,7 +57,7 @@ footer {
             margin-left: -48%;
             background: #888;
             top: 2%;
-            background: url(../images/icon_office.png) no-repeat left top $fatfooter-color;
+            background: url(../images/icon_office.png) no-repeat left top;
             background-size: 80px;
             @include border-radius(10px);
             z-index: 0;
@@ -77,7 +77,6 @@ footer {
         @include gutter();
         min-height: 100px;
         margin-bottom: 1em;
-        padding-left: 128px;
         position: relative;
         padding-left: 100px;
         font-size:1rem;
@@ -105,7 +104,7 @@ footer {
             margin-left: -48%;
             background: #888;
             top: 2%;
-            background: url(../images/icon_tel.png) no-repeat left top $fatfooter-color;
+            background: url(../images/icon_tel.png) no-repeat left top;
             background-size: 80px;
             @include border-radius(10px);
             z-index: 0;
@@ -166,6 +165,7 @@ footer {
     }
     p {
         line-height: 1.65em;
+        margin: .3em 0;
     }
     .update,
     .counter {

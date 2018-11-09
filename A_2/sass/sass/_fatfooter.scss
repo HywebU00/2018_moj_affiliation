@@ -25,12 +25,13 @@ $fatTextColor: #FFF; //fatFooter 連結顏色
         font-size: .813em;
         cursor: pointer;
         display: inline-block;
-        width: 80px;
+        width: 140px;
         color: #FFF;
         border: none;
         background: $footer-btn;
         position: absolute;
         right: 1%;
+        top:.5em;
         z-index: 990;
         @include border-radius(4px);
         &:hover,
@@ -75,7 +76,7 @@ $fatTextColor: #FFF; //fatFooter 連結顏色
                     display:block;
                 }
                 a {
-                    color: lighten($aHover,10);
+                    color: #FFF;
                     text-align: left;
                     line-height: 1.65em;
                     display: block;
@@ -83,7 +84,7 @@ $fatTextColor: #FFF; //fatFooter 連結顏色
                     padding: 1% 0px 1% 0px;
                     &:hover,
                     &:focus {
-                        color: lighten($aHover,40);
+                        color: lighten($aHover,30);
                         text-decoration: none;
                         box-shadow:none;
                         // background: $aHover;

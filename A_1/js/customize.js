@@ -418,13 +418,16 @@ $(function() {
     $('.font-size').find('.size-s').click(function(event) {
         $('.main').removeClass('large-fontsize');
         $('.main').addClass('small-fontsize');
+        colHeight();
     });
     $('.font-size').find('.size-m').click(function(event) {
         $('.main').removeClass('small-fontsize').removeClass('large-fontsize');
+        colHeight();
     });
     $('.font-size').find('.size-l').click(function(event) {
         $('.main').removeClass('small-fontsize');
         $('.main').addClass('large-fontsize');
+        colHeight();
     });
     // 進階搜尋
     $('.advanced_search').hide();
