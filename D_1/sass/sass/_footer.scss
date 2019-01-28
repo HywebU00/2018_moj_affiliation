@@ -30,12 +30,11 @@ footer {
         padding-left: 113px;
         position: relative;
         min-height: 100px;
-        font-size:1rem;
-              a {
+        font-size: 1rem;
+        a {
             font-size: 1em;
             margin-bottom: .5em;
-            color: #FFF;
-
+            color: lighten($secondaryColor, 0);
             &:hover,
             &:focus {
                 color: lighten($secondaryColor, 10);
@@ -45,7 +44,7 @@ footer {
             position: relative;
             z-index: 1;
         }
-         p {
+        p {
             line-height: 1.75em;
         }
         &:after {
@@ -57,7 +56,7 @@ footer {
             margin-left: -48%;
             background: #888;
             top: 2%;
-            background: url(../images/icon_office.png) no-repeat left top $fatfooter-color;
+            background: url(../images/icon_office.png) no-repeat left top transparent;
             background-size: 80px;
             @include border-radius(10px);
             z-index: 0;
@@ -74,13 +73,13 @@ footer {
         padding-left: 128px;
         position: relative;
         padding-left: 100px;
-        font-size:1rem;
+        font-size: 1rem;
         a[href^="tel"] {
             font-size: 1em;
             margin-bottom: .5em;
             color: #FFF;
-            &:hover,&:focus {
-                color:lighten($secondaryColor,10);
+            &:hover, &:focus {
+                color: lighten($secondaryColor, 10);
             }
         }
         * {
@@ -88,7 +87,7 @@ footer {
             z-index: 1;
         }
         p {
-             line-height: 1.75em;
+            line-height: 1.75em;
         }
         &:after {
             content: "";
@@ -99,7 +98,7 @@ footer {
             margin-left: -48%;
             background: #888;
             top: 2%;
-            background: url(../images/icon_tel.png) no-repeat left top $fatfooter-color;
+            background: url(../images/icon_tel.png) no-repeat left top transparent;
             background-size: 80px;
             @include border-radius(10px);
             z-index: 0;
@@ -134,7 +133,8 @@ footer {
         a {
             margin-right: .5em;
         }
-    } // 版權連結
+    }
+    // 版權連結
     .footer_link {
         @include li-reset();
         @include clearfix();
@@ -144,13 +144,12 @@ footer {
             margin: 0px 15px 5px 0px;
             a {
                 display: block; // padding: .5em 1em;
-                color: #FFF;
+                color: lighten($aHover, 15);
                 @include border-radius(3px);
                 @include transition(all, .3s, ease-out);
-
                 &:hover,
                 &:focus {
-                    color: $aHover;
+                    color: lighten($color-yellow, 0);
                 }
             }
         }

@@ -33,10 +33,10 @@ footer {
         a {
             font-size: 1em;
             margin-bottom: .5em;
-            color: #FFF;
+            color: lighten($aHover, 0);
             &:hover,
             &:focus {
-                color: lighten($secondaryColor, 10);
+                color: $color-green;
             }
         }
         * {
@@ -73,7 +73,7 @@ footer {
         a[href^="tel"] {
             font-size: 1em;
             margin-bottom: .5em;
-           color: $aColor;
+            color: $aColor;
             &:hover, &:focus {
                 color: lighten($secondaryColor, 10);
             }
@@ -142,12 +142,12 @@ footer {
             margin: 0px 15px 5px 0px;
             a {
                 display: block; // padding: .5em 1em;
-                color: $aColor;
+                color: lighten($aHover, 0);
                 @include border-radius(3px);
                 @include transition(all, .3s, ease-out);
                 &:hover,
                 &:focus {
-                    color: $aHover;
+                    color: $color-green;
                 }
             }
         }
@@ -162,7 +162,7 @@ footer {
         margin-right: 5px;
         em {
             font-style: normal;
-            color: $color-green;
+            color: $aHover;
             padding: 0 .5em;
         }
     }

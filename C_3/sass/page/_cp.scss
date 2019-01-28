@@ -65,41 +65,65 @@
                 }
             }
         }
+        p {
+            a {
+                color: $color-purple;
+                &:hover {
+                    color: $importantColor;
+                    text-decoration: underline;
+                }
+            }
+        }
         a {
             color: $aHover;
             &:hover {
-                color: lighten($aHover, 15);
+                color: lighten($aHover, 10);
+            }
+            &.download {
+                color: #FFF;
+                font-weight: bold;
+                text-shadow: -1px 1px 5px RGBA(0, 0, 0, .5);
+                background: darken($secondaryColor, 5);
+                border: 1px solid darken($secondaryColor, 5);
+                transition: .3s ease;
+                &:hover, &:focus {
+                    background: darken($secondaryColor, 15);
+                    border: 1px solid darken($secondaryColor, 15);
+                }
+                &:before {
+                    content: "";
+                    width: 16px;
+                    height: 16px;
+                    background: url(../images/icon_download.png) no-repeat center bottom;
+                    background-size: 16px;
+                    display: inline-block;
+                    margin-right: .5em;
+                    vertical-align: middle;
+                }
             }
         }
         .info {
             line-height: 1.5em;
             list-style: none;
             margin: 0 0 1em 0;
-            border-left: solid 5px $secondaryColor;
             @include box-sizing;
             padding: 0.5em 1em;
-            background: #F2F2F2;
+            background: #FAFAFA;
+            @include border-radius(6px);
             ul {
                 margin: 0;
                 padding: 0;
                 list-style: none;
             }
             li {
-                width: 30%;
-                margin-bottom: .2em;
-                display: inline-block;
+                width: 100%;
+                margin-bottom: .1em;
+                display: block;
                 vertical-align: top;
-                font-size: 0.938em;
-                @include screen('tablet') {
-                    width: 48%;
-                    margin-bottom: .2em;
-                    font-size: .938em;
-                }
-                @include screen('mobile') {
-                    width: 100%;
-                    display: block;
-                }
+                line-height: 1.65em;
+                font-size: .938em;
                 i {
+                    width: 2em;
                     opacity: .5;
                     margin-right: 0em;
                     font-size: 1em;

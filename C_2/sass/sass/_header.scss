@@ -270,8 +270,8 @@
                 font-size: 0em;
                 width: 30px !important;
                 height: 30px;
-                max-width: auto;
-                min-width: auto;
+                max-width: 100%;
+                min-width: 30px;
                 background: url(../images/icon_search.png) no-repeat center center;
                 background-size: 24px;
                 border: none;
@@ -387,8 +387,8 @@
                     width: 36px !important;
                     height: 36px;
                     padding: 0;
-                    max-width: auto;
-                    min-width: auto;
+                    max-width: 100%;
+                    min-width: 36px;
                     background: url(../images/icon_search.png) no-repeat center center;
                     background-size: 24px;
                     border: none;

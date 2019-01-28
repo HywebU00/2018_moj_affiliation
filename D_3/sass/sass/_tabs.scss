@@ -1,6 +1,7 @@
 .tabSet {
     max-width: 100%;
     margin: 0px $grid-gutter-width/2 1.5em;
+
     overflow: hidden;
     @include clearfix;
     @include screen('mobile') {
@@ -10,6 +11,7 @@
         margin: 1.5em auto;
     }
 }
+
 .tabs {
     position: relative;
     @include screen('mobile') {
@@ -39,21 +41,32 @@
         }
         &>a {
             display: block;
-            padding: 16px 0 14px;
+            padding: 16px 0 20px;
             text-align: center;
             background-color: $secondaryColor;
+            color: #fff;
             text-decoration: none;
             @include text-overflow();
             @include box-sizing();
-            font-weight: bold;   
-            color: #FFF;
             &:hover {
-                color: #FFF;
                 background: lighten($primaryColor, 10);
+            }
+            position:relative;
+            &:before{
+                content:"";
+                position:absolute;
+                width:10px;
+                height: 10px;
+                transform:rotate(45deg);
+                border:2px solid #666;
+                border-left: none;
+                border-bottom: none;
+                top:.3em;
             }
         }
     }
 }
+
 //多組 可設定差異
 .example-2 {
     .tabItem>a:hover {
@@ -63,10 +76,12 @@
         background: $secondaryColor;
     }
 }
+
 // 顯示content
 .active+.tabContent {
     display: block;
 }
+
 .tabContent {
     position: absolute;
     background: #f6f6f6;
@@ -79,6 +94,7 @@
     @include screen('mobile') {
         position: static;
     }
+
     ul {
         list-style-type: none;
         margin: 0;
@@ -99,19 +115,12 @@
             width: 80%;
             text-align: left;
             display: block;
-            color:#333;
-            &:hover,&:focus{
-                color:#aHover;
-            }
-            @include screen('mobile') {
-                width: 75%;
-            }
-            &.more{
-                color:#333 !important;
-            }
+                    @include screen('mobile') {
+                        width: 75%;
+                    }
         }
         time {
-            display: block;
+            display:block;
             margin: 0 0 0 1em;
             font-size: .813em;
             text-align: center;
@@ -124,8 +133,7 @@
                 text-align: right;
             }
         }
-    }
-    // .more {
+    } // .more {
     //     text-align: right;
     //     @include screen('mobile') {
     //         text-align: center;

@@ -10,7 +10,6 @@ body {
         padding: 0;
     }
 }
-
 // 最外圍預設為100%
 .wrapper {
     width: 100%;
@@ -19,23 +18,21 @@ body {
         background: #FFF;
     }
 }
-
 // 整體共用container樣式，請注意首頁切版頁面的整齊
 .container {
     padding: 0;
     margin: 0 auto;
     max-width: $container-max; //請看_variable.scss
 }
-
 .main {
     position: relative;
     margin: 0 auto;
-
     padding: 0; // max-width: $container-max;
     // 可先設定一個中央區塊最大寬，限制accesskey對齊
     @include screen('mobile') {
         padding-top: 55px;
-    } // 內頁標題設定
+    }
+    // 內頁標題設定
     h2 {
         line-height: 1.25em;
     }
@@ -56,7 +53,6 @@ body {
         }
     }
 }
-
 ////////////////////////////////////////////////////////////
 // 為了與首頁區隔，請在內頁加上innerpage ClassName
 .innerpage {
@@ -69,7 +65,6 @@ body {
         @include gutter(); //gutter 代表左右要留白
     }
 }
-
 .innerpage .main_menu {
     @include make-xs-column(12);
     @include make-sm-column(12);
@@ -79,7 +74,8 @@ body {
     margin-top: 1em;
     @include screen('tablet') {
         display: none;
-    } // @include gutter();
+    }
+    // @include gutter();
     &~.content {
         @include make-xs-column(12);
         @include make-sm-column(12);
@@ -101,12 +97,12 @@ body {
                 }
             }
             &>li>a {
-                height: 1.5em;
+                min-height: 1.5em;
                 line-height: 1.5em;
                 position: relative;
                 padding-left: 1.8em !important;
                 transition: .3s ease-out;
-                margin-bottom: none;
+                margin-bottom: 0;
                 border-bottom: 1px solid RGBA(255, 255, 255, 0.4);
                 &:hover,
                 &:focus {
@@ -136,11 +132,10 @@ body {
                 left: auto;
                 top: 0em;
             }
-
             li {
                 display: block;
                 text-align: left;
-                margin-bottom: none;
+                margin-bottom: 0;
                 &:last-child {
                     border-bottom: none;
                 }
@@ -157,7 +152,8 @@ body {
                 }
             }
         }
-    } // ul {
+    }
+    // ul {
     //     padding: 0;
     //     margin: 0;
     //     list-style: none;
@@ -183,7 +179,6 @@ body {
     //     }
     // }
 }
-
 .content {
     @include make-xs-column(12);
     @include make-sm-column(12);
@@ -251,7 +246,6 @@ body {
         margin: .2em;
     }
 }
-
 .inner_image {
     width: 100%;
     min-height: 150px;
@@ -297,7 +291,6 @@ body {
         @include screen('mobile') {
             height: auto;
         }
-
         &:before {
             content: "";
             width: 60%;
@@ -314,7 +307,6 @@ body {
         }
     }
 }
-
 .cp,
 .lp,
 .qp,

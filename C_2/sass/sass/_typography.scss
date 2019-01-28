@@ -14,16 +14,15 @@ $grid-background-baseline-color: rgba(187, 187, 187, 0.4);
         margin: 0 $base-font-size 0 0;
     }
 }
-
 .cp {
     @include adjust-font-size-to($base-font-size*1.125, 2.5); // @include trailer(1);
     h1 {
-        @include adjust-font-size-to($base-font-size*2,2.5);
+        @include adjust-font-size-to($base-font-size*2, 2.5);
         @include leader(.5);
         @include trailer(.5);
     }
     h2 {
-        @include adjust-font-size-to($base-font-size*1.5,2.5);
+        @include adjust-font-size-to($base-font-size*1.5, 2.5);
         @include leader(.5);
         @include trailer(.6666);
     }
@@ -72,7 +71,8 @@ $grid-background-baseline-color: rgba(187, 187, 187, 0.4);
     img {
         max-width: 100%;
         @media (max-width: 767px) {
-            width: 100%;
+            width: auto;
+            max-width: 100%;
             clear: both;
         }
     }

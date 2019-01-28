@@ -65,13 +65,44 @@
                 }
             }
         }
+        p {
+            a {
+                color: $aHover;
+                &:hover {
+                    color: $importantColor;
+                    text-decoration: underline;
+                }
+            }
+        }
         a {
             color: $aHover;
             &:hover {
                 color: lighten($aHover, 10);
             }
+            &.download {
+                color: #FFF;
+                font-weight: bold;
+                text-shadow: -1px 1px 5px RGBA(0, 0, 0, .5);
+                background: $secondaryColor;
+                border: 1px solid $secondaryColor;
+                transition: .3s ease;
+                &:hover, &:focus {
+                    background: darken($secondaryColor, 5);
+                    border: 1px solid darken($secondaryColor, 5);
+                }
+                &:before {
+                    content: "";
+                    width: 16px;
+                    height: 16px;
+                    background: url(../images/icon_download.png) no-repeat center bottom;
+                    background-size: 16px;
+                    display: inline-block;
+                    margin-right: .5em;
+                    vertical-align: middle;
+                }
+            }
         }
-         .info {
+        .info {
             line-height: 1.5em;
             list-style: none;
             margin: 0 0 1em 0;

@@ -1,4 +1,4 @@
-@charset 'UTF-8';
+@charset "utf-8";
 .slick-loading .slick-list {
     background: #fff url('./ajax-loader.gif') center center no-repeat;
 }
@@ -151,7 +151,7 @@
 .slick-dots li button:hover:before,
 .slick-dots li button:focus:before {
     opacity: 1;
-    background: #AA5AC5;
+    background: #21baff;
 }
 .slick-dots li button:before {
     font-size: 0em;
@@ -172,5 +172,5 @@
 .slick-dots li.slick-active button:before {
     opacity: .9;
     color: black;
-    background: #AA5AC5;
+    background: #21baff;
 }

@@ -100,12 +100,12 @@ body {
                 }
             }
             &>li>a {
-                height: 1.5em;
+                min-height: 1.5em;
                 line-height: 1.5em;
                 position: relative;
                 padding-left: 1.8em !important;
                 transition: .3s ease-out;
-                margin-bottom: none;
+                margin-bottom: 0;
                 border-bottom: 1px solid RGBA(255, 255, 255, 0.4);
                 &:hover,
                 &:focus {
@@ -139,7 +139,7 @@ body {
             li {
                 display: block;
                 text-align: left;
-                margin-bottom: none;
+                margin-bottom: 0;
                 &:last-child {
                     border-bottom: none;
                 }

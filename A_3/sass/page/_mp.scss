@@ -447,9 +447,9 @@
                 }
             }
             img {
-                width: 36px;
-                height: 36px;
-                margin: 7px auto;
+                width: 24px;
+                height: 24px;
+                margin: 13px auto;
             }
         }
     }
@@ -551,7 +551,7 @@
                         }
                         a {
                             display: block;
-                            padding: .8em 1em;
+                            padding: .5em 1em;
                             color: #FFF;
                             transition: .3s ease-out;
                             line-height: 1.45em;
@@ -628,11 +628,14 @@
 .facebook {
     text-align: center;
     overflow: hidden;
+    position:relative;
+    text-align: center;
     iframe {
         display: block;
-        height: 400px;
-        margin: 0px auto 1em;
-        width: 320px;
+        height: 380px;
+        margin: 0px auto .5em;
+        width:340px;
+        position:relative;
     }
 }
 // 技職成果
@@ -810,6 +813,18 @@
             border: 1px solid #DDD;
             @include border-radius(4px);
             @include box-shadow(0px 0px 10px RGBA(0, 0, 0, .15));
+            .youtube {
+                @include aspect-ratio(16, 9);
+                iframe {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
             h3 {
                 width: 90%;
                 overflow: hidden;
@@ -1044,6 +1059,7 @@
             display: block;
             position: relative;
             overflow: hidden;
+            vertical-align: top;
             @include screen('xs_mobile') {
                 width: 46%;
                 height: 45px;
@@ -1675,6 +1691,21 @@
                 cursor: pointer;
                 background: lighten($forth-color, 2);
                 box-shadow: 2px 2px 5px RGBA(0, 0, 0, .7) inset;
+            }
+        }
+    }
+}
+// 查扣物查詢
+.seizure {
+    .form_grid {
+        text-align: left;
+        .form_title {
+            font-weight: bold;
+        }
+        .form_grp {
+            border: none;
+            @include screen('mobile') {
+                border-bottom: 1px solid #DDD;
             }
         }
     }

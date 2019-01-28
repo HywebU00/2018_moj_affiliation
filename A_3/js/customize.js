@@ -36,15 +36,6 @@ $(function() {
             $(this).text(text);
         }
     });
-    // hitsory
-    var history = 250; // 超過250個字以"..."取代
-    $(".text_block").find('p').each(function(i) {
-        if ($(this).text().length > history) {
-            $(this).attr("title", $(this).text());
-            var text = $(this).text().substring(0, history - 1) + "...";
-            $(this).text(text);
-        }
-    });
     // fastlink 快捷
     $('.fastlink ul li a').each(function(index, el) {
         var linkTitle = $(this).attr('title');
@@ -420,16 +411,16 @@ $(function() {
     $('.font-size').find('.size-s').click(function(event) {
         $('.main').removeClass('large-fontsize');
         $('.main').addClass('small-fontsize');
-         colHeight();
+        colHeight();
     });
     $('.font-size').find('.size-m').click(function(event) {
         $('.main').removeClass('small-fontsize').removeClass('large-fontsize');
-         colHeight();
+        colHeight();
     });
     $('.font-size').find('.size-l').click(function(event) {
         $('.main').removeClass('small-fontsize');
         $('.main').addClass('large-fontsize');
-         colHeight();
+        colHeight();
     });
     // 進階搜尋
     $('.advanced_search').hide();

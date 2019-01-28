@@ -147,7 +147,7 @@ footer {
             margin: 0px 15px 5px 0px;
             a {
                 display: block; // padding: .5em 1em;
-                color: #333;
+                color: $aHover;
                 @include border-radius(3px);
                 @include transition(all, .3s, ease-out);
                 padding: .3em .5em;

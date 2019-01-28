@@ -1,6 +1,6 @@
 body {
     overflow-x: hidden;
-    background:#f2f2f2;
+    background: #f2f2f2;
     &.noscroll {
         position: static !important;
         width: 100%;
@@ -11,7 +11,6 @@ body {
         padding: 0;
     }
 }
-
 // 最外圍預設為100%
 .wrapper {
     width: 100%;
@@ -20,14 +19,12 @@ body {
         background: #FFF;
     }
 }
-
 // 整體共用container樣式，請注意首頁切版頁面的整齊
 .container {
     padding: 0;
     margin: 0 auto;
     max-width: $container-max; //請看_variable.scss
 }
-
 .main {
     position: relative;
     margin: 0 auto;
@@ -35,7 +32,8 @@ body {
     // 可先設定一個中央區塊最大寬，限制accesskey對齊
     @include screen('mobile') {
         padding-top: 55px;
-    } // 內頁標題設定
+    }
+    // 內頁標題設定
     h2 {
         line-height: 1.25em;
     }
@@ -56,7 +54,6 @@ body {
         }
     }
 }
-
 ////////////////////////////////////////////////////////////
 // 為了與首頁區隔，請在內頁加上innerpage ClassName
 .innerpage {
@@ -75,8 +72,8 @@ body {
     @include make-sm-column(12);
     @include make-md-column(2);
     @include make-lg-column(2);
-    @include gradient(lighten($primaryColor,40), lighten($secondaryColor,30), vertical);
-    padding-bottom: 400px; // margin-top: 1em;
+    @include gradient(lighten($primaryColor, 40), lighten($secondaryColor, 30), vertical);
+    padding-bottom: 180px; // margin-top: 1em;
     position: relative;
     &:before {
         position: absolute;
@@ -89,7 +86,8 @@ body {
     }
     @include screen('tablet') {
         display: none;
-    } // @include gutter();
+    }
+    // @include gutter();
     &~.content {
         @include make-xs-column(12);
         @include make-sm-column(12);
@@ -134,16 +132,16 @@ body {
                 }
             }
             &>li>a {
-                height: 1.5em;
+                min-height: 1.5em;
                 line-height: 1.5em;
                 position: relative;
                 padding-left: 1.8em !important;
                 transition: .3s ease-out;
-                margin-bottom: none;
-                color:#333 !important;
-                height:auto;
-                min-height:auto;
-                max-height:auto;
+                margin-bottom: 0;
+                color: #333 !important;
+                height: auto;
+                min-height: 1.5em;
+                max-height: 15em;
                 border-bottom: 1px solid RGBA(255, 255, 255, 0.4);
                 &:hover,
                 &:focus {
@@ -173,17 +171,16 @@ body {
                 left: auto;
                 top: 0em;
             }
-
             li {
                 display: block;
                 text-align: left;
-                margin-bottom: none;
+                margin-bottom: 0;
                 &:last-child {
                     border-bottom: none;
                 }
                 a {
                     display: block;
-                    padding: .8em 1em;
+                    padding: .5em 1em;
                     color: #FFF;
                     transition: .3s ease-out;
                     line-height: 1.45em;
@@ -194,7 +191,8 @@ body {
                 }
             }
         }
-    } // ul {
+    }
+    // ul {
     //     padding: 0;
     //     margin: 0;
     //     list-style: none;
@@ -220,7 +218,6 @@ body {
     //     }
     // }
 }
-
 .mp_content {
     @include make-xs-column(12);
     @include make-sm-column(12);
@@ -233,7 +230,6 @@ body {
     min-height: 1px;
     display: block !important;
 }
-
 .content {
     @include make-xs-column(12);
     @include make-sm-column(12);
@@ -244,7 +240,7 @@ body {
     background: #FFF;
     padding-top: 1em;
     padding-bottom: 3em;
-    margin-top: 1em;
+    // margin-top: 1em;
     min-height: 500px;
     @include screen('desktop') {
         min-height: 650px;
@@ -300,7 +296,6 @@ body {
         margin: .2em;
     }
 }
-
 .inner_image {
     width: 100%;
     min-height: 150px;
@@ -346,7 +341,6 @@ body {
         @include screen('mobile') {
             height: auto;
         }
-
         &:before {
             content: "";
             width: 60%;
@@ -363,7 +357,6 @@ body {
         }
     }
 }
-
 .cp,
 .lp,
 .qp,

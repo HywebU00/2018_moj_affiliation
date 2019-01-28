@@ -33,7 +33,7 @@ footer {
         a {
             font-size: 1em;
             margin-bottom: .5em;
-            color: #FFF;
+           color: lighten($secondaryColor, 0);
             &:hover,
             &:focus {
                 color: lighten($secondaryColor, 10);
@@ -154,7 +154,7 @@ footer {
                 @include transition(all, .3s, ease-out);
                 &:hover,
                 &:focus {
-                    color: lighten($aHover,10);
+                   color:lighten($color-blue,0);
                 }
             }
         }
