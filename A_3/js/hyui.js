@@ -14,7 +14,7 @@ $(function() {
         _body = $('body'),
         wwNormal = 1400,
         wwMedium = 992,
-        wwSmall = 768,
+        wwSmall = 992,
         wwxs = 576;
     /*-----------------------------------*/
     //////////// nojs 先移除////////////////
@@ -544,6 +544,40 @@ $(function() {
             $(this).attr("title", $(this).text());
             var text = $(this).text().substring(0, history - 1) + "...";
             $(this).text(text);
+        }
+    });
+    /*-----------------------------------*/
+    /////////// 無障礙快捷鍵盤組合  //////////
+    /*-----------------------------------*/
+    $(document).on('keydown', function(e) {
+        // alt+S 查詢
+        if (e.altKey && e.keyCode == 83) {
+            $('html, body').animate({ scrollTop: 0 }, 200, 'easeOutExpo');
+            $('.search').find('input[type="text"]').focus();
+        }
+        // alt+U header
+        if (e.altKey && e.keyCode == 85) {
+            $('html, body').animate({ scrollTop: 0 }, 200, 'easeOutExpo');
+            $('header').find('.accesskey').focus();
+        }
+        // alt+C 主要內容區
+        if (e.altKey && e.keyCode == 67) {
+            $('html, body').stop(true, true).animate({ scrollTop: $('.main').find('.accesskey').offset().top }, 800, 'easeOutExpo');
+            $('.main').find('.accesskey').focus();
+        }
+        // alt+C footer
+        if (e.altKey && e.keyCode == 66) {
+            $('html, body').stop(true, true).animate({ scrollTop: $('footer').find('.accesskey').offset().top }, 800, 'easeOutExpo');
+            $('footer').find('.accesskey').focus();
+        }
+    });
+    /*------------------------------------*/
+    /////gotoCenter on focus跳到 content/////
+    /*------------------------------------*/
+    $('a.goCenter').keydown(function(e) {
+        if (e.which == 13) {
+            $('#aC').focus();
+            $('html, body').stop(true, true).animate({ scrollTop: $('.main').find('.accesskey').offset().top }, 800, 'easeOutExpo');
         }
     });
 });

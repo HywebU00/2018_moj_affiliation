@@ -58,6 +58,13 @@ $function_color:#888;
                     background-size: cover;
                 }
             }
+            &.icon_subscribe {
+                a:before {
+                    @extend %function_before;
+                    background: url(../images/basic/icon_subscribe.svg) no-repeat center center;
+                    background-size: cover;
+                }
+            }
         }
     }
 }

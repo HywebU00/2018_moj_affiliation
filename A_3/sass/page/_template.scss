@@ -29,7 +29,7 @@ body {
     margin: 0 auto;
     padding: 0; // max-width: $container-max;
     // 可先設定一個中央區塊最大寬，限制accesskey對齊
-    @include screen('mobile') {
+    @include screen('tablet') {
         padding-top: 55px;
     }
     // 內頁標題設定

@@ -267,6 +267,12 @@
                 .pic {
                     background: $color-blue;
                 }
+                @include screen('tablet') {
+                    margin: 0px 5% 1.5em 0;
+                }
+                @include screen('mobile') {
+                   margin: 0 auto 1em;
+                }
             }
             &:nth-child(4n) {
                 .pic {
@@ -293,7 +299,7 @@
                     margin-right: auto;
                 }
                 &:nth-child(3n) {
-                    margin-right: auto;
+                    margin: 0 auto 1em;
                 }
             }
             a {

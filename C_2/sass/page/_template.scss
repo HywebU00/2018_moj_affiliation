@@ -100,7 +100,7 @@ body {
         @include make-lg-column(10);
         padding-top: 1em;
         &>section {
-            padding: 1em 0;
+            padding: .3em 0;
             text-align: center;
             clear: both; // &+section {
             //     padding-top: 2em;

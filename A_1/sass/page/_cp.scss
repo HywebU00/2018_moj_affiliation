@@ -5,8 +5,21 @@
         @include make-lg-column(12);
         @include gutter(0);
         ul {
+            text-align: right;
             li {
-                float: right;
+                float: none;
+                display: inline-block;
+                min-width: 6em;
+                text-align: center;
+                margin: 0px 1px .2em; 
+                a {
+                    &.i_mail {
+                        &:before {
+                            display: inline-block;
+                            filter: invert(100%);
+                        }
+                    }
+                }
             }
         }
         margin-bottom: 2em;

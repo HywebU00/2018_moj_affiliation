@@ -22,6 +22,7 @@ $function_color:#888;
             display:block;
             float: left;
             margin:0 3px 3px 0;
+            position:relative;
             button,
             a {
                 font-size: .813em;
@@ -55,6 +56,13 @@ $function_color:#888;
                 a:before {
                     @extend %function_before;
                     background: url(../images/basic/icon_forward.svg) no-repeat center center;
+                    background-size: cover;
+                }
+            }
+            &.icon_subscribe {
+                a:before {
+                    @extend %function_before;
+                    background: url(../images/basic/icon_subscribe.svg) no-repeat center center;
                     background-size: cover;
                 }
             }

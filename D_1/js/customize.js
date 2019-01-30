@@ -1,6 +1,6 @@
 // 自行加入的JS請寫在這裡
 $(function() {
-    // 最新消息 列表
+ // 最新消息 列表
     var newsList_len = 300; // 超過300個字以"..."取代
     $(".news_list p").each(function(i) {
         if ($(this).text().length > newsList_len) {
@@ -36,11 +36,22 @@ $(function() {
             $(this).text(text);
         }
     });
+    // hitsory
+    var history = 250; // 超過250個字以"..."取代
+    $(".text_block").find('p').each(function(i) {
+        if ($(this).text().length > history) {
+            $(this).attr("title", $(this).text());
+            var text = $(this).text().substring(0, history - 1) + "...";
+            $(this).text(text);
+        }
+    });
     // fastlink 快捷
     $('.fastlink ul li a').each(function(index, el) {
         var linkTitle = $(this).attr('title');
         // console.log(linkTitle);
     });
+
+
     // 大廣告輪播 
     $('.mp_slider').slick({
         dots: true,
@@ -115,6 +126,7 @@ $(function() {
         //              slidesToScroll: 2,
         //              vertical: false,
         //              verticalSwiping: false
+
         //          }
         //      }, {
         //          breakpoint: 480,
@@ -319,6 +331,7 @@ $(function() {
         slidesToScroll: 3,
         autoplay: true,
         autoplaySpeed: 1500,
+
         speed: 1000,
         // centerMode: true,
         focusOnSelect: true,
@@ -335,6 +348,7 @@ $(function() {
         //              slidesToScroll: 2,
         //              vertical: false,
         //              verticalSwiping: false
+
         //          }
         //      }, {
         //          breakpoint: 480,
@@ -388,6 +402,7 @@ $(function() {
     //             $(this).removeAttr('style');
     //         });
     //     }
+
     // }
     // //設定resize 計時器
     // var menuResize;
@@ -409,14 +424,18 @@ $(function() {
     $('.font-size').find('.size-s').click(function(event) {
         $('.main').removeClass('large-fontsize');
         $('.main').addClass('small-fontsize');
+
     });
     $('.font-size').find('.size-m').click(function(event) {
         $('.main').removeClass('small-fontsize').removeClass('large-fontsize');
+
     });
     $('.font-size').find('.size-l').click(function(event) {
         $('.main').removeClass('small-fontsize');
         $('.main').addClass('large-fontsize');
+
     });
+
     // 進階搜尋
     $('.advanced_search').hide();
     $('.btn_advanced_search').off().click(function(event) {
@@ -427,17 +446,5 @@ $(function() {
     $('.advance_search button').off().click(function(e) {
         $('.advance_block').stop(true, true).slideToggle();
     });
-    // 無障礙打開search
-    $(document).on('keydown', function(e) {
-        if (e.altKey && e.keyCode == 83) {
-            $('html, body').animate({ scrollTop: 0 }, 200, 'easeOutExpo');
-            $('.search').fadeIn();
-            $('.search').find('input[type="text"]').focus();
-            // console.log("ok");
-        }
-        if (e.keyCode == 27) {
-            $('.search').hide();
-            $('.search').find('input[type="text"]').focusout();
-        }
-    });
+
 });

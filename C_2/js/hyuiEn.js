@@ -30,13 +30,10 @@ $(function() {
     /*-----------------------------------*/
     /////// header選單 tab及 fix設定////////
     /*-----------------------------------*/
-    var _menu = $('.menu');
+    var _menu = $('.header .menu');
     _menu.find('li').has('ul').addClass('hasChild');
-    var liHasChild = _menu.find('li.hasChild'),
-        liHasChild_level1 = $('.menu ul').children('li.hasChild');
-    liHasChild_level2 = $('.menu ul ul').children('li.hasChild');
-    liHasChild_level3 = $('.menu ul ul ul').children('li.hasChild');
-    subMenuWidth = liHasChild.first().children('ul').outerWidth();
+    var liHasChild = _menu.find('li.hasChild');
+    var subMenuWidth = liHasChild.first().children('ul').outerWidth();
     /*-----------------------------------*/
     ////////////// 行動版選單切換////////////
     /*-----------------------------------*/
@@ -93,19 +90,23 @@ $(function() {
     });
     _overlay.off("mouseenter");
     // 無障礙tab設定
-    liHasChild.keyup(function() {
-        $(this).children('ul').fadeIn();
-        $(this).siblings().focus(function() {
-            $(this).hide();
+    liHasChild.keyup(
+        function() {
+            $(this).children('ul').fadeIn();
+            $(this).siblings().focus(function() {
+                $(this).hide();
+            });
         });
-    });
     _menu.find('li').keyup(function() {
         $(this).siblings().children('ul').hide();
     });
     _menu.find('li:last>a').focusout(function() {
         _menu.find('li ul').hide();
     });
+
     // 
+
+
     function mobileMenu() {
         // switch PC/MOBILE
         ww = _window.outerWidth();
@@ -137,24 +138,16 @@ $(function() {
             liHasChild.on('touchstart', function() {
                 $(this).off('mouseenter,mouseleave');
             });
-            // 第一層選單
-            liHasChild_level1.off().on('click', function(e) {
-                $(this).siblings('li').find('ul').stop(true, true).slideUp('600', 'easeOutQuint');
-                $(this).children('ul').stop(true, true).slideDown('600', 'easeOutQuint');
-            });
-            // 第二層選單
-            liHasChild_level2.off().on('click', function(e) {
+            liHasChild.off().on('click', function(e) {
                 $(this).siblings('li').children('ul').stop(true, true).slideUp('600', 'easeOutQuint');
                 $(this).children('ul').stop(true, true).slideToggle('600', 'easeOutQuint');
-            });
-            // 第三層選單
-            liHasChild_level3.off().on('click', function(e) {
-                e.preventDefault();
+                // $(this).prop('disabled', true);
+                // e.preventDefault();
             });
             //手機版第第一層點了不會進入內頁，拿掉第一層的連結無作用
-            liHasChild.children('a').off().on('click', function(e) {
+            $('.sidebar .menu .hasChild>a').off().on('click', function(e) {
                 e.preventDefault();
-            });
+            })
             _body.off('touchmove');
             // 行動版查詢
             var _searchCtrl = $('.searchCtrl');
@@ -167,6 +160,7 @@ $(function() {
                     $('.m_search').hide();
                     search_mode = false;
                 }
+
             });
             // 如果點在外面
             $('.main').off().on('click touchend', function(e) {
@@ -185,6 +179,8 @@ $(function() {
             _menu.appendTo('.header .container');
             _search.removeClass('m_search');
             _search.show();
+
+
             _menu.appendTo(_mainMenu);
             // 副選單滑出
             liHasChild.on({
@@ -204,6 +200,7 @@ $(function() {
                 }
             });
             //手機版第第一層點了不會進入內頁，拿掉第一層的連結無作用
+
         }
     }
     //設定resize 計時器
@@ -265,7 +262,8 @@ $(function() {
     /*-----------------------------------*/
     /////////////fatfooter開關/////////////
     /*-----------------------------------*/
-    $('.btn-fatfooter').click(function(e) {
+     $('.btn-fatfooter').click(function(e) {
+
         $(this).parent('.container').find('nav>ul>li>ul').stop(true, true).slideToggle(function() {
             if ($(this).is(':visible')) {
                 $('.btn-fatfooter').html("close");
@@ -287,6 +285,7 @@ $(function() {
                 cHeight = _imgContainer.height(),
                 ratioC = cWidth / cHeight,
                 _img = _imgContainer.find('img');
+
             var iWidth = $(this).find('img').width(),
                 iHeight = $(this).find('img').height(),
                 ratioImg = iWidth / iHeight,
@@ -301,6 +300,7 @@ $(function() {
             $(this).find('img').removeClass('img-responsive');
         });
     });
+
     /*-----------------------------------*/
     //////////////相簿縮圖+燈箱//////////////
     /*-----------------------------------*/
@@ -312,6 +312,7 @@ $(function() {
                 cHeight = _imgContainer.height(),
                 ratioC = cWidth / cHeight,
                 _img = _imgContainer.find('img');
+
             var iWidth = $(this).find('img').width(),
                 iHeight = $(this).find('img').height(),
                 ratioImg = iWidth / iHeight,
@@ -437,6 +438,7 @@ $(function() {
             tw = $(this).width();
             var tabItemHeight = $(this).find('.tabs>.tabItem').height();
             $(this).children('.tabs').find('.tabContent').css('top', tabItemHeight);
+
             var tabContentHeight = $(this).find('.active').next('.tabContent').innerHeight();
             // console.log(tabContentHeight);
             var tabItemLength = $(this).find('.tabItem').length;
@@ -528,30 +530,4 @@ $(function() {
         }
     });
     // tabs();
-    /*------------------------------------*/
-    /////gotoCenter on focus跳到 content/////
-    /*------------------------------------*/
-    $('a.goCenter').keydown(function(e) {
-        if (e.which == 13) {
-            $('#aC').focus();
-        }
-    });
-    /*------------------------------------*/
-    /////cp table 加上響應式table wrapper/////
-    /*------------------------------------*/
-    $('.cp table').each(function(index, el) {
-        //判斷沒有table_list
-        if ($(this).parents('.table_list').length == 0) {
-            $(this).wrap('<div class="table_wrapper"></div>')
-        }
-    });
-    // hitsory
-    var history = 250; // 超過250個字以"..."取代
-    $(".text_block").find('p').each(function(i) {
-        if ($(this).text().length > history) {
-            $(this).attr("title", $(this).text());
-            var text = $(this).text().substring(0, history - 1) + "...";
-            $(this).text(text);
-        }
-    });
 });

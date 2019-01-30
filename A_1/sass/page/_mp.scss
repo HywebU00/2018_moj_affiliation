@@ -265,6 +265,12 @@
                 .pic {
                     background: $color-blue;
                 }
+                @include screen('tablet') {
+                    margin: 0px 5% 1.5em 0;
+                }
+                @include screen('mobile') {
+                   margin: 0 auto 1em;
+                }
             }
             &:nth-child(4n) {
                 .pic {
@@ -291,7 +297,7 @@
                     margin-right: auto;
                 }
                 &:nth-child(3n) {
-                    margin-right: auto;
+                    margin: 0 auto 1em;
                 }
             }
             a {
@@ -459,7 +465,7 @@
 }
 .main_banner {
     width: 100%;
-    min-height: 400px; // overflow: hidden;
+    min-height: 300px; // overflow: hidden;
     display: block;
     background: #DDD;
     resize: both;
@@ -470,6 +476,13 @@
         background: none;
         @include gutter(0);
     }
+    // .col-4-8{
+    //     &.col:nth-child(1){
+    //         @include screen('tablet') {
+    //             display:none !important;
+    //         }
+    //     }
+    // }
     .container {
         position: absolute;
         width: 100%;
@@ -502,8 +515,9 @@
             position: relative;
             padding-top: 1em;
             height: 100%;
+            max-width: 280px;
             @include box-sizing;
-            @include screen('mobile') {
+            @include screen('tablet') {
                 display: none;
             }
             .menu {
@@ -628,14 +642,14 @@
 .facebook {
     text-align: center;
     overflow: hidden;
-    position:relative;
+    position: relative;
     text-align: center;
     iframe {
         display: block;
         height: 380px;
         margin: 0px auto .5em;
-        width:340px;
-        position:relative;
+        width: 340px;
+        position: relative;
     }
 }
 // 技職成果
@@ -1699,7 +1713,7 @@
 .seizure {
     .form_grid {
         text-align: left;
-        .form_title{
+        .form_title {
             font-weight: bold;
         }
         .form_grp {
