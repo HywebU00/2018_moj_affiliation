@@ -11,7 +11,7 @@
                 display: inline-block;
                 min-width: 6em;
                 text-align: center;
-                margin: 0px 1px .2em; 
+                margin: 0px 1px .2em;
                 a {
                     &.i_mail {
                         &:before {
@@ -53,6 +53,12 @@
         }
     }
     .cp {
+        // table {
+        //     th,
+        //     td {
+        //         border: none;
+        //     }
+        // }
         img {
             &.float_left {
                 float: left;
@@ -81,6 +87,7 @@
         p {
             a {
                 color: $color-green;
+
                 &:hover {
                     color: $importantColor;
                     text-decoration: underline;
@@ -89,6 +96,7 @@
         }
         a {
             color: $aHover;
+             word-break: break-all;
             &:hover {
                 color: lighten($aHover, 10);
             }
@@ -99,7 +107,8 @@
                 background: darken($secondaryColor, 5);
                 border: 1px solid darken($secondaryColor, 5);
                 transition: .3s ease;
-                &:hover, &:focus {
+                &:hover,
+                &:focus {
                     background: darken($secondaryColor, 15);
                     border: 1px solid darken($secondaryColor, 15);
                 }

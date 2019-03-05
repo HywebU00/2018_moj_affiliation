@@ -1,7 +1,18 @@
 .lp {
+    .seizure {
+        border: 3px solid lighten($secondaryColor, 10);
+        @include border-radius(10px);
+        @include clearfix;
+        margin-bottom: 1em;
+    }
     table {
+        th {
+            border: 1px solid #DDD;
+        }
         td {
+            border: 1px solid #DDD;
             text-align: left;
+
             a {
                 max-width: 450px;
             }

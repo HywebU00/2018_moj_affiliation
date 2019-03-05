@@ -72,7 +72,7 @@ body {
     @include make-md-column(2);
     @include make-lg-column(2);
     @include gradient(lighten($primaryColor, 40), lighten($secondaryColor, 30), vertical);
-    padding-bottom: 180px; // margin-top: 1em;
+    padding-bottom: 250px; // margin-top: 1em;
     position: relative;
     &:before {
         position: absolute;
