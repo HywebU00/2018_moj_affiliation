@@ -6,9 +6,10 @@
         @include gutter(0);
         ul {
             text-align: right;
+            float:right;
             li {
-                float: none;
-                display: inline-block;
+                float: left;
+                display: block;
                 min-width: 6em;
                 text-align: center;
                 margin: 0px 1px .2em;
@@ -44,7 +45,7 @@
             @include gutter(0);
             ul {
                 li {
-                    float: right;
+                    float: left;
                 }
             }
             margin-bottom: 1em;
@@ -54,9 +55,13 @@
     }
     .cp {
         // table {
-        //     th,
+        //     th {
+        //         border: inherit;
+        //         background: inherit;
+        //     }
         //     td {
-        //         border: none;
+        //         border: inherit;
+        //         background: inherit;
         //     }
         // }
         img {
@@ -95,8 +100,7 @@
         }
         a {
             color: $aHover;
-                word-break: break-all;
-            
+            word-break: break-all;
             &:hover {
                 color: lighten($aHover, 10);
             }
@@ -104,13 +108,13 @@
                 color: #FFF;
                 font-weight: bold;
                 text-shadow: -1px 1px 5px RGBA(0, 0, 0, .5);
-                background: darken($secondaryColor, 5);
-                border: 1px solid darken($secondaryColor, 5);
+                background: $secondaryColor;
+                border: 1px solid $secondaryColor;
                 transition: .3s ease;
                 &:hover,
                 &:focus {
-                    background: darken($secondaryColor, 15);
-                    border: 1px solid darken($secondaryColor, 15);
+                    background: darken($secondaryColor, 5);
+                    border: 1px solid darken($secondaryColor, 5);
                 }
                 &:before {
                     content: "";

@@ -53,6 +53,9 @@ body {
             position: relative;
         }
     }
+    button, input[type="button"] {
+        box-shadow: none;
+    }
 }
 ////////////////////////////////////////////////////////////
 // 為了與首頁區隔，請在內頁加上innerpage ClassName
@@ -64,6 +67,9 @@ body {
     }
     >.container {
         @include gutter(); //gutter 代表左右要留白
+        @include screen('mobile') {
+            @include gutter(0);
+        }
     }
 }
 .innerpage .main_menu {
@@ -72,7 +78,7 @@ body {
     @include make-md-column(2);
     @include make-lg-column(2);
     @include gradient(lighten($primaryColor, 40), lighten($secondaryColor, 30), vertical);
-    padding-bottom: 250pxA_; // margin-top: 1em;
+    padding-bottom: 250px; // margin-top: 1em;
     position: relative;
     &:before {
         position: absolute;

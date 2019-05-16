@@ -129,6 +129,12 @@
 .chart {
     @include gutter;
     min-height: 350px;
+    @include screen('mobile') {
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        -webkit-overflow-scrolling: touch;
+        -webkit-transform: translate3d(0, 0, 0);
+    }
 }
 // 常用服務熱區
 .hot_service {
@@ -269,7 +275,7 @@
                     margin: 0px 5% 1.5em 0;
                 }
                 @include screen('mobile') {
-                   margin: 0 auto 1em;
+                    margin: 0 auto 1em;
                 }
             }
             &:nth-child(4n) {
@@ -426,6 +432,7 @@
                 height: 50px;
                 position: relative;
                 font-weight: bold;
+                text-align: center;
                 transition: .3s ease-out;
                 &:before {
                     position: absolute;
@@ -616,7 +623,7 @@
             padding: 0 !important;
             position: relative;
             height: 100%;
-             min-height: 280px !important;
+            min-height: 280px !important;
             @include box-sizing;
             @include screen('mobile') {
                 min-height: 1px !important;
@@ -624,7 +631,6 @@
         }
         @include screen('mobile') {
             @include gutter;
-
             .col:nth-child(2) {
                 @include gutter(0);
             }
@@ -748,7 +754,7 @@
                 .img-container {
                     height: 300px;
                     @include screen('mobile') {
-                        height: 250px;
+                        height: auto;
                     }
                 }
                 @include screen('mobile') {
@@ -787,14 +793,14 @@
 .facebook {
     text-align: center;
     overflow: hidden;
-    position:relative;
+    position: relative;
     text-align: center;
     iframe {
         display: block;
         height: 380px;
         margin: 0px auto .5em;
-        width:340px;
-        position:relative;
+        width: 340px;
+        position: relative;
     }
 }
 // 技職成果
@@ -848,6 +854,7 @@
 .single_photo {
     background: #FFF;
     padding-bottom: .5em;
+    text-align: left;
     .pic {
         @include aspect-ratio(4, 3);
         img {
@@ -859,6 +866,7 @@
             display: block;
             margin: .5em auto;
             line-height: 1.5em;
+            text-align: left;
             a {
                 color: $secondaryColor;
                 &:hover,
@@ -881,6 +889,7 @@
             min-height: 250px;
             border: 1px solid #DDD;
             background: #FFF;
+            text-align: left;
             @include border-radius(4px);
             @include box-shadow(0px 0px 10px RGBA(0, 0, 0, .15));
             a {
@@ -893,6 +902,7 @@
                     margin: .5em auto;
                     line-height: 1.5em;
                     color: $secondaryColor;
+                    text-align: left;
                     &:hover,
                     &:focus {
                         h3 {
@@ -940,6 +950,7 @@
 .single_video {
     background: #FFF;
     padding-bottom: .5em;
+    text-align: left;
     .youtube {
         @include aspect-ratio(4, 3);
         width: 100%;
@@ -951,10 +962,39 @@
             right: 0;
         }
     }
+    .pic {
+        @include aspect-ratio(16, 9);
+        width: 100%;
+        display: block;
+        // height: 200px;
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+        }
+        &:after {
+            content: "";
+            width: 48px;
+            height: 48px;
+            background: url(../images/icon_play.png) no-repeat center center;
+            background-size: cover;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -24px;
+            margin-left: -24px;
+            z-index: 1;
+        }
+    }
     h3 {
         display: block;
         margin: .5em auto;
         line-height: 1.5em;
+        text-align: left;
         a {
             color: $secondaryColor;
             &:hover,
@@ -975,6 +1015,7 @@
             padding: .5em;
             min-height: 250px;
             border: 1px solid #DDD;
+            text-align: left;
             background: #FFF;
             @include border-radius(4px);
             @include box-shadow(0px 0px 10px RGBA(0, 0, 0, .15));
@@ -990,6 +1031,34 @@
                     height: 100%;
                 }
             }
+            .pic {
+                @include aspect-ratio(16, 9);
+                width: 100%;
+                display: block;
+                // height: 200px;
+                img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+                &:after {
+                    content: "";
+                    width: 48px;
+                    height: 48px;
+                    background: url(../images/icon_play.png) no-repeat center center;
+                    background-size: cover;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    margin-top: -24px;
+                    margin-left: -24px;
+                    z-index: 1;
+                }
+            }
             h3 {
                 width: 90%;
                 overflow: hidden;
@@ -997,6 +1066,7 @@
                 height: 3em;
                 margin: .5em auto;
                 line-height: 1.5em;
+                text-align: left;
                 a {
                     color: $secondaryColor;
                     &:hover,
@@ -1869,13 +1939,31 @@
 .seizure {
     .form_grid {
         text-align: left;
-        .form_title{
+        .form_title {
             font-weight: bold;
         }
         .form_grp {
             border: none;
             @include screen('mobile') {
                 border-bottom: 1px solid #DDD;
+            }
+        }
+    }
+}
+// 修正格線排版
+.col-4-4-4, .col-3-3-3-3 {
+    .col {
+        .news_list {
+            ul {
+                li {
+                    h3 {
+                        display: block !important;
+                    }
+                    .pic {
+                        float: none !important;
+                        margin: 0px auto .5em !important;
+                    }
+                }
             }
         }
     }

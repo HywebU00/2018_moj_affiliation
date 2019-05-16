@@ -33,10 +33,10 @@ $(function() {
     var _menu = $('.menu');
     _menu.find('li').has('ul').addClass('hasChild');
     var liHasChild = _menu.find('li.hasChild'),
-        liHasChild_level1 = $('.menu ul').children('li.hasChild');
-    liHasChild_level2 = $('.menu ul ul').children('li.hasChild');
-    liHasChild_level3 = $('.menu ul ul ul').children('li.hasChild');
-    subMenuWidth = liHasChild.first().children('ul').outerWidth();
+        liHasChild_level1 = $('.menu ul').children('li.hasChild'),
+        liHasChild_level2 = $('.menu ul ul').children('li.hasChild'),
+        liHasChild_level3 = $('.menu ul ul ul').children('li.hasChild'),
+        subMenuWidth = liHasChild.first().children('ul').outerWidth();
     /*-----------------------------------*/
     ////////////// 行動版選單切換////////////
     /*-----------------------------------*/
@@ -475,7 +475,11 @@ $(function() {
     /////click event to scroll to top//////
     /*-----------------------------------*/
     $('.scrollToTop').click(function(e) {
-        $('html, body').animate({ scrollTop: 0 }, 800, 'easeOutExpo');
+        $('html, body').animate({ scrollTop: 0 }, 400, 'easeOutQuint');
+        e.preventDefault();
+    });
+    $('.scrollToTop').keydown(function(e) {
+        _body.find('a:first').focus();
         e.preventDefault();
     });
     /*--------------------------------------------------------*/
@@ -521,24 +525,16 @@ $(function() {
         }
     });
     /*------------------------------------*/
-    /////gotoCenter on focus跳到 content/////
-    /*------------------------------------*/
-    $('a.goCenter').keydown(function(e) {
-        if (e.which == 13) {
-            $('#aC').focus();
-        }
-    });
-    /*------------------------------------*/
     /////cp table 加上響應式table wrapper/////
     /*------------------------------------*/
     $('.cp table').each(function(index, el) {
-        //判斷沒有table_list
+        //判斷沒有table_list120
         if ($(this).parents('.table_list').length == 0) {
             $(this).wrap('<div class="table_wrapper"></div>')
         }
     });
     // hitsory
-    var history = 100; // 超過250個字以"..."取代
+    var history = 120; // 超過250個字以"..."取代
     $(".text_block").find('p').each(function(i) {
         if ($(this).text().length > history) {
             $(this).attr("title", $(this).text());

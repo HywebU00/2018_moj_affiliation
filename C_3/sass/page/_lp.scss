@@ -12,13 +12,16 @@
         td {
             border: 1px solid #DDD;
             text-align: left;
-
+            time {
+                white-space: nowrap;
+            }
             a {
                 max-width: 450px;
             }
             &.date {
                 text-align: center;
                 color: #666;
+                white-space:nowrap;
                 min-width: 120px;
                 @include screen('mobile') {
                     text-align: left;

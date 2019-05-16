@@ -1,5 +1,7 @@
 // 自行加入的JS請寫在這裡
 $(function() {
+    // lazyload
+    $("img").lazyload({ effect: "fadeIn" });
     // fix 內頁 mp_content
     if ($('.innerpage .mp_content').is(':empty')) {
         $('.mp_content').css({
@@ -43,15 +45,7 @@ $(function() {
             $(this).text(text);
         }
     });
-    // hitsory
-    var history = 250; // 超過250個字以"..."取代
-    $(".text_block").find('p').each(function(i) {
-        if ($(this).text().length > history) {
-            $(this).attr("title", $(this).text());
-            var text = $(this).text().substring(0, history - 1) + "...";
-            $(this).text(text);
-        }
-    });
+
     // fastlink 快捷
     $('.fastlink ul li a').each(function(index, el) {
         var linkTitle = $(this).attr('title');
@@ -76,7 +70,7 @@ $(function() {
         slidesToShow: 4,
         slidesToScroll: 1,
         pauseOnHover: true,
-        autoplay: false,
+        autoplay: true,
         arrow: true,
         responsive: [{
             breakpoint: 1024,
@@ -755,16 +749,16 @@ $(function() {
         dots: false,
         infinite: true,
         speed: 300,
-        slidesToShow: 3,
-        slidesToScroll: 3,
+        slidesToShow: 2,
+        slidesToScroll: 2,
         autoplay: true,
         pauseOnHover: true,
         arrow: true,
         responsive: [{
             breakpoint: 1024,
             settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
+                slidesToShow: 2,
+                slidesToScroll: 2,
                 infinite: true,
                 dots: false,
                 arrows: true
@@ -1028,16 +1022,16 @@ $(function() {
         dots: false,
         infinite: true,
         speed: 300,
-        slidesToShow: 3,
-        slidesToScroll: 3,
+        slidesToShow: 2,
+        slidesToScroll: 2,
         autoplay: true,
         pauseOnHover: true,
         arrow: true,
         responsive: [{
             breakpoint: 1024,
             settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
+                slidesToShow:2,
+                slidesToScroll: 2,
                 infinite: true,
                 dots: false,
                 arrows: true
@@ -1130,16 +1124,16 @@ $(function() {
         dots: false,
         infinite: true,
         speed: 300,
-        slidesToShow: 3,
-        slidesToScroll: 3,
+        slidesToShow: 2,
+        slidesToScroll: 2,
         autoplay: true,
         pauseOnHover: true,
         arrow: true,
         responsive: [{
             breakpoint: 1024,
             settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
+                slidesToShow: 2,
+                slidesToScroll: 2,
                 infinite: true,
                 dots: false,
                 arrows: true
@@ -1535,4 +1529,43 @@ $(function() {
             }
         }]
     });
+      //不同語系
+    var weblang = $('html').attr('lang');
+    if (weblang.substring(0, 2) == 'zh') {
+        // console.log("中文");
+        $('.slick-prev').attr('title', '上一筆');
+        $('.slick-next').attr('title', '下一筆');
+        $('header').find('.accesskey').attr('title', '上方功能區塊');
+        $('.main').find('.accesskey').attr('title', '中央內容區塊');
+        $('footer').find('.accesskey').attr('title', '下方功能區塊');
+        $('.search').find('.accesskey').attr('title', '關鍵字搜尋：文章關鍵字搜尋');
+    } else if (weblang.substring(0, 2) == 'en') {
+        // console.log("英文");
+        $('.slick-prev').attr('title', 'previous');
+        $('.slick-next').attr('title', 'next');
+        $('header').find('.accesskey').attr('title', 'header');
+        $('.main').find('.accesskey').attr('title', 'content');
+        $('footer').find('.accesskey').attr('title', 'footer');
+        $('.search').find('.accesskey').attr('title', 'search');
+    } else if (weblang.substring(0, 2) == 'vi') {
+        // console.log("越南");
+        $('.slick-prev').attr('title', 'Trước');
+        $('.slick-next').attr('title', 'kế tiếp');
+    } else if (weblang.substring(0, 2) == 'id') {
+        // console.log("印尼");
+        $('.slick-prev').attr('title', 'sebelumnya');
+        $('.slick-next').attr('title', 'berikutnya');
+    } else if (weblang.substring(0, 2) == 'km') {
+        // console.log("柬埔寨");
+        $('.slick-prev').attr('title', 'មុន');
+        $('.slick-next').attr('title', 'បន្ទាប់');
+    } else if (weblang.substring(0, 2) == 'th') {
+        // console.log("泰文");
+        $('.slick-prev').attr('title', 'ก่อน');
+        $('.slick-next').attr('title', 'ต่อไป');
+    } else {
+        // console.log("沒有判斷");
+        $('.slick-prev').attr('title', 'previous');
+        $('.slick-next').attr('title', 'next');
+    }
 });

@@ -1,5 +1,8 @@
 //header
 .header {
+    .menu{
+        display:none;
+    }
     input[type="submit"] {
         box-shadow: none;
     }
@@ -238,10 +241,13 @@
                 margin-left: -40px !important;
                 margin-top: -2px !important;
                 opacity: .8;
-                &:hover,
+                &:hover {
+                    opacity: 1;
+                }
                 &:focus {
                     opacity: 1;
-                    box-shadow: none;
+                    box-shadow: 0px 0px 0px 2px $form-focus;
+                    outline: none;
                 }
             }
         }
@@ -258,10 +264,14 @@
             background: $color-yellow;
             border-color: $color-yellow;
             color: #333;
-            &:hover,
-            &:focus {
+            &:hover {
                 background: darken($color-yellow, 5);
                 border-color: darken($color-yellow, 5);
+            }
+            &:focus {
+                opacity: 1;
+                box-shadow: 0px 0px 0px 2px $form-focus;
+                outline: none;
             }
         }
     }

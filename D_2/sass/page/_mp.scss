@@ -132,6 +132,12 @@
 .chart {
     @include gutter;
     min-height: 350px;
+    @include screen('mobile') {
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        -webkit-overflow-scrolling: touch;
+        -webkit-transform: translate3d(0, 0, 0);
+    }
 }
 // 常用服務熱區
 .hot_service {
@@ -428,6 +434,7 @@
                 padding: 0;
                 height: 50px;
                 position: relative;
+                text-align: center;
                 font-weight: bold;
                 transition: .3s ease-out;
                 &:before {
@@ -663,9 +670,9 @@
             }
             &~.mp_slider {
                 .img-container {
-                    height: 300px;
+                     height: 300px;
                     @include screen('mobile') {
-                        height: 250px;
+                        height: auto;
                     }
                 }
                 @include screen('mobile') {
@@ -765,6 +772,7 @@
 .single_photo {
     background: #FFF;
     padding-bottom: .5em;
+    text-align: left;
     .pic {
         @include aspect-ratio(4, 3);
         img {
@@ -776,6 +784,7 @@
             display: block;
             margin: .5em auto;
             line-height: 1.5em;
+            text-align: left;
             a {
                 color: $primaryColor;
                 &:hover,
@@ -799,6 +808,7 @@
             border: 1px solid #DDD;
             background: #FFF;
             @include border-radius(4px);
+            text-align: left;
             @include box-shadow(0px 0px 10px RGBA(0, 0, 0, .15));
             .youtube {
                  @include aspect-ratio(16, 9);
@@ -812,6 +822,34 @@
                     height: 100%;
                 }
             }
+                        .pic {
+                @include aspect-ratio(16, 9);
+                width: 100%;
+                display: block;
+                // height: 200px;
+                img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+                &:after {
+                    content: "";
+                    width: 48px;
+                    height: 48px;
+                    background: url(../images/icon_play.png) no-repeat center center;
+                    background-size: cover;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    margin-top: -24px;
+                    margin-left: -24px;
+                    z-index: 1;
+                }
+            }
             a {
                 display: block;
                 h3 {
@@ -822,6 +860,7 @@
                     margin: .5em auto;
                     line-height: 1.5em;
                     color: $primaryColor;
+                    text-align: left;
                     &:hover,
                     &:focus {
                         h3 {
@@ -869,6 +908,7 @@
 .single_video {
     background: #FFF;
     padding-bottom: .5em;
+    text-align: left;
     .youtube {
         @include aspect-ratio(4, 3);
         width: 100%;
@@ -880,10 +920,39 @@
             right: 0;
         }
     }
+                .pic {
+                @include aspect-ratio(16, 9);
+                width: 100%;
+                display: block;
+                // height: 200px;
+                img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+                &:after {
+                    content: "";
+                    width: 48px;
+                    height: 48px;
+                    background: url(../images/icon_play.png) no-repeat center center;
+                    background-size: cover;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    margin-top: -24px;
+                    margin-left: -24px;
+                    z-index: 1;
+                }
+            }
     h3 {
         display: block;
         margin: .5em auto;
         line-height: 1.5em;
+        text-align: left;
         a {
             color: $primaryColor;
             &:hover,
@@ -909,6 +978,7 @@
             min-height: 250px;
             border: 1px solid #DDD;
             background: #FFF;
+            text-align: left;
             @include border-radius(4px);
             @include box-shadow(0px 0px 10px RGBA(0, 0, 0, .15));
             h3 {
@@ -917,6 +987,7 @@
                 display: block;
                 height: 3em;
                 margin: .5em auto;
+                text-align: left;
                 line-height: 1.5em;
                 a {
                     color: $primaryColor;
@@ -1805,6 +1876,24 @@
             border: none;
             @include screen('mobile') {
                 border-bottom: 1px solid #DDD;
+            }
+        }
+    }
+}
+// 修正格線排版
+.col-4-4-4, .col-3-3-3-3 {
+    .col {
+        .news_list {
+            ul {
+                li {
+                    h3 {
+                        display: block !important;
+                    }
+                    .pic {
+                        float: none !important;
+                        margin: 0px auto .5em !important;
+                    }
+                }
             }
         }
     }

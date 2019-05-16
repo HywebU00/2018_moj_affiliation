@@ -52,6 +52,9 @@ body {
             position: relative;
         }
     }
+    button, input[type="button"] {
+        box-shadow: none;
+    }
 }
 ////////////////////////////////////////////////////////////
 // 為了與首頁區隔，請在內頁加上innerpage ClassName

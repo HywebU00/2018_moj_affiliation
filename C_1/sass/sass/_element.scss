@@ -2,9 +2,16 @@ body {
     -webkit-text-size-adjust: none;
 }
 // tab的外框線
-a:focus {
+a:focus{
     outline: none;
     box-shadow: 0 0px 0px 1px $aHover inset;
+    @include screen('mobile') {
+        box-shadow: none;
+    }
+}
+.btn:focus{
+    outline: none;
+    box-shadow: 0 0px 0px 3px $form-focus;
     @include screen('mobile') {
         box-shadow: none;
     }
@@ -210,7 +217,8 @@ img.img-responsive {
         .file_view {
             font-size: .813em;
             color: #666;
-            width: 100px;
+            min-width: 100px;
+            white-space: nowrap;
             float: left;
             margin-top: 5px;
             @include border-radius(6px);

@@ -6,9 +6,10 @@
         @include gutter(0);
         ul {
             text-align: right;
+            float:right;
             li {
-                float: none;
-                display: inline-block;
+                float: left;
+                display: block;
                 min-width: 6em;
                 text-align: center;
                 margin: 0px 1px .2em;
@@ -44,7 +45,7 @@
             @include gutter(0);
             ul {
                 li {
-                    float: right;
+                    float: left;
                 }
             }
             margin-bottom: 1em;
@@ -54,12 +55,15 @@
     }
     .cp {
         // table {
-        //     th,
+        //     th {
+        //         border: inherit;
+        //         background: inherit;
+        //     }
         //     td {
-        //         border: none;
+        //         border: inherit;
+        //         background: inherit;
         //     }
         // }
-
         img {
             &.float_left {
                 float: left;

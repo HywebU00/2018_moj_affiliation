@@ -47,6 +47,9 @@ $function_color:#888;
             }
             // 友善列印
             &.icon_print {
+                @include screen('mobile') {
+                    display: none;
+                }
                 a:before {
                     @extend %function_before;
                     background: url(../images/basic/icon_print.svg) no-repeat center center;

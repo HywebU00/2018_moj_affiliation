@@ -4,17 +4,15 @@
         @include make-md-column(12);
         @include make-lg-column(12);
         @include gutter(0);
-
         ul {
             text-align: right;
-
+            float:right;
             li {
-                float: none;
-                display: inline-block;
+                float: left;
+                display: block;
                 min-width: 6em;
                 text-align: center;
                 margin: 0px 1px .2em;
-
                 a {
                     &.i_mail {
                         &:before {
@@ -25,44 +23,36 @@
                 }
             }
         }
-
         margin-bottom: 2em;
         clear: both;
         min-height:2.5em;
     }
-
     .share {
         @include make-xs-column(12);
         @include make-sm-column(6);
         @include make-md-column(6);
         @include make-lg-column(6);
         @include gutter(0);
-
         ul {
             @include li-reset;
         }
-
         margin-bottom: 1em;
-
         &+.function {
             @include make-xs-column(12);
             @include make-sm-column(6);
             @include make-md-column(6);
             @include make-lg-column(6);
             @include gutter(0);
-
             ul {
                 li {
-                    float: right;
+                    float: left;
                 }
             }
-
             margin-bottom: 1em;
             height:auto;
             clear:none;
         }
     }
-
     .cp {
         // table {
         //     th {
@@ -80,7 +70,6 @@
                 max-width: 40%;
                 margin: 0px 1em 1em 0;
                 min-width: 240px;
-
                 @include screen('mobile') {
                     float: none;
                     width: 100%;
@@ -88,12 +77,10 @@
                     margin: 0px auto 1em;
                 }
             }
-
             &.float_right {
                 float: right;
                 max-width: 40%;
                 margin: 0px 0 1em 1em;
-
                 @include screen('mobile') {
                     float: none;
                     width: 100%;
@@ -102,25 +89,21 @@
                 }
             }
         }
-
         p {
             a {
                 color: $aHover;
-
                 &:hover {
                     color: $importantColor;
                     text-decoration: underline;
                 }
             }
         }
-
         a {
             color: $aHover;
             word-break: break-all;
             &:hover {
                 color: lighten($aHover, 10);
             }
-
             &.download {
                 color: #FFF;
                 font-weight: bold;
@@ -128,13 +111,11 @@
                 background: $secondaryColor;
                 border: 1px solid $secondaryColor;
                 transition: .3s ease;
-
                 &:hover,
                 &:focus {
                     background: darken($secondaryColor, 5);
                     border: 1px solid darken($secondaryColor, 5);
                 }
-
                 &:before {
                     content: "";
                     width: 16px;
@@ -147,7 +128,6 @@
                 }
             }
         }
-
         .info {
             line-height: 1.5em;
             list-style: none;
@@ -156,13 +136,11 @@
             padding: 0.5em 1em;
             background: #FAFAFA;
             @include border-radius(6px);
-
             ul {
                 margin: 0;
                 padding: 0;
                 list-style: none;
             }
-
             li {
                 width: 100%;
                 margin-bottom: .1em;
@@ -170,7 +148,6 @@
                 vertical-align: top;
                 line-height: 1.65em;
                 font-size: .938em;
-
                 i {
                     width: 2em;
                     opacity: .5;

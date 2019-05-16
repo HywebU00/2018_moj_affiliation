@@ -65,6 +65,9 @@ body {
             position: relative;
         }
     }
+    button, input[type="button"] {
+        box-shadow: none;
+    }
 }
 
 ////////////////////////////////////////////////////////////

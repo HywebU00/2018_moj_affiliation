@@ -33,10 +33,10 @@ $(function() {
     var _menu = $('.menu');
     _menu.find('li').has('ul').addClass('hasChild');
     var liHasChild = _menu.find('li.hasChild'),
-        liHasChild_level1 = $('.menu ul').children('li.hasChild');
-    liHasChild_level2 = $('.menu ul ul').children('li.hasChild');
-    liHasChild_level3 = $('.menu ul ul ul').children('li.hasChild');
-    subMenuWidth = liHasChild.first().children('ul').outerWidth();
+        liHasChild_level1 = $('.menu ul').children('li.hasChild'),
+        liHasChild_level2 = $('.menu ul ul').children('li.hasChild'),
+        liHasChild_level3 = $('.menu ul ul ul').children('li.hasChild'),
+        subMenuWidth = liHasChild.first().children('ul').outerWidth();
     /*-----------------------------------*/
     ////////////// 行動版選單切換////////////
     /*-----------------------------------*/
@@ -125,7 +125,7 @@ $(function() {
                     $(this).children('ul').stop(true, true).slideUp('600', 'easeOutQuint');
                 }
             });
-// 副選單點出
+            // 副選單點出
             liHasChild.off().on('mouseenter,mouseleave');
             liHasChild.on('touchstart', function() {
                 $(this).off('mouseenter,mouseleave');
@@ -475,7 +475,11 @@ $(function() {
     /////click event to scroll to top//////
     /*-----------------------------------*/
     $('.scrollToTop').click(function(e) {
-        $('html, body').animate({ scrollTop: 0 }, 800, 'easeOutExpo');
+        $('html, body').animate({ scrollTop: 0 }, 400, 'easeOutQuint');
+        e.preventDefault();
+    });
+    $('.scrollToTop').keydown(function(e) {
+        _body.find('a:first').focus();
         e.preventDefault();
     });
     /*--------------------------------------------------------*/
@@ -538,7 +542,7 @@ $(function() {
         }
     });
     // hitsory
-    var history = 250; // 超過250個字以"..."取代
+    var history = 240; // 超過250個字以"..."取代
     $(".text_block").find('p').each(function(i) {
         if ($(this).text().length > history) {
             $(this).attr("title", $(this).text());
