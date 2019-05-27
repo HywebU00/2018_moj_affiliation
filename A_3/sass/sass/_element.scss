@@ -146,9 +146,13 @@ a.more {
     display: none;
     z-index: 99999999;
     text-indent: -999999px;
-    &:hover {
+   &:hover {
         opacity: 1;
-        background: url(../images/basic/top.png) no-repeat center top $gotoTop;
+        background: url(../images/basic/top.png) no-repeat center top darken($gotoTop,10);
+    }
+    &:focus{
+        opacity: 1;
+        background: url(../images/basic/top.png) no-repeat center top $color-orange;
     }
 }
 // img

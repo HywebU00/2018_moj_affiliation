@@ -2,14 +2,14 @@ body {
     -webkit-text-size-adjust: none;
 }
 // tab的外框線
-a:focus{
+a:focus {
     outline: none;
     box-shadow: 0 0px 0px 1px $aHover inset;
     @include screen('mobile') {
         box-shadow: none;
     }
 }
-.btn:focus{
+.btn:focus {
     outline: none;
     box-shadow: 0 0px 0px 3px $form-focus;
     @include screen('mobile') {
@@ -147,7 +147,11 @@ a.more {
     text-indent: -999999px;
     &:hover {
         opacity: 1;
-        background: url(../images/basic/top.png) no-repeat center top $gotoTop;
+        background: url(../images/basic/top.png) no-repeat center top darken($gotoTop,10);
+    }
+    &:focus{
+        opacity: 1;
+        background: url(../images/basic/top.png) no-repeat center top $color-orange;
     }
 }
 // img
@@ -279,7 +283,7 @@ img.img-responsive {
                 left: 35px;
                 text-align: right;
             }
-            &[href$="doc"]:after,&[href$="docx"]:after {
+            &[href$="doc"]:after, &[href$="docx"]:after {
                 background: url(../images/basic/icon_doc.jpg);
             }
             &[href$="odf"]:after {
@@ -291,10 +295,10 @@ img.img-responsive {
             &[href$="pdf"]:after {
                 background: url(../images/basic/icon_pdf.jpg);
             }
-            &[href$="xls"]:after,&[href$="xlsx"]:after {
+            &[href$="xls"]:after, &[href$="xlsx"]:after {
                 background: url(../images/basic/icon_xls.jpg);
             }
-            &[href$="ppt"]:after,&[href$="pptx"]:after {
+            &[href$="ppt"]:after, &[href$="pptx"]:after {
                 background: url(../images/basic/icon_ppt.jpg);
             }
             &[href$="jpg"]:after {
