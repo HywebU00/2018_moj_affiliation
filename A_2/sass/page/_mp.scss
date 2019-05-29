@@ -1,10 +1,10 @@
 /////////////////////////////////////////////////////////以下為demo範例///
 // 首頁模組
 .slick-prev {
-    left: 0;
+    left: 3px;
 }
 .slick-next {
-    right: 0;
+    right: 3px;
 }
 %paragraph {
     font-size: .938em;
@@ -19,6 +19,13 @@
     color: #FFF;
     background: $secondaryColor;
     border: 1px solid $secondaryColor;
+    &:focus {
+        background: darken($secondaryColor, 10);
+        border: 1px solid darken($secondaryColor, 10);
+        &:before {
+            background: darken($secondaryColor, 20);
+        }
+    }
 }
 %time {
     font-size: .813em;
@@ -203,10 +210,10 @@
     ul {
         @include li-reset;
         .slick-prev {
-            left: 0;
+            left: 3px;
         }
         .slick-next {
-            right: 0;
+            right: 3px;
         }
         li {
             margin: 0px 1em;
@@ -517,6 +524,7 @@
             height: 100%;
             @include box-sizing;
             max-width: 280px;
+            display: block;
             @include screen('tablet') {
                 display: none;
             }
@@ -531,7 +539,7 @@
                         transition: .3s ease-out;
                         &:hover,
                         &:focus {
-                            background: RGBA(0, 0, 0, .2) !important;
+                            background: RGBA(0, 0, 0, .5) !important;
                         }
                         &:before {
                             position: absolute;
@@ -772,7 +780,7 @@
         }
     }
     .slick-prev {
-        left: 0px;
+        left: 3px;
         background: url(../vendor/slick/icon_arrow_left.png) center center no-repeat RGBA(0, 0, 0, .5) !important;
         background-size: 30px 30px !important;
         &:hover,
@@ -782,7 +790,7 @@
         }
     }
     .slick-next {
-        right: 0px;
+        right: 3px;
         background: url(../vendor/slick/icon_arrow_right.png) center center no-repeat RGBA(0, 0, 0, .5) !important;
         background-size: 30px 30px !important;
         &:hover,
@@ -924,7 +932,7 @@
         }
     }
     .slick-prev {
-        left: 0px;
+        left: 3px;
         background: url(../vendor/slick/icon_arrow_left.png) center center no-repeat RGBA(0, 0, 0, .5) !important;
         background-size: 30px 30px !important;
         &:hover,
@@ -934,7 +942,7 @@
         }
     }
     .slick-next {
-        right: 0px;
+        right: 3px;
         background: url(../vendor/slick/icon_arrow_right.png) center center no-repeat RGBA(0, 0, 0, .5) !important;
         background-size: 30px 30px !important;
         &:hover,
@@ -1354,6 +1362,7 @@
         @include gutter();
     }
     @include clearfix;
+    overflow:visible;
     .slick-prev {
         background: url(../vendor/slick/icon_arrow_left_inverse.png) no-repeat center center;
         background-size: 80%;
@@ -1648,10 +1657,10 @@
             }
         }
         .slick-prev {
-            left: 0px;
+            left: 3px;
         }
         .slick-next {
-            right: 0px;
+            right: 3px;
         }
         a.more {
             font-size: .813em;

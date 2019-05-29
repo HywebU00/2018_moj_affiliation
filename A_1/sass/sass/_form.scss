@@ -120,6 +120,7 @@ input[type="button"],
 input[type="submit"] {
     @extend %btn;
     @include btn_setting($form-focus, #FFF);
+    
 }
 
 textarea {

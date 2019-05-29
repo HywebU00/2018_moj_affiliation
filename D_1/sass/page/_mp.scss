@@ -1,11 +1,11 @@
 /////////////////////////////////////////////////////////以下為demo範例///
 // 首頁模組
 .slick-prev {
-    left: 0;
+    left: 3px;
     box-shadow: none;
 }
 .slick-next {
-    right: 0;
+    right: 3px;
     box-shadow: none;
 }
 %paragraph {
@@ -21,6 +21,13 @@
     color: #FFF;
     background: $secondaryColor;
     border: 1px solid $secondaryColor;
+    &:focus {
+        background: darken($secondaryColor, 10);
+        border: 1px solid darken($secondaryColor, 10);
+        &:before {
+            background: darken($secondaryColor, 20);
+        }
+    }
 }
 %time {
     font-size: .813em;
@@ -205,10 +212,10 @@
     ul {
         @include li-reset;
         .slick-prev {
-            left: 0;
+            left: 3px;
         }
         .slick-next {
-            right: 0;
+            right: 3px;
         }
         li {
             margin: 0px 1em;
@@ -843,7 +850,7 @@
         }
     }
     .slick-prev {
-        left: 0px;
+        left: 3px;
         background: url(../vendor/slick/icon_arrow_left.png) center center no-repeat RGBA(0, 0, 0, .5) !important;
         background-size: 30px 30px !important;
         &:hover,
@@ -853,7 +860,7 @@
         }
     }
     .slick-next {
-        right: 0px;
+        right: 3px;
         background: url(../vendor/slick/icon_arrow_right.png) center center no-repeat RGBA(0, 0, 0, .5) !important;
         background-size: 30px 30px !important;
         &:hover,
@@ -998,7 +1005,7 @@
         }
     }
     .slick-prev {
-        left: 0px;
+        left: 3px;
         background: url(../vendor/slick/icon_arrow_left.png) center center no-repeat RGBA(0, 0, 0, .5) !important;
         background-size: 30px 30px !important;
         &:hover,
@@ -1008,7 +1015,7 @@
         }
     }
     .slick-next {
-        right: 0px;
+        right: 3px;
         background: url(../vendor/slick/icon_arrow_right.png) center center no-repeat RGBA(0, 0, 0, .5) !important;
         background-size: 30px 30px !important;
         &:hover,
@@ -1428,6 +1435,7 @@
         @include gutter();
     }
     @include clearfix;
+    overflow:visible;
     .slick-prev {
         background: url(../vendor/slick/icon_arrow_left_inverse.png) no-repeat center center;
         background-size: 80%;
@@ -1722,10 +1730,10 @@
             }
         }
         .slick-prev {
-            left: 0px;
+            left: 3px;
         }
         .slick-next {
-            right: 0px;
+            right: 3px;
         }
         a.more {
             font-size: .813em;

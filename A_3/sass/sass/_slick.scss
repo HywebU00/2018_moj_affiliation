@@ -1,3 +1,10 @@
+// arrow
+.slick-prev,.slick-next{
+    transition:.3s ease-out;
+    &:focus{
+        box-shadow:0px 0px 0px 3px adjust_hue(saturate(lighten($aHover, 7), 18), -17);
+    }
+}
 // slick dots
 .slick-dots {
     li {

@@ -25,6 +25,14 @@ a:focus{
     z-index: 9;
     color: $color-word;
     font-size: $font-size;
+    display:block;
+    padding: .3em .5em .5em;
+    border-radius:4px;
+    line-height: 1em;
+    &:hover,&:focus{
+        background:rgba(0,0,0,.5);
+        color:#FFF;
+    }
     @include screen("tablet") {
         display: none;
     }
@@ -47,19 +55,19 @@ a:focus{
         margin-bottom: 3px;
     }
     &.red {
-        background: $color-red;
+        background: darken($color-red,10);
     }
     &.green {
-        background: $color-green;
+        background: darken($color-green,10);
     }
     &.blue {
-        background: $color-blue;
+        background: darken($color-blue,15);
     }
     &.orange {
-        background: $color-orange;
+        background: darken($color-orange,10);
     }
     &.purple {
-        background: $color-purple;
+        background: darken($color-purple,10);
     }
 }
 // more按鈕

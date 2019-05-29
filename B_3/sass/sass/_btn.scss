@@ -27,6 +27,11 @@ $btn-radius:4px;
         background: lighten($btn-bg, 5);
         cursor: pointer;
     }
+    &:focus {
+        background: darken($btn-bg, 10);
+        outline: none;
+        box-shadow: 0px 0px 0px 3px lighten($form-focus, 20);
+    }
 }
 
 // 按鈕預設陰影
