@@ -790,6 +790,18 @@
     @include gutter;
     a {
         display: block;
+        &:focus {
+            &:before {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                box-shadow: 0 0px 0px 2px $aHover inset;
+                content: "";
+                z-index: 1;
+                top: 0;
+                left: 0;
+            }
+        }
     }
     img {
         width: 100%;
@@ -850,6 +862,18 @@
                 &:focus {
                     h3 {
                         background: darken($primaryColor, 10);
+                    }
+                }
+                &:focus {
+                    &:before {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        box-shadow: 0 0px 0px 3px $aHover inset;
+                        content: "";
+                        z-index: 1;
+                        top: 0;
+                        left: 0;
                     }
                 }
             }
@@ -1012,6 +1036,13 @@
     p {
         @extend %paragraph;
     }
+    a {
+        &:focus {
+            .pic {
+                outline: 2px solid $aHover;
+            }
+        }
+    }
 }
 .multi_video {
     ul {
@@ -1083,6 +1114,13 @@
             }
             p {
                 @extend %paragraph;
+            }
+            a {
+                &:focus {
+                    .pic {
+                        outline: 2px solid $aHover;
+                    }
+                }
             }
         }
     }

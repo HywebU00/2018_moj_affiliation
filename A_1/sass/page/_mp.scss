@@ -22,7 +22,7 @@
     &:focus {
         background: darken($secondaryColor, 10);
         border: 1px solid darken($secondaryColor, 10);
-        &:before{
+        &:before {
             background: darken($secondaryColor, 20);
         }
     }
@@ -485,10 +485,11 @@
     resize: both;
     position: relative;
     @include screen('mobile') {
-        height: 280px;
+        height: auto;
         min-height: 280px;
         background: none;
         @include gutter(0);
+        padding-bottom: 0em !important;
     }
     // .col-4-8{
     //     &.col:nth-child(1){
@@ -641,6 +642,9 @@
             width: 100%;
             height: 100%;
         }
+        @include screen('mobile') {
+            display: none;
+        }
     }
 }
 // 靜態圖static_banner
@@ -648,6 +652,18 @@
     @include gutter;
     a {
         display: block;
+        &:focus {
+            &:before {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                box-shadow: 0 0px 0px 2px $aHover inset;
+                content: "";
+                z-index: 1;
+                top: 0;
+                left: 0;
+            }
+        }
     }
     img {
         width: 100%;
@@ -708,6 +724,18 @@
                 &:focus {
                     h3 {
                         background: darken($primaryColor, 10);
+                    }
+                }
+                &:focus {
+                    &:before {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        box-shadow: 0 0px 0px 3px $aHover inset;
+                        content: "";
+                        z-index: 1;
+                        top: 0;
+                        left: 0;
                     }
                 }
             }
@@ -865,6 +893,13 @@
     p {
         @extend %paragraph;
     }
+    a {
+        &:focus {
+            .pic {
+                outline: 2px solid $aHover;
+            }
+        }
+    }
 }
 .multi_video {
     ul {
@@ -935,6 +970,13 @@
             }
             p {
                 @extend %paragraph;
+            }
+            a {
+                &:focus {
+                    .pic {
+                        outline: 2px solid $aHover;
+                    }
+                }
             }
         }
     }

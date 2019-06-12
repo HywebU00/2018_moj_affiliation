@@ -68,14 +68,13 @@ body {
     >.container {
         @include gutter(); //gutter 代表左右要留白
         @include screen('mobile') {
-             @include gutter(0);
+            @include gutter(0);
         }
     }
     // .mp_content{
     //     display:none;
     // }
 }
-
 .innerpage .main_menu {
     @include make-xs-column(12);
     @include make-sm-column(12);
@@ -154,13 +153,19 @@ body {
                 border-bottom: 1px solid RGBA(255, 255, 255, 0.4);
                 &:hover,
                 &:focus {
-                    background: RGBA(0, 0, 0, .2) !important;
+                    color:#FFF !important;
+                    background: RGBA(0,0,0,.5) !important;
+                    &:before {
+                        border: 2px solid #FFF;
+                        border-left: none;
+                        border-top: none;
+                    }
                 }
                 &:before {
                     position: absolute;
                     width: 4px;
                     height: 4px;
-                    top: 1.4em;
+                    top: 1em;
                     left: .7em;
                     border: 2px solid #222;
                     border-left: none;
@@ -350,20 +355,20 @@ body {
         @include screen('mobile') {
             height: auto;
         }
-        &:before {
-            content: "";
-            width: 60%;
-            right: 0;
-            height: 100%;
-            background: url(../images/inner_img.png) no-repeat right bottom;
-            position: absolute;
-            background-size: 100% 150px;
-            display: block;
-            top: 0;
-            @include screen('mobile') {
-                display: none;
-            }
-        }
+        // &:before {
+        //     content: "";
+        //     width: 60%;
+        //     right: 0;
+        //     height: 100%;
+        //     background: url(../images/inner_img.png) no-repeat right bottom;
+        //     position: absolute;
+        //     background-size: 100% 150px;
+        //     display: block;
+        //     top: 0;
+        //     @include screen('mobile') {
+        //         display: none;
+        //     }
+        // }
     }
 }
 .cp,

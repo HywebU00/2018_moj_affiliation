@@ -252,14 +252,14 @@ $(function() {
                 // $(this).off('focus');
                 e.preventDefault();
             });
-            $(this).keyup(function(e) {
-                $(this).parent('li').siblings().children('a').removeClass('active');
-                $(this).toggleClass('active');
-                $(this).parent('li').siblings().children('.accordion-content').slideUp();
-                $(this).next('.accordion-content').slideToggle();
-                $(this).off('click');
-                e.preventDefault();
-            });
+            // $(this).keyup(function(e) {
+            //     $(this).parent('li').siblings().children('a').removeClass('active');
+            //     $(this).toggleClass('active');
+            //     $(this).parent('li').siblings().children('.accordion-content').slideUp();
+            //     $(this).next('.accordion-content').slideToggle();
+            //     $(this).off('click');
+            //     e.preventDefault();
+            // });
         });
     });
     /*-----------------------------------*/

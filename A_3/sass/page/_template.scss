@@ -109,7 +109,7 @@ body {
                 border-bottom: 1px solid RGBA(255, 255, 255, 0.4);
                 &:hover,
                 &:focus {
-                    background: RGBA(0, 0, 0, .2) !important;
+                    background: RGBA(0, 0, 0, .4) !important;
                 }
                 &:before {
                     position: absolute;
@@ -294,20 +294,20 @@ body {
         @include screen('mobile') {
             height: auto;
         }
-        &:before {
-            content: "";
-            width: 60%;
-            right: 0;
-            height: 100%;
-            background: url(../images/inner_img.png) no-repeat right bottom;
-            position: absolute;
-            background-size: 100% 150px;
-            display: block;
-            top: 0;
-            @include screen('mobile') {
-                display: none;
-            }
-        }
+        // &:before {
+        //     content: "";
+        //     width: 60%;
+        //     right: 0;
+        //     height: 100%;
+        //     background: url(../images/inner_img.png) no-repeat right bottom;
+        //     position: absolute;
+        //     background-size: 100% 150px;
+        //     display: block;
+        //     top: 0;
+        //     @include screen('mobile') {
+        //         display: none;
+        //     }
+        // }
     }
 }
 .cp,
