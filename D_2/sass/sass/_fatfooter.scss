@@ -37,14 +37,14 @@ $fatTextColor: #333; //fatFooter 連結顏色
         @include border-radius(4px);
         &:hover,
         &:focus {
-            background: darken($footer-btn, 10);
-            color: #fff;
+            background: darken($color-orange,10);
             text-decoration: none;
             cursor: pointer;
             border: none;
-            box-shadow: none;
             outline: none;
             border: none;
+            color:#FFF;
+            text-shadow: none;
         }
     }
     nav {
@@ -81,7 +81,8 @@ $fatTextColor: #333; //fatFooter 連結顏色
                     line-height: 1.65em;
                     display: block;
                     font-weight: 800;
-                    padding: 1% 8px 1% 0px;
+                    padding: 1%;
+                    border-radius: 4px;
                     &:hover,
                     &:focus {
                         color: $primaryColor;
@@ -89,6 +90,9 @@ $fatTextColor: #333; //fatFooter 連結顏色
                         box-shadow: none;
                         // background: $aHover;
                         // @include border-radius(3px);
+                    }
+                     &:focus {
+                        background: rgba(255, 255, 255, .85);
                     }
                 }
                 ul {
@@ -103,7 +107,7 @@ $fatTextColor: #333; //fatFooter 連結顏色
                         margin: 0px auto;
                     }
                     li {
-                        display: inline-block; // outline: 1px solid red;
+                        display: block; // outline: 1px solid red;
                         text-align: left;
                         vertical-align: top;
                          padding: 2px 0;
@@ -124,7 +128,7 @@ $fatTextColor: #333; //fatFooter 連結顏色
                             font-size: .938em;
                             font-weight: normal;
                             line-height: 1.4em;
-                            padding: 3px 8px 3px 0px;
+                            padding: 3px 8px 3px 8px;
                             background: none;
                             @include box-sizing(border-box);
                             border-bottom: none;

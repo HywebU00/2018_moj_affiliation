@@ -265,14 +265,15 @@ $(function() {
     /*-----------------------------------*/
     /////////////fatfooter開關/////////////
     /*-----------------------------------*/
+    $('.btn-fatfooter').html("CLOSE");
     $('.btn-fatfooter').click(function(e) {
         $(this).parent('.container').find('nav>ul>li>ul').stop(true, true).slideToggle(function() {
             if ($(this).is(':visible')) {
-                $('.btn-fatfooter').html("收合");
-                $('.btn-fatfooter').attr('name', '收合選單');
+                $('.btn-fatfooter').html("CLOSE");
+                $('.btn-fatfooter').attr('name', 'CLOSE');
             } else {
-                $('.btn-fatfooter').html("展開");
-                $('.btn-fatfooter').attr('name', '展開選單');
+                $('.btn-fatfooter').html("OPEN");
+                $('.btn-fatfooter').attr('name', 'OPEN');
             }
         });
         $(this).stop(true, true).toggleClass('close');

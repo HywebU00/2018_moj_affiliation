@@ -45,7 +45,6 @@ $(function() {
             $(this).text(text);
         }
     });
-
     // fastlink 快捷
     $('.fastlink ul li a').each(function(index, el) {
         var linkTitle = $(this).attr('title');
@@ -1030,7 +1029,7 @@ $(function() {
         responsive: [{
             breakpoint: 1024,
             settings: {
-                slidesToShow:2,
+                slidesToShow: 2,
                 slidesToScroll: 2,
                 infinite: true,
                 dots: false,
@@ -1529,7 +1528,7 @@ $(function() {
             }
         }]
     });
-      //不同語系
+    //不同語系
     var weblang = $('html').attr('lang');
     if (weblang.substring(0, 2) == 'zh') {
         // console.log("中文");

@@ -41,7 +41,7 @@ $(function() {
     ////////////// 行動版選單切換////////////
     /*-----------------------------------*/
     _body.prepend('<aside class="sidebar"><div class="m_area"><button type="button" class="sidebarClose">關閉</button></div><div class="menu_overlay"></div></aside>');
-    $('header .container').prepend('<button type="button" class="sidebarCtrl">側欄選單</button><button type="button" class="searchCtrl">查詢</button>');
+    $('header .container').prepend('<button type="button" class="sidebarCtrl">側欄選單</button><button type="button" class="searchCtrl">Search</button>');
     var menu_status = false;
     var _sidebar = $('.sidebar'),
         _search = $('.search'),
@@ -268,15 +268,15 @@ $(function() {
     /*-----------------------------------*/
     /////////////fatfooter開關/////////////
     /*-----------------------------------*/
-     $('.btn-fatfooter').click(function(e) {
-
+    $('.btn-fatfooter').html("CLOSE");
+    $('.btn-fatfooter').click(function(e) {
         $(this).parent('.container').find('nav>ul>li>ul').stop(true, true).slideToggle(function() {
             if ($(this).is(':visible')) {
-                $('.btn-fatfooter').html("close");
-                $('.btn-fatfooter').attr('name', '收合選單');
+                $('.btn-fatfooter').html("CLOSE");
+                $('.btn-fatfooter').attr('name', 'CLOSE');
             } else {
-                $('.btn-fatfooter').html("open");
-                $('.btn-fatfooter').attr('name', '展開選單');
+                $('.btn-fatfooter').html("OPEN");
+                $('.btn-fatfooter').attr('name', 'OPEN');
             }
         });
         $(this).stop(true, true).toggleClass('close');
@@ -335,7 +335,7 @@ $(function() {
     });
     //相簿JQ設定
     var lightbox_Status = false;
-    $('.gallery').append('<div class="lightbox"><a href="#" class="light_close">關閉</a><a href="#" class="light_prev">上一張</a><a href="#" class="light_next">下一張</a><img src="" alt=""><div class="galler_overlay"></div></div>')
+    $('.gallery').append('<div class="lightbox"><a href="#" class="light_close">CLOSE</a><a href="#" class="light_prev">PREVIOUS</a><a href="#" class="light_next">NEXT</a><img src="" alt=""><div class="galler_overlay"></div></div>')
     $('.gallery .lightbox').hide(); // lightbox先隱藏
     $('.light_close').click(function(event) {
         $('.gallery .lightbox').hide(); // 如果點到close，lightbox隱藏
