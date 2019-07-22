@@ -80,8 +80,9 @@
         li {
             float: none;
             a {
-                padding: .5em 1.2em;
+                padding: .3em 1.2em;
                 color: #FFF;
+                font-size:.938em;
                 &:hover,
                 &:focus {
                     background: $primaryColor;

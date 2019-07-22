@@ -73,9 +73,24 @@ footer {
         a[href^="tel"] {
             font-size: 1em;
             margin-bottom: .5em;
-            color: #FFF;
+            color: darken(#FFF, 5);
+            position: relative;
             &:hover, &:focus {
-                color: lighten($secondaryColor, 10);
+                color: #FFF;
+            }
+            &:focus {
+                &:before {
+                    position: absolute;
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    box-shadow: 0px 0px 0px 1px $color-yellow inset;
+                    z-index: 9;
+                }
             }
         }
         * {
@@ -171,6 +186,21 @@ footer {
         a {
             display: inline-block;
             vertical-align: top;
+            position: relative;
+            &:focus {
+                &:before {
+                    position: absolute;
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    box-shadow: 0px 0px 0px 1px $color-yellow inset;
+                    z-index: 9;
+                }
+            }
         }
         img {
             max-width: 120px;

@@ -1,47 +1,47 @@
 body {
     -webkit-text-size-adjust: none;
 }
-.img-container{
-    a{
-        &:focus{
-            &:before{
-                position:absolute;
+.img-container {
+    a {
+        &:focus {
+            &:before {
+                position: absolute;
                 width: 100%;
                 height: 100%;
                 box-shadow: 0 0px 0px 3px $aHover inset;
-                content:"";
+                content: "";
                 z-index: 1;
-                top:0;
+                top: 0;
                 left: 0;
             }
         }
     }
 }
-.vertical_picture_link{
-    a{
-        &:focus{
-            &:before{
-                position:absolute;
+.vertical_picture_link {
+    a {
+        &:focus {
+            &:before {
+                position: absolute;
                 width: 100%;
                 height: 100%;
                 box-shadow: 0 0px 0px 3px $aHover inset;
-                content:"";
+                content: "";
                 z-index: 1;
-                top:0;
+                top: 0;
                 left: 0;
             }
         }
     }
 }
 // tab的外框線
-a:focus{
+a:focus {
     outline: none;
     box-shadow: 0 0px 0px 1px $aHover inset;
     @include screen('mobile') {
         box-shadow: none;
     }
 }
-.btn:focus{
+.btn:focus {
     outline: none;
     box-shadow: 0 0px 0px 3px $form-focus;
     @include screen('mobile') {
@@ -56,13 +56,13 @@ a:focus{
     z-index: 9;
     color: $color-word;
     font-size: $font-size;
-    display:block;
+    display: block;
     padding: .3em .5em .5em;
-    border-radius:4px;
+    border-radius: 4px;
     line-height: 1em;
-    &:hover,&:focus{
-        background:rgba(0,0,0,.5);
-        color:#FFF;
+    &:hover, &:focus {
+        background: rgba(0, 0, 0, .5);
+        color: #FFF;
     }
     @include screen("tablet") {
         display: none;
@@ -86,19 +86,19 @@ a:focus{
         margin-bottom: 3px;
     }
     &.red {
-        background: darken($color-red,10);
+        background: darken($color-red, 10);
     }
     &.green {
-        background: darken($color-green,10);
+        background: darken($color-green, 10);
     }
     &.blue {
-        background: darken($color-blue,15);
+        background: darken($color-blue, 15);
     }
     &.orange {
-        background: darken($color-orange,10);
+        background: darken($color-orange, 10);
     }
     &.purple {
-        background: darken($color-purple,10);
+        background: darken($color-purple, 10);
     }
 }
 // more按鈕
@@ -187,11 +187,23 @@ a.more {
     text-indent: -999999px;
     &:hover {
         opacity: 1;
-        background: url(../images/basic/top.png) no-repeat center top darken($gotoTop,10);
+        background: url(../images/basic/top.png) no-repeat center top darken($gotoTop, 10);
     }
-    &:focus{
+    &:focus {
         opacity: 1;
         background: url(../images/basic/top.png) no-repeat center top $color-orange;
+        &:before {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            box-shadow: 0px 0px 0px 2px $color-green inset;
+            z-index: 9;
+        }
     }
 }
 // img
@@ -323,7 +335,7 @@ img.img-responsive {
                 left: 35px;
                 text-align: right;
             }
-            &[href$="doc"]:after,&[href$="docx"]:after {
+            &[href$="doc"]:after, &[href$="docx"]:after {
                 background: url(../images/basic/icon_doc.jpg);
             }
             &[href$="odf"]:after {
@@ -335,10 +347,10 @@ img.img-responsive {
             &[href$="pdf"]:after {
                 background: url(../images/basic/icon_pdf.jpg);
             }
-            &[href$="xls"]:after,&[href$="xlsx"]:after {
+            &[href$="xls"]:after, &[href$="xlsx"]:after {
                 background: url(../images/basic/icon_xls.jpg);
             }
-            &[href$="ppt"]:after,&[href$="pptx"]:after {
+            &[href$="ppt"]:after, &[href$="pptx"]:after {
                 background: url(../images/basic/icon_ppt.jpg);
             }
             &[href$="jpg"]:after {
