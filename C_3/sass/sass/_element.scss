@@ -172,7 +172,7 @@ a.more {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: url(../images/basic/top.png) no-repeat center top $gotoTop;
+    background: url(../images/basic/top.png) no-repeat center top rgba(0,0,0,.6);
     opacity: .8;
     text-align: center;
     color: #FFF;
@@ -185,25 +185,9 @@ a.more {
     display: none;
     z-index: 99999999;
     text-indent: -999999px;
-    &:hover {
+    &:hover,&:focus{
         opacity: 1;
-        background: url(../images/basic/top.png) no-repeat center top darken($gotoTop, 10);
-    }
-    &:focus {
-        opacity: 1;
-        background: url(../images/basic/top.png) no-repeat center top $color-orange;
-        &:before {
-            position: absolute;
-            content: "";
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            box-shadow: 0px 0px 0px 2px $color-purple inset;
-            z-index: 9;
-        }
+        background: url(../images/basic/top.png) no-repeat center top lighten($secondaryColor,0);
     }
 }
 // img

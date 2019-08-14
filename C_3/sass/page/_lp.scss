@@ -1,3 +1,11 @@
+.lp_content {
+    background: #F3F3F3;
+    @extend %clearfix;
+    border: 3px solid lighten($primaryColor, 10);
+    padding: 1em 2em;
+    border-radius: .5em;
+    margin-bottom: .5em;
+}
 .lp {
     .seizure {
         border: 3px solid lighten($secondaryColor, 10);
@@ -21,8 +29,8 @@
             &.date {
                 text-align: center;
                 color: #666;
-                white-space:nowrap;
                 min-width: 120px;
+                white-space: nowrap;
                 @include screen('mobile') {
                     text-align: left;
                     min-width: auto;
@@ -90,28 +98,44 @@
             padding: 0;
             border-top: 2px solid $primaryColor;
             li {
-                padding: 1em 0;
+                padding: 1em 0 1em 4em;
                 border-bottom: 1px solid #DDD;
                 position: relative; // outline: 1px solid blue;
                 a {
+                    .title {
+                        margin: .5em 0;
+                        color: #333;
+                    }
                     display: block;
-                    padding-left: 4em;
                     position: relative;
                     line-height: 1.45em;
+                    font-weight: bold;
                     .num {
                         width: 3.4em;
                         text-align: right;
                         position: absolute;
-                        top: .2em;
-                        left: 0;
+                        top: 0em;
+                        left: -4em;
                         &:after {
                             content: ".";
                             display: inline-block;
                         }
                     }
+                    &:hover, &:focus {
+                        .title {
+                            color: darken($aHover, 0);
+                        }
+                    }
+                }
+                p {
+                    color: #555;
+                    font-size: .813em;
+                    color: #555;
+                    font-weight: normal;
+                    line-height: 1.65em;
                 }
                 span.dept {
-                    display: inline-block;
+                    display: none;
                     font-size: .938em;
                     color: $secondaryColor;
                     @include border-radius(6px);
@@ -128,10 +152,19 @@
                         max-width: 100px;
                     }
                 }
-                time {
+                time, .counter {
                     @extend %time;
                     background: transparent;
                     border: 1px solid #CCC;
+                    display: inline-block;
+                }
+                .counter {
+                    max-width: 130px;
+                    &:before {
+                        background: url(../images/icon/icon_view.svg) no-repeat center bottom;
+                        background-size: 100%;
+                        top: .6em;
+                    }
                 }
             }
         }
@@ -158,6 +191,7 @@
                     overflow: hidden;
                     text-align: left;
                     transition: .3s ease-out;
+                    position: relative;
                     &:hover {
                         @include box-shadow(1px 1px 5px RGBA(0, 0, 0, .4));
                     }
@@ -177,9 +211,12 @@
                 .imgOuter {
                     width: 100%;
                     @include aspect-ratio(4, 3);
+                    img{
+                        object-fit: cover;
+                    }
                 }
                 .caption {
-                    height: 8em;
+                    height: 10em;
                     overflow: hidden;
                     @include gutter;
                     h3 {
@@ -189,9 +226,19 @@
                         display: block;
                         border-bottom: 1px dotted #DDD;
                     }
-                    time {
+                    time, .counter {
+                        font-size: .75em;
                         @extend %time;
                         display: inline-block;
+                        margin-bottom: .5em;
+                    }
+                    .counter {
+                        max-width: 120px;
+                        &:before {
+                            background: url(../images/icon/icon_view.svg) no-repeat center bottom;
+                            background-size: 100%;
+                            top: .6em;
+                        }
                     }
                 }
             }

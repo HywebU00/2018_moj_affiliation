@@ -160,10 +160,10 @@ footer {
                 color: #FFF;
                 @include border-radius(3px);
                 @include transition(all, .3s, ease-out);
-                color: lighten($aHover, 25);
+                color: lighten($color-yellow, 0);
                 &:hover,
                 &:focus {
-                    color: lighten($color-yellow, 0);
+                    color: #FFF;
                 }
             }
         }
