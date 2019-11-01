@@ -37,6 +37,55 @@
         }
     }
 }
+// 首頁大圖輪播
+.mpSlider {
+    width: 100%;
+    padding-bottom: 3em;
+    @include gutter(0);
+    .img-container {
+        @include aspect-ratio(5, 2);
+        @include screen('mobile') {
+            @include aspect-ratio(5, 3);
+        }
+    }
+    .slick-prev {
+        @include screen('mobile') {
+            top: 30%;
+            left: 2%;
+        }
+    }
+    .slick-next {
+        @include screen('mobile') {
+            top: 30%;
+            right: 2%;
+        }
+    }
+}
+// adSlider
+.adSlider {
+    @include gutter(70px);
+    margin-bottom: 20px;
+    @include screen('mobile') {
+        @include gutter();
+    }
+    .slick-prev {
+        left: -15px;
+    }
+    .slick-next {
+        right: -15px;
+    }
+    .img-container {
+        width: 165px;
+        height: 55px;
+        margin: 0px 15px;
+        a {
+            display: block;
+            img {
+                margin: 0 auto;
+            }
+        }
+    }
+}
 //  slick燈箱
 .lightbox_slider {
     h3 {

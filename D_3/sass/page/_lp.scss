@@ -183,6 +183,7 @@
                 @include make-lg-column(4);
                 @include gutter();
                 margin-bottom: 1em;
+                padding-top: .2em;
                 a {
                     display: block;
                     text-align: center;

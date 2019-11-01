@@ -172,7 +172,7 @@ a.more {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: url(../images/basic/top.png) no-repeat center top RGBA(0,0,0,.7);
+    background: url(../images/basic/top.png) no-repeat center top $color-orange;
     opacity: .8;
     text-align: center;
     color: #FFF;
@@ -187,7 +187,7 @@ a.more {
     text-indent: -999999px;
     &:hover,&:focus{
         opacity: 1;
-        background: url(../images/basic/top.png) no-repeat center top darken($color-orange,0);
+        background: url(../images/basic/top.png) no-repeat center top darken($color-yellow,0);
     }
 }
 // img

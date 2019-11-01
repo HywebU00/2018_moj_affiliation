@@ -6,10 +6,10 @@
     //     widows: 2;
     // }
     @page {
-        margin: .6cm;
-        width: 21cm;
-        min-height: 29.7cm;
-        padding: 2cm;
+        // margin: 0 .6cm;
+        // width: 21cm;
+        // min-height: 29.7cm;
+        // padding: 0cm 2cm 2cm;
     }
     %no-bg {
         background: none;
@@ -17,6 +17,9 @@
     // -------------------------------不需要列印的區塊，請放置於這----//
     header, .fatfooter, footer, .accesskey, .submenu, .function, .share {
         display: none;
+    }
+    *{
+        @extend %no-bg;
     }
     // -------------------------------各別顯示設定----//
     body {
@@ -37,6 +40,8 @@
         @include gutter(0);
         margin: 0px;
         .info {
+            padding: 0;
+            margin-bottom: .2cm;
             li {
                 display: inline-block;
                 float: none;
@@ -57,6 +62,9 @@
         }
     }
     .main, .content {
+        h2.title {
+            margin: .2cm 0;
+        }
         @include gutter(0);
         width: 100% !important;
         max-width: 100%;
@@ -70,14 +78,16 @@
             float: none;
             page-break-inside: avoid;
             &.float_left {
-                max-width: 50%;
+                max-width: 25%;
                 float: left;
                 margin: 0px 1em 1em 0;
+                min-width: 160px;
             }
             &.float_right {
-                max-width: 50%;
+                max-width: 25%;
                 float: right;
                 margin: 0px 0 1em 1em;
+                min-width: 160px;
             }
         }
         a:link, a:visited, a {
@@ -89,6 +99,7 @@
             word-wrap: break-word;
         }
         p {
+            line-height: 1.65;
             a {
                 word-wrap: break-word;
             }

@@ -20,7 +20,7 @@
         overflow: hidden;
         padding: .5em 0;
     }
-    .form_title {
+    .form_title,.form_title_th {
         @include make-xs-column(12);
         @include make-sm-column(3);
         @include make-md-column(3);
@@ -28,13 +28,14 @@
         @include gutter();
         padding-top: 5px;
     }
-    .form_content {
+    .form_content,.form_content_th {
         @include make-xs-column(12);
         @include make-sm-column(9);
         @include make-md-column(9);
         @include make-lg-column(9);
         @include gutter();
     }
+
 }
 
 .form_content{
@@ -262,7 +263,7 @@ input[type="file"] {
 //---------------------------------------------form setting--------//
 form {
     .attention{
-        color:#777;
+        color:#555;
         font-size:.813em;
         margin:.1em 0;
     }

@@ -12,7 +12,7 @@ $fatTextColor: #FFF; //fatFooter 連結顏色
     position: relative;
     padding-bottom: 2em;
     margin-left: auto;
-    background: $fatBgColor;
+    background: darken($fatBgColor,10);
     margin-right: auto; // 右上方切換收合按鈕設定
     padding-top: .5em;
     clear: both;
@@ -88,10 +88,10 @@ $fatTextColor: #FFF; //fatFooter 連結顏色
                     font-weight: 800;
                     padding: 1%;
                     border-radius: 4px;
-                    color:lighten($color-yellow,0);
+                    color:lighten($color-yellow,21);
                     &:hover,
                     &:focus {
-                        color:lighten($color-yellow,10);
+                        color:lighten($color-yellow,40);
                         text-decoration: none;
                         box-shadow: none;
                         // background: $aHover;

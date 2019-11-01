@@ -1,6 +1,9 @@
 // 自行加入的JS請寫在這裡
 $(function() {
     // lazyload
+    if($('.innerpage').length>0){
+        $('.innerpage').find('#aC').css('top', 0);
+    }
     $("img").lazyload({ effect: "fadeIn" });
 // 最新消息 列表
     var newsList_len = 300; // 超過300個字以"..."取代
