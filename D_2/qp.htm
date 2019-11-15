@@ -45,13 +45,11 @@
                     </div>
                 </nav>
                 <h1>
-                    <a href="../index.htm"><img src="images/logo.png" alt="網站標題"/></a>
+                    <a href="../index.htm"><img src="images/logo.png" alt="網站標題" /></a>
                 </h1>
                 <!-- Search Start -->
                 <section class="search">
-                    <noscript>
-                        您的瀏覽器不支援 JavaScript 或 JavaScript已停用
-                    </noscript>
+                    <noscript> 您的瀏覽器不支援 JavaScript 或 JavaScript已停用 </noscript>
                     <form action="" class="form_inline">
                         <div class="form_grp">
                             <label for="mustSameAsId">帳號:</label>
@@ -71,8 +69,7 @@
                     </div>
                 </section>
                 <!-- noscript -->
-                <noscript>
-                    您的瀏覽器不支援JavaScript語法，JavaScript語法並不影響內容的陳述。您可使用按鍵盤上的Ctrl鍵+ (+)鍵放大/(-)鍵縮小來改變字型大小；回到上一頁可使用瀏覽器提供的 Alt+左方向鍵(←) 快速鍵功能；列印可使用瀏覽器提供的(Ctrl+P)功能。您的瀏覽器，不支援script語法，若您的瀏覽器無法支援請點選此超連結 <a href="#">網站導覽</a>
+                <noscript> 您的瀏覽器不支援JavaScript語法，JavaScript語法並不影響內容的陳述。您可使用按鍵盤上的Ctrl鍵+ (+)鍵放大/(-)鍵縮小來改變字型大小；回到上一頁可使用瀏覽器提供的 Alt+左方向鍵(←) 快速鍵功能；列印可使用瀏覽器提供的(Ctrl+P)功能。您的瀏覽器，不支援script語法，若您的瀏覽器無法支援請點選此超連結 <a href="#">網站導覽</a>
                 </noscript>
                 <!-- menu Start -->
                 <nav class="menu">
@@ -156,6 +153,9 @@
         <div id="center" class="main innerpage">
             <a class="accesskey" href="#aC" id="aC" accesskey="C" title="主要內容區">:::</a>
             <div class="container">
+                <!-- .main_menu 不可刪除，JS clone menu放置用 -->
+                <div class="main_menu">
+                </div>
                 <!-- content為一定要存在之內容區 -->
                 <div class="content">
                     <!-- breadcrumb路徑 -->
@@ -178,9 +178,7 @@
                     </div>
                     <!-- QP Start -->
                     <section class="qp">
-                        <blockquote>
-                            如果您要檢舉公務員貪污瀆職，您可以透過本信箱，直接向我們反映，我們將儘速回答您的問題並依法處理，如經查未涉貪瀆不法，將轉請相關單位（機關）處理。在此竭誠歡迎您的建言，謝謝！
-                        </blockquote>
+                        <blockquote> 如果您要檢舉公務員貪污瀆職，您可以透過本信箱，直接向我們反映，我們將儘速回答您的問題並依法處理，如經查未涉貪瀆不法，將轉請相關單位（機關）處理。在此竭誠歡迎您的建言，謝謝！ </blockquote>
                         <p>註:<span class="necessary">*</span>為必填(選)欄位, 不能為空白。</p>
                         <form action="" class="form_grid">
                             <div class="form_grp">
@@ -257,9 +255,7 @@
                                 <label for="" class="form_title"><span class="necessary">*</span>您的意見內容：</label>
                                 <div class="form_content">
                                     <textarea name="" id="" cols="30" rows="70" placeholder="請輸入你的意見內容"></textarea>
-                                    <p class="attention">
-                                        （請寫出具體事實，包括人、事、時、地及意見。如須保守秘密或須答復者，並請註明）。
-                                    </p>
+                                    <p class="attention"> （請寫出具體事實，包括人、事、時、地及意見。如須保守秘密或須答復者，並請註明）。 </p>
                                 </div>
                             </div>
                             <div class="form_grp">
@@ -275,13 +271,16 @@
                             <div class="form_grp">
                                 <label for="" class="form_title"><span class="necessary">*</span>檔案上傳：</label>
                                 <div class="form_content">
-                                   <div class="upload_grp">
-    <input class="upload_file" type="text" readonly>
-    <div class="upload_btn">
-        <span>上傳檔案</span>
-        <input type="file" class="check_file" />
-    </div>
-</div>
+                                    <div class="upload_grp">
+                                        <input class="upload_file" type="text" readonly>
+                                        <div class="upload_btn">
+                                            <span>上傳檔案</span>
+                                            <input type="file" class="check_file" />
+                                        </div>
+                                    </div>
+                                    <div class="progress_bar">
+                                        <span style="width:70%"></span>
+                                    </div>
                                     <p class="attention">(可上傳附件類型：jpg、doc、docx、pdf，上傳檔案大小請勿超過10MB。)</p>
                                 </div>
                             </div>
@@ -298,6 +297,30 @@
                             <div class="btn_grp">
                                 <input name="" type="reset" value="清除">
                                 <input name="" type="submit" value="送出">
+                            </div>
+                        </form>
+                        <h3>追加模組</h3>
+                        <form class="form_grid" style="border:3px solid #AAA;">
+                            <div class="form_grp">
+                                <label for="" class="form_title">檔案上傳：</label>
+                                <div class="form_content">
+                                    <div class="upload_grp">
+                                        <input class="upload_file" type="text" readonly>
+                                        <div class="upload_btn">
+                                            <span>上傳檔案</span>
+                                            <input type="file" class="check_file" />
+                                        </div>
+                                    </div>
+                                    <div class="progress_bar">
+                                        <span style="width:70%"></span>
+                                    </div>
+                                    <p class="attention">(可上傳附件類型：jpg、doc、docx、pdf，上傳檔案大小請勿超過10MB。)</p>
+                                    <div class="btn_grp text-right">
+                                        <input name="" type="submit" value="送出資料">
+                                        <input name="" type="submit" value="重新選擇">
+                                        <input name="" type="reset" value="取消上傳">
+                                    </div>
+                                </div>
                             </div>
                         </form>
                     </section>
@@ -377,14 +400,11 @@
             <div class="container ">
                 <a class="accesskey " href="#aF " id="aF " accesskey="F " title="頁尾區 ">:::</a>
                 <div class="location ">
-                    <p>地址：10048臺北市中正區貴陽街一段235號
-                        <br/> 辦公時間：08:00~17:00
-                    </p>
+                    <p>地址：10048臺北市中正區貴陽街一段235號 <br /> 辦公時間：08:00~17:00 </p>
                 </div>
                 <div class="contact ">
                     <p>電話總機：<a href="tel:(03)320-6361 ">(02)1234-5678</a>
-                        <br> 傳真電話：
-                        <a href="tel:(03)320-0043 ">(02)320-0043</a></p>
+                        <br> 傳真電話： <a href="tel:(03)320-0043 ">(02)320-0043</a></p>
                 </div>
                 <hr>
                 <div class="qrcode ">
@@ -397,9 +417,7 @@
                         <li><a href="# ">政府網站資料開放宣告</a></li>
                     </ul>
                     <p class="copyright ">版權所有©Copyright (機關單位)</p>
-                    <p>瀏覽器建議使用IE9+,Firefox,Chrome,Safari　最佳觀看解析度1024x768.
-                        <br> 最佳瀏覽解析度為1024*768以上 建議瀏覽器：Chrome 31、Firefox 31、IE 11以上版本
-                    </p>
+                    <p>瀏覽器建議使用IE9+,Firefox,Chrome,Safari　最佳觀看解析度1024x768. <br> 最佳瀏覽解析度為1024*768以上 建議瀏覽器：Chrome 31、Firefox 31、IE 11以上版本 </p>
                 </div>
                 <div class="footer_icon ">
                     <a target="_blank " href="# " title=" ">

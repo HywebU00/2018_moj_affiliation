@@ -1,27 +1,53 @@
-.qp{
-	margin: 1em auto;
-	@include box-sizing;
-	padding:1em;
-
+.qp {
+    margin: 1em auto;
+    @include box-sizing;
+    padding: 1em;
 }
-	.q_title{
-		background:$primaryColor;
-		color:#FFF;
-		@include border-radius(6px);
-		padding:1em;
-		font-size:1em;
-		color:#FFF;
-		margin:.5em 0;
-	}
-	.q_content{
-		background:#FAFAFA;
-		padding:1em;
-		margin:.5em 0;
-		@include border-radius(6px);
-		table{
-			background:#FFF;
-		}
-		h3,h4{
-			color:$color-blue;
-		}
-	}
+.q_title {
+    background: $primaryColor;
+    color: #FFF;
+    @include border-radius(6px);
+    padding: 1em;
+    font-size: 1em;
+    color: #FFF;
+    margin: .5em 0;
+}
+.q_content {
+    background: #FAFAFA;
+    padding: 1em;
+    margin: .5em 0;
+    @include border-radius(6px);
+    table {
+        background: #FFF;
+    }
+    h3, h4 {
+        color: $color-blue;
+    }
+}
+.progress_bar {
+    position: relative;
+    background: #DDD;
+    border-radius: 3px;
+    height: 6px;
+    width: 100%;
+    span {
+        position: absolute;
+        height: 100%;
+        border-radius: 3px;
+        background: $color-blue;
+        background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.25) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 75%, transparent 75%, transparent);
+        background-size: 1rem 1rem;
+        animation: progress-bar-stripes 1s linear infinite;
+    }
+}
+@keyframes progress-bar-stripes {
+    from {
+        background-position: 1rem 0;
+    }
+    to {
+        background-position: 0 0;
+    }
+}
+.text-right {
+    text-align: right;
+}
