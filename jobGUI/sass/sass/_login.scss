@@ -3,6 +3,14 @@ body {
     background: #646464;
     overflow-x: hidden;
 }
+.result{
+    background: url(../images/logo_bg.png) repeat #FFF !important;
+    table{
+        th{
+            background: transparent !important;
+        }
+    }
+}
 .login_wrapper {
     background: url(../images/login_bg.jpg) no-repeat center bottom #f4f4f4;
     width: 100%;
