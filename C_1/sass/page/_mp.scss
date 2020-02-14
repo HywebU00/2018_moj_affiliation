@@ -885,9 +885,11 @@
     }
     a {
         &:focus {
+            box-shadow:0px 0px 3px $color-orange inset;
             .pic {
-                outline: 2px solid $aHover;
+                outline: 2px solid $color-orange;
             }
+
         }
     }
 }

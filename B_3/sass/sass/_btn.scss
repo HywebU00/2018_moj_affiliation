@@ -18,8 +18,9 @@ $btn-radius:4px;
     @include border-radius($btn-radius);
     &:hover,
     &:focus {
-        background: lighten($btn-bg, 5);
-         @include box-shadow(0px 2px 2px RGBA(0,0,0,.15));
+        border: 1px solid  darken($form-focus, 25);
+        background: darken($form-focus, 25);
+         // @include box-shadow(0px 2px 2px lighten($form-focus, 25));
         cursor: pointer;
         color: #FFF;
     }
@@ -28,9 +29,10 @@ $btn-radius:4px;
         cursor: pointer;
     }
     &:focus {
-        background: darken($btn-bg, 10);
+        background: darken($form-focus, 25);
+        // background:#000;
         outline: none;
-        box-shadow: 0px 0px 0px 3px lighten($form-focus, 20);
+        box-shadow: 0px 0px 0px 3px darken($form-focus, 25);
     }
 }
 

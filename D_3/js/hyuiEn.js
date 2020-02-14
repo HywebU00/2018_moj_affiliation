@@ -1,4 +1,12 @@
 $(function() {
+    var SearchTitle="";
+    //不同語系
+    var weblang = $('html').attr('lang');
+    if (weblang.substring(0, 2) == 'zh') {
+        SearchTitle="查詢";
+    } else if (weblang.substring(0, 2) == 'en') {
+        SearchTitle="search";
+    }
     /*-----------------------------------*/
     ///////////// fix iOS bug /////////////
     /*-----------------------------------*/
@@ -41,7 +49,7 @@ $(function() {
     ////////////// 行動版選單切換////////////
     /*-----------------------------------*/
     _body.prepend('<aside class="sidebar"><div class="m_area"><button type="button" class="sidebarClose">關閉</button></div><div class="menu_overlay"></div></aside>');
-    $('header .container').prepend('<button type="button" class="sidebarCtrl">側欄選單</button><button type="button" class="searchCtrl">Search</button>');
+    $('header .container').prepend('<button type="button" class="sidebarCtrl">側欄選單</button><button type="button" class="searchCtrl" title="'+SearchTitle+'">查詢</button>');
     var menu_status = false;
     var _sidebar = $('.sidebar'),
         _search = $('.search'),
@@ -582,9 +590,16 @@ $(function() {
         $('.search').show();
         $('.search').find('input[type="text"]').focus();
     });
-    $('.search').find('a:last').focusout(function(event) {
-       $('.search').hide();
-    });
+    if ($('.search .keywordHot').length > 0) {
+        $('.search').find('a:last').focusout(function(event) {
+            $('.search').hide();
+            $('h1 a').focus();
+        });
+    }else{
+        $('.search').find('.btn_grp input').focusout(function(event) {
+            $('.search').hide();
+        });
+    }
     /*------------------------------------*/
     /////gotoCenter on focus跳到 content/////
     /*------------------------------------*/

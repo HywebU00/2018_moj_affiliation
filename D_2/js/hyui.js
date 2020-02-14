@@ -1,4 +1,12 @@
 $(function() {
+    var SearchTitle="";
+    //不同語系
+    var weblang = $('html').attr('lang');
+    if (weblang.substring(0, 2) == 'zh') {
+        SearchTitle="查詢";
+    } else if (weblang.substring(0, 2) == 'en') {
+        SearchTitle="search";
+    }
     /*-----------------------------------*/
     ///////////// fix iOS bug /////////////
     /*-----------------------------------*/
@@ -41,7 +49,7 @@ $(function() {
     ////////////// 行動版選單切換////////////
     /*-----------------------------------*/
     _body.prepend('<aside class="sidebar"><div class="m_area"><button type="button" class="sidebarClose">關閉</button></div><div class="menu_overlay"></div></aside>');
-    $('header .container').prepend('<button type="button" class="sidebarCtrl">側欄選單</button><button type="button" class="searchCtrl">查詢</button>');
+    $('header .container').prepend('<button type="button" class="sidebarCtrl">側欄選單</button><button type="button" class="searchCtrl" title="'+SearchTitle+'">查詢</button>');
     var menu_status = false;
     var _sidebar = $('.sidebar'),
         _search = $('.search'),
@@ -86,13 +94,12 @@ $(function() {
     });
     _overlay.off("mouseenter");
     // 無障礙tab設定
-    liHasChild.keyup(
-        function() {
-            $(this).children('ul').fadeIn();
-            $(this).siblings().focus(function() {
-                $(this).hide();
-            });
+    liHasChild.keyup(function() {
+        $(this).children('ul').fadeIn();
+        $(this).siblings().focus(function() {
+            $(this).hide();
         });
+    });
     _menu.find('li').keyup(function() {
         $(this).siblings().children('ul').hide();
     });
@@ -179,10 +186,10 @@ $(function() {
             _menu.appendTo('.header .container');
             _search.removeClass('m_search');
             _search.hide();
-
             $('.searchCtrl').off().click(function(event) {
-                    $('.search').stop(true,true).fadeToggle();
-                });
+                $('.search').stop(true, true).fadeToggle();
+                $('.search').find('input[type="text"]').focus();
+            });
             // 如果點在外面
             $('.main').off().on('click touchend', function(e) {
                 _search.hide();
@@ -269,7 +276,6 @@ $(function() {
     /////////////fatfooter開關/////////////
     /*-----------------------------------*/
     $('.btn-fatfooter').click(function(e) {
-
         $(this).parent('.container').find('nav>ul>li>ul').stop(true, true).slideToggle(function() {
             if ($(this).is(':visible')) {
                 $('.btn-fatfooter').html("收合");
@@ -291,7 +297,6 @@ $(function() {
                 cHeight = _imgContainer.height(),
                 ratioC = cWidth / cHeight,
                 _img = _imgContainer.find('img');
-
             var iWidth = $(this).find('img').width(),
                 iHeight = $(this).find('img').height(),
                 ratioImg = iWidth / iHeight,
@@ -306,7 +311,6 @@ $(function() {
             $(this).find('img').removeClass('img-responsive');
         });
     });
-
     /*-----------------------------------*/
     //////////////相簿縮圖+燈箱//////////////
     /*-----------------------------------*/
@@ -318,7 +322,6 @@ $(function() {
                 cHeight = _imgContainer.height(),
                 ratioC = cWidth / cHeight,
                 _img = _imgContainer.find('img');
-
             var iWidth = $(this).find('img').width(),
                 iHeight = $(this).find('img').height(),
                 ratioImg = iWidth / iHeight,
@@ -444,7 +447,6 @@ $(function() {
             tw = $(this).width();
             var tabItemHeight = $(this).find('.tabs>.tabItem').height();
             $(this).children('.tabs').find('.tabContent').css('top', tabItemHeight);
-
             var tabContentHeight = $(this).find('.active').next('.tabContent').innerHeight();
             // console.log(tabContentHeight);
             var tabItemLength = $(this).find('.tabItem').length;
@@ -474,7 +476,6 @@ $(function() {
     $('.tabs>.tabItem>a').click(tabs);
     $(window).bind("load resize", function(e) {
         tabs();
-
     });
     $('.tabs>.tabItem:first-child>a').trigger('click');
     /*-----------------------------------*/
@@ -540,7 +541,7 @@ $(function() {
             $(this).closest('.upload_grp').find('.upload_file').attr("value", names);
         }
     });
-        // hitsory
+    // hitsory
     var history = 120; // 超過120個字以"..."取代
     $(".text_block").find('p').each(function(i) {
         if ($(this).text().length > history) {
@@ -576,7 +577,7 @@ $(function() {
             $('html, body').stop(true, true).animate({ scrollTop: $('.main').find('.accesskey').offset().top }, 800, 'easeOutExpo');
             $('.main').find('.accesskey').focus();
         }
-        // alt+C footer
+        // alt+B footer
         if (e.altKey && e.keyCode == 66) {
             $('html, body').stop(true, true).animate({ scrollTop: $('footer').find('.accesskey').offset().top }, 800, 'easeOutExpo');
             $('footer').find('.accesskey').focus();
@@ -589,9 +590,16 @@ $(function() {
         $('.search').show();
         $('.search').find('input[type="text"]').focus();
     });
-    $('.search').find('a:last').focusout(function(event) {
-       $('.search').hide();
-    });
+    if ($('.search .keywordHot').length > 0) {
+        $('.search').find('a:last').focusout(function(event) {
+            $('.search').hide();
+            $('h1 a').focus();
+        });
+    }else{
+        $('.search').find('.btn_grp input').focusout(function(event) {
+            $('.search').hide();
+        });
+    }
     /*------------------------------------*/
     /////gotoCenter on focus跳到 content/////
     /*------------------------------------*/

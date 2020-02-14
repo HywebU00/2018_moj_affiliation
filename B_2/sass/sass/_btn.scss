@@ -12,14 +12,15 @@ $btn-radius:4px;
 // 按鈕的共用設定
 @mixin btn_setting($btn-bg:#DDD, $btn-font-color:$btn-font-color) {
     background: $btn-bg;
-    border: 1px solid darken($btn-bg, 10);
+    border: 1px solid darken($btn-bg, 20);
     color: $btn-font-color;
     @include box-shadow(0px 2px 2px RGBA(0,0,0,.08));
     @include border-radius($btn-radius);
     &:hover,
     &:focus {
-        background: lighten($btn-bg, 5);
-         @include box-shadow(0px 2px 2px RGBA(0,0,0,.15));
+        border: 1px solid darken($color-orange, 20);
+        background: darken($color-orange, 20);
+         // @include box-shadow(0px 2px 2px lighten($color-orange, 20));
         cursor: pointer;
         color: #FFF;
     }
@@ -28,9 +29,10 @@ $btn-radius:4px;
         cursor: pointer;
     }
     &:focus {
-        background: darken($btn-bg, 10);
+        background: darken($color-orange, 20);
+        // background:#000;
         outline: none;
-        box-shadow: 0px 0px 0px 3px lighten($form-focus, 20);
+        box-shadow: 0px 0px 0px 3px darken($color-orange, 20);
     }
 }
 

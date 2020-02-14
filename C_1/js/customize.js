@@ -135,7 +135,7 @@ $(function() {
         //          }
         //      }]
     });
-    // 圖文卡片式 
+    // 圖文卡片式
     // $('.news_card ul').slick({
     //     dots: false,
     //     infinite: true,
@@ -436,7 +436,7 @@ $(function() {
     $('.advance_search button').off().click(function(e) {
         $('.advance_block').stop(true, true).slideToggle();
     });
-    // 圖文卡片式 
+    // 圖文卡片式
     $('.col-12 .news_card ul').slick({
         dots: false,
         infinite: true,
