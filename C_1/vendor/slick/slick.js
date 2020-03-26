@@ -27,7 +27,7 @@
                 appendDots: $(element),
                 arrows: true,
                 asNavFor: null,
-                prevArrow: '<button type="button" data-role="none" class="slick-prev" aria-label="previous">前一則</button>', //Allows you to select a node or customize the HTML for the "Previous" arrow.                
+                prevArrow: '<button type="button" data-role="none" class="slick-prev" aria-label="previous">前一則</button>', //Allows you to select a node or customize the HTML for the "Previous" arrow.
                 nextArrow: '<button type="button" data-role="none" class="slick-next" aria-label="next">下一則</button>', //Allows you to select a node or customize the HTML for the "Next" arrow.
                 autoplay: false,
                 autoplaySpeed: 3000,
@@ -1680,7 +1680,7 @@
 
             if (_.options.accessibility === true) {
                 _.initADA();
-                
+
                 if (_.options.focusOnChange) {
                     var $currentSlide = $(_.$slides.get(_.currentSlide));
                     $currentSlide.attr('tabindex', 0).focus();

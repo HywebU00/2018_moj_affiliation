@@ -190,6 +190,7 @@ $(function() {
 
             $('.searchCtrl').off().click(function(event) {
                     $('.search').stop(true,true).fadeToggle();
+                     $('.search').find('input[type="text"]').focus();
                 });
             // 如果點在外面
             $('.main').off().on('click touchend', function(e) {
