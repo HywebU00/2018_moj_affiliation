@@ -136,7 +136,7 @@ $(function() {
         //          }
         //      }]
     });
-    // 圖文卡片式 
+    // 圖文卡片式
     // $('.news_card ul').slick({
     //     dots: false,
     //     infinite: true,
@@ -437,7 +437,7 @@ $(function() {
     $('.advance_search button').off().click(function(e) {
         $('.advance_block').stop(true, true).slideToggle();
     });
-    // 圖文卡片式 
+    // 圖文卡片式
     $('.col-12 .news_card ul').slick({
         dots: false,
         infinite: true,
@@ -1536,7 +1536,7 @@ $(function() {
         $('.slick-prev').attr('title', '上一筆');
         $('.slick-next').attr('title', '下一筆');
         $('header').find('.accesskey').attr('title', '上方功能區塊');
-        $('.main').find('.accesskey').attr('title', '中央內容區塊');
+        $('.main').find('.accesskey').prependTo('.mp_content').attr('title', '中央內容區塊');
         $('footer').find('.accesskey').attr('title', '下方功能區塊');
         $('.search').find('.accesskey').attr('title', '關鍵字搜尋：文章關鍵字搜尋');
     } else if (weblang.substring(0, 2) == 'en') {
