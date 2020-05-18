@@ -165,7 +165,7 @@
                 text-decoration: none;
                 &:hover,
                 &:focus {
-                    color:$lightColor;
+                    color:lighten($lightColor, 20);
                 }
                 &:after {
                     @extend %slash;
