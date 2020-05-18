@@ -18,7 +18,8 @@
             border-bottom: 2px solid $baseline;
             width: 300px;
             max-width: 100%;
-            left: 0;
+            left: 50%;
+            margin-left: -150px;
         }
         &:before{
             content: " ";
