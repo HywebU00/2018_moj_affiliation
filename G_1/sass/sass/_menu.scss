@@ -6,6 +6,7 @@
     z-index: 99; // 預設選單 ul
     clear: both;
     background: $primaryColor;
+    @include gradient($lightColor, $primaryColor, vertical);
     padding:1em 0;
     box-shadow: 2px 0 5px rgba(0,0,0,.3) inset;
     @include gutter();

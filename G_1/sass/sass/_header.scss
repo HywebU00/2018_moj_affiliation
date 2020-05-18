@@ -1,5 +1,6 @@
 //header
 .header {
+
     .menu{
 
     }
@@ -13,7 +14,7 @@
     @include screen('tablet') {
         @include clearfix;
         position: fixed;
-        width: 100%;
+        width: 100vw;
     }
     &:before {
         content: "";
@@ -320,14 +321,14 @@
     }
     // m_search
     &.m_search {
-        width: 100% !important;
+        width: 100vw !important;
         max-width: 100% !important;
         min-width: auto;
         padding: .2em .3em 1em;
         display: block;
         height: auto;
         position: fixed;
-        top: 60px;
+        top: 52px;
         left: 0;
         z-index: 98;
         background: #333;
@@ -383,6 +384,9 @@
                 padding: .6em 1em .7em !important;
                 margin: 0;
             }
+            @include screen('tablet'){
+                padding-left:10px;
+            }
         }
         .keywordHot {
             padding-left: 5%;
@@ -412,6 +416,7 @@
     }
     .menu {
         padding:0;
+        background: $primaryColor;
         >ul {
             >li {
                 >a {

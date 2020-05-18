@@ -25,7 +25,7 @@
             }
             a {
                 max-width: 450px;
-                color:$secondaryColor;
+                color:darken($secondaryColor, 10);
             }
             &.date {
                 text-align: center;
@@ -261,7 +261,7 @@
                         overflow: hidden;
                         display: block;
                         border-bottom: 1px dotted #DDD;
-                        color:$secondaryColor;
+                        color:darken($secondaryColor,10);
                     }
                     time, .counter {
                         font-size: .75em;

@@ -518,7 +518,7 @@
     min-height: 350px; // overflow: hidden;
     display: block;
     background: #DDD;
-    resize: both;
+    //resize: both;
     position: relative;
     .focus {
         @include gutter(0);
@@ -660,6 +660,9 @@
     .mp_slider{
         margin:2em 0 0 auto;
         width: 66%;
+        @include screen('tablet'){
+            width: 100%;
+        }
     }
     @include screen('mobile') {
         @include gutter(0);
@@ -774,7 +777,7 @@
                 text-align: center;
                 top: 0em;
                 font-size: 1em;
-                margin: 1em auto;
+                margin: 2em auto;
             }
             span {
                 position: relative;
@@ -792,7 +795,8 @@
                 font-size: 1.5em;
                 text-shadow: 0px 0px 2px #222, 0px 0px 3px #222, 0px 0px 5px #222, 0px 0px 7px #222, 0px 0px 8px #222;
                 @include screen('mobile') {
-                    font-size: 1.5em;
+                    font-size: 1.2em;
+                    line-height:1.5;
                 }
             }
             a.more {
@@ -812,7 +816,7 @@
                     }
                 }
                 @include screen('mobile') {
-                    background: #FFF;
+                    //background: #FFF;
                 }
             }
         }

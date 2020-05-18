@@ -18,6 +18,7 @@ body {
     margin: 0px auto;
     @include screen('mobile') {
         background: #FFF;
+        overflow:hidden;
     }
 }
 
