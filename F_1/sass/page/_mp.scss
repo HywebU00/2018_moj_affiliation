@@ -329,6 +329,7 @@
                 line-height: 4em;
                 position:relative;
                 margin-top: 0%;
+                color:$color-word;
                 @include text-overflow;
                 &:focus{
                     &:before{
@@ -1408,6 +1409,7 @@
                 display: block;
                 padding: .5em .5em .5em 1.2em;
                 position: relative;
+                color:$color-word;
                 &:before {
                     position: absolute;
                     width: 4px;
@@ -1419,6 +1421,9 @@
                     border-bottom: none;
                     transform: rotate(45deg);
                     content: "";
+                }
+                &:hover{
+                    color:$aColor;
                 }
             }
         }

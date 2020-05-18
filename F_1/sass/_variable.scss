@@ -22,7 +22,7 @@ $color-hr:					#666;		  			 //hr顏色
 $color-word:				#222;                    //一般字的顏色
 // 連結顏色
 $aColor:					#820e3f;
-$aHover:					#820e3f;
+$aHover:					lighten($aColor, 10);
 
 // 表單focus顏色
 $form-focus:				#494881;				//表單
@@ -49,7 +49,7 @@ $font-size:					1em;
 // 格線系統
 $grid-columns:              12 !default;			   //格線欄位數
 $grid-gutter-width:         30px !default;			   //左右padding
-$container-max:             1100px !default;		   //container最大寬
+$container-max:             1200px !default;		   //container最大寬
 
 //mediaquery
 $screen-lg:        			1400px !default;  	       //電腦
