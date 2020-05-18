@@ -1,0 +1,350 @@
+body {
+    overflow-x: hidden !important;
+    background: #FFF;
+    &.noscroll {
+        position: static !important;
+        width: 100%;
+        height: 100%;
+        overflow: hidden !important;
+        overflow-y: hidden !important;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+// 最外圍預設為100%
+.wrapper {
+    width: 100%;
+    margin: 0px auto;
+    @include screen('mobile') {
+        background: #FFF;
+    }
+}
+
+// 整體共用container樣式，請注意首頁切版頁面的整齊
+.container {
+    padding: 0;
+    margin: 0 auto;
+    max-width: $container-max; //請看_variable.scss
+}
+
+.main {
+    position: relative;
+    margin: 0 auto;
+    padding: 0; // max-width: $container-max;
+    // 可先設定一個中央區塊最大寬，限制accesskey對齊
+    @include screen('mobile') {
+        padding-top: 55px;
+        margin-top: 0;
+    } // 內頁標題設定
+    h2 {
+        line-height: 1.25em;
+    }
+    &>section {
+        padding: 1em 0;
+        text-align: center;
+        clear: both; // &+section {
+        //     padding-top: 2em;
+        // }
+        .col {
+            position: relative;
+        }
+        // &:first-of-type {
+        //     padding-top: 8em;
+        //     padding-bottom: 0;
+        //     @extend %clearfix;
+        //     @include screen('mobile') {
+        //         padding-top: 3em;
+        //         padding-bottom: 2em;
+        //         margin: 0;
+        //     }
+        // }
+        h2.title {
+            padding: .4em 0;
+            text-align: center;
+            position: relative;
+            margin-bottom:1.5em;
+        }
+    }
+    button, input[type="button"] {
+        box-shadow: none;
+    }
+    .accesskey{
+        top:0;
+    }
+}
+
+////////////////////////////////////////////////////////////
+// 為了與首頁區隔，請在內頁加上innerpage ClassName
+.innerpage {
+    background: #F1F1F1;
+    @include screen('mobile') {
+        padding-top: 5em;
+    }
+    >.container {
+        @include gutter(0); //gutter 代表左右要留白
+                @include screen('mobile') {
+                    @include gutter();
+                }
+
+    }
+}
+
+.innerpage .main_menu {
+    @include make-xs-column(12);
+    @include make-sm-column(12);
+    @include make-md-column(3);
+    @include make-lg-column(3);
+    @include gradient(darken($primaryColor, 15), lighten($primaryColor, 10), vertical);
+    margin-top: 1em;
+    @include screen('tablet') {
+        display: none;
+    } // @include gutter();
+    &~.content {
+        @include make-xs-column(12);
+        @include make-sm-column(12);
+        @include make-md-column(9);
+        @include make-lg-column(9);
+    }
+    h2 {
+        background: lighten($primaryColor, 5);
+        padding: .8em;
+        color: #FFF;
+        margin: 0 0 1px 0;
+    }
+    .menu {
+        display: block;
+        &:before {
+            display: none;
+        }
+        &>ul {
+            &>li:last-child {
+                &>a {
+                    border-bottom: none;
+                }
+            }
+            &>li>a {
+                height: 1.5em;
+                line-height: 1.5em;
+                position: relative;
+                padding-left: 1.8em !important;
+                transition: .3s ease-out;
+                margin-bottom: 0;
+                border-bottom: 1px solid RGBA(255, 255, 255, 0.4);
+                &:hover,
+                &:focus {
+                    background: RGBA(0, 0, 0, .4) !important;
+                }
+                &:before {
+                    position: absolute;
+                    width: 4px;
+                    height: 4px;
+                    top: 1.2em;
+                    left: .7em;
+                    border: 2px solid #FFF;
+                    border-left: none;
+                    border-top: none;
+                    transform: rotate(315deg);
+                    content: "";
+                }
+                &.hasChild {
+                    >a {
+                        &:after {
+                            @extend %arrow;
+                            border-color: #FFF;
+                        }
+                    }
+                }
+            }
+        }
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            ul {
+                display: none;
+                right: -200px;
+                left: auto;
+                top: 0em;
+            }
+
+            li {
+                display: block;
+                text-align: left;
+                margin-bottom: 0;
+                &:last-child {
+                    border-bottom: none;
+                }
+                a {
+                    display: block;
+                    padding: .8em 1em;
+                    color: #FFF;
+                    transition: .3s ease-out;
+                    line-height: 1.45em;
+                    &:hover,
+                    &:focus {
+                        background: darken($primaryColor, 0);
+                    }
+                }
+            }
+        }
+    } // ul {
+    //     padding: 0;
+    //     margin: 0;
+    //     list-style: none;
+    //     li {
+    //         display: block;
+    //         text-align: left;
+    //         margin-bottom: 1px;
+    //         background: $secondaryColor;
+    //         &:last-child {
+    //             border-bottom: none;
+    //         }
+    //         a {
+    //             display: block;
+    //             padding: .8em 1em;
+    //             color: #FFF;
+    //             transition: .3s ease-out;
+    //             line-height: 1.45em;
+    //             &:hover,
+    //             &:focus {
+    //                 background: darken($primaryColor, 0);
+    //             }
+    //         }
+    //     }
+    // }
+}
+
+.content {
+    @include make-xs-column(12);
+    @include make-sm-column(12);
+    @include make-md-column(12);
+    @include make-lg-column(12);
+    @include gutter();
+    @include box-shadow(1px 1px 3px RGBA(0, 0, 0, .4));
+    margin-bottom: 3em;
+    background: #FFF;
+    padding-top: 1em;
+    padding-bottom: 3em;
+    margin-top: 1em;
+    min-height: 500px;
+    @include screen('desktop') {
+        min-height: 650px;
+    }
+    @include screen('mobile') {
+        min-height: auto;
+        margin-top: 0px;
+    }
+    .function {
+        // width: 300px;
+        margin: 0px 0 0 auto;
+        position: relative;
+        z-index: 9;
+        @include screen('mobile') {
+            float: none;
+            width: 100%;
+            margin: 0 0 5px 0;
+        }
+    }
+    h2.title {
+        position: relative;
+        padding:.4em 0;
+        @include screen('mobile') {
+            padding-right: .8em;
+        }
+        &:before {
+            content: "";
+            width: 46px;
+            height: 2px;
+            position: absolute;
+            bottom:0;
+            left: 0;
+            background: $baseline;
+        }
+    }
+    h3.title {
+        // border-bottom: 2px solid $secondaryColor;
+        padding: .4em 0;
+        font-size: 1.25em;
+        text-align: center;
+        color: $secondaryColor;
+        position: relative;
+        margin: .2em;
+    }
+}
+
+.inner_image {
+    width: 100%;
+    min-height: 150px;
+    color: #FFF;
+    padding: 0em;
+    text-shadow: 2px 2px 5px RGBA(0, 0, 0, .5);
+    background-color: rgb(43, 153, 145); // Old browsers
+    @include filter-gradient(#2b9991, #634b89, horizontal); // IE6-9
+    @include background-image(linear-gradient(left, rgba(43, 153, 145, 1) 0%, rgba(57, 124, 151, 1) 33%, rgba(89, 108, 168, 1) 66%, rgba(99, 75, 137, 1) 100%));
+    h2 {
+        font-size: 2em;
+        margin: .5em 0;
+        position: relative;
+        z-index: 1;
+        @include screen('mobile') {
+            font-size: 1.5em;
+        }
+    }
+    h3 {
+        font-size: 1.5em;
+        margin: .5em 0;
+        position: relative;
+        z-index: 1;
+        a {
+            color: $secondaryColor;
+            &:hover,
+            &:focus {
+                color: darken($secondaryColor, 10);
+            }
+        }
+        @include screen('mobile') {
+            font-size: 1.2em;
+        }
+    }
+    @include screen('mobile') {
+        min-height: auto;
+    }
+    .container {
+        padding-top: 1em;
+        @include box-sizing;
+        height: 150px;
+        position: relative;
+        @include screen('mobile') {
+            height: auto;
+        }
+
+        // &:before {
+        //     content: "";
+        //     width: 60%;
+        //     right: 0;
+        //     height: 100%;
+        //     background: url(../images/inner_img.png) no-repeat right bottom;
+        //     position: absolute;
+        //     background-size: 100% 150px;
+        //     display: block;
+        //     top: 0;
+        //     @include screen('mobile') {
+        //         display: none;
+        //     }
+        // }
+    }
+}
+
+.cp,
+.lp,
+.qp,
+.fp,
+.sitemap,
+.np {
+    clear: both;
+    @include gutter(60px);
+    @include screen('mobile') {
+        @include gutter;
+    }
+}
