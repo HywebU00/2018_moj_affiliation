@@ -316,7 +316,7 @@
         display: block;
         height: auto;
         position: fixed;
-        top: 60px;
+        top: 52px;
         left: 0;
         z-index: 98;
         background: #333;
@@ -366,7 +366,7 @@
             margin-bottom: 0;
             width: 20%;
             margin-top: 20px;
-            padding-left: 5%;
+            padding-left: .5em;
             @include box-sizing();
             input {
                 padding: .6em 1em .7em !important;

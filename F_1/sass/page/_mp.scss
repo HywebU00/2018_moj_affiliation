@@ -656,10 +656,13 @@
     }
     .mp_slider{
         margin-top:2em;
+        @include screen('mobile'){
+            margin-top: 1em;
+        }
     }
     @include screen('mobile') {
         @include gutter(0);
-        min-height: 460px;
+        //min-height: 460px;
     }
     .container {
         // position: absolute;
