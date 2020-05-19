@@ -28,8 +28,8 @@ $aHover:					lighten($aColor, 10);
 $form-focus:				#5E1A2C;				//表單
 //-------------------------------------------------------------法務部專屬設定------//
 
-$fatfooter-color:			#dcdcdc;				//fatfooter底色
-$footer-color:				#262626;				//footer底色
+$fatfooter-color:			darken($secondaryColor, 10);			//fatfooter底色
+$footer-color:				darken($primaryColor, 15);		//footer底色
 $footer-btn:				#3d3229;				//footer按鈕
 
 $third-color:				#50A68C; 				//3th
