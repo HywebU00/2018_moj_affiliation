@@ -1,0 +1,141 @@
+$fatBgColor: $fatfooter-color; //fatFooter 底色
+$fatTextColor: #FFF; //fatFooter 連結顏色
+.fatfooter {
+    @include make-fatfooter(7, 100%); // 如需要手機版顯示，把以下註解即可，或改為visible
+    @media (max-width: 767px) {
+        display: none;
+    }
+}
+.fatfooter {
+    @include clearfix;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 2em;
+    margin-left: auto;
+    background: $fatfooter-color;
+    margin-right: auto; // 右上方切換收合按鈕設定
+    padding-top: .5em;
+    clear: both;
+    .container {
+        position: relative;
+        overflow: hidden;
+        @include box-sizing();
+        @include gutter();
+    }
+    //fatfooter選單
+    .btn-fatfooter {
+        font-size: .813em;
+        cursor: pointer;
+        display: inline-block;
+        width: 140px;
+        color: #FFF;
+        border: none;
+        background: $footer-btn;
+        position: absolute;
+        right: 1%;
+        z-index: 990;
+        font-weight: bold;
+        top: .5em;
+        @include border-radius(4px);
+        &:hover,
+        &:focus {
+            background: darken($primaryColor, 0);
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            border: none;
+            color:#fff;
+        }
+    }
+    nav {
+        clear: both;
+        color: #fff;
+        overflow: hidden;
+        display: block;
+        position: relative;
+        padding: 0;
+        padding-top: 40px;
+        @include box-sizing(border-box);
+        ul {
+            list-style: none;
+            margin: 0;
+            overflow: hidden;
+            width: 100%;
+            padding: 0;
+            @media (max-width: 767px) {
+                width: 100%;
+                display: block;
+                margin: 0px auto;
+            }
+            li {
+                display: inline-block; // outline: 1px solid red;
+                text-align: left;
+                vertical-align: top;
+                margin: 0 0 1em -3px;
+                line-height: 2.6em; // margin:$fatFooterliMargin;
+                @include box-sizing(border-box);
+                &:nth-child(7n+1){
+                    margin-left: 0;
+                }
+                @media (max-width: 767px) {
+                    display: block;
+                }
+                a {
+                    text-align: left;
+                    line-height: 1.65em;
+                    display: block;
+                    font-weight: 800;
+                    padding: 1%;
+                    border-radius: 4px;
+                    color:darken($secondaryColor, 10);
+                    &:hover,
+                    &:focus {
+                        color:$secondaryColor;
+                        text-decoration: none;
+                        box-shadow: none;
+                        // background: $aHover;
+                        // @include border-radius(3px);
+                    }
+                    &:focus {
+                        background: rgba(0, 0, 0, .5);
+                    }
+                }
+                ul {
+                    padding: 0;
+                    margin-top: 5px;
+                    overflow: hidden;
+                    @media (max-width: 767px) {
+                        width: auto;
+                        padding-left: 5%;
+                    }
+                    li {
+                        display: block;
+                        margin: 0;
+                        padding: 2px 0;
+                        border: none;
+                        background: none;
+                        width: 100%;
+                        a {
+                            display: block;
+                            color: $color-word;
+                            font-weight: normal;
+                            text-align: left;
+                            text-decoration: none;
+                            font-size: .938em;
+                            font-weight: normal;
+                            line-height: 1.4em;
+                            padding: 3px 8px 3px 8px;
+                            background: none;
+                            @include box-sizing(border-box);
+                            border-bottom: none;
+                        }
+                    }
+                    ul {
+                        display: none; //第三層關閉
+                    }
+                }
+            }
+        }
+    }
+}
