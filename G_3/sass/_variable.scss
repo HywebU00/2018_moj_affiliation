@@ -1,0 +1,72 @@
+// 此變數為框架之整體變數，控制整體網站之設定，包含 顏色、文字、格線系統
+// 於mixins 資料夾內，各個模組也有其個別使用的變數，請至個別檔案設定，個別使用變數不含在此設定
+
+//-------------------------------------------------------------顏色---------//
+// 定義顏色 此顏色可自由變換
+$primaryColor:				#e1dad6;				//主色
+$secondaryColor:			#4A4E69; 				//輔色
+$lightColor:				#d0bbaf;				//點綴
+$linkColor:					#22223B;				//連結
+$importantColor:			#F1E4E8;				//重要
+// 但注意真實顏色與語意的關聯必須易於辨識
+
+$color-blue: 				#21BAFF;
+$color-green:				#5CB85C;
+$color-orange: 				#F77810;
+$color-red: 				#FF3E4D;
+$color-yellow: 				#FCC211;
+$color-purple: 				#AA5AC5;
+$color-gray: 				#CCC;
+$color-dark: 				#262626;
+$color-hr:					#666;		  			 //hr顏色
+$color-word:				#222;                    //一般字的顏色
+// 連結顏色
+$aColor:					#444054;
+$aHover:					lighten($aColor, 10);
+
+// 表單focus顏色
+$form-focus:				#4A4E69;			//表單
+//-------------------------------------------------------------法務部專屬設定------//
+
+$fatfooter-color:			#dcdcdc;				//fatfooter底色
+$footer-color:				#2d2c2c;				//footer底色
+$footer-btn:				#3d3229;				//footer按鈕
+
+$third-color:				#9A8C98; 				//3th
+$fourth-color:				#4D3E4A; 				//4th
+
+$more:						darken($secondaryColor, 10);				//more
+$baseline:					#7c7a7a;				//h2底線
+$gotoTop:					$secondaryColor;					//gotoTop
+//-------------------------------------------------------------字型--------//
+
+// 字型設定
+$font-family:               Lato, "PingFang TC", "Helvetica Neue", Helvetica, 微軟正黑體, Arial, sans-serif;
+$font-size:					1em;
+
+//-------------------------------------------------------------格線系統-----//
+
+// 格線系統
+$grid-columns:              12 !default;			   //格線欄位數
+$grid-gutter-width:         30px !default;			   //左右padding
+$container-max:             1200px !default;		   //container最大寬
+
+//mediaquery
+$screen-lg:        			1400px !default;  	       //電腦
+$screen-md:        			992px  !default;      	   //平板
+$screen-sm:        			992px  !default;     	   //手機
+$screen-xs:        			576px  !default;      	   //極小尺寸
+
+//-------------------------------------------------------------客製化------//
+
+// 圖片
+$rounded-angle:             16px;					   //圖片導角
+
+
+
+
+
+
+
+
+
