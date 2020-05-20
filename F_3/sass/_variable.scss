@@ -3,8 +3,8 @@
 
 //-------------------------------------------------------------顏色---------//
 // 定義顏色 此顏色可自由變換
-$primaryColor:				#4A4E69;				//主色
-$secondaryColor:			#9A8C98; 				//輔色
+$primaryColor:				#6c5048;				//主色
+$secondaryColor:			#3A506B; 				//輔色
 $lightColor:				#C9ADA7;				//點綴
 $linkColor:					#22223B;				//連結
 $importantColor:			#F2E9E4;				//重要
@@ -21,22 +21,22 @@ $color-dark: 				#262626;
 $color-hr:					#666;		  			 //hr顏色
 $color-word:				#222;                    //一般字的顏色
 // 連結顏色
-$aColor:					#4A4E69;
+$aColor:					#D2691E;
 $aHover:					lighten($aColor, 10);
 
 // 表單focus顏色
-$form-focus:				#5D4C75;				//表單
+$form-focus:				#844331;				//表單
 //-------------------------------------------------------------法務部專屬設定------//
 
 $fatfooter-color:			#dcdcdc;				//fatfooter底色
-$footer-color:				#252836;				//footer底色
-$footer-btn:				#595380;				//footer按鈕
+$footer-color:				#382A26;				//footer底色
+$footer-btn:				#F7B7A6;				//footer按鈕
 
-$third-color:				#695954; 				//3th
-$fourth-color:				#6D76B5; 				//4th
+$third-color:				#B85D44; 				//3th
+$fourth-color:				#784A56; 				//4th
 
-$more:						darken($primaryColor, 15);				//more
-$baseline:					#7F86B5;				//h2底線
+$more:						#D2691E;				//more
+$baseline:					#B8887B;				//h2底線
 $gotoTop:					$secondaryColor;					//gotoTop
 //-------------------------------------------------------------字型--------//
 

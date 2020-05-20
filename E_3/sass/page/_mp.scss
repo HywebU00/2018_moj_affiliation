@@ -276,18 +276,18 @@
             float: left;
             &:nth-child(2n) {
                 .pic {
-                    background: $third-color;
+                    background: darken($third-color,15);
                     &:after{
-                        background: $third-color;
+                        background: darken($third-color,15);
                     }
                 }
             }
             &:nth-child(3n) {
                 margin-right: 0;
                 .pic {
-                    background: darken($third-color,15);
+                    background: darken($third-color,20);
                     &:after{
-                        background: darken($third-color,15);
+                        background: darken($third-color,20);
                     }
                 }
                 @include screen('tablet') {
@@ -299,25 +299,25 @@
             }
             &:nth-child(4n) {
                 .pic {
-                    background: lighten($fourth-color, 10);
+                    background: darken($fourth-color, 10);
                     &:after{
-                        background: lighten($fourth-color, 10);
+                        background: darken($fourth-color, 10);
                     }
                 }
             }
             &:nth-child(5n) {
                 .pic {
-                    background: $fourth-color;
+                    background: darken($fourth-color, 15);
                     &:after{
-                        background: $fourth-color;
+                        background: darken($fourth-color, 15);
                     }
                 }
             }
             &:nth-child(6n) {
                 .pic {
-                    background: darken($fourth-color, 15);
+                    background: darken($fourth-color, 20);
                     &:after{
-                        background: darken($fourth-color, 15);
+                        background: darken($fourth-color, 20);
                     }
                 }
             }
@@ -351,7 +351,7 @@
                     height: 4em;
                     top: 0;
                     left: 0;
-                    background: lighten($third-color, 10);
+                    background: darken($third-color, 10);
                     overflow:initial;
                     img {
                         width: 60%;
@@ -367,7 +367,7 @@
                         height:4em;
                         width:2em;
                         transform: skewX(-25deg);
-                        background: lighten($third-color, 10);
+                        background: darken($third-color, 10);
                     }
                 }
             }
@@ -845,10 +845,10 @@
             line-height: 1.5em;
             text-align: left;
             a {
-                color: $secondaryColor;
+                color: $color-word;
                 &:hover,
                 &:focus {
-                    color: darken($secondaryColor, 10);
+                    color: $aHover;
                 }
             }
         }
@@ -879,11 +879,12 @@
                     line-height: 1.5em;
                     text-align: left;
                     color: $color-word;
-                    &:hover,
-                    &:focus {
-                        h3 {
-                            color: $aColor;
-                        }
+
+                }
+                &:hover,
+                &:focus {
+                    h3 {
+                        color: $aHover;
                     }
                 }
                 p {
@@ -970,10 +971,10 @@
         line-height: 1.5em;
         text-align: left;
         a {
-            color: $secondaryColor;
+            color: $color-word;
             &:hover,
             &:focus {
-                color: darken($secondaryColor, 10);
+                color: $aColor;
             }
         }
     }
