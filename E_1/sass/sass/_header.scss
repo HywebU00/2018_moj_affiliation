@@ -219,7 +219,8 @@
 .search {
     position: absolute;
     right:60px;
-    top:100%;
+    bottom:0;
+    height:60px;
     float: right;
     vertical-align: middle;
     padding: 1em;

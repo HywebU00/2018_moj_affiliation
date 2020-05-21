@@ -47,7 +47,7 @@
             @include text-overflow();
             @include box-sizing();
             &:hover {
-                background: lighten($primaryColor, 10);
+                background: $primaryColor;
                 color:#fff;
             }
             position:relative;

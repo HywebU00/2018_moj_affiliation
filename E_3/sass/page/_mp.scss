@@ -2128,6 +2128,7 @@
         position:relative;
         background: #f6f6f6;
         padding:1.5em 1em 3em;
+        min-height: 250px;
         >ul{
             li{
                padding:.5em 0;
@@ -2141,6 +2142,14 @@
                 }
                 a{
                     flex:0 1 auto;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 2;
+                     overflow: hidden;
+                     height:46px;
+                     &:hover{
+                        color:$aHover;
+                     }
                 }
             }
         }

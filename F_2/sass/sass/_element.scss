@@ -103,18 +103,14 @@ a:focus {
     &.new_tag{
         display:inline-block;
         font-style: italic;
-        color: #be000f;
+        color: darken($color-red, 20);
         font-weight: bold;
-        padding:0 5px;
+        padding:0 .5em;
         vertical-align:middle;
-        &:after{
-            content:"";
-            display:inline-block;
-            width: .5em;
-            height:2px;
-            background: #be000f;
-            vertical-align:middle;
-            margin:0 5px;
+        margin-right: .5em;
+        &.tag{
+            background: darken($color-red, 20);
+            color:#fff;
         }
     }
 }

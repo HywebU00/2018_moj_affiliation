@@ -2254,6 +2254,11 @@
                 a{
                     flex:0 1 auto;
                     color:$color-word;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 2;
+                    overflow: hidden;
+                    height:46px;
                     &:hover{
                         color:darken($secondaryColor, 10);
                     }

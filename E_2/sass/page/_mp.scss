@@ -17,13 +17,16 @@
 %more_color {
     width: 100%;
     color: #FFF;
-    background: $secondaryColor;
-    border: 1px solid $secondaryColor;
+    background: darken($secondaryColor, 20);
+    border: 1px darken($secondaryColor, 20);
+    &:before{
+        background: darken($secondaryColor, 30);
+    }
     &:focus {
-        background: darken($secondaryColor, 10);
-        border: 1px solid darken($secondaryColor, 10);
+        background: darken($secondaryColor, 30);
+        border: 1px solid darken($secondaryColor, 30);
         &:before {
-            background: darken($secondaryColor, 20);
+            background: darken($secondaryColor, 30);
         }
     }
 }
@@ -1283,7 +1286,7 @@
     }
     h2.title{
         text-align: center;
-        border-bottom: 2px solid $secondaryColor;
+        border-bottom: 2px solid $primaryColor;
     }
 }
 .main{
@@ -2110,6 +2113,7 @@
         position:relative;
         background: #f6f6f6;
         padding:1.5em 1em 3em;
+        min-height: 250px;
         >ul{
             li{
                padding:.5em 0;
@@ -2123,6 +2127,14 @@
                 }
                 a{
                     flex:0 1 auto;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 2;
+                     overflow: hidden;
+                     height:46px;
+                     &:hover{
+                        color:$aHover;
+                     }
                 }
             }
         }

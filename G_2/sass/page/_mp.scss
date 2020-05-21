@@ -2240,6 +2240,7 @@
         background: #fff;
         padding:1.5em 1em 1em;
         box-shadow: 0 2px 10px rgba(0,0,0,.2);
+        min-height: 250px;
         >ul{
             li{
                padding:.5em 0;
@@ -2254,6 +2255,11 @@
                 a{
                     flex:0 1 auto;
                     color:$color-word;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 2;
+                    overflow: hidden;
+                    height:46px;
                     &:hover{
                         color:darken($secondaryColor, 10);
                     }

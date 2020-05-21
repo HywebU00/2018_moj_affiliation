@@ -223,7 +223,7 @@
                 &:hover,
                 &:focus {
                     .pic {
-                        background: $secondaryColor;
+                        background: darken($secondaryColor, 10);
                     }
                     h3 a {
                         color: $secondaryColor;
@@ -236,7 +236,7 @@
                 height: 100px;
                 margin: 0 auto 1em;
                 @include border-radius(50%);
-                background: $lightColor;
+                background: $secondaryColor;
                 img {
                     margin: 20px auto 0;
                     width: 60px;
@@ -2202,6 +2202,7 @@
         background: #fff;
         padding:1.5em 1em 1em;
         box-shadow: 0 0 10px rgba(0,0,0,.2);
+        min-height: 250px;
         >ul{
             li{
                padding:.5em 0;
@@ -2215,7 +2216,15 @@
                 }
                 a{
                     flex:0 1 auto;
+                    display: -webkit-box;
                     color:$color-word;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 2;
+                     overflow: hidden;
+                     height:46px;
+                     &:hover{
+                        color:$aHover;
+                     }
                 }
             }
         }
