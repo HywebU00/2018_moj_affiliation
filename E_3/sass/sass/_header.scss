@@ -223,9 +223,11 @@
     height:60px;
     float: right;
     vertical-align: middle;
-    padding: 1em;
+    padding: .85em 1em;
     background: rgba(0,0,0,.8);
     z-index: 9999;
+    display:flex;
+    align-items: center;
     @include box-sizing;
     label {
         font-size: 0em;

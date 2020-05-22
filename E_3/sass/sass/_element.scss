@@ -167,7 +167,7 @@ a.more{
     &:hover,
     &:focus,
     &.active {
-        color: #fff;
+        color: $color-word;
         &:before {
             -webkit-transform: scaleX(1);
             transform: scaleX(1);
