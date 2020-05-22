@@ -172,7 +172,7 @@
                 &:hover,
                 &:focus {
                     .pic {
-                        background: darken($secondaryColor, 5);
+                        background: darken($secondaryColor, 15);
                     }
                     h3 a {
                         color: $secondaryColor;

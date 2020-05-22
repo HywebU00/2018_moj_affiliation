@@ -23,5 +23,10 @@
         &:focus {
             background: darken($primaryColor, 10);
         }
+        &.active{
+            color:#fff;
+            background: darken($linkColor, 10);
+
+        }
     }
 }
