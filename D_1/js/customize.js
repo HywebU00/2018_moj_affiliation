@@ -8,6 +8,8 @@ $(function() {
             // console.log("中文");
             $('.slick-prev').attr('title', '上一筆');
             $('.slick-next').attr('title', '下一筆');
+            $('.slick-prev').attr('aria-label', '前一則');
+            $('.slick-next').attr('aria-label', '下一則');
             $('header').find('.accesskey').attr('title', '上方功能區塊');
             $('.main').find('.accesskey').attr('title', '中央內容區塊');
             $('footer').find('.accesskey').attr('title', '下方功能區塊');

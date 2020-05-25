@@ -43,7 +43,7 @@ $(function() {
         var linkTitle = $(this).attr('title');
         // console.log(linkTitle);
     });
-    // 大廣告輪播 
+    // 大廣告輪播
     $('.mp_slider').slick({
         dots: true,
         arrow: true,
@@ -54,7 +54,7 @@ $(function() {
         fade: true,
         cssEase: 'ease'
     });
-    // 廣告輪播 
+    // 廣告輪播
     $('.ad_banner ul').slick({
         dots: false,
         infinite: true,
@@ -295,7 +295,7 @@ $(function() {
         $('.advance_block').stop(true, true).slideToggle();
     });
     // 輪播col 設定
-    // 圖文卡片式 
+    // 圖文卡片式
     $('.col-12 .news_card ul').slick({
         dots: false,
         infinite: true,
@@ -1393,14 +1393,19 @@ $(function() {
         // console.log("中文");
         $('.slick-prev').attr('title', '上一筆');
         $('.slick-next').attr('title', '下一筆');
+        $('.slick-prev').attr('aria-label', '前一則');
+        $('.slick-next').attr('aria-label', '下一則');
         $('header').find('.accesskey').attr('title', '上方功能區塊');
         $('.main').find('.accesskey').attr('title', '中央內容區塊');
         $('footer').find('.accesskey').attr('title', '下方功能區塊');
         $('.search').find('.accesskey').attr('title', '關鍵字搜尋：文章關鍵字搜尋');
+        $('.header .searchCtrl').attr('title', '查詢');
     } else if (weblang.substring(0, 2) == 'en') {
         // console.log("英文");
         $('.slick-prev').attr('title', 'previous');
         $('.slick-next').attr('title', 'next');
+        $('.slick-prev').attr('aria-label', 'previous');
+        $('.slick-next').attr('aria-label', 'next');
         $('header').find('.accesskey').attr('title', 'header');
         $('.main').find('.accesskey').attr('title', 'content');
         $('footer').find('.accesskey').attr('title', 'footer');

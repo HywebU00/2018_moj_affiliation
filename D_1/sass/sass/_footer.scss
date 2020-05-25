@@ -110,6 +110,9 @@ footer {
         @include make-md-column(1);
         @include make-lg-column(1);
         @include gutter();
+        img{
+            max-width:75px;
+        }
     }
     .footer_info {
         @include make-xs-column(12);
