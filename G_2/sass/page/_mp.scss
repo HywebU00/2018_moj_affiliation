@@ -2092,7 +2092,7 @@
             &:hover,
             &:focus {
                 cursor: pointer;
-                background: lighten($primaryColor, 8);
+                background: lighten($fourth-color, 8);
                 box-shadow: 2px 2px 5px RGBA(0, 0, 0, .7) inset;
             }
         }
@@ -2122,7 +2122,7 @@
             &:hover,
             &:focus {
                 cursor: pointer;
-                background: lighten($fourth-color, 2);
+                background: lighten($secondaryColor, 2);
                 box-shadow: 2px 2px 5px RGBA(0, 0, 0, .7) inset;
             }
         }
