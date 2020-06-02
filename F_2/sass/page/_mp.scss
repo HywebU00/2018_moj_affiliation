@@ -2015,6 +2015,7 @@
     }
     ul {
         @include li-reset;
+        overflow:hidden;
     }
     h3 {
         display: block;
@@ -2087,6 +2088,11 @@
                 background: lighten($fourth-color, 2);
                 box-shadow: 2px 2px 5px RGBA(0, 0, 0, .7) inset;
             }
+        }
+    }
+    a{
+        &.more{
+            margin-top:1em;
         }
     }
 }
