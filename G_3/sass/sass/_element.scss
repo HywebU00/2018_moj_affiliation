@@ -103,19 +103,11 @@ a:focus {
     &.new_tag{
         display:inline-block;
         font-style: italic;
-        color: #be000f;
+        color: #fff;
         font-weight: bold;
         padding:0 5px;
         vertical-align:middle;
-        &:after{
-            content:"";
-            display:inline-block;
-            width: .5em;
-            height:2px;
-            background: #be000f;
-            vertical-align:middle;
-            margin:0 5px;
-        }
+        background: darken($color-red, 20);
     }
 }
 // more按鈕
