@@ -2210,7 +2210,7 @@
                display:flex;
                border-bottom: 1px dashed $color-gray;
                time{
-                    flex:0 0 90px;
+                    flex:0 0 80px;
                     margin-right: 1em;
                     font-size:.875em;
                     color:lighten($color-word, 20);
@@ -2247,7 +2247,7 @@
             height: 0;
             border-style: solid;
             border-width: 8px 6px 0 6px;
-            border-color:darken($secondaryColor, 10) transparent transparent transparent;
+            border-color:darken($primaryColor, 10) transparent transparent transparent;
         }
     }
     &:nth-child(3n+2){
