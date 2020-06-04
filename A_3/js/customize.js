@@ -43,7 +43,27 @@ $(function() {
         var linkTitle = $(this).attr('title');
         // console.log(linkTitle);
     });
-    // 大廣告輪播 
+    //聯合拍賣日期
+    $('.show-calendar-toggle').hover(function(){
+                //console.log('hovered')
+        $('.calendar-container').show();
+    },function(){
+        $('.calendar-container').hide();
+    });
+    //小廣告展開收合
+    $('.btn_ad_more').click(function(e) {
+        $(this).parents('.ad_banner_accordion').find('.ad_more').stop(true, true).slideToggle(function() {
+            if ($(this).is(':visible')) {
+                $('.btn_ad_more').html("較少連結 -");
+                $('.btn_ad_more').attr('name', '較少連結');
+            } else {
+                $('.btn_ad_more').html("更多連結 ＋");
+                $('.btn_ad_more').attr('name', '更多連結');
+            }
+        });
+        $(this).stop(true, true).toggleClass('close');
+    });
+    // 大廣告輪播
     $('.mp_slider').slick({
         dots: true,
         arrow: true,
@@ -54,7 +74,7 @@ $(function() {
         fade: true,
         cssEase: 'ease'
     });
-    // 廣告輪播 
+    // 廣告輪播
     $('.ad_banner ul').slick({
         dots: false,
         infinite: true,
@@ -127,6 +147,21 @@ $(function() {
         //              verticalSwiping: false
         //          }
         //      }]
+    });
+    //左右捲動文字跑馬燈
+    $('.marquee-2 ul').slick({
+        dots: false,
+        infinite: true,
+        vertical: false,
+        verticalSwiping: true,
+        speed: 1000,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        pauseOnHover: true, //滑鼠移過後暫停自動撥放
+        autoplaySpeed: 1500,
+        speed: 1000,
+        focusOnSelect: true,
     });
     //燈箱slick+lightBox組合
     $('.cp_slider').slick({
@@ -295,7 +330,7 @@ $(function() {
         $('.advance_block').stop(true, true).slideToggle();
     });
     // 輪播col 設定
-    // 圖文卡片式 
+    // 圖文卡片式
     $('.col-12 .news_card ul').slick({
         dots: false,
         infinite: true,
