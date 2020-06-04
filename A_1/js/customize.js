@@ -43,6 +43,26 @@ $(function() {
         var linkTitle = $(this).attr('title');
         // console.log(linkTitle);
     });
+    //聯合拍賣日期
+    $('.show-calendar-toggle').hover(function(){
+                //console.log('hovered')
+        $('.calendar-container').show();
+    },function(){
+        $('.calendar-container').hide();
+    });
+    //小廣告展開收合
+    $('.btn_ad_more').click(function(e) {
+        $(this).parents('.ad_banner_accordion').find('.ad_more').stop(true, true).slideToggle(function() {
+            if ($(this).is(':visible')) {
+                $('.btn_ad_more').html("較少連結 -");
+                $('.btn_ad_more').attr('name', '較少連結');
+            } else {
+                $('.btn_ad_more').html("更多連結 ＋");
+                $('.btn_ad_more').attr('name', '更多連結');
+            }
+        });
+        $(this).stop(true, true).toggleClass('close');
+    });
     // 大廣告輪播
     $('.mp_slider').slick({
         dots: true,

@@ -1007,7 +1007,7 @@
     }
 }
 // 跑馬燈
-.marquee {
+.marquee, .marquee-2  {
     height: 45px;
     display: block;
     overflow: hidden;
@@ -1079,6 +1079,56 @@
         @include text-overflow;
     }
 }
+//左右文字跑馬燈
+.marquee-2 {
+
+    padding: 0 30px;
+
+    .slick-prev {
+
+        transform: rotate(0deg);
+        left: -22px !important;
+        top: 50% !important;
+        right: auto;
+        margin-top:-10px;
+
+        &:hover,
+        &:focus {
+            opacity: 1;
+        }
+        &:before {
+            width: 10px !important;
+            height: 10px !important;
+        }
+    }
+    .slick-next {
+        transform: rotate(180deg);
+        right: -22px !important;
+        top: 50% !important;
+        left: auto;
+        margin-top:-10px;
+        &:hover,
+        &:focus {
+            opacity: 1;
+        }
+        &:before {
+            width: 10px !important;
+            height: 10px !important;
+        }
+    }
+    &>div {
+        padding: 0;
+        margin: 0;
+    }
+    a {
+        display: block;
+        line-height: 40px;
+        margin:2px 5px;
+        font-weight: bold;
+        @include text-overflow;
+    }
+}
+
 // mp_banner (首頁大輪播區塊)
 .mp_slider {
     width: 100%;
@@ -1828,12 +1878,12 @@
             }
         }
         &:nth-child(4n) {
-            background: darken($forth-color, 5);
+            background: darken($fourth-color, 5);
             @extend %small_block;
             &:hover,
             &:focus {
                 cursor: pointer;
-                background: lighten($forth-color, 2);
+                background: lighten($fourth-color, 2);
                 box-shadow: 2px 2px 5px RGBA(0, 0, 0, .7) inset;
             }
         }
@@ -1852,5 +1902,217 @@
                 border-bottom: 1px solid #DDD;
             }
         }
+    }
+}
+//聯合拍賣日期
+.auction_time{
+    position:relative;
+    text-align: center;
+    .date{
+        font-weight: bold;
+        // color:#fff;
+        // background: $color-dark;
+        padding:0 .25em;
+    }
+    .auction_remain{
+        .day{
+            display:inline-block;
+            font-size:3.125em;
+            border-radius:5px;
+            font-weight: bold;
+            line-height:40px;
+            background: $secondaryColor;
+            padding:.5em;
+            vertical-align:middle;
+            color:#fff;
+            margin:.5em .2em;
+
+        }
+    }
+    .show-calendar-toggle{
+        position:relative;
+        padding:.5em 2em .5em 1em;
+        &:after{
+            content: "";
+            width: 6px;
+            height: 6px;
+            border: 2px solid #FFF;
+            transform: rotate(45deg);
+            position: absolute;
+            right: 10px;
+            top: 15px;
+            border-left: none;
+            border-bottom: none;
+            transition: .3s ease-out;
+        }
+        @include screen('mobile'){
+            display:none;
+        }
+    }
+    .calendar-container{
+        padding: 15px;
+        background-color: white;
+        border-radius: 5px;
+        //visibility: hidden;
+        display:none;
+        position: absolute;
+        bottom: 50px;
+        left: 0;
+        right:0;
+        box-shadow: 0px 3px 6px rgba(0,0,0,0.3);
+        z-index: 999;
+        .auction-table {
+            height: 180px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 0;
+            width: auto;
+            .auction-table-row {
+                width: 300px;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                border: solid 1px $color-hr;
+                border-bottom: 0;
+                color: $color-word;
+                &:last-child{
+                    border-bottom: solid 1px $color-hr;
+                }
+                .auction-table-cell{
+                    border-right: 1px solid $color-hr;
+                    height:100%;
+                    width:25%;
+                    display:flex;
+                    justify-content: center;
+                    align-items: center;
+                    &:last-child{
+                        border-right: 0;
+                    }
+                }
+            }
+
+        }
+    }
+}
+//卡片式條列
+.multi_cards{
+    margin:1em 0;
+    ul{
+        @include li-reset;
+        overflow:hidden;
+    }
+}
+.list_card{
+    @include make-xs-column(12);
+    @include make-sm-column(6);
+    @include make-md-column(4);
+    @include make-lg-column(4);
+    @include gutter();
+    text-align: left;
+    margin-bottom: 1em;
+    &>.card_content{
+        position:relative;
+        background: #fff;
+        padding:1.5em 1em 1em;
+        box-shadow: 0 1px 5px rgba(0,0,0,.2);
+        min-height: 250px;
+        >ul{
+            li{
+               padding:.5em 0;
+               display:flex;
+               border-bottom: 1px dashed $color-gray;
+               time{
+                    flex:0 0 80px;
+                    margin-right: 1em;
+                    font-size:.875em;
+                    color:lighten($color-word, 20);
+                }
+                a{
+                    flex:0 1 auto;
+                    color:$color-word;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 2;
+                     overflow: hidden;
+                     height:46px;
+                     &:hover{
+                        color:$aHover;
+                     }
+                }
+            }
+        }
+        a.more{
+            margin:1em auto;
+        }
+    }
+    h2{
+        position:relative;
+        background: darken($secondaryColor, 10);
+        color:#fff;
+        font-size:1em;
+        padding:.85em 1em;
+        margin:0;
+        box-shadow: 0 -2px 5px rgba(0,0,0,.5);
+        &:after{
+            content:"";
+            position:absolute;
+            z-index: 10;
+            left:1em;
+            top:100%;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 8px 6px 0 6px;
+            border-color:darken($secondaryColor, 10) transparent transparent transparent;
+        }
+    }
+    &:nth-child(3n+2){
+        h2{
+            background: $third-color;
+            &:after{
+                border-color:$third-color transparent transparent transparent;
+            }
+        }
+    }
+    &:nth-child(3n+3){
+        h2{
+            background: $fourth-color;
+            &:after{
+                border-color:$fourth-color transparent transparent transparent;
+            }
+        }
+    }
+
+}
+//小廣告展開/收合
+.ad_banner_accordion{
+    padding:1em 0;
+    ul{
+        @include li-reset;
+        overflow:hidden;
+    }
+    li{
+        @include make-xs-column(6);
+        @include make-sm-column(4);
+        @include make-md-column(2);
+        @include make-lg-column(2);
+        @include gutter();
+        margin-bottom:1em;
+    }
+    .img-container, .btn_ad_more{
+        width: 165px;
+        height: 55px;
+        margin: 0px auto;
+        box-sizing: border-box;
+        img{
+            border:1px solid $color-gray;
+        }
+    }
+    .btn_ad_more{
+        border-radius: 0;
+    }
+    .ad_more{
+        display:none;
     }
 }
