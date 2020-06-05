@@ -2207,7 +2207,7 @@
         position:relative;
         background: #fff;
         padding:1.5em 1em 1em;
-        box-shadow: 0 0 10px rgba(0,0,0,.2);
+        box-shadow: 0 2px 5px rgba(0,0,0,.2);
         min-height: 250px;
         >ul{
             li{
@@ -2245,12 +2245,15 @@
         font-size:1em;
         padding:.85em 1em;
         margin:0;
+        text-align: center;
+        box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
         &:after{
             content:"";
             position:absolute;
             z-index: 10;
-            left:1em;
+            left:50%;
             top:100%;
+            margin-left:-3px;
             width: 0;
             height: 0;
             border-style: solid;
