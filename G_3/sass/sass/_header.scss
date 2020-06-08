@@ -408,7 +408,7 @@
     width: 100%;
     right: 0;
     top: 0;
-    box-shadow: rgba(0, 0, 0, .5) 0 0 25px;
+    box-shadow: rgba(0, 0, 0, .3) 0 0 10px;
     //background: darken($primaryColor, 5);
     z-index: 999;
     @include screen('tablet') {
@@ -417,6 +417,7 @@
     .menu {
         padding:.5em 0;
         //background: $primaryColor;
+        box-shadow: none;
         >ul {
             >li {
                 >a {
