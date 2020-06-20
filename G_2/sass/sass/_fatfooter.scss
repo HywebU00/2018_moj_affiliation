@@ -90,14 +90,14 @@ $fatTextColor: #FFF; //fatFooter 連結顏色
                     color:$color-word;
                     &:hover,
                     &:focus {
-                        color:darken($primaryColor,10);
+                        color:$secondaryColor;
                         text-decoration: none;
                         box-shadow: none;
                         // background: $aHover;
                         // @include border-radius(3px);
                     }
                     &:focus {
-                        background: rgba(0, 0, 0, .5);
+                        background: rgba(255, 255, 255, .5);
                     }
                 }
                 ul {
