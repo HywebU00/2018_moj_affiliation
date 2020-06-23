@@ -91,11 +91,16 @@ body {
     @include make-sm-column(12);
     @include make-md-column(3);
     @include make-lg-column(3);
-    background-image:linear-gradient(to bottom, $primaryColor,$secondaryColor);
+    background-image:url(../images/menu_bg01.png),
+                             url(../images/menu_bg02.png),
+                             linear-gradient(to bottom, $primaryColor,$secondaryColor);
     background-repeat: no-repeat,
-                       no-repeat;
+                               no-repeat,
+                               no-repeat;
     background-position: top left,
-                         left;
+                        bottom left,
+                        left;
+    //background-size:contain,contain,auto;
     margin: 1em 0 3em;
     flex:0 0 290px;
     @include screen('tablet') {

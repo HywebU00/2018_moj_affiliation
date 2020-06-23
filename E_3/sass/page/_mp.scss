@@ -598,11 +598,16 @@
             }
         }
         .main_menu {
-            background-image:linear-gradient(to bottom, $primaryColor,$secondaryColor);
+            background-image:url(../images/menu_bg01.png),
+                             url(../images/menu_bg02.png),
+                             linear-gradient(to bottom, $primaryColor,$secondaryColor);
             background-repeat: no-repeat,
+                               no-repeat,
                                no-repeat;
-            background-position: bottom left,
+            background-position: top left,
+                                 bottom left,
                                  left;
+            background-size:contain,contain,auto;
             position: relative;
             height: 100%;
             min-height: 500px;
