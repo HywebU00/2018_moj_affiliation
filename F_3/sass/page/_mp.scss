@@ -106,7 +106,7 @@
             a {
                 display: block;
                 background: url(../images/icon_plus.png) no-repeat right 12px $secondaryColor;
-                padding: 1em;
+                padding: 1em 1.5em 1em 1em;
                 color: #FFF;
                 position: relative;
                 &:hover,
@@ -350,17 +350,17 @@
                     width: 3.5em;
                     height: 3.5em;
                     border-radius: 50%;
-                    @include screen('mobile') {
-                        width: 3em;
-                        height: 3em;
-                    }
+                    // @include screen('mobile') {
+                    //     width: 3em;
+                    //     height: 3em;
+                    // }
                     top: .2em;
                     left: .2em;
                     background: lighten($third-color, 10);
                     img {
                         width: 60%;
                         height: 60%;
-                        margin: 10% auto 0;
+                        margin: 20% auto 0;
                         display: block;
                     }
                 }
@@ -944,6 +944,7 @@
             margin: .5em auto;
             line-height: 1.5em;
             text-align: left;
+            width:90%;
             a {
                 color: $secondaryColor;
                 &:hover,
@@ -1072,6 +1073,7 @@
         margin: .5em auto;
         line-height: 1.5em;
         text-align: left;
+        width:90%;
         a {
             color: $secondaryColor;
             &:hover,

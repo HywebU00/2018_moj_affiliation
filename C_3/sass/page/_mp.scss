@@ -108,7 +108,7 @@
             a {
                 display: block;
                 background: url(../images/icon_plus.png) no-repeat right 12px lighten($primaryColor, 10);
-                padding: 1em;
+                padding: 1em 1.5em 1em 1em;
                 color: #FFF;
                 position: relative;
                 &:hover,
@@ -747,6 +747,7 @@
             margin: .5em auto;
             line-height: 1.5em;
             text-align: left;
+            width:90%;
             a {
                 color: darken($secondaryColor, 15);
                 &:hover,
@@ -872,6 +873,7 @@
         margin: .5em auto;
         line-height: 1.5em;
         text-align: left;
+        width:90%;
         a {
             color: darken($secondaryColor, 15);
             &:hover,
