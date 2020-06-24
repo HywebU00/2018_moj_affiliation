@@ -16,9 +16,8 @@
             position:absolute;
             bottom:0;
             border-bottom: 2px solid $baseline;
-            width: 46px;
-            left: 50%;
-            margin-left: -23px;
+            width: 100%;
+            left: 0;
         }
     }
 }
@@ -32,9 +31,8 @@
         &:after {
             content: "";
             border-bottom: 2px solid $baseline;
-            width: 46px;
-            left: 50%;
-            margin-left: -23px;
+            width:80%;
+            left: 10%;
             position: absolute;
             bottom: 0;
         }

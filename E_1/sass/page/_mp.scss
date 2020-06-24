@@ -2211,8 +2211,12 @@
     }
     .btn_ad_more{
         border-radius: 0;
+        // &.close{
+        //     background: $form-focus;
+        // }
     }
     .ad_more{
         display:none;
     }
+
 }
