@@ -1921,12 +1921,12 @@
                 }
             }
             &:nth-child(4n) {
-                background: darken($forth-color, 5);
+                background: darken($fourth-color, 5);
                 @extend %small_block;
                 &:hover,
                 &:focus {
                     cursor: pointer;
-                    background: lighten($forth-color, 2);
+                    background: lighten($fourth-color, 2);
                     box-shadow: 2px 2px 5px RGBA(0, 0, 0, .7) inset;
                 }
             }
@@ -1962,6 +1962,219 @@
             }
         }
     }
+    //聯合拍賣日期
+.auction_time{
+    position:relative;
+    text-align: center;
+    .date{
+        font-weight: bold;
+        // color:#fff;
+        // background: $color-dark;
+        padding:0 .25em;
+    }
+    .auction_remain{
+        .day{
+            display:inline-block;
+            font-size:3.125em;
+            border-radius:5px;
+            font-weight: bold;
+            line-height:40px;
+            background: $primaryColor;
+            padding:.5em;
+            vertical-align:middle;
+            color:#fff;
+            margin:.5em .2em;
+
+        }
+    }
+    .show-calendar-toggle{
+        position:relative;
+        padding:.5em 1.5em;
+        // &:after{
+        //     content: "";
+        //     width: 6px;
+        //     height: 6px;
+        //     border: 2px solid #FFF;
+        //     transform: rotate(45deg);
+        //     position: absolute;
+        //     right: 10px;
+        //     top: 15px;
+        //     border-left: none;
+        //     border-bottom: none;
+        //     transition: .3s ease-out;
+        // }
+        @include screen('mobile'){
+            display:none;
+        }
+    }
+    .calendar-container{
+        padding: 15px;
+        background-color: white;
+        border-radius: 5px;
+        //visibility: hidden;
+        display:none;
+        position: absolute;
+        bottom: 50px;
+        left: 0;
+        right: 0;
+        box-shadow: 0px 3px 6px rgba(0,0,0,0.3);
+        z-index: 98;
+        .auction-table {
+            height: 180px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 0;
+            width: auto;
+            .auction-table-row {
+                width: 100%;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                border: solid 1px $color-hr;
+                border-bottom: 0;
+                color: $color-word;
+                &:last-child{
+                    border-bottom: solid 1px $color-hr;
+                }
+                .auction-table-cell{
+                    border-right: 1px solid $color-hr;
+                    height:100%;
+                    width:25%;
+                    display:flex;
+                    justify-content: center;
+                    align-items: center;
+                    &:last-child{
+                        border-right: 0;
+                    }
+                }
+            }
+
+        }
+    }
+}
+//卡片式條列
+.multi_cards{
+    margin:1em 0;
+    ul{
+        @include li-reset;
+        overflow:hidden;
+    }
+}
+.list_card{
+    @include make-xs-column(12);
+    @include make-sm-column(6);
+    @include make-md-column(4);
+    @include make-lg-column(4);
+    @include gutter();
+    text-align: left;
+    margin-bottom: 1em;
+    &>.card_content{
+        position:relative;
+        background: #fff;
+        padding:1.5em 1em 1em;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        min-height: 250px;
+        >ul{
+            li{
+               padding:.5em 0;
+               display:flex;
+               border-bottom: 1px dashed $color-gray;
+               time{
+                    flex:0 0 80px;
+                    margin-right: 1em;
+                    font-size:.875em;
+                    color:lighten($color-word, 20);
+                }
+                a{
+                    flex:0 1 auto;
+                    color:$color-word;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 2;
+                    overflow: hidden;
+                    height:46px;
+                    &:hover{
+                        color:$aHover;
+                    }
+                }
+            }
+        }
+        a.more{
+            margin:1em auto;
+        }
+    }
+    h2{
+        position:relative;
+        background: darken($primaryColor, 5);
+        color:#fff;
+        font-size:1em;
+        padding:.85em 1em;
+        margin:0;
+        text-align: center;
+        &:after{
+            content:"";
+            position:absolute;
+            z-index: 10;
+            left:50%;
+            top:100%;
+            margin-left:-3px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 8px 6px 0 6px;
+            border-color:darken($primaryColor, 5) transparent transparent transparent;
+        }
+    }
+    &:nth-child(3n+2){
+        h2{
+            background: darken($third-color, 5);
+            &:after{
+                border-color:darken($third-color, 5) transparent transparent transparent;
+            }
+        }
+    }
+    &:nth-child(3n+3){
+        h2{
+            background: darken($fourth-color, 5);
+            &:after{
+                border-color:darken($fourth-color, 5) transparent transparent transparent;
+            }
+        }
+    }
+
+}
+//小廣告展開/收合
+.ad_banner_accordion{
+    padding:1em 0;
+    ul{
+        @include li-reset;
+        overflow:hidden;
+    }
+    li{
+        @include make-xs-column(6);
+        @include make-sm-column(4);
+        @include make-md-column(2);
+        @include make-lg-column(2);
+        @include gutter();
+        margin-bottom:1em;
+    }
+    .img-container, .btn_ad_more{
+        width: 165px;
+        height: 55px;
+        margin: 0px auto;
+        box-sizing: border-box;
+        img{
+            border:1px solid $color-gray;
+        }
+    }
+    .btn_ad_more{
+        border-radius: 0;
+    }
+    .ad_more{
+        display:none;
+    }
+}
     // 修正格線排版
     .col-4-4-4, .col-3-3-3-3 {
         .col {
