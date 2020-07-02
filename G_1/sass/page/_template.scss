@@ -249,17 +249,17 @@ body {
     }
     h2.title {
         position: relative;
-        padding:.4em 0;
+        padding: 0 0 0 .5em;
         @include screen('mobile') {
             padding-right: .8em;
         }
         &:before {
             content: "";
-            width: 46px;
-            height: 2px;
+            width:  4px;
+            height: 100%;
             position: absolute;
-            bottom:0;
             left: 0;
+            top:0;
             background: $baseline;
         }
     }
