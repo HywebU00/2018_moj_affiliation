@@ -51,8 +51,8 @@ a:focus {
 // 導盲磚
 .accesskey {
     position: absolute;
-    top: 5px;
-    left: 5px;
+    top: 0;
+    left: 0;
     z-index: 9;
     color: $color-word;
     font-size: $font-size;
