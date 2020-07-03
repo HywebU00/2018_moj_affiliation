@@ -165,7 +165,7 @@
                 text-decoration: none;
                 &:hover,
                 &:focus {
-                    color:lighten($lightColor, 20);
+                    color:$aColor;
                 }
                 &:after {
                     @extend %slash;
@@ -193,7 +193,6 @@
                         display: block;
                         &:hover,
                         &:focus {
-                            color: $primaryColor;
                             @include border-radius(6px);
                             background: $color-gray;
                         }
