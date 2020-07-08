@@ -220,6 +220,9 @@
         }
         li {
             margin: 0px 1em;
+            &:focus{
+                outline:0;
+            }
             a {
                 &:hover,
                 &:focus {

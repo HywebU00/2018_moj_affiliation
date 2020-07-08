@@ -2045,6 +2045,9 @@
             width: 100%;
             color: #FFF;
             font-size: 1.25em;
+            &:focus{
+                box-shadow: 0 0px 0px 1px $primaryColor inset;
+            }
             img {
                 display: block;
                 margin: 0px auto .5em;
