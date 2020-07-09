@@ -232,7 +232,7 @@ $(function() {
         }]
     });
     // 影音專區
-    $('.multi_video ul').slick({
+    $('.col .multi_video ul').slick({
         dots: false,
         infinite: true,
         speed: 300,
