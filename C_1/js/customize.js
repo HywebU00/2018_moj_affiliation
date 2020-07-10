@@ -155,6 +155,21 @@ $(function() {
         //          }
         //      }]
     });
+    //左右捲動文字跑馬燈
+    $('.marquee-2 ul').slick({
+        dots: false,
+        infinite: true,
+        vertical: false,
+        verticalSwiping: true,
+        speed: 1000,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        pauseOnHover: true, //滑鼠移過後暫停自動撥放
+        autoplaySpeed: 1500,
+        speed: 1000,
+        focusOnSelect: true,
+    });
     // 圖文卡片式
     // $('.news_card ul').slick({
     //     dots: false,
@@ -295,6 +310,7 @@ $(function() {
     //         }
     //     }]
     // });
+
     //燈箱slick+lightBox組合
     $('.cp_slider').slick({
         dots: false,
