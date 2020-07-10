@@ -198,6 +198,11 @@
                         overflow:hidden;
                     }
                 }
+                >p{
+                    &:not(:first-of-type){
+                        display:none;
+                    }
+                }
             }
         }
     }
