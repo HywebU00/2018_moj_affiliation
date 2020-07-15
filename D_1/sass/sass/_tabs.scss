@@ -116,17 +116,6 @@
                 //width: 75%
                 margin-right: 5px;
             }
-            &+a{
-                &:before{
-                        content:none;
-                }
-                time{
-                    display:block;
-                    flex:1 0 80px;
-                    text-align: right;
-                }
-            }
-
         }
         time {
             display: block;
