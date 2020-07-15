@@ -84,6 +84,11 @@ a:focus {
         @include border-radius(6px);
         margin-right: .5em;
         margin-bottom: 3px;
+        @include screen("mobile"){
+            display:inline-flex;
+            align-content: center;
+            justify-content: center;
+        }
     }
     &.red {
         background: darken($color-red, 10);
