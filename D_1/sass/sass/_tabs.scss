@@ -90,6 +90,7 @@
         position: relative;
         border-bottom: 1px #CCC dashed;
         @include screen('mobile') {
+            display:flex;
             @include text-overflow();
         }
         a {
@@ -111,7 +112,8 @@
                 left: 0;
             }
             @include screen('mobile') {
-                width: 75%
+                //width: 75%
+                margin-right: 5px;
             }
         }
         time {
@@ -125,6 +127,7 @@
             right: 0;
             top: 0;
             @include screen('mobile') {
+                flex:1 0 80px;
                 text-align: right;
                 //margin:0;
             }
