@@ -126,6 +126,7 @@
             top: 0;
             @include screen('mobile') {
                 text-align: right;
+                margin:0;
             }
         }
     }
