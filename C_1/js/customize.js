@@ -1574,7 +1574,7 @@ $(function() {
         $('.slick-prev').attr('aria-label', '前一則');
         $('.slick-next').attr('aria-label', '下一則');
         $('header').find('.accesskey').attr('title', '上方功能區塊');
-        //$('.main').find('.accesskey').prependTo('.mp_content').attr('title', '中央內容區塊');
+        $('.main').find('.accesskey').prependTo('.mp_content').attr('title', '中央內容區塊');
         $('.main').find('.accesskey').prependTo('.innerpage_content').attr('title', '中央內容區塊');
         $('footer').find('.accesskey').attr('title', '下方功能區塊');
         $('.search').find('.accesskey').attr('title', '關鍵字搜尋：文章關鍵字搜尋');
