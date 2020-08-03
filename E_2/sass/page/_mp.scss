@@ -2115,7 +2115,7 @@
     @include make-lg-column(4);
     @include gutter();
     text-align: left;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
     &>.card_content{
         position:relative;
         background: #f6f6f6;

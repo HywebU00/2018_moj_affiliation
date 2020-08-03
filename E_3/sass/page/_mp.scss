@@ -2132,6 +2132,9 @@
     @include gutter();
     text-align: left;
     margin-bottom: 1em;
+    @include screen('mobile'){
+        margin-bottom:2em;
+    }
     &>.card_content{
         position:relative;
         background: #f6f6f6;

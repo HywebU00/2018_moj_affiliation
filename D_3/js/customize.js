@@ -93,6 +93,7 @@ $(function() {
     },function(){
         $('.calendar-container').hide();
     });
+
     //小廣告展開收合
     $('.btn_ad_more').click(function(e) {
         $(this).parents('.ad_banner_accordion').find('.ad_more').stop(true, true).slideToggle(function() {
@@ -106,6 +107,8 @@ $(function() {
         });
         $(this).stop(true, true).toggleClass('close');
     });
+    //tabContent new tag
+    $('.tabContent ul li a').has('span.new_tag').css('paddingRight','4.2em');
     // 大廣告輪播
     $('.mp_slider').slick({
         dots: true,

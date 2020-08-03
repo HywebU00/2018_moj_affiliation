@@ -91,6 +91,12 @@ a:focus {
             height:auto;
         }
     }
+    &.new_tag{
+        width:auto;
+        min-width: 3em;
+        font-style:italic;
+        background: darken($color-red,25);
+    }
     &.red {
         background: darken($color-red, 10);
     }

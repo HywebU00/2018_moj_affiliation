@@ -150,7 +150,8 @@ $(function() {
         });
         $(this).stop(true, true).toggleClass('close');
     });
-
+    //tabContent new tag
+    $('.tabContent ul li a').has('span.new_tag').css('paddingRight','4.2em');
     // 大廣告輪播
     $('.mp_slider').slick({
         dots: true,

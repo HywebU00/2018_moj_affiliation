@@ -234,6 +234,7 @@
     }
     @include screen('tablet') {
         display: none;
+        bottom: auto;
     }
     .form_grp {
         margin-bottom: 0;

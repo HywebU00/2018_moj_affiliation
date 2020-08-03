@@ -64,6 +64,8 @@ $(function() {
     },function(){
         $('.calendar-container').hide();
     });
+    //tabContent new tag
+    $('.tabContent ul li a').has('span.new_tag').css('paddingRight','4.2em');
     //小廣告展開收合
     $('.btn_ad_more').click(function(e) {
         $(this).parents('.ad_banner_accordion').find('.ad_more').stop(true, true).slideToggle(function() {

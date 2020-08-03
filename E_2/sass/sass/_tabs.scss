@@ -87,7 +87,7 @@
     }
     li {
         margin: 0 0 1.3em 0;
-        padding: 0 0 0 15px;
+        padding: 0;
         position: relative;
         border-bottom: 1px #CCC dashed;
         @include screen('mobile') {
@@ -95,10 +95,12 @@
         }
         a {
             @include text-overflow;
-            margin-right: 120px;
-            width: 80%;
+            //margin-right: 120px;
+            max-width: calc(100% - 150px);
             text-align: left;
-            display: block;
+            display: inline-block;
+            position:relative;
+            padding:0 0 0 15px;
             &:before {
                 content: "";
                 position: absolute;
@@ -112,22 +114,29 @@
                 left: 0;
             }
             @include screen('mobile') {
-                width: 75%;
+                //width: 75%;
+            }
+            span{
+                &.new_tag{
+                    position:absolute;
+                    right:0;
+                    font-size:.875em;
+                }
             }
         }
         time {
             display: block;
             margin: 0 0 0 1em;
             font-size: .813em;
-            text-align: center;
+            text-align: right;
             color: #666;
             width: 100px;
             position: absolute;
             right: 0;
             top: 0;
-            @include screen('mobile') {
-                text-align: right;
-            }
+            // @include screen('mobile') {
+            //     text-align: right;
+            // }
         }
     }
     // .more {
