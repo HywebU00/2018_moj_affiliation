@@ -75,6 +75,7 @@
     clear: both;
     padding: 30px 20px;
     display: none;
+    text-align: left;
     @include screen('mobile') {
         position: static;
     }
