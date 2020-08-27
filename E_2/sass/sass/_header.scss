@@ -219,11 +219,11 @@
 .search {
     position: absolute;
     right:60px;
-    bottom:0;
-    height:60px;
+    top:40px;
+    //height:auto;
     float: right;
     vertical-align: middle;
-    padding: 1em;
+    padding:.82em 1em;
     background: rgba(0,0,0,.8);
     z-index: 9999;
     @include box-sizing;
