@@ -177,17 +177,8 @@ $(function() {
             _search.appendTo('.header .container');
             _menu.appendTo('.header .container');
             _search.removeClass('m_search');
+            _search.show();
             _menu.appendTo(_mainMenu);
-            _search.hide();
-            $('.searchCtrl').off().click(function(event) {
-                $('.search').stop(true, true).fadeToggle();
-                $('.search').find('input[type="text"]').focus();
-            });
-            // 如果點在外面
-            $('.main').off().on('click touchend', function(e) {
-                _search.hide();
-                search_mode = false;
-            });
             // 副選單滑出
             liHasChild.on({
                 mouseenter: function() {
