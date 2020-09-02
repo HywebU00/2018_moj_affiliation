@@ -1,4 +1,3 @@
-
 // 自行加入的JS請寫在這裡
 $(function() {
     //不同語系
@@ -8,8 +7,6 @@ $(function() {
             // console.log("中文");
             $('.slick-prev').attr('title', '上一筆');
             $('.slick-next').attr('title', '下一筆');
-            $('.slick-prev').attr('aria-label', '前一則');
-            $('.slick-next').attr('aria-label', '下一則');
             $('header').find('.accesskey').attr('title', '上方功能區塊');
             $('.main').find('.accesskey').attr('title', '中央內容區塊');
             $('footer').find('.accesskey').attr('title', '下方功能區塊');
@@ -46,46 +43,7 @@ $(function() {
             $('.slick-next').attr('title', 'next');
         }
     });
-    var weblang = $('html').attr('lang');
-    if (weblang.substring(0, 2) == 'zh') {
-        // console.log("中文");
-        $('.slick-prev').attr('title', '上一筆');
-        $('.slick-next').attr('title', '下一筆');
-        $('header').find('.accesskey').attr('title', '上方功能區塊');
-        $('.main').find('.accesskey').attr('title', '中央內容區塊');
-        $('footer').find('.accesskey').attr('title', '下方功能區塊');
-        $('.search').find('.accesskey').attr('title', '關鍵字搜尋：文章關鍵字搜尋');
-        $('.header .searchCtrl').attr('title', '查詢');
-    } else if (weblang.substring(0, 2) == 'en') {
-        // console.log("英文");
-        $('.slick-prev').attr('title', 'previous');
-        $('.slick-next').attr('title', 'next');
-        $('header').find('.accesskey').attr('title', 'header');
-        $('.main').find('.accesskey').attr('title', 'content');
-        $('footer').find('.accesskey').attr('title', 'footer');
-        $('.search').find('.accesskey').attr('title', 'search');
-        $('.header .searchCtrl').attr('title','search');
-    } else if (weblang.substring(0, 2) == 'vi') {
-        // console.log("越南");
-        $('.slick-prev').attr('title', 'Trước');
-        $('.slick-next').attr('title', 'kế tiếp');
-    } else if (weblang.substring(0, 2) == 'id') {
-        // console.log("印尼");
-        $('.slick-prev').attr('title', 'sebelumnya');
-        $('.slick-next').attr('title', 'berikutnya');
-    } else if (weblang.substring(0, 2) == 'km') {
-        // console.log("柬埔寨");
-        $('.slick-prev').attr('title', 'មុន');
-        $('.slick-next').attr('title', 'បន្ទាប់');
-    } else if (weblang.substring(0, 2) == 'th') {
-        // console.log("泰文");
-        $('.slick-prev').attr('title', 'ก่อน');
-        $('.slick-next').attr('title', 'ต่อไป');
-    } else {
-        // console.log("沒有判斷");
-        $('.slick-prev').attr('title', 'previous');
-        $('.slick-next').attr('title', 'next');
-    }
+
     // lazyload
     $("img").lazyload({ effect: "fadeIn" });
  // 最新消息 列表
@@ -130,6 +88,7 @@ $(function() {
         var linkTitle = $(this).attr('title');
         // console.log(linkTitle);
     });
+
     //聯合拍賣日期
     $('.show-calendar-toggle').hover(function(){
                 //console.log('hovered')
@@ -252,146 +211,6 @@ $(function() {
         autoplaySpeed: 1500,
         speed: 1000,
         focusOnSelect: true,
-    });
-    //圖文卡片式
-    $('.news_card ul').slick({
-        dots: false,
-        infinite: true,
-        speed: 300,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        autoplay: true,
-        pauseOnHover: true,
-        arrow: true,
-        responsive: [{
-            breakpoint: 1024,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                infinite: true,
-                dots: false,
-                arrows: true
-            }
-        }, {
-            breakpoint: 992,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2,
-                arrows: true
-            }
-        }, {
-            breakpoint: 575,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                arrows: true
-            }
-        }]
-    });
-    // 影音專區
-    $('.col .multi_video ul').slick({
-        dots: false,
-        infinite: true,
-        speed: 300,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        pauseOnHover: true,
-        autoplay: false,
-        arrow: true,
-        responsive: [{
-            breakpoint: 1024,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                infinite: true,
-                dots: false,
-                arrows: true
-            }
-        }, {
-            breakpoint: 992,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2,
-                arrows: true
-            }
-        }, {
-            breakpoint: 575,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                arrows: true
-            }
-        }]
-    });
-    // 影音專區
-    $('.multi_photo ul').slick({
-        dots: false,
-        infinite: true,
-        speed: 300,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        pauseOnHover: true,
-        autoplay: false,
-        arrow: true,
-        responsive: [{
-            breakpoint: 1024,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                infinite: true,
-                dots: false,
-                arrows: true
-            }
-        }, {
-            breakpoint: 992,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2,
-                arrows: true
-            }
-        }, {
-            breakpoint: 575,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                arrows: true
-            }
-        }]
-    });
-    // 便民專區
-    $('.service ul').slick({
-        dots: false,
-        infinite: true,
-        speed: 300,
-        slidesToShow: 6,
-        pauseOnHover: true,
-        slidesToScroll: 1,
-        autoplay: false,
-        arrow: true,
-        responsive: [{
-            breakpoint: 1024,
-            settings: {
-                slidesToShow: 4,
-                slidesToScroll: 4,
-                infinite: true,
-                dots: false,
-                arrows: true
-            }
-        }, {
-            breakpoint: 992,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                arrows: true
-            }
-        }, {
-            breakpoint: 575,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2,
-                arrows: true
-            }
-        }]
     });
     //燈箱slick+lightBox組合
     $('.cp_slider').slick({
@@ -561,6 +380,7 @@ $(function() {
     $('.advance_search button').off().click(function(e) {
         $('.advance_block').stop(true, true).slideToggle();
     });
+    
     // 圖文卡片式
     $('.col-12 .news_card ul').slick({
         dots: false,
@@ -975,7 +795,7 @@ $(function() {
         dots: false,
         infinite: true,
         speed: 300,
-        slidesToShow: 3,
+        slidesToShow: 2,
         slidesToScroll: 3,
         autoplay: true,
         pauseOnHover: true,
@@ -983,7 +803,7 @@ $(function() {
         responsive: [{
             breakpoint: 1024,
             settings: {
-                slidesToShow: 3,
+                slidesToShow: 2,
                 slidesToScroll: 3,
                 infinite: true,
                 dots: false,

@@ -212,146 +212,6 @@ $(function() {
         speed: 1000,
         focusOnSelect: true,
     });
-    //圖文卡片式
-    $('.news_card ul').slick({
-        dots: false,
-        infinite: true,
-        speed: 300,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        autoplay: true,
-        pauseOnHover: true,
-        arrow: true,
-        responsive: [{
-            breakpoint: 1024,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                infinite: true,
-                dots: false,
-                arrows: true
-            }
-        }, {
-            breakpoint: 992,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2,
-                arrows: true
-            }
-        }, {
-            breakpoint: 575,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                arrows: true
-            }
-        }]
-    });
-    // 影音專區
-    $('.col .multi_video ul').slick({
-        dots: false,
-        infinite: true,
-        speed: 300,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        pauseOnHover: true,
-        autoplay: false,
-        arrow: true,
-        responsive: [{
-            breakpoint: 1024,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                infinite: true,
-                dots: false,
-                arrows: true
-            }
-        }, {
-            breakpoint: 992,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2,
-                arrows: true
-            }
-        }, {
-            breakpoint: 575,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                arrows: true
-            }
-        }]
-    });
-    // 影音專區
-    $('.multi_photo ul').slick({
-        dots: false,
-        infinite: true,
-        speed: 300,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        pauseOnHover: true,
-        autoplay: false,
-        arrow: true,
-        responsive: [{
-            breakpoint: 1024,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                infinite: true,
-                dots: false,
-                arrows: true
-            }
-        }, {
-            breakpoint: 992,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2,
-                arrows: true
-            }
-        }, {
-            breakpoint: 575,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                arrows: true
-            }
-        }]
-    });
-    // 便民專區
-    $('.service ul').slick({
-        dots: false,
-        infinite: true,
-        speed: 300,
-        slidesToShow: 6,
-        pauseOnHover: true,
-        slidesToScroll: 1,
-        autoplay: false,
-        arrow: true,
-        responsive: [{
-            breakpoint: 1024,
-            settings: {
-                slidesToShow: 4,
-                slidesToScroll: 4,
-                infinite: true,
-                dots: false,
-                arrows: true
-            }
-        }, {
-            breakpoint: 992,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                arrows: true
-            }
-        }, {
-            breakpoint: 575,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2,
-                arrows: true
-            }
-        }]
-    });
     //燈箱slick+lightBox組合
     $('.cp_slider').slick({
         dots: false,
@@ -520,6 +380,7 @@ $(function() {
     $('.advance_search button').off().click(function(e) {
         $('.advance_block').stop(true, true).slideToggle();
     });
+    
     // 圖文卡片式
     $('.col-12 .news_card ul').slick({
         dots: false,
@@ -934,7 +795,7 @@ $(function() {
         dots: false,
         infinite: true,
         speed: 300,
-        slidesToShow: 3,
+        slidesToShow: 2,
         slidesToScroll: 3,
         autoplay: true,
         pauseOnHover: true,
@@ -942,7 +803,7 @@ $(function() {
         responsive: [{
             breakpoint: 1024,
             settings: {
-                slidesToShow: 3,
+                slidesToShow: 2,
                 slidesToScroll: 3,
                 infinite: true,
                 dots: false,
