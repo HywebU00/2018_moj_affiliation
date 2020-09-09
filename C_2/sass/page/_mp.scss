@@ -1806,6 +1806,7 @@
     }
     ul {
         @include li-reset;
+        overflow: hidden;
     }
     h3 {
         display: block;
