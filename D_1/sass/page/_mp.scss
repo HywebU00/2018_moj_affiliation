@@ -193,7 +193,7 @@
                     height: 60px;
                 }
             }
-            h3 {
+            h3, .service_title {
                 font-size: 1em;
                 text-align: center;
                 width: 80%;
@@ -202,6 +202,7 @@
                 height: 4.5em;
                 margin: 0px auto;
                 overflow: hidden;
+                font-weight: bold;
             }
         }
     }
@@ -243,7 +244,7 @@
                     height: 60px;
                 }
             }
-            h3 {
+            h3, .service_title{
                 font-size: 1em;
                 text-align: center;
                 width: 80%;
@@ -252,6 +253,7 @@
                 height: 4.5em;
                 margin: 0px auto;
                 overflow: hidden;
+                font-weight: bold;
             }
         }
     }
@@ -1877,13 +1879,14 @@
         @include li-reset;
         overflow: hidden;
     }
-    h3 {
+    h3, .service_title {
         display: block;
         height: 3em;
         font-size: 1em;
         line-height: 1.5em;
         display: block;
         overflow: hidden;
+        font-weight: bold;
     }
     .pic {
         margin: 1em auto;
