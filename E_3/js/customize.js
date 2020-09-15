@@ -271,9 +271,9 @@ $(function() {
     // 設定 main-menu高度同等 col
     function colHeight() {
         var WindowWidth = $(window).outerWidth();
-        var cellDiv1 = $(".main_banner").find('.col');
+        var cellDiv1 = $("div.main_banner").find('.col');
         if (WindowWidth >= 768) {
-            $(".main_banner .col").each(function() {
+            $("div.main_banner .col").each(function() {
                 var highestBox = 0;
                 $(cellDiv1, this).each(function() {
                     if ($(this).height() > highestBox) {
@@ -281,18 +281,18 @@ $(function() {
                     }
                 });
                 $(cellDiv1, this).height(highestBox);
-                $('.main_banner').height(highestBox);
+                $('div.main_banner').height(highestBox);
             });
         } else {
-            $(".main_banner .col").each(function() {
+            $("div.main_banner .col").each(function() {
                 $(this).removeAttr('style');
             });
-            $('.main_banner').removeAttr('style');
+            $('div.main_banner').removeAttr('style');
         }
     }
     //設定resize 計時器
     var menuResize;
-    $(window).bind("load resize", function(event) {
+    $(window).bind("load resize", function(event) {f
         clearTimeout(menuResize);
         menuResize = setTimeout(function() {
             colHeight();

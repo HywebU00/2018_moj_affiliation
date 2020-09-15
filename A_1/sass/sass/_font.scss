@@ -45,8 +45,10 @@ body {
 a {
     @include aSetting();
 }
-h3{
+h3, 
+.heading-3{
     font-size:1.125em;
+    font-weight: bold;
 }
 .small-fontsize {
     font-size: .938em;

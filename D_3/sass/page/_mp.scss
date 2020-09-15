@@ -215,8 +215,11 @@
                             background: darken($secondaryColor, 5);
                         }
 
-                        h3 a {
-                            color: $secondaryColor;
+                        h3,
+                        .heading-3 {
+                            a {
+                                color: $secondaryColor;
+                            }
                         }
                     }
                 }
@@ -238,7 +241,8 @@
                     }
                 }
 
-                h3 {
+                h3,
+                .heading-3 {
                     font-size: 1em;
                     text-align: center;
                     width: 80%;
@@ -278,8 +282,11 @@
                             background: $secondaryColor;
                         }
 
-                        h3 a {
-                            color: $secondaryColor;
+                        h3,
+                        .heading-3 {
+                            a {
+                                color: $secondaryColor;
+                            }
                         }
                     }
                 }
@@ -300,7 +307,8 @@
                     }
                 }
 
-                h3 {
+                h3,
+                .heading-3 {
                     font-size: 1em;
                     text-align: center;
                     width: 80%;
@@ -458,7 +466,8 @@
                     padding-bottom: 1em;
                     background: #FFF;
 
-                    h3 {
+                    h3,
+                    .heading-3 {
                         color: #222;
                     }
 
@@ -466,7 +475,8 @@
                     &:focus {
                         background: $secondaryColor;
 
-                        h3 {
+                        h3,
+                        .heading-3 {
                             color: #FFF;
                         }
 
@@ -487,7 +497,8 @@
                         margin-bottom: 1em;
                     }
 
-                    h3 {
+                    h3,
+                    .heading-3 {
                         height: 3em;
                         line-height: 1.5em;
                         overflow: hidden;
@@ -922,7 +933,8 @@
                     }
                 }
 
-                h3 {
+                h3,
+                .heading-3 {
                     display: block;
                     background: $primaryColor;
                     color: #FFF;
@@ -936,7 +948,9 @@
 
                     &:hover,
                     &:focus {
-                        h3 {
+
+                        h3,
+                        .heading-3 {
                             background: darken($primaryColor, 10);
                         }
                     }
@@ -973,7 +987,8 @@
                 height: 100%;
             }
 
-            &+h3 {
+            &+h3,
+            &+.heading-3 {
                 display: block;
                 margin: .5em auto;
                 line-height: 1.5em;
@@ -1009,7 +1024,8 @@
                 a {
                     display: block;
 
-                    h3 {
+                    h3,
+                    .heading-3 {
                         width: 90%;
                         overflow: hidden;
                         display: block;
@@ -1021,7 +1037,9 @@
 
                         &:hover,
                         &:focus {
-                            h3 {
+
+                            h3,
+                            .heading-3 {
                                 color: darken($secondaryColor, 10);
                             }
                         }
@@ -1121,7 +1139,8 @@
             }
         }
 
-        h3 {
+        h3,
+        .heading-3 {
             display: block;
             margin: .5em auto;
             line-height: 1.5em;
@@ -1211,7 +1230,8 @@
                     }
                 }
 
-                h3 {
+                h3,
+                .heading-3 {
                     width: 90%;
                     overflow: hidden;
                     display: block;
@@ -1358,55 +1378,62 @@
             }
         }
     }
+
     //左右文字跑馬燈
-.marquee-2 {
+    .marquee-2 {
 
-    padding: 0 30px;
+        padding: 0 30px;
 
-    .slick-prev {
+        .slick-prev {
 
-        transform: rotate(0deg);
-        left: -22px !important;
-        top: 50% !important;
-        right: auto;
-        margin-top:-10px;
+            transform: rotate(0deg);
+            left: -22px !important;
+            top: 50% !important;
+            right: auto;
+            margin-top: -10px;
 
-        &:hover,
-        &:focus {
-            opacity: 1;
+            &:hover,
+            &:focus {
+                opacity: 1;
+            }
+
+            &:before {
+                width: 10px !important;
+                height: 10px !important;
+            }
         }
-        &:before {
-            width: 10px !important;
-            height: 10px !important;
+
+        .slick-next {
+            transform: rotate(180deg);
+            right: -22px !important;
+            top: 50% !important;
+            left: auto;
+            margin-top: -10px;
+
+            &:hover,
+            &:focus {
+                opacity: 1;
+            }
+
+            &:before {
+                width: 10px !important;
+                height: 10px !important;
+            }
+        }
+
+        &>div {
+            padding: 0;
+            margin: 0;
+        }
+
+        a {
+            display: block;
+            line-height: 40px;
+            margin: 2px 5px;
+            font-weight: bold;
+            @include text-overflow;
         }
     }
-    .slick-next {
-        transform: rotate(180deg);
-        right: -22px !important;
-        top: 50% !important;
-        left: auto;
-        margin-top:-10px;
-        &:hover,
-        &:focus {
-            opacity: 1;
-        }
-        &:before {
-            width: 10px !important;
-            height: 10px !important;
-        }
-    }
-    &>div {
-        padding: 0;
-        margin: 0;
-    }
-    a {
-        display: block;
-        line-height: 40px;
-        margin:2px 5px;
-        font-weight: bold;
-        @include text-overflow;
-    }
-}
 
     // mp_banner (首頁大輪播區塊)
     .mp_slider {
@@ -1950,7 +1977,8 @@
                     display: inline-block;
                 }
 
-                h3 {
+                h3,
+                .heading-3 {
                     margin-top: 0;
                     margin-bottom: 1em;
 
@@ -2081,7 +2109,8 @@
                 }
             }
 
-            h3 {
+            h3,
+            .heading-3 {
                 margin: 1em auto .5em;
                 width: 90%;
                 height: 4.5em;
@@ -2124,11 +2153,13 @@
                 // height: 200px;
                 margin-bottom: .5em;
 
-                &.hidden~h3 {
+                &.hidden~h3,
+                &.hidden~.heading-3 {
                     margin: 1em auto;
                 }
 
-                &~h3 {
+                &~h3,
+                &~.heading-3 {
                     height: 3em;
                 }
 
@@ -2226,7 +2257,8 @@
             overflow: hidden;
         }
 
-        h3 {
+        h3,
+        .heading-3 {
             display: block;
             height: 3em;
             font-size: 1em;
@@ -2315,7 +2347,7 @@
         // color: #FFF;
         // overflow: hidden;
         // padding: 3em 0;
-        // h2, h2.title, h3, p {
+        // h2, h2.title, h3, .heading-3, p {
         //     color: #FFF;
         // }
         // a {
@@ -2599,7 +2631,9 @@
             .news_list {
                 ul {
                     li {
-                        h3 {
+
+                        h3,
+                        .heading-3 {
                             display: block !important;
                         }
 

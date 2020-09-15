@@ -1,15 +1,18 @@
 /* 修正粗體 */
 @font-face {
     font-family: '微軟正黑體修正';
-    unicode-range: U+7db0, U+78A7, U+7B75; /* ASCII (碧筵綰) */
+    unicode-range: U+7db0, U+78A7, U+7B75;
+    /* ASCII (碧筵綰) */
     font-style: normal;
     font-weight: bold;
     src: local(Yu Gothic), local(MS Gothic);
 }
+
 /* 一般粗細的時候改回微軟正黑 */
 @font-face {
     font-family: '微軟正黑體修正';
-    unicode-range: U+7db0, U+78A7, U+7B75; /* ASCII (碧筵綰) */
+    unicode-range: U+7db0, U+78A7, U+7B75;
+    /* ASCII (碧筵綰) */
     font-style: normal;
     font-weight: normal;
     src: local(微軟正黑體);
@@ -24,6 +27,7 @@
 @mixin aSetting($COLOR:$aColor, $NOLINE:none) {
     color: $COLOR;
     text-decoration: $NOLINE;
+
     &:hover,
     &:focus {
         color: $aHover;
@@ -37,6 +41,7 @@ body {
     font-family: $font-family;
     -webkit-text-size-adjust: none;
     color: #222;
+
     @media print {
         font-size: .75em;
     }
@@ -45,9 +50,13 @@ body {
 a {
     @include aSetting();
 }
-h3{
-    font-size:1.125em;
+
+h3,
+.heading-3 {
+    font-size: 1.125em;
+    font-weight: bold;
 }
+
 .small-fontsize {
     font-size: .938em;
 }
