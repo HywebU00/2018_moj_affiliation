@@ -895,8 +895,20 @@ section {
 
         .container {
             max-width: 1200px !important;
-        }
+            &>.col:nth-child(1){
+               &+.col{
+                    padding-right: 0;
+                    display: block;
+                    @media screen and (max-width: 1200px) {
+                        padding-right: 0;
+                    }
+               } 
+            }
+            @include screen('mobile') {
+                @include gutter;
+            }
 
+        }
         .main_img {
             left: 0;
             width: 100%;
