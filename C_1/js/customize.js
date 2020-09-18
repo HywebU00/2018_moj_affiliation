@@ -4,10 +4,11 @@ $(function() {
     $("img").lazyload({ effect: "fadeIn" });
     // fix 內頁 mp_content
     if ($('.innerpage .mp_content').is(':empty')) {
-        $('.mp_content').css({
+        $('.mp_content').removeAttr('id').css({
             background: 'transparent',
             height: '0px'
         });
+
     }
     // 最新消息 列表
     var newsList_len = 300; // 超過300個字以"..."取代

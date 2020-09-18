@@ -47,10 +47,10 @@ $(function() {
     $('.main').wrapInner('<div class="container"></div>');
     $('.main').addClass('innerpage');
 
-    $('.innerpage .content').addClass('innerpage_content')
+    $('.innerpage .content').addClass('innerpage_content');
     $('.main').find('.accesskey').prependTo('.main .mp_content');
     $('.main').find('.accesskey').prependTo('.main .innerpage_content')
-    
+
     $('.main').find('section[class^="col"]').appendTo('.main .mp_content');
     $('.main_menu').insertBefore('.content');
     // console.log(1);

@@ -47,7 +47,7 @@ $(function() {
     $('.main').wrapInner('<div class="container"></div>');
     $('.main').addClass('innerpage');
 
-    $('.innerpage .content').addClass('innerpage_content')
+    $('.innerpage .content').addClass('innerpage_content');
     $('.main').find('.accesskey').prependTo('.main .mp_content');
     $('.main').find('.accesskey').prependTo('.main .innerpage_content')
     
