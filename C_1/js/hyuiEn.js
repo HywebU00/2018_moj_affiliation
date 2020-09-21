@@ -43,11 +43,12 @@ $(function() {
     _body.prepend('<aside class="sidebar"><div class="m_area"><button type="button" class="sidebarClose">關閉</button></div><div class="menu_overlay"></div></aside>');
     $('header .container').prepend('<button type="button" class="sidebarCtrl">側欄選單</button><button type="button" class="searchCtrl">查詢</button>');
     $('.main_menu').remove();
+
+    $('.main').removeAttr('id').addClass('innerpage');
     $('.main').append('<div class="main_menu"></div><div id="center" class="mp_content"></div>');
     $('.main').wrapInner('<div class="container"></div>');
-    $('.main').addClass('innerpage');
 
-    $('.innerpage .content').addClass('innerpage_content');
+    $('.innerpage .content').attr('id','center').addClass('innerpage_content');
     $('.main').find('.accesskey').prependTo('.main .mp_content');
     $('.main').find('.accesskey').prependTo('.main .innerpage_content')
 
