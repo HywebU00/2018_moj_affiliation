@@ -3,10 +3,10 @@
 
 //-------------------------------------------------------------顏色---------//
 // 定義顏色 此顏色可自由變換
-$primaryColor:				#104c9b;				//主色
+$primaryColor:				#007c75;				//主色
 $secondaryColor:			#aa8d4b; 				//輔色
-$lightColor:				#008fd5;				//點綴
-$linkColor:					#008fd6;				//連結
+$lightColor:				#0c98ba;				//點綴
+$linkColor:					#0c98ba;				//連結
 $importantColor:			#fff;				//重要
 // 但注意真實顏色與語意的關聯必須易於辨識
 
@@ -21,22 +21,22 @@ $color-dark: 				#262626;
 $color-hr:					#666;		  			 //hr顏色
 $color-word:				#222;                    //一般字的顏色
 // 連結顏色
-$aColor:					#008fd5;
-$aHover:					#104c9b;
+$aColor:					#077594;
+$aHover:					#007c75;
 
 // 表單focus顏色
-$form-focus:				#008fd5;				//表單
+$form-focus:				#077594;				//表單
 //-------------------------------------------------------------法務部專屬設定------//
 
 $fatfooter-color:			#dcdcdc;				//fatfooter底色
 $footer-color:				darken($primaryColor, 20);				//footer底色
 $footer-btn:				#3d3229;				//footer按鈕
 
-$third-color:				#003f96; 				//3th
-$fourth-color:				#006da3; 				//4th
+$third-color:				#0271D1;				//3th
+$fourth-color:				#086E87; 				//4th
 
 $more:						darken($primaryColor, 15);				//more
-$baseline:					#eac776;				//h2底線
+$baseline:					#C9A70A;				//h2底線
 $gotoTop:					$secondaryColor;					//gotoTop
 //-------------------------------------------------------------字型--------//
 
