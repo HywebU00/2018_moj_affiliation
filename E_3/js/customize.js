@@ -292,7 +292,7 @@ $(function() {
     }
     //設定resize 計時器
     var menuResize;
-    $(window).bind("load resize", function(event) {f
+    $(window).bind("load resize", function(event) {
         clearTimeout(menuResize);
         menuResize = setTimeout(function() {
             colHeight();
