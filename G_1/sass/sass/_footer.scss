@@ -157,10 +157,9 @@ footer {
             margin: 0px 15px 5px 0px;
             a {
                 display: block; // padding: .5em 1em;
-                color: #FFF;
                 @include border-radius(3px);
                 @include transition(all, .3s, ease-out);
-                color: $importantColor;
+                color: $secondaryColor;
                 &:hover,
                 &:focus {
                     color: #FFF;

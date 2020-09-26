@@ -639,13 +639,13 @@
     position: relative;
 
     @include screen('tablet') {
-        min-height: 460px;
+        min-height: 400px;
         margin-bottom: 0;
+        background: none;
     }
 
     @include screen('mobile') {
         min-height: 320px;
-        background: none;
         //@include gutter(0);
         padding-bottom: 0em !important;
     }
@@ -691,6 +691,9 @@
             position: relative;
             height: 100%;
             @include box-sizing;
+            @include screen('tablet'){
+                width: 0;
+            }
 
             &+.col {
                 padding-right: calc((100% - 1200px) / 2 + 60px);
@@ -701,6 +704,12 @@
 
                 @media screen and (max-width: 1200px) {
                     padding-right: 60px;
+                }
+
+                @include screen('tablet'){
+                    padding: 0;
+                    width: 100%;
+                    justify-content: center;
                 }
             }
         }
@@ -1490,7 +1499,7 @@ section {
     padding-bottom: 3em;
     @include gutter;
 
-    @include screen('mobile') {
+    @include screen('tablet') {
         @include gutter(0);
     }
 
@@ -2572,6 +2581,7 @@ section {
                     -webkit-line-clamp: 2;
                     overflow: hidden;
                     height: 46px;
+                    color:$color-word;
 
                     &:hover {
                         color: $aHover;
@@ -2594,6 +2604,7 @@ section {
         font-size: 1em;
         padding: .85em 1em;
         margin: 0;
+        word-wrap:break-word;
 
         &:after {
             content: "";

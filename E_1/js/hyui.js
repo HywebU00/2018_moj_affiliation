@@ -50,6 +50,11 @@ $(function() {
     /*-----------------------------------*/
     _body.prepend('<aside class="sidebar"><div class="m_area"><button type="button" class="sidebarClose">關閉</button></div><div class="menu_overlay"></div></aside>');
     $('header .container').append('<button type="button" class="sidebarCtrl">側欄選單</button><button type="button" class="searchCtrl">查詢</button>');
+
+    $('.main').removeAttr('id');
+    $('.main').find('.accesskey').prependTo('.main_banner .col+.col');
+    $('.main_banner .col+.col').attr('id','center');
+
     var menu_status = false;
     var _sidebar = $('.sidebar'),
         _search = $('.search'),
@@ -174,6 +179,12 @@ $(function() {
                 $('.m_search').hide();
                 search_mode = false;
             });
+
+            //主圖有輪播時隱藏
+            $('.main_banner').has('.mp_slider').children('.main_img').hide();
+            $('.main_banner').has('.mp_slider').find('.slogan').hide();
+            $('.main_banner').has('.mp_slider').css('min-height', 'auto');
+
         } else {
             /*-----------------------------------*/
             /////////////// PC版設定 /////////////

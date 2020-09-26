@@ -1568,7 +1568,6 @@ $(function() {
     });
       //不同語系
     var weblang = $('html').attr('lang');
-    $('.innerpage .content').addClass('innerpage_content')
     if (weblang.substring(0, 2) == 'zh') {
         // console.log("中文");
         $('.slick-prev').attr('title', '上一筆');
@@ -1576,8 +1575,8 @@ $(function() {
         $('.slick-prev').attr('aria-label', '前一則');
         $('.slick-next').attr('aria-label', '下一則');
         $('header').find('.accesskey').attr('title', '上方功能區塊');
-        $('.main').find('.accesskey').prependTo('.mp_content').attr('title', '中央內容區塊');
-        $('.main').find('.accesskey').prependTo('.innerpage_content').attr('title', '中央內容區塊');
+        $('.main').find('.accesskey').attr('title', '中央內容區塊');
+        
         $('footer').find('.accesskey').attr('title', '下方功能區塊');
         $('.search').find('.accesskey').attr('title', '關鍵字搜尋：文章關鍵字搜尋');
     } else if (weblang.substring(0, 2) == 'en') {
@@ -1585,9 +1584,7 @@ $(function() {
         $('.slick-prev').attr('title', 'previous');
         $('.slick-next').attr('title', 'next');
         $('header').find('.accesskey').attr('title', 'header');
-        // $('.main').find('.accesskey').attr('title', 'content');
-        $('.main').find('.accesskey').prependTo('.mp_content').attr('title', 'content');
-        $('.main').find('.accesskey').prependTo('.innerpage_content').attr('title', 'content');
+        $('.main').find('.accesskey').attr('title', 'content');
         $('footer').find('.accesskey').attr('title', 'footer');
         $('.search').find('.accesskey').attr('title', 'search');
     } else if (weblang.substring(0, 2) == 'vi') {

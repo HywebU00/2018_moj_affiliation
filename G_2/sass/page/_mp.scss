@@ -1096,8 +1096,8 @@
             h3,
             .heading-3 {
                 display: block;
-                background: darken($primaryColor, 10);
-                color: #FFF;
+                background: $primaryColor;
+                color: #000;
                 padding: .8em;
                 margin-bottom: 0;
                 @include text-overflow;
@@ -1734,6 +1734,10 @@
                 padding: .5em .5em .5em 1.2em;
                 position: relative;
                 color: $color-word;
+                &:hover,
+                &:focus{
+                    color:$aHover;
+                }
 
                 &:before {
                     position: absolute;
@@ -2670,8 +2674,9 @@
                     overflow: hidden;
                     height: 46px;
 
-                    &:hover {
-                        color: darken($secondaryColor, 10);
+                    &:hover,
+                    &:focus {
+                        color: $aHover;
                     }
                 }
             }
@@ -2691,6 +2696,7 @@
         margin: 0;
         box-shadow: 0 -2px 10px rgba(0, 0, 0, .3);
         text-align: center;
+        word-wrap:break-word;
 
         &:after {
             content: "";

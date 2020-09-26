@@ -165,7 +165,7 @@
                 text-decoration: none;
                 &:hover,
                 &:focus {
-                    color:$aColor;
+                    color:$aHover;
                 }
                 &:after {
                     @extend %slash;

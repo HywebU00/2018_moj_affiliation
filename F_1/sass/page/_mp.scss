@@ -1729,8 +1729,9 @@
             position: relative;
             padding-left: 1.8em !important;
             transition: .3s ease-out;
-            &:hover{
-                color:darken($primaryColor, 10);
+            &:hover,
+            &:focus{
+                color:$aHover;
             }
             &:before {
                 position: absolute;
@@ -2254,6 +2255,7 @@
         margin:0;
         text-align: center;
         box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+        word-wrap:break-word;
         &:after{
             content:"";
             position:absolute;

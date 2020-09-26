@@ -162,7 +162,7 @@ footer {
                 @include transition(all, .3s, ease-out);
                 &:hover,
                 &:focus {
-                    color: darekn($aHover, 10);
+                    color: darken($aHover, 10);
                 }
             }
         }

@@ -1096,7 +1096,7 @@
             h3,
             .heading-3 {
                 display: block;
-                background: darken($primaryColor, 10);
+                background: $primaryColor;
                 color: #FFF;
                 padding: .8em;
                 margin-bottom: 0;
@@ -1729,6 +1729,10 @@
                 padding: .5em .5em .5em 1.2em;
                 position: relative;
                 color: $color-word;
+                &:hover,
+                &:focus{
+                    color:$aHover;
+                }
 
                 &:before {
                     position: absolute;
@@ -2070,8 +2074,9 @@
             padding-left: 1.8em !important;
             transition: .3s ease-out;
 
-            &:hover {
-                color: darken($primaryColor, 10);
+            &:hover,
+            &:focus {
+                color: $aHover;
             }
 
             &:before {
@@ -2503,7 +2508,7 @@
             &:hover,
             &:focus {
                 cursor: pointer;
-                background: lighten($fourth-color, 2);
+                background: lighten($secondaryColor, 2);
                 box-shadow: 2px 2px 5px RGBA(0, 0, 0, .7) inset;
             }
         }
@@ -2660,7 +2665,8 @@
                     overflow: hidden;
                     height: 46px;
 
-                    &:hover {
+                    &:hover,
+                    &:focus {
                         color: $aHover;
                     }
                 }
@@ -2680,6 +2686,7 @@
         padding: .85em 1em;
         margin: 0;
         text-align: center;
+        word-wrap:break-word;
 
         &:after {
             content: "";

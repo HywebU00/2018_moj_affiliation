@@ -343,14 +343,15 @@
             padding:0 15px;
         }
         .form_grp {
-            width: 65%;
+            //width: 65%;
             height: auto;
             padding: 0 !important;
             margin-top: 0;
             text-align: right;
-            float: left;
+            //float: left;
             height: 50px;
             position: relative;
+            flex:1 0 auto;
             @include box-sizing();
             input {
                 width: 100%;

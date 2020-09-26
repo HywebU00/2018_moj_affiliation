@@ -166,6 +166,12 @@ $(function() {
                 $('.m_search').hide();
                 search_mode = false;
             });
+
+            //主圖有輪播時隱藏
+            $('.main_banner').has('.mp_slider').children('.main_img').hide();
+            $('.main_banner').has('.mp_slider').children('.slogan').hide();
+            $('.main_banner').has('.mp_slider').css('min-height', 'auto');
+            
         } else {
             /*-----------------------------------*/
             /////////////// PC版設定 /////////////
