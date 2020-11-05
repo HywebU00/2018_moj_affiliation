@@ -42,6 +42,11 @@ $(function() {
     /*-----------------------------------*/
     _body.prepend('<aside class="sidebar"><div class="m_area"><button type="button" class="sidebarClose">關閉</button></div><div class="menu_overlay"></div></aside>');
     $('header .container').prepend('<button type="button" class="sidebarCtrl">側欄選單</button><button type="button" class="searchCtrl">search</button>');
+
+    $('.main').removeAttr('id');
+    $('.main').find('.accesskey').prependTo('.main_banner .col+.col');
+    $('.main_banner .col+.col').attr('id','center');
+    
     var menu_status = false;
     var _sidebar = $('.sidebar'),
         _search = $('.search'),

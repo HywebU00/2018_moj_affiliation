@@ -42,6 +42,11 @@ $(function() {
     /*-----------------------------------*/
     _body.prepend('<aside class="sidebar"><div class="m_area"><button type="button" class="sidebarClose">關閉</button></div><div class="menu_overlay"></div></aside>');
     $('header .container').prepend('<button type="button" class="sidebarCtrl">側欄選單</button><button type="button" class="searchCtrl">search</button>');
+
+    $('.main').removeAttr('id');
+    $('.main').find('.accesskey').prependTo('.main_banner .col+.col');
+    $('.main_banner .col+.col').attr('id','center');
+
     var menu_status = false;
     var _sidebar = $('.sidebar'),
         _search = $('.search'),
@@ -183,8 +188,17 @@ $(function() {
             _search.appendTo('.header .container');
             _menu.appendTo('.header .container');
             _search.removeClass('m_search');
-            _search.show();
+            _search.hide();
             _menu.appendTo(_mainMenu);
+            $('.searchCtrl').off().click(function(event) {
+                $('.search').stop(true, true).fadeToggle();
+                $('.search').find('input[type="text"]').focus();
+            });
+            // 如果點在外面
+            $('.main').off().on('click touchend', function(e) {
+                _search.hide();
+                search_mode = false;
+            });
             // 副選單滑出
             liHasChild.on({
                 mouseenter: function() {

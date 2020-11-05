@@ -2526,8 +2526,13 @@
         // background: $color-dark;
         padding: 0 .25em;
     }
-
+    .auction_text{
+        font-size: 1.125em;
+        line-height: 1.5;
+    }
     .auction_remain {
+        font-size: 1.25em;
+        padding: 1.5em 0;
         .day {
             display: inline-block;
             font-size: 3.125em;
@@ -2538,7 +2543,7 @@
             padding: .5em;
             vertical-align: middle;
             color: #fff;
-            margin: .5em .2em;
+            margin: 0 .2em;
 
         }
     }
