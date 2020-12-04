@@ -2204,97 +2204,122 @@
     }
 }
 //卡片式條列
-.multi_cards{
-    margin:1em 0;
-    ul{
+.multi_cards {
+    margin: 1em 0;
+
+    ul {
         @include li-reset;
-        overflow:hidden;
-    }
-}
-.list_card{
-    @include make-xs-column(12);
-    @include make-sm-column(6);
-    @include make-md-column(4);
-    @include make-lg-column(4);
-    @include gutter();
-    text-align: left;
-    margin-bottom: 1em;
-    &>.card_content{
-        position:relative;
-        background: #fff;
-        padding:1.5em 1em 1em;
-        box-shadow: 0 2px 5px rgba(0,0,0,.2);
-        min-height: 250px;
-        >ul{
-            li{
-               padding:.5em 0;
-               display:flex;
-               border-bottom: 1px dashed $color-gray;
-               time{
-                    flex:0 0 80px;
-                    margin-right: 1em;
-                    font-size:.875em;
-                    color:lighten($color-word, 20);
-                }
-                a{
-                    flex:0 1 auto;
-                    color:$color-word;
-                    display: -webkit-box;
-                    -webkit-box-orient: vertical;
-                    -webkit-line-clamp: 2;
-                     overflow: hidden;
-                     height:46px;
-                     &:hover{
-                        color:$aHover;
-                     }
-                }
-            }
-        }
-        a.more{
-            margin:1em auto;
-        }
-    }
-    h2{
-        position:relative;
-        background: darken($secondaryColor, 10);
-        color:#fff;
-        font-size:1em;
-        padding:.85em 1em;
-        margin:0;
-        text-align: center;
-        box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
-        word-wrap:break-word;
-        &:after{
-            content:"";
-            position:absolute;
-            z-index: 10;
-            left:50%;
-            top:100%;
-            margin-left:-3px;
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 8px 6px 0 6px;
-            border-color:darken($secondaryColor, 10) transparent transparent transparent;
-        }
-    }
-    &:nth-child(3n+2){
-        h2{
-            background: $third-color;
-            &:after{
-                border-color:$third-color transparent transparent transparent;
-            }
-        }
-    }
-    &:nth-child(3n+3){
-        h2{
-            background: $fourth-color;
-            &:after{
-                border-color:$fourth-color transparent transparent transparent;
-            }
-        }
+        overflow: hidden;
     }
 
+    .list_card {
+        @include make-xs-column(12);
+        @include make-sm-column(6);
+        @include make-md-column(4);
+        @include make-lg-column(4);
+        @include gutter();
+        text-align: left;
+        margin-bottom: 1em;
+
+        &>.card_content {
+            position: relative;
+            background: #fff;
+            padding: 1.5em 1em 1em;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, .2);
+            min-height: 250px;
+            z-index: 1;
+
+            &:after {
+                content: "";
+                position: absolute;
+                z-index: 10;
+                left: 50%;
+                margin-left: -4px;
+                top: 0;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 8px 6px 0 6px;
+                border-color: darken($secondaryColor, 10) transparent transparent transparent;
+            }
+
+            >ul {
+                li {
+                    padding: .5em 0;
+                    display: flex;
+                    border-bottom: 1px dashed $color-gray;
+
+                    time {
+                        flex: 0 0 80px;
+                        margin-right: 1em;
+                        font-size: .875em;
+                        color: lighten($color-word, 20);
+                    }
+
+                    a {
+                        flex: 0 1 auto;
+                        color: $color-word;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 2;
+                        overflow: hidden;
+                        height: 46px;
+
+                        &:hover {
+                            color: $aHover;
+                        }
+                    }
+                }
+            }
+
+            a.more {
+                margin: 1em auto;
+            }
+        }
+
+        h2,
+        h2.title {
+            position: relative;
+            background: darken($secondaryColor, 10);
+            color: #fff;
+            font-size: 1em;
+            padding: .85em 1em;
+            margin: 0;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, .2);
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            &:after {
+                content: none;
+            }
+        }
+
+        &:nth-child(3n+2) {
+            h2 {
+                background: $third-color;
+            }
+
+            >.card_content {
+                &:after {
+                    border-color: $third-color transparent transparent transparent;
+                }
+            }
+        }
+
+        &:nth-child(3n+3) {
+            h2 {
+                background: $fourth-color;
+            }
+
+            >.card_content {
+                &:after {
+                    border-color: $fourth-color transparent transparent transparent;
+                }
+            }
+        }
+
+    }
 }
 //小廣告展開/收合
 .ad_banner_accordion{

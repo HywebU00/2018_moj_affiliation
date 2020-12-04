@@ -640,7 +640,7 @@
     @include screen('tablet') {
         min-height: 400px;
         margin-bottom: 0;
-        background: none; 
+        background: none;
     }
 
     @include screen('mobile') {
@@ -690,7 +690,8 @@
             position: relative;
             height: 100%;
             @include box-sizing;
-            @include screen('tablet'){
+
+            @include screen('tablet') {
                 width: 0;
             }
 
@@ -705,7 +706,8 @@
                 @media screen and (max-width: 1200px) {
                     padding-right: 60px;
                 }
-                @include screen('tablet'){
+
+                @include screen('tablet') {
                     padding: 0;
                     width: 100%;
                     justify-content: center;
@@ -891,20 +893,24 @@ section {
 
         .container {
             max-width: 1200px !important;
-            &>.col:nth-child(1){
-               &+.col{
+
+            &>.col:nth-child(1) {
+                &+.col {
                     padding-right: 0;
                     display: block;
+
                     @media screen and (max-width: 1200px) {
                         padding-right: 0;
                     }
-               } 
+                }
             }
+
             @include screen('mobile') {
                 @include gutter;
             }
 
         }
+
         .main_img {
             left: 0;
             width: 100%;
@@ -2419,13 +2425,16 @@ section {
         // background: $color-dark;
         padding: 0 .25em;
     }
-    .auction_text{
+
+    .auction_text {
         font-size: 1.125em;
         line-height: 1.5;
     }
+
     .auction_remain {
         font-size: 1.25em;
         padding: 1.5em 0;
+
         .day {
             display: inline-block;
             font-size: 3em;
@@ -2525,107 +2534,116 @@ section {
         @include li-reset;
         overflow: hidden;
     }
-}
 
-.list_card {
-    @include make-xs-column(12);
-    @include make-sm-column(6);
-    @include make-md-column(4);
-    @include make-lg-column(4);
-    @include gutter();
-    text-align: left;
-    margin-bottom: 1em;
+    .list_card {
+        @include make-xs-column(12);
+        @include make-sm-column(6);
+        @include make-md-column(4);
+        @include make-lg-column(4);
+        @include gutter();
+        text-align: left;
+        margin-bottom: 1em;
 
-    @include screen('mobile') {
-        margin-bottom: 2em;
-    }
+        @include screen('mobile') {
+            margin-bottom: 2em;
+        }
 
-    &>.card_content {
-        position: relative;
-        background: #f6f6f6;
-        padding: 1.5em 1em 3em;
-        min-height: 250px;
+        &>.card_content {
+            position: relative;
+            background: #f6f6f6;
+            padding: 1.5em 1em 3em;
+            min-height: 250px;
+            &:after {
+                content: "";
+                position: absolute;
+                z-index: 10;
+                left: 1em;
+                top: 0;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 8px 6px 0 6px;
+                border-color: darken($secondaryColor, 10) transparent transparent transparent;
+            }
+            >ul {
+                li {
+                    padding: .5em 0;
+                    display: flex;
+                    border-bottom: 1px dashed $color-gray;
 
-        >ul {
-            li {
-                padding: .5em 0;
-                display: flex;
-                border-bottom: 1px dashed $color-gray;
+                    time {
+                        flex: 0 0 80px;
+                        margin-right: 1em;
+                        font-size: .875em;
+                        color: lighten($color-word, 20);
+                    }
 
-                time {
-                    flex: 0 0 80px;
-                    margin-right: 1em;
-                    font-size: .875em;
-                    color: lighten($color-word, 20);
-                }
+                    a {
+                        flex: 0 1 auto;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 2;
+                        overflow: hidden;
+                        height: 46px;
+                        color: $color-word;
 
-                a {
-                    flex: 0 1 auto;
-                    display: -webkit-box;
-                    -webkit-box-orient: vertical;
-                    -webkit-line-clamp: 2;
-                    overflow: hidden;
-                    height: 46px;
-                    color:$color-word;
-
-                    &:hover {
-                        color: $aHover;
+                        &:hover {
+                            color: $aHover;
+                        }
                     }
                 }
             }
-        }
 
-        a.more {
-            position: absolute;
-            bottom: -2em;
-            right: 1em;
-        }
-    }
-
-    h2 {
-        position: relative;
-        background: darken($secondaryColor, 10);
-        color: #fff;
-        font-size: 1em;
-        padding: .85em 1em;
-        margin: 0;
-        word-wrap:break-word;
-
-        &:after {
-            content: "";
-            position: absolute;
-            z-index: 10;
-            left: 1em;
-            top: 100%;
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 8px 6px 0 6px;
-            border-color: darken($secondaryColor, 10) transparent transparent transparent;
-        }
-    }
-
-    &:nth-child(3n+2) {
-        h2 {
-            background: $third-color;
-
-            &:after {
-                border-color: $third-color transparent transparent transparent;
+            a.more {
+                position: absolute;
+                bottom: -2em;
+                right: 1em;
             }
         }
-    }
 
-    &:nth-child(3n+3) {
-        h2 {
-            background: $fourth-color;
+        h2,
+        h2.title {
+            position: relative;
+            background: darken($secondaryColor, 10);
+            color: #fff;
+            font-size: 1em;
+            padding: .85em 1em;
+            margin: 0;
+            text-align: left;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
 
             &:after {
-                border-color: $fourth-color transparent transparent transparent;
+                content: none;
             }
         }
-    }
 
+        &:nth-child(3n+2) {
+            h2 {
+                background: darken($third-color, 10);
+            }
+            >.card_content{
+                &:after {
+                    border-color: darken($third-color, 10) transparent transparent transparent;
+                }
+            }
+        }
+
+        &:nth-child(3n+3) {
+            h2 {
+                background: darken($fourth-color, 10);
+            }
+            >.card_content{
+                &:after {
+                    border-color: darken($fourth-color,10) transparent transparent transparent;
+                }
+            }
+        }
+
+    }
 }
+
 
 //小廣告展開/收合
 .ad_banner_accordion {
