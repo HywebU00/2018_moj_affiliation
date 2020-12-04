@@ -2436,24 +2436,24 @@
 
         &:nth-child(3n+2) {
             h2 {
-                background: $third-color;
+                background: darken($third-color, 10);
             }
 
             >.card_content {
                 &:after {
-                    border-color: $third-color transparent transparent transparent;
+                    border-color: darken($third-color, 10) transparent transparent transparent;
                 }
             }
         }
 
         &:nth-child(3n+3) {
             h2 {
-                background: $fourth-color;
+                background: darken($fourth-color, 10);
             }
 
             >.card_content {
                 &:after {
-                    border-color: $fourth-color transparent transparent transparent;
+                    border-color: darken($fourth-color, 10) transparent transparent transparent;
                 }
             }
         }

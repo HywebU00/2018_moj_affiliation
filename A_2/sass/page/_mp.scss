@@ -2110,12 +2110,12 @@
 
         &:nth-child(3n+2) {
             h2 {
-                background: $third-color;
+                background: darken($third-color, 10);
             }
 
             >.card_content {
                 &:after {
-                    border-color: $third-color transparent transparent transparent;
+                    border-color: darken($third-color, 10) transparent transparent transparent;
                 }
             }
         }
