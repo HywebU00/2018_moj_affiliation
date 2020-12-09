@@ -138,6 +138,11 @@
                     color: #555;
                     font-weight: normal;
                     line-height: 1.65em;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 4;
+                    max-height:6.5em;
+                    overflow:hidden;    
                 }
                 span.dept {
                     display: none;
@@ -194,13 +199,13 @@
                             height:auto;
                         }
                     }
-                    ~ p{
-                        display: -webkit-box;
-                        -webkit-box-orient: vertical;
-                        -webkit-line-clamp: 4;
-                        max-height:6.5em;
-                        overflow:hidden;
-                    }
+                    // ~ p{
+                    //     display: -webkit-box;
+                    //     -webkit-box-orient: vertical;
+                    //     -webkit-line-clamp: 4;
+                    //     max-height:6.5em;
+                    //     overflow:hidden;
+                    // }
                 }
                 >p{
                     &:not(:first-of-type){
