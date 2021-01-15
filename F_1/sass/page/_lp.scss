@@ -263,15 +263,17 @@
                     }
                 }
                 .caption {
-                    height: 10em;
+                    height: 5.6em;
                     overflow: hidden;
                     @include gutter;
                     h3 {
                         line-height: 1.5em;
                         height: 3em;
                         overflow: hidden;
-                        display: block;
-                        border-bottom: 1px dotted #DDD;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                        text-overflow: ellipsis;
                         color:$secondaryColor;
                     }
                     time, .counter {
