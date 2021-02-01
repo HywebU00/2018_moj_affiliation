@@ -101,6 +101,7 @@
                 padding: 1em 0 1em 4em;
                 border-bottom: 1px solid #DDD;
                 position: relative; // outline: 1px solid blue;
+                overflow: hidden; 
                 a {
                     .title {
                         margin: .5em 0;
