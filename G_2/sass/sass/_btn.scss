@@ -18,8 +18,8 @@ $btn-radius:4px;
     @include border-radius($btn-radius);
     &:hover,
     &:focus {
-        border: 1px solid lighten($form-focus, 20);
-        background: lighten($form-focus, 20);
+        border: 1px solid darken($form-focus, 10);
+        background: darken($form-focus, 10);
          // @include box-shadow(0px 2px 2px lighten($form-focus, 20));
         cursor: pointer;
         color: #FFF;

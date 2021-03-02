@@ -22,7 +22,7 @@ $color-hr:					#666;		  			 //hr顏色
 $color-word:				#222;                    //一般字的顏色
 // 連結顏色
 $aColor:					#077594;
-$aHover:					#007c75;
+$aHover:					darken($aColor, 10);
 
 // 表單focus顏色
 $form-focus:				#077594;				//表單

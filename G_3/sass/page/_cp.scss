@@ -91,18 +91,18 @@
         }
         p {
             a {
-                color: $aHover;
+                color: $aColor;
                 &:hover {
-                    color: $importantColor;
+                    color: $aHover;
                     text-decoration: underline;
                 }
             }
         }
         a {
-            color: $aHover;
+            color: $aColor;
             word-break: break-all;
             &:hover {
-                color: lighten($aHover, 10);
+                color: $aHover;
             }
             &.download {
                 color: #FFF;
