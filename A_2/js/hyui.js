@@ -478,7 +478,8 @@ $(function() {
         $('html, body').animate({ 
             scrollTop: $("#goCenter").offset().top
     }, 2000);
-        e.preventDefault();
+    $('#goCenter').focus();
+            e.preventDefault();
     });
     $('.scrollToTop').keydown(function(e) {
         _body.find('a.goCenter').focus();
