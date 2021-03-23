@@ -475,7 +475,9 @@ $(function() {
     /////click event to scroll to top//////
     /*-----------------------------------*/
     $('.scrollToTop').click(function(e) {
-        $('html, body').animate({ scrollTop: 0 }, 400, 'easeOutQuint');
+        $('html, body').animate({ 
+            scrollTop: $("#goCenter").offset().top
+    }, 2000);
         e.preventDefault();
     });
     $('.scrollToTop').keydown(function(e) {
