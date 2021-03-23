@@ -474,10 +474,10 @@ $(function() {
     /*-----------------------------------*/
     /////click event to scroll to top//////
     /*-----------------------------------*/
-    $('.scrollToTop').click(function(e) {
-        $('html, body').animate({ scrollTop: 0 }, 400, 'easeOutQuint');
-        e.preventDefault();
-    });
+    // $('.scrollToTop').click(function(e) {
+    //     $('html, body').animate({ scrollTop: 0 }, 400, 'easeOutQuint');
+    //     e.preventDefault();
+    // });
     $('.scrollToTop').keydown(function(e) {
         _body.find('a.goCenter').focus();
         e.preventDefault();
