@@ -479,10 +479,10 @@ $(function() {
         e.preventDefault();
     });
     $('.scrollToTop').keydown(function(e) {
-        _body.find('.goCenter').focus();
+        _body.find('a.goCenter').focus();
         e.preventDefault();
-         if (e.keyCode == 13 /*Enter*/) {
-            $('.goCenter').focus();
+         if (e.keyCode == 13) {
+            $('#goCenter').focus();
             e.preventDefault();
          }
     });
