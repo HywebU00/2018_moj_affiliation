@@ -2192,6 +2192,7 @@
                 <div class="container">
                     <div class="chart">
                         <h2 class="title">統計圖表</h2>
+                        <div id="columnchart_material" style="width: 100%; height: 500px;"></div>
                     </div>
                 </div>
             </section>
@@ -2201,6 +2202,7 @@
                     <div class="col">
                         <div class="free">
                             <h2 class="title">自由欄位</h2>
+                            
                         </div>
                     </div>
                     <div class="col">
@@ -2568,7 +2570,7 @@
     <script src="vendor/slick/slick.min.js "></script>
     <script src="vendor/slick/slick-lightbox.js "></script>
     <!-- hyUI -->
-    <script src="js/hyui.js"></script>
+    <script src="js/hyuiEn.js"></script>
     <!-- 客製js -->
     <script src="js/customize.js"></script>
     <script>
@@ -2586,6 +2588,32 @@
         $('html, body').stop(true, true).animate({ scrollTop: $('#B').offset().top }, 800, 'easeOutExpo');
         e.preventDefault();
     });
+    </script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Sales', 'Expenses', 'Profit'],
+          ['2014', 1000, 400, 200],
+          ['2015', 1170, 460, 250],
+          ['2016', 660, 1120, 300],
+          ['2017', 1030, 540, 350]
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Company Performance',
+            subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+          }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
     </script>
 </body>
 
