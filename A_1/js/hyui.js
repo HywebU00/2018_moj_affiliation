@@ -99,7 +99,7 @@ $(function() {
     _menu.find('li:last>a').focusout(function() {
         _menu.find('li ul').hide();
     });
-
+    _sidebar.appendTo('.header .container');
     function mobileMenu() {
         // switch PC/MOBILE
         ww = _window.outerWidth();
@@ -176,7 +176,7 @@ $(function() {
             hideSidebar();
             _body.removeClass('noscroll');
             //_nav.prependTo('.header .container');
-            _goCenter.prependTo('body')
+            _goCenter.prependTo('body');
             _search.appendTo('.header .container');
             _menu.appendTo('.header .container');
             _search.removeClass('m_search');
