@@ -1,11 +1,11 @@
 $(function() {
-    var SearchTitle="";
+    var SearchTitle = "";
     //不同語系
     var weblang = $('html').attr('lang');
     if (weblang.substring(0, 2) == 'zh') {
-        SearchTitle="查詢";
+        SearchTitle = "查詢";
     } else if (weblang.substring(0, 2) == 'en') {
-        SearchTitle="search";
+        SearchTitle = "search";
     }
     /*-----------------------------------*/
     ///////////// fix iOS bug /////////////
@@ -49,7 +49,7 @@ $(function() {
     ////////////// 行動版選單切換////////////
     /*-----------------------------------*/
     _body.prepend('<aside class="sidebar"><div class="m_area"><button type="button" class="sidebarClose">關閉</button></div><div class="menu_overlay"></div></aside>');
-    $('header .container').prepend('<button type="button" class="sidebarCtrl">側欄選單</button><button type="button" class="searchCtrl" title="'+SearchTitle+'">查詢</button>');
+    $('header .container').prepend('<button type="button" class="sidebarCtrl">側欄選單</button><button type="button" class="searchCtrl" title="' + SearchTitle + '">查詢</button>');
     var menu_status = false;
     var _sidebar = $('.sidebar'),
         _search = $('.search'),
@@ -120,7 +120,7 @@ $(function() {
             _overlay.hide();
             _nav.prependTo(_mArea);
             _menu.prependTo(_mArea);
-            _search.prependTo(_body);
+            //_search.prependTo(_body);
             _search.addClass('m_search');
             _mArea.css({
                 'margin-left': _mArea.width() * -1 + 'px'
@@ -134,7 +134,7 @@ $(function() {
                     $(this).children('ul').stop(true, true).slideUp('600', 'easeOutQuint');
                 }
             });
-             // 副選單點出
+            // 副選單點出
             liHasChild.off().on('mouseenter,mouseleave');
             liHasChild.on('touchstart', function() {
                 $(this).off('mouseenter,mouseleave');
@@ -187,11 +187,12 @@ $(function() {
             _menu.appendTo('.header .container');
             _search.removeClass('m_search');
             _search.show();
-
+            _sidebar.appendTo('.header .container');
+            $('#aU').prependTo('.header .container');
             $('.searchCtrl').off().click(function(event) {
-                    $('.search').stop(true,true).fadeToggle();
-                     $('.search').find('input[type="text"]').focus();
-                });
+                $('.search').stop(true, true).fadeToggle();
+                $('.search').find('input[type="text"]').focus();
+            });
 
             // _menu.appendTo(_mainMenu);
             // 副選單滑出
@@ -497,6 +498,7 @@ $(function() {
     /*-----------------------------------*/
     $('.scrollToTop').click(function(e) {
         $('html, body').animate({ scrollTop: 0 }, 400, 'easeOutQuint');
+        $('a.goCenter').focus();
         e.preventDefault();
     });
     $('.scrollToTop').keydown(function(e) {
@@ -545,7 +547,7 @@ $(function() {
             $(this).closest('.upload_grp').find('.upload_file').attr("value", names);
         }
     });
-        // hitsory
+    // hitsory
     var history = 240; // 超過240個字以"..."取代
     $(".text_block").find('p').each(function(i) {
         if ($(this).text().length > history) {
@@ -592,7 +594,7 @@ $(function() {
             $('.search').hide();
             $('h1 a').focus();
         });
-    }else{
+    } else {
         $('.search').find('.btn_grp input').focusout(function(event) {
             $('.search').hide();
         });
@@ -606,4 +608,6 @@ $(function() {
             $('html, body').stop(true, true).animate({ scrollTop: $('.main').find('.accesskey').offset().top }, 800, 'easeOutExpo');
         }
     });
+    $('.goCenter').removeAttr('tabindex');
+    $('#aU').removeAttr('tabindex');
 });

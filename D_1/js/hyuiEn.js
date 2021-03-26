@@ -120,7 +120,7 @@ $(function() {
             _overlay.hide();
             _nav.prependTo(_mArea);
             _menu.prependTo(_mArea);
-            _search.prependTo(_body);
+            //_search.prependTo(_body);
             _search.addClass('m_search');
             _mArea.css({
                 'margin-left': _mArea.width() * -1 + 'px'
@@ -187,7 +187,8 @@ $(function() {
             _menu.appendTo('.header .container');
             _search.removeClass('m_search');
             _search.hide();
-
+            _sidebar.appendTo('.header .container');
+            $('#aU').prependTo('.header .container');
             $('.searchCtrl').off().click(function(event) {
                     $('.search').stop(true,true).fadeToggle();
                      $('.search').find('input[type="text"]').focus();
@@ -501,6 +502,7 @@ $(function() {
     /*-----------------------------------*/
     $('.scrollToTop').click(function(e) {
         $('html, body').animate({ scrollTop: 0 }, 400, 'easeOutQuint');
+        $('a.goCenter').focus();
         e.preventDefault();
     });
     $('.scrollToTop').keydown(function(e) {
@@ -610,4 +612,6 @@ $(function() {
             $('html, body').stop(true, true).animate({ scrollTop: $('.main').find('.accesskey').offset().top }, 800, 'easeOutExpo');
         }
     });
+    $('.goCenter').removeAttr('tabindex');
+    $('#aU').removeAttr('tabindex');
 });

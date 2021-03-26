@@ -1463,4 +1463,5 @@ $(function() {
         $('.slick-prev').attr('title', 'previous');
         $('.slick-next').attr('title', 'next');
     }
+
 });

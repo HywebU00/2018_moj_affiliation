@@ -124,7 +124,7 @@ $(function() {
             menu_status = false;
             _sidebar.hide();
             _overlay.hide();
-            _nav.prependTo(_mArea);
+            //_nav.prependTo(_mArea);
             _menu.prependTo(_mArea);
             _search.prependTo(_body);
             _search.addClass('m_search');
@@ -194,6 +194,9 @@ $(function() {
             _search.removeClass('m_search');
             _search.show();
             _menu.appendTo(_mainMenu);
+            _sidebar.appendTo('.header .container');
+            $('#aU').prependTo('.header .container');
+
             // 副選單滑出
             liHasChild.on({
                 mouseenter: function() {
@@ -492,6 +495,7 @@ $(function() {
     /*-----------------------------------*/
     $('.scrollToTop').click(function(e) {
         $('html, body').animate({ scrollTop: 0 }, 400, 'easeOutQuint');
+        $('a.goCenter').focus();
         e.preventDefault();
     });
     $('.scrollToTop').keydown(function(e) {
@@ -591,4 +595,6 @@ $(function() {
             $('html, body').stop(true, true).animate({ scrollTop: $('.main').find('.accesskey').offset().top }, 800, 'easeOutExpo');
         }
     });
+    $('.goCenter').removeAttr('tabindex');
+    $('#aU').removeAttr('tabindex');
 });

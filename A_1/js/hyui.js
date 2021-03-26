@@ -51,7 +51,6 @@ $(function() {
         _overlay = $('.menu_overlay'),
         _mainMenu = $('.main_menu'),
         _mArea = $('.m_area');
-        _goCenter = $('a.goCenter')
     _sidebarCtrl.append('<span></span><span></span><span></span>');
     var search_mode = false;
     // 打開選單 function
@@ -110,10 +109,10 @@ $(function() {
             menu_status = false;
             _sidebar.hide();
             _overlay.hide();
-            _nav.prependTo(_mArea);
+            //_nav.prependTo(_mArea);
             _nav.prependTo('.header .container');
             _menu.prependTo(_mArea);
-            _search.prependTo(_body);
+            //_search.prependTo(_body);
             _search.addClass('m_search');
             _mArea.css({
                 'margin-left': _mArea.width() * -1 + 'px'
@@ -175,13 +174,13 @@ $(function() {
             // $('.menu .hasChild>a').off('click');
             hideSidebar();
             _body.removeClass('noscroll');
-            //_nav.prependTo('.header .container');
-            _goCenter.prependTo('body');
+            _nav.prependTo('.header .container');
             _search.appendTo('.header .container');
-            _menu.appendTo('.header .container');
+            //_menu.appendTo('.header .container');
             _search.removeClass('m_search');
             _search.show();
             _menu.appendTo(_mainMenu);
+            _sidebar.appendTo('.header .container');
             $('#aU').prependTo('.header .container');
 
             // 副選單滑出
@@ -481,7 +480,7 @@ $(function() {
     /*-----------------------------------*/
     $('.scrollToTop').click(function(e) {
         $('html, body').animate({ scrollTop: 0 }, 400, 'easeOutQuint');
-        _goCenter.focus();
+        $('a.goCenter').focus();
         e.preventDefault();
     });
     $('.scrollToTop').keydown(function(e) {
@@ -583,10 +582,12 @@ $(function() {
     /*------------------------------------*/
     /////gotoCenter on focus跳到 content/////
     /*------------------------------------*/
-    _goCenter.keydown(function(e) {
+    $('a.goCenter').keydown(function(e) {
         if (e.which == 13) {
             $('#aC').focus();
             $('html, body').stop(true, true).animate({ scrollTop: $('.main').find('.accesskey').offset().top }, 800, 'easeOutExpo');
         }
     });
+    $('.goCenter').removeAttr('tabindex');
+    $('#aU').removeAttr('tabindex');
 });
