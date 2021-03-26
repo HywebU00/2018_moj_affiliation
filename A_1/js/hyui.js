@@ -51,6 +51,7 @@ $(function() {
         _overlay = $('.menu_overlay'),
         _mainMenu = $('.main_menu'),
         _mArea = $('.m_area');
+        _goCenter = $('a.goCenter')
     _sidebarCtrl.append('<span></span><span></span><span></span>');
     var search_mode = false;
     // 打開選單 function
@@ -110,6 +111,7 @@ $(function() {
             _sidebar.hide();
             _overlay.hide();
             _nav.prependTo(_mArea);
+            _nav.prependTo('.header .container');
             _menu.prependTo(_mArea);
             _search.prependTo(_body);
             _search.addClass('m_search');
@@ -174,11 +176,14 @@ $(function() {
             hideSidebar();
             _body.removeClass('noscroll');
             //_nav.prependTo('.header .container');
+            _goCenter.prependTo('body')
             _search.appendTo('.header .container');
             _menu.appendTo('.header .container');
             _search.removeClass('m_search');
             _search.show();
             _menu.appendTo(_mainMenu);
+            $('#aU').prependTo('.header .container');
+
             // 副選單滑出
             liHasChild.on({
                 mouseenter: function() {
@@ -476,7 +481,7 @@ $(function() {
     /*-----------------------------------*/
     $('.scrollToTop').click(function(e) {
         $('html, body').animate({ scrollTop: 0 }, 400, 'easeOutQuint');
-        $('a.goCenter').focus();
+        _goCenter.focus();
         e.preventDefault();
     });
     $('.scrollToTop').keydown(function(e) {
@@ -578,7 +583,7 @@ $(function() {
     /*------------------------------------*/
     /////gotoCenter on focus跳到 content/////
     /*------------------------------------*/
-    $('a.goCenter').keydown(function(e) {
+    _goCenter.keydown(function(e) {
         if (e.which == 13) {
             $('#aC').focus();
             $('html, body').stop(true, true).animate({ scrollTop: $('.main').find('.accesskey').offset().top }, 800, 'easeOutExpo');
