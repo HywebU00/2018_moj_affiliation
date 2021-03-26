@@ -111,7 +111,7 @@ $(function() {
             _overlay.hide();
             _nav.prependTo(_mArea);
             _menu.prependTo(_mArea);
-            _search.prependTo(_body);
+            //_search.prependTo(_body);
             _search.addClass('m_search');
             _mArea.css({
                 'margin-left': _mArea.width() * -1 + 'px'
@@ -178,6 +178,8 @@ $(function() {
             _menu.appendTo('.header .container');
             _search.removeClass('m_search');
             _search.show();
+            _sidebar.appendTo('.header .container');
+            $('#aU').prependTo('.header .container');
             // _search.hide();
             $('.innerpage').parents().find('header').addClass('header-relative');
             // $('.searchCtrl').off().click(function(event) {
@@ -268,7 +270,7 @@ $(function() {
             // });
         });
     });
-    /*-----------------------------------*/
+   /*-----------------------------------*/
     /////////////fatfooter開關/////////////
     /*-----------------------------------*/
     $('.btn-fatfooter').html("CLOSE");
@@ -490,10 +492,11 @@ $(function() {
     /*-----------------------------------*/
     $('.scrollToTop').click(function(e) {
         $('html, body').animate({ scrollTop: 0 }, 400, 'easeOutQuint');
+        $('a.goCenter').focus();
         e.preventDefault();
     });
     $('.scrollToTop').keydown(function(e) {
-        _body.find('a:first').focus();
+        _body.find('a.goCenter').focus();
         e.preventDefault();
     });
     /*--------------------------------------------------------*/
@@ -596,4 +599,6 @@ $(function() {
             $('html, body').stop(true, true).animate({ scrollTop: $('.main').find('.accesskey').offset().top }, 800, 'easeOutExpo');
         }
     });
+    $('.goCenter').removeAttr('tabindex');
+    $('#aU').removeAttr('tabindex');
 });

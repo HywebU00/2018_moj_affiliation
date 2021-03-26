@@ -50,7 +50,7 @@ $(function() {
     /*-----------------------------------*/
     _body.prepend('<aside class="sidebar"><div class="m_area"><button type="button" class="sidebarClose">關閉</button></div><div class="menu_overlay"></div></aside>');
     $('header .container').append('<button type="button" class="sidebarCtrl">側欄選單</button><button type="button" class="searchCtrl">查詢</button>');
-    
+
     $('.main').removeAttr('id');
     $('.main').find('.accesskey').prependTo('.main_banner .col+.col');
     $('.main_banner .col+.col').attr('id','center');
@@ -124,7 +124,7 @@ $(function() {
             _overlay.hide();
             _nav.prependTo(_mArea);
             _menu.prependTo(_mArea);
-            _search.prependTo(_body);
+            //_search.prependTo(_body);
             _search.addClass('m_search');
             _mArea.css({
                 'margin-left': _mArea.width() * -1 + 'px'
@@ -182,7 +182,7 @@ $(function() {
 
             //主圖有輪播時隱藏
             $('.main_banner').has('.mp_slider').children('.main_img').hide();
-            $('.main_banner').has('.mp_slider').children('.slogan').hide();
+            $('.main_banner').has('.mp_slider').find('.slogan').hide();
             $('.main_banner').has('.mp_slider').css('min-height', 'auto');
 
         } else {
@@ -198,6 +198,8 @@ $(function() {
             _search.removeClass('m_search');
             _menu.appendTo(_mainMenu);
             _search.hide();
+            _sidebar.appendTo('.header .container');
+            $('#aU').prependTo('.header .container');
             $('.searchCtrl').off().click(function(event) {
                 $('.search').stop(true, true).fadeToggle();
                 $('.search').find('input[type="text"]').focus();
@@ -504,6 +506,7 @@ $(function() {
     /*-----------------------------------*/
     $('.scrollToTop').click(function(e) {
         $('html, body').animate({ scrollTop: 0 }, 400, 'easeOutQuint');
+        $('a.goCenter').focus();
         e.preventDefault();
     });
     $('.scrollToTop').keydown(function(e) {
@@ -611,4 +614,6 @@ $(function() {
             $('html, body').stop(true, true).animate({ scrollTop: $('.main').find('.accesskey').offset().top }, 800, 'easeOutExpo');
         }
     });
+    $('.goCenter').removeAttr('tabindex');
+    $('#aU').removeAttr('tabindex');
 });

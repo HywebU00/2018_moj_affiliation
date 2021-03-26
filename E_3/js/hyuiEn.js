@@ -46,7 +46,7 @@ $(function() {
     $('.main').removeAttr('id');
     $('.main').find('.accesskey').prependTo('.main_banner .col+.col');
     $('.main_banner .col+.col').attr('id','center');
-
+    
     var menu_status = false;
     var _sidebar = $('.sidebar'),
         _search = $('.search'),
@@ -116,7 +116,7 @@ $(function() {
             _overlay.hide();
             _nav.prependTo(_mArea);
             _menu.prependTo(_mArea);
-            _search.prependTo(_body);
+            //_search.prependTo(_body);
             _search.addClass('m_search');
             _mArea.css({
                 'margin-left': _mArea.width() * -1 + 'px'
@@ -174,7 +174,7 @@ $(function() {
 
             //主圖有輪播時隱藏
             $('.main_banner').has('.mp_slider').children('.main_img').hide();
-            $('.main_banner').has('.mp_slider').find('.slogan').hide();
+            $('.main_banner').has('.mp_slider').children('.slogan').hide();
             $('.main_banner').has('.mp_slider').css('min-height', 'auto');
             
         } else {
@@ -188,8 +188,10 @@ $(function() {
             _search.appendTo('.header .container');
             _menu.appendTo('.header .container');
             _search.removeClass('m_search');
-            _search.hide();
             _menu.appendTo(_mainMenu);
+            _search.hide();
+            _sidebar.appendTo('.header .container');
+            $('#aU').prependTo('.header .container');
             $('.searchCtrl').off().click(function(event) {
                 $('.search').stop(true, true).fadeToggle();
                 $('.search').find('input[type="text"]').focus();
@@ -497,6 +499,7 @@ $(function() {
     /*-----------------------------------*/
     $('.scrollToTop').click(function(e) {
         $('html, body').animate({ scrollTop: 0 }, 400, 'easeOutQuint');
+        $('a.goCenter').focus();
         e.preventDefault();
     });
     $('.scrollToTop').keydown(function(e) {
@@ -605,4 +608,6 @@ $(function() {
             $('html, body').stop(true, true).animate({ scrollTop: $('.main').find('.accesskey').offset().top }, 800, 'easeOutExpo');
         }
     });
+    $('.goCenter').removeAttr('tabindex');
+    $('#aU').removeAttr('tabindex');
 });

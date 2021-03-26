@@ -43,15 +43,18 @@ $(function() {
     _body.prepend('<aside class="sidebar"><div class="m_area"><button type="button" class="sidebarClose">關閉</button></div><div class="menu_overlay"></div></aside>');
     $('header .container').prepend('<button type="button" class="sidebarCtrl">側欄選單</button><button type="button" class="searchCtrl">查詢</button>');
     $('.main_menu').remove();
-    $('.main').append('<div class="main_menu"></div><div class="mp_content"></div>');
-    $('.main').wrapInner('<div class="container"></div>');
-    $('.main').addClass('innerpage');
 
-    $('.innerpage .content').addClass('innerpage_content');
+    $('.main').removeAttr('id').addClass('innerpage');
+    $('.main').append('<div class="main_menu"></div><div id="center" class="mp_content"></div>');
+    $('.main').wrapInner('<div class="container"></div>');
+    
+
+    $('.innerpage .content').attr('id','center').addClass('innerpage_content');
     $('.main').find('.accesskey').prependTo('.main .mp_content');
-    $('.main').find('.accesskey').prependTo('.main .innerpage_content');
+    $('.main').find('.accesskey').prependTo('.main .innerpage_content')
     
     $('.main').find('section[class^="col"]').appendTo('.main .mp_content');
+    
     $('.main_menu').insertBefore('.content');
     console.log(1);
     var menu_status = false;
@@ -121,7 +124,7 @@ $(function() {
             menu_status = false;
             _sidebar.hide();
             _overlay.hide();
-            _nav.prependTo(_mArea);
+            //_nav.prependTo(_mArea);
             _menu.prependTo(_mArea);
             _search.prependTo(_body);
             _search.addClass('m_search');
@@ -191,6 +194,9 @@ $(function() {
             _search.removeClass('m_search');
             _search.show();
             _menu.appendTo(_mainMenu);
+            _sidebar.appendTo('.header .container');
+            $('#aU').prependTo('.header .container');
+
             // 副選單滑出
             liHasChild.on({
                 mouseenter: function() {
@@ -267,6 +273,7 @@ $(function() {
             // });
         });
     });
+    
     /*-----------------------------------*/
     /////////////fatfooter開關/////////////
     /*-----------------------------------*/
@@ -488,6 +495,7 @@ $(function() {
     /*-----------------------------------*/
     $('.scrollToTop').click(function(e) {
         $('html, body').animate({ scrollTop: 0 }, 400, 'easeOutQuint');
+        $('a.goCenter').focus();
         e.preventDefault();
     });
     $('.scrollToTop').keydown(function(e) {
@@ -587,4 +595,6 @@ $(function() {
             $('html, body').stop(true, true).animate({ scrollTop: $('.main').find('.accesskey').offset().top }, 800, 'easeOutExpo');
         }
     });
+    $('.goCenter').removeAttr('tabindex');
+    $('#aU').removeAttr('tabindex');
 });

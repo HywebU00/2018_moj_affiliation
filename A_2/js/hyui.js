@@ -98,7 +98,7 @@ $(function() {
     _menu.find('li:last>a').focusout(function() {
         _menu.find('li ul').hide();
     });
-
+    _sidebar.appendTo('.header .container');
     function mobileMenu() {
         // switch PC/MOBILE
         ww = _window.outerWidth();
@@ -109,9 +109,10 @@ $(function() {
             menu_status = false;
             _sidebar.hide();
             _overlay.hide();
-            _nav.prependTo(_mArea);
+            //_nav.prependTo(_mArea);
+            _nav.prependTo('.header .container');
             _menu.prependTo(_mArea);
-            _search.prependTo(_body);
+            //_search.prependTo(_body);
             _search.addClass('m_search');
             _mArea.css({
                 'margin-left': _mArea.width() * -1 + 'px'
@@ -175,10 +176,13 @@ $(function() {
             _body.removeClass('noscroll');
             _nav.prependTo('.header .container');
             _search.appendTo('.header .container');
-            _menu.appendTo('.header .container');
+            //_menu.appendTo('.header .container');
             _search.removeClass('m_search');
             _search.show();
             _menu.appendTo(_mainMenu);
+            _sidebar.appendTo('.header .container');
+            $('#aU').prependTo('.header .container');
+
             // 副選單滑出
             liHasChild.on({
                 mouseenter: function() {
@@ -475,19 +479,13 @@ $(function() {
     /////click event to scroll to top//////
     /*-----------------------------------*/
     $('.scrollToTop').click(function(e) {
-        $('html, body').animate({ 
-            scrollTop: $("#goCenter").offset().top
-    }, 2000);
-    $('#goCenter').focus();
-            e.preventDefault();
+        $('html, body').animate({ scrollTop: 0 }, 400, 'easeOutQuint');
+        $('a.goCenter').focus();
+        e.preventDefault();
     });
     $('.scrollToTop').keydown(function(e) {
         _body.find('a.goCenter').focus();
         e.preventDefault();
-         if (e.keyCode == 13) {
-            $('#goCenter').focus();
-            e.preventDefault();
-         }
     });
     /*--------------------------------------------------------*/
     /////設定img 在IE9+ SAFARI FIREFOX CHROME 可以object-fit/////
@@ -590,4 +588,6 @@ $(function() {
             $('html, body').stop(true, true).animate({ scrollTop: $('.main').find('.accesskey').offset().top }, 800, 'easeOutExpo');
         }
     });
+    $('.goCenter').removeAttr('tabindex');
+    $('#aU').removeAttr('tabindex');
 });
