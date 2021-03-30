@@ -9,7 +9,7 @@ $(function() {
     var newsList_len = 300; // 超過300個字以"..."取代
     $(".news_list p").each(function(i) {
         if ($(this).text().length > newsList_len) {
-            $(this).attr("title", $(this).text());
+            //$(this).attr("title", $(this).text());
             var text = $(this).text().substring(0, newsList_len - 1) + "...";
             $(this).text(text);
         }
@@ -18,7 +18,7 @@ $(function() {
     var newsCard_len = 300; // 超過300個字以"..."取代
     $(".news_card p").each(function(i) {
         if ($(this).text().length > newsCard_len) {
-            $(this).attr("title", $(this).text());
+            //$(this).attr("title", $(this).text());
             var text = $(this).text().substring(0, newsCard_len - 1) + "...";
             $(this).text(text);
         }
@@ -27,7 +27,7 @@ $(function() {
     var video_len = 100; // 超過100個字以"..."取代
     $(".youtube").siblings('p').each(function(i) {
         if ($(this).text().length > video_len) {
-            $(this).attr("title", $(this).text());
+            //$(this).attr("title", $(this).text());
             var text = $(this).text().substring(0, video_len - 1) + "...";
             $(this).text(text);
         }
@@ -36,7 +36,7 @@ $(function() {
     var photo_len = 100; // 超過100個字以"..."取代
     $(".multi_photo .pic").siblings('p').each(function(i) {
         if ($(this).text().length > photo_len) {
-            $(this).attr("title", $(this).text());
+            //$(this).attr("title", $(this).text());
             var text = $(this).text().substring(0, photo_len - 1) + "...";
             $(this).text(text);
         }

@@ -176,7 +176,6 @@ $(function() {
             _body.removeClass('noscroll');
             _nav.prependTo('.header .container');
             _search.appendTo('.header .container');
-            //_menu.appendTo('.header .container');
             _search.removeClass('m_search');
             _search.show();
             _menu.appendTo(_mainMenu);
