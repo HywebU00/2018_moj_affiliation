@@ -587,6 +587,6 @@ $(function() {
             $('html, body').stop(true, true).animate({ scrollTop: $('.main').find('.accesskey').offset().top }, 800, 'easeOutExpo');
         }
     });
-    $('.goCenter').removeAttr('tabindex');
-    $('#aU').removeAttr('tabindex');
+    // $('.goCenter').removeAttr('tabindex');
+    // $('#aU').removeAttr('tabindex');
 });
