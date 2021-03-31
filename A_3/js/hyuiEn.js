@@ -50,7 +50,7 @@ $(function() {
         _sidebarCtrl = $('.sidebarCtrl'),
         _overlay = $('.menu_overlay'),
         _mainMenu = $('.main_menu'),
-        _mArea = $('.m_area'),
+        _mArea = $('.m_area');
     _sidebarCtrl.append('<span></span><span></span><span></span>');
     var search_mode = false;
     // 打開選單 function
@@ -176,7 +176,6 @@ $(function() {
             _body.removeClass('noscroll');
             _nav.prependTo('.header .container');
             _search.appendTo('.header .container');
-            _menu.appendTo('.header .container');
             _search.removeClass('m_search');
             _search.show();
             _menu.appendTo(_mainMenu);

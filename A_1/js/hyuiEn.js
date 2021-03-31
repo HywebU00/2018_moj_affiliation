@@ -50,7 +50,7 @@ $(function() {
         _sidebarCtrl = $('.sidebarCtrl'),
         _overlay = $('.menu_overlay'),
         _mainMenu = $('.main_menu'),
-        _mArea = $('.m_area'),
+        _mArea = $('.m_area');
     _sidebarCtrl.append('<span></span><span></span><span></span>');
     var search_mode = false;
     // 打開選單 function
