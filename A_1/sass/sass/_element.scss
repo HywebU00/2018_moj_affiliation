@@ -196,6 +196,16 @@ a.more {
         background: url(../images/basic/top.png) no-repeat center top $color-orange;
     }
 }
+
+.helper{
+    width: 60px;
+    position: fixed;
+    right: 10px;
+    bottom: 70px;
+    img{
+        max-width: 100%;
+    }
+}
 // img
 img.img-responsive {
     @include img-responsive();

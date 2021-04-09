@@ -269,57 +269,57 @@ $(function() {
         infinite: true,
     });
     // 設定 main-menu高度同等 col
-    function colHeight() {
-        var WindowWidth = $(window).outerWidth();
-        var cellDiv1 = $(".main_banner").find('.col');
-        if (WindowWidth >= 768) {
-            $(".main_banner .col").each(function() {
-                var highestBox = 0;
-                $(cellDiv1, this).each(function() {
-                    if ($(this).height() > highestBox) {
-                        highestBox = $(this).height();
-                    }
-                });
-                $(cellDiv1, this).height(highestBox);
-                $('.main_banner').height(highestBox);
-            });
-        } else {
-            $(".main_banner .col").each(function() {
-                $(this).removeAttr('style');
-            });
-            $('.main_banner').removeAttr('style');
-        }
-    }
+    // function colHeight() {
+    //     var WindowWidth = $(window).outerWidth();
+    //     var cellDiv1 = $(".main_banner").find('.col');
+    //     if (WindowWidth >= 768) {
+    //         $(".main_banner .col").each(function() {
+    //             var highestBox = 0;
+    //             $(cellDiv1, this).each(function() {
+    //                 if ($(this).height() > highestBox) {
+    //                     highestBox = $(this).height();
+    //                 }
+    //             });
+    //             $(cellDiv1, this).height(highestBox);
+    //             $('.main_banner').height(highestBox);
+    //         });
+    //     } else {
+    //         $(".main_banner .col").each(function() {
+    //             $(this).removeAttr('style');
+    //         });
+    //         $('.main_banner').removeAttr('style');
+    //     }
+    // }
     //設定resize 計時器
     var menuResize;
     $(window).bind("load resize", function(event) {
         clearTimeout(menuResize);
-        menuResize = setTimeout(function() {
-            colHeight();
-        }, 20);
+        // menuResize = setTimeout(function() {
+        //     colHeight();
+        // }, 20);
     });
-    colHeight();
+    //colHeight();
     // font-size
     $('.font-size ul li a').each(function(index, el) {
         $(this).click(function(event) {
             $(this).parent().parent().find('a').removeClass('active');
             $(this).addClass('active');
-            colHeight();
+            //colHeight();
         });
     });
     $('.font-size').find('.size-s').click(function(event) {
         $('.main').removeClass('large-fontsize');
         $('.main').addClass('small-fontsize');
-        colHeight();
+        //colHeight();
     });
     $('.font-size').find('.size-m').click(function(event) {
         $('.main').removeClass('small-fontsize').removeClass('large-fontsize');
-        colHeight();
+        //colHeight();
     });
     $('.font-size').find('.size-l').click(function(event) {
         $('.main').removeClass('small-fontsize');
         $('.main').addClass('large-fontsize');
-        colHeight();
+        //colHeight();
     });
     // 進階搜尋
     $('.advanced_search').hide();
