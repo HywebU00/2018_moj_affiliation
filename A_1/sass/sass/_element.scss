@@ -190,7 +190,8 @@ a.more {
     transition: .3s ease-out;
     display: none;
     z-index: 99999999;
-    text-indent: -999999px;
+    font-size: 0;
+    line-height: 1;
     &:hover,&:focus{
         opacity: 1;
         background: url(../images/basic/top.png) no-repeat center top $color-orange;
@@ -203,9 +204,14 @@ a.more {
     right: 10px;
     bottom: 70px;
     z-index: 99999999;
+    font-size: 0;
+    transition: .3s ease-in;
+    line-height: 1;
     img{
         max-width: 100%;
-
+    }
+    &:hover{
+        transform: translateY(-3px);
     }
 }
 // img
