@@ -202,8 +202,10 @@ a.more {
     position: fixed;
     right: 10px;
     bottom: 70px;
+    z-index: 99999999;
     img{
         max-width: 100%;
+
     }
 }
 // img
