@@ -112,7 +112,7 @@ $(function() {
             _nav.prependTo(_mArea);
             //_nav.prependTo('.header .container');
             _menu.prependTo(_mArea);
-            //_search.prependTo(_body);
+            _search.prependTo(_body);
             _search.addClass('m_search');
             _mArea.css({
                 'margin-left': _mArea.width() * -1 + 'px'
