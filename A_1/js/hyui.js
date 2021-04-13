@@ -98,7 +98,7 @@ $(function() {
     _menu.find('li:last>a').focusout(function() {
         _menu.find('li ul').hide();
     });
-    _sidebar.appendTo('.header .container');
+    //_sidebar.appendTo('.header .container');
     function mobileMenu() {
         // switch PC/MOBILE
         ww = _window.outerWidth();
@@ -109,8 +109,8 @@ $(function() {
             menu_status = false;
             _sidebar.hide();
             _overlay.hide();
-            //_nav.prependTo(_mArea);
-            _nav.prependTo('.header .container');
+            _nav.prependTo(_mArea);
+            //_nav.prependTo('.header .container');
             _menu.prependTo(_mArea);
             //_search.prependTo(_body);
             _search.addClass('m_search');
