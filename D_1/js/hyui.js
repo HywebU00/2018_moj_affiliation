@@ -277,7 +277,7 @@ $(function() {
     /*-----------------------------------*/
     /////////////fatfooter開關/////////////
     /*-----------------------------------*/
-    $('.btn-fatfooter').attr('aria-label', '底部選單區塊收合按鈕');
+    $('.btn-fatfooter').attr('aria-label', '底部選單區塊收合');
     $('.btn-fatfooter').attr('aria-expanded', 'true');
     $('.btn-fatfooter').click(function(e) {
         $(this).parent('.container').find('nav>ul>li>ul').stop(true, true).slideToggle(function() {
