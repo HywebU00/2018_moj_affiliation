@@ -6,7 +6,7 @@ $(function() {
     var newsList_len = 300; // 超過300個字以"..."取代
     $(".news_list p").each(function(i) {
         if ($(this).text().length > newsList_len) {
-            $(this).attr("title", $(this).text());
+            //$(this).attr("title", $(this).text());
             var text = $(this).text().substring(0, newsList_len - 1) + "...";
             $(this).text(text);
         }
@@ -15,7 +15,7 @@ $(function() {
     var newsCard_len = 300; // 超過300個字以"..."取代
     $(".news_card p").each(function(i) {
         if ($(this).text().length > newsCard_len) {
-            $(this).attr("title", $(this).text());
+            //$(this).attr("title", $(this).text());
             var text = $(this).text().substring(0, newsCard_len - 1) + "...";
             $(this).text(text);
         }
@@ -24,7 +24,7 @@ $(function() {
     var video_len = 100; // 超過100個字以"..."取代
     $(".youtube").siblings('p').each(function(i) {
         if ($(this).text().length > video_len) {
-            $(this).attr("title", $(this).text());
+            //$(this).attr("title", $(this).text());
             var text = $(this).text().substring(0, video_len - 1) + "...";
             $(this).text(text);
         }
@@ -33,7 +33,7 @@ $(function() {
     var photo_len = 100; // 超過100個字以"..."取代
     $(".multi_photo .pic").siblings('p').each(function(i) {
         if ($(this).text().length > photo_len) {
-            $(this).attr("title", $(this).text());
+            //$(this).attr("title", $(this).text());
             var text = $(this).text().substring(0, photo_len - 1) + "...";
             $(this).text(text);
         }
@@ -54,10 +54,10 @@ $(function() {
     $('.btn_ad_more').click(function(e) {
         $(this).parents('.ad_banner_accordion').find('.ad_more').stop(true, true).slideToggle(function() {
             if ($(this).is(':visible')) {
-                $('.btn_ad_more').html("較少連結 -");
+                $('.btn_ad_more').html('較少連結 -');
                 $('.btn_ad_more').attr('name', '較少連結');
             } else {
-                $('.btn_ad_more').html("更多連結 ＋");
+                $('.btn_ad_more').html('更多連結 ＋');
                 $('.btn_ad_more').attr('name', '更多連結');
             }
         });
@@ -1430,8 +1430,10 @@ $(function() {
         // console.log("中文");
         $('.slick-prev').attr('title', '上一筆');
         $('.slick-next').attr('title', '下一筆');
-        $('.slick-prev').attr('aria-label', '前一則');
-        $('.slick-next').attr('aria-label', '下一則');
+        $('.slick-prev').html('上一筆');
+        $('.slick-next').html('下一筆');
+        $('.slick-prev').removeAttr('aria-label');
+        $('.slick-next').removeAttr('aria-label');
         $('header').find('.accesskey').attr('title', '上方功能區塊');
         $('.main').find('.accesskey').attr('title', '中央內容區塊');
         $('footer').find('.accesskey').attr('title', '下方功能區塊');
@@ -1441,6 +1443,8 @@ $(function() {
         // console.log("英文");
         $('.slick-prev').attr('title', 'previous');
         $('.slick-next').attr('title', 'next');
+        $('.slick-prev').removeAttr('aria-label');
+        $('.slick-next').removeAttr('aria-label');
         $('header').find('.accesskey').attr('title', 'header');
         $('.main').find('.accesskey').attr('title', 'content');
         $('footer').find('.accesskey').attr('title', 'footer');

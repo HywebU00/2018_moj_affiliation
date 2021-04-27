@@ -7,8 +7,8 @@ $(function() {
             // console.log("中文");
             $('.slick-prev').attr('title', '上一筆');
             $('.slick-next').attr('title', '下一筆');
-            $('.slick-prev').text('上一筆');
-            $('.slick-next').text('下一筆');
+            $('.slick-prev').html('上一筆');
+            $('.slick-next').html('下一筆');
             $('.slick-prev').removeAttr('aria-label');
             $('.slick-next').removeAttr('aria-label');
             $('header').find('.accesskey').attr('title', '上方功能區塊');

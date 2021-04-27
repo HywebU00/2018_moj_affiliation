@@ -188,7 +188,6 @@ $(function() {
             _body.removeClass('noscroll');
             _nav.prependTo('.header .container');
             _search.appendTo('.header .container');
-            _menu.appendTo('.header .container');
             _search.removeClass('m_search');
             _search.show();
             _menu.appendTo(_mainMenu);
@@ -274,15 +273,19 @@ $(function() {
     /*-----------------------------------*/
     /////////////fatfooter開關/////////////
     /*-----------------------------------*/
+    $('.btn-fatfooter').attr('aria-label', 'Fatfooter menu collapse');
+    $('.btn-fatfooter').attr('aria-expanded', 'true');
     $('.btn-fatfooter').html("CLOSE");
     $('.btn-fatfooter').click(function(e) {
         $(this).parent('.container').find('nav>ul>li>ul').stop(true, true).slideToggle(function() {
             if ($(this).is(':visible')) {
                 $('.btn-fatfooter').html("CLOSE");
                 $('.btn-fatfooter').attr('name', 'CLOSE');
+                $('.btn-fatfooter').attr('aria-expanded', 'true');
             } else {
                 $('.btn-fatfooter').html("OPEN");
                 $('.btn-fatfooter').attr('name', 'OPEN');
+                $('.btn-fatfooter').attr('aria-expanded', 'false');
             }
         });
         $(this).stop(true, true).toggleClass('close');

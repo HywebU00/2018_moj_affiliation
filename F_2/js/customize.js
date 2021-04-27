@@ -1,15 +1,15 @@
 // 自行加入的JS請寫在這裡
 $(function() {
     // lazyload
-    if($('.innerpage').length>0){
+    if ($('.innerpage').length > 0) {
         $('.innerpage').find('#aC').css('top', 0);
     }
     $("img").lazyload({ effect: "fadeIn" });
-// 最新消息 列表
+    // 最新消息 列表
     var newsList_len = 300; // 超過300個字以"..."取代
     $(".news_list p").each(function(i) {
         if ($(this).text().length > newsList_len) {
-            $(this).attr("title", $(this).text());
+            //$(this).attr("title", $(this).text());
             var text = $(this).text().substring(0, newsList_len - 1) + "...";
             $(this).text(text);
         }
@@ -18,7 +18,7 @@ $(function() {
     var newsCard_len = 300; // 超過300個字以"..."取代
     $(".news_card p").each(function(i) {
         if ($(this).text().length > newsCard_len) {
-            $(this).attr("title", $(this).text());
+            //$(this).attr("title", $(this).text());
             var text = $(this).text().substring(0, newsCard_len - 1) + "...";
             $(this).text(text);
         }
@@ -27,7 +27,7 @@ $(function() {
     var video_len = 100; // 超過100個字以"..."取代
     $(".youtube").siblings('p').each(function(i) {
         if ($(this).text().length > video_len) {
-            $(this).attr("title", $(this).text());
+            //$(this).attr("title", $(this).text());
             var text = $(this).text().substring(0, video_len - 1) + "...";
             $(this).text(text);
         }
@@ -58,10 +58,10 @@ $(function() {
         // console.log(linkTitle);
     });
     //聯合拍賣日期
-    $('.show-calendar-toggle').hover(function(){
-                //console.log('hovered')
+    $('.show-calendar-toggle').hover(function() {
+        //console.log('hovered')
         $('.calendar-container').show();
-    },function(){
+    }, function() {
         $('.calendar-container').hide();
     });
     //小廣告展開收合
@@ -78,7 +78,7 @@ $(function() {
         $(this).stop(true, true).toggleClass('close');
     });
     //tabContent new tag
-    $('.tabContent ul li a').has('span.new_tag').css('paddingRight','4.2em');
+    $('.tabContent ul li a').has('span.new_tag').css('paddingRight', '4.2em');
     // 大廣告輪播
     $('.mp_slider').slick({
         dots: true,
@@ -402,7 +402,7 @@ $(function() {
         //          }
         //      }]
     })
-     $('.Slider-for').on('init reInit afterChange', function(event, slick, currentSlide) {
+    $('.Slider-for').on('init reInit afterChange', function(event, slick, currentSlide) {
         var i = (currentSlide ? currentSlide : 0) + 1;
         $('.controls').html(i + '/' + slick.slideCount);
     });
@@ -482,7 +482,7 @@ $(function() {
     $('.advance_search button').off().click(function(e) {
         $('.advance_block').stop(true, true).slideToggle();
     });
-     // 圖文卡片式
+    // 圖文卡片式
     $('.col-12 .news_card ul').slick({
         dots: false,
         infinite: true,
@@ -1574,14 +1574,16 @@ $(function() {
             }
         }]
     });
-      //不同語系
+    //不同語系
     var weblang = $('html').attr('lang');
     if (weblang.substring(0, 2) == 'zh') {
         // console.log("中文");
         $('.slick-prev').attr('title', '上一筆');
         $('.slick-next').attr('title', '下一筆');
-        $('.slick-prev').attr('aria-label', '前一則');
-        $('.slick-next').attr('aria-label', '下一則');
+        $('.slick-prev').html('上一筆');
+        $('.slick-next').html('下一筆');
+        $('.slick-prev').removeAttr('aria-label');
+        $('.slick-next').removeAttr('aria-label');
         $('header').find('.accesskey').attr('title', '上方功能區塊');
         $('.main').find('.accesskey').attr('title', '中央內容區塊');
         $('footer').find('.accesskey').attr('title', '下方功能區塊');
@@ -1590,8 +1592,8 @@ $(function() {
         // console.log("英文");
         $('.slick-prev').attr('title', 'previous');
         $('.slick-next').attr('title', 'next');
-        $('.slick-prev').attr('aria-label', 'previous');
-        $('.slick-next').attr('aria-label', 'next');
+        $('.slick-prev').removeAttr('aria-label');
+        $('.slick-next').removeAttr('aria-label');
         $('header').find('.accesskey').attr('title', 'header');
         $('.main').find('.accesskey').attr('title', 'content');
         $('footer').find('.accesskey').attr('title', 'footer');

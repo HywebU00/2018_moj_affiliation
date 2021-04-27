@@ -277,14 +277,18 @@ $(function() {
     /*-----------------------------------*/
     /////////////fatfooter開關/////////////
     /*-----------------------------------*/
+    $('.btn-fatfooter').attr('aria-label', '底部選單區塊收合');
+    $('.btn-fatfooter').attr('aria-expanded', 'true');
     $('.btn-fatfooter').click(function(e) {
         $(this).parent('.container').find('nav>ul>li>ul').stop(true, true).slideToggle(function() {
             if ($(this).is(':visible')) {
                 $('.btn-fatfooter').html("收合");
                 $('.btn-fatfooter').attr('name', '收合選單');
+                $('.btn-fatfooter').attr('aria-expanded', 'true');
             } else {
                 $('.btn-fatfooter').html("展開");
                 $('.btn-fatfooter').attr('name', '展開選單');
+                $('.btn-fatfooter').attr('aria-expanded', 'false');
             }
         });
         $(this).stop(true, true).toggleClass('close');

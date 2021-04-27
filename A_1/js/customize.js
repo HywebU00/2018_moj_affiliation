@@ -1430,8 +1430,10 @@ $(function() {
         // console.log("中文");
         $('.slick-prev').attr('title', '上一筆');
         $('.slick-next').attr('title', '下一筆');
-        $('.slick-prev').attr('aria-label', '前一則');
-        $('.slick-next').attr('aria-label', '下一則');
+        $('.slick-prev').html('上一筆');
+        $('.slick-next').html('下一筆');
+        $('.slick-prev').removeAttr('aria-label');
+        $('.slick-next').removeAttr('aria-label');
         $('header').find('.accesskey').attr('title', '上方功能區塊');
         $('.main').find('.accesskey').attr('title', '中央內容區塊');
         $('footer').find('.accesskey').attr('title', '下方功能區塊');
@@ -1441,8 +1443,8 @@ $(function() {
         // console.log("英文");
         $('.slick-prev').attr('title', 'previous');
         $('.slick-next').attr('title', 'next');
-        $('.slick-prev').attr('aria-label', 'previous');
-        $('.slick-next').attr('aria-label', 'next');
+        $('.slick-prev').removeAttr('aria-label');
+        $('.slick-next').removeAttr('aria-label');
         $('header').find('.accesskey').attr('title', 'header');
         $('.main').find('.accesskey').attr('title', 'content');
         $('footer').find('.accesskey').attr('title', 'footer');
