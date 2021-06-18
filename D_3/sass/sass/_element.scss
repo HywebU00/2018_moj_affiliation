@@ -196,6 +196,22 @@ a.more {
         background: url(../images/basic/top.png) no-repeat center top lighten($secondaryColor,0);
     }
 }
+.helper{
+    width: 60px;
+    position: fixed;
+    right: 10px;
+    bottom: 70px;
+    z-index: 99999999;
+    font-size: 0;
+    transition: .3s ease-in;
+    line-height: 1;
+    img{
+        max-width: 100%;
+    }
+    &:hover{
+        transform: translateY(-3px);
+    }
+}
 // img
 img.img-responsive {
     @include img-responsive();
