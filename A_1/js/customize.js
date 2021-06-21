@@ -117,12 +117,12 @@ $(function() {
         infinite: true,
         vertical: true,
         verticalSwiping: true,
-        speed: 1000,
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
         pauseOnHover: true, //滑鼠移過後暫停自動撥放
-        autoplaySpeed: 10000,
+        autoplaySpeed: 6000,
+        speed: 1000,
         // centerMode: true,
         focusOnSelect: true,
         //      responsive: [{
@@ -155,12 +155,12 @@ $(function() {
         infinite: true,
         vertical: false,
         verticalSwiping: true,
-        speed: 1000,
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
         pauseOnHover: true, //滑鼠移過後暫停自動撥放
-        autoplaySpeed: 10000,
+        autoplaySpeed: 6000,
+        speed: 1500,
         focusOnSelect: true,
     });
     //燈箱slick+lightBox組合
