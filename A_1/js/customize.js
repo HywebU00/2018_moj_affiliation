@@ -122,8 +122,7 @@ $(function() {
         slidesToScroll: 1,
         autoplay: true,
         pauseOnHover: true, //滑鼠移過後暫停自動撥放
-        autoplaySpeed: 1500,
-        speed: 1000,
+        autoplaySpeed: 10000,
         // centerMode: true,
         focusOnSelect: true,
         //      responsive: [{
@@ -161,8 +160,7 @@ $(function() {
         slidesToScroll: 1,
         autoplay: true,
         pauseOnHover: true, //滑鼠移過後暫停自動撥放
-        autoplaySpeed: 1500,
-        speed: 1000,
+        autoplaySpeed: 10000,
         focusOnSelect: true,
     });
     //燈箱slick+lightBox組合
