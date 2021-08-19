@@ -33,7 +33,7 @@ $(function() {
     var _menu = $('.menu');
     _menu.find('li').has('ul').addClass('hasChild');
     var liHasChild = _menu.find('li.hasChild'),
-        liHasChild_level1 = $('.menu ul').children('li.hasChild');
+        liHasChild_level1 = $('.menu>ul').children('li.hasChild');
     liHasChild_level2 = $('.menu ul ul').children('li.hasChild');
     liHasChild_level3 = $('.menu ul ul ul').children('li.hasChild');
     subMenuWidth = liHasChild.first().children('ul').outerWidth();
@@ -211,6 +211,9 @@ $(function() {
             //手機版第第一層點了不會進入內頁，拿掉第一層的連結無作用
         }
     }
+    liHasChild.children('a').attr('title',function(i,origValue){
+            return origValue + "（展開子選單）";
+        })
     //設定resize 計時器
     var resizeTimer;
     _window.bind("load resize", function(event) {
