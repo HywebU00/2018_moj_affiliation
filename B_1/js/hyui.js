@@ -98,6 +98,7 @@ $(function() {
     _menu.find('li:last>a').focusout(function() {
         _menu.find('li ul').hide();
     });
+
     function mobileMenu() {
         // switch PC/MOBILE
         ww = _window.outerWidth();
@@ -179,7 +180,7 @@ $(function() {
             _search.show();
             _sidebar.appendTo('.header .container');
             $('#aU').prependTo('.header .container');
-            
+
             // _search.hide();
             $('.innerpage').parents().find('header').addClass('header-relative');
             // $('.searchCtrl').off().click(function(event) {
@@ -211,9 +212,9 @@ $(function() {
             //手機版第第一層點了不會進入內頁，拿掉第一層的連結無作用
         }
     }
-    liHasChild.children('a').attr('title',function(i,origValue){
-            return origValue + "（展開子選單）";
-        })
+    liHasChild.children('a').attr('title', function(i, origValue) {
+        return origValue + "（自動展開子選單）";
+    })
     //設定resize 計時器
     var resizeTimer;
     _window.bind("load resize", function(event) {
