@@ -175,7 +175,7 @@ $(function() {
             hideSidebar();
             _body.removeClass('noscroll');
             _nav.prependTo('.header .container');
-            _search.appendTo('.header .container');
+            _search.insertAfter('.header .container h1');
             _search.removeClass('m_search');
             _search.show();
             _menu.appendTo(_mainMenu);
