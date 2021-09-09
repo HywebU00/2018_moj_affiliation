@@ -193,7 +193,7 @@ $(function() {
             hideSidebar();
             _body.removeClass('noscroll');
             _nav.prependTo('.header .container');
-            _search.appendTo('.header .container');
+            _search.insertAfter('.header .container h1');
             _menu.appendTo('.header .container');
             _search.removeClass('m_search');
             _menu.appendTo(_mainMenu);
