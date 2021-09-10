@@ -79,6 +79,7 @@
         .searchCtrl {
             display: block;
             right: 0px;
+            z-index: 999;
             font-size: 0em;
             border-radius: 0!important;
             background: $secondaryColor;

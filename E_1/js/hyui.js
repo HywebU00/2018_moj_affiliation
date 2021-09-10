@@ -58,6 +58,7 @@ $(function() {
     var menu_status = false;
     var _sidebar = $('.sidebar'),
         _search = $('.search'),
+        _searchCtrl = $('.searchCtrl'),
         _nav = $('.navigation'),
         _sidebarClose = $('.sidebarClose'),
         _sidebarCtrl = $('.sidebarCtrl'),
@@ -163,7 +164,7 @@ $(function() {
             });
             _body.off('touchmove');
             // 行動版查詢
-            var _searchCtrl = $('.searchCtrl');
+            
             $('.m_search').hide();
             _searchCtrl.off().on('click', function(e) {
                 if (!search_mode) {
@@ -193,8 +194,9 @@ $(function() {
             hideSidebar();
             _body.removeClass('noscroll');
             _nav.prependTo('.header .container');
-            _search.insertAfter('.header .container h1');
             _menu.appendTo('.header .container');
+            _searchCtrl.appendTo('.header .container');
+            _search.appendTo('.header .container');
             _search.removeClass('m_search');
             _menu.appendTo(_mainMenu);
             _search.hide();
