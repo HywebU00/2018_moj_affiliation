@@ -268,14 +268,14 @@
             border-right: none;
         }
         li {
-            float: left;
-            width: 50%;
+            //float: left;
+            //width: 50%;
             margin: 0;
             padding: 0;
             @include box-sizing;
-            &:nth-child(odd):last-child {
-                width: 100%;
-            }
+            // &:nth-child(odd):last-child {
+            //     width: 100%;
+            // }
             a {
                 display: block;
                 height: 3em;
