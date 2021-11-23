@@ -52,7 +52,8 @@ $(function() {
     $('header .container').append('<button type="button" class="sidebarCtrl">側欄選單</button><button type="button" class="searchCtrl">查詢</button>');
 
     //$('.main').removeAttr('id');
-    $('.main').find('.accesskey').prependTo('.main_banner .col+.col');
+    $('#aC').prependTo('.main_banner .col+.col');
+    $('.innerpage').find('#aC').prependTo('.main_menu~.content');
     //$('.main_banner .col+.col').attr('id','center');
 
     var menu_status = false;
