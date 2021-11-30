@@ -124,7 +124,7 @@ $(function() {
             menu_status = false;
             _sidebar.hide();
             _overlay.hide();
-            //_nav.prependTo(_mArea);
+            _nav.prependTo(_mArea);
             _menu.prependTo(_mArea);
             _search.prependTo(_body);
             _search.addClass('m_search');
