@@ -782,6 +782,12 @@
                 font-size: 1em;
             }
 
+            @include screen('xs_mobile'){
+                width: 100%;
+                left: 0;
+                margin-left: 0;
+            }
+
             span {
                 position: relative;
                 font-size: 3em;
