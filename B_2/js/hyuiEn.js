@@ -40,8 +40,9 @@ $(function() {
     /*-----------------------------------*/
     ////////////// 行動版選單切換////////////
     /*-----------------------------------*/
-    _body.prepend('<aside class="sidebar"><div class="m_area"><button type="button" class="sidebarClose">關閉</button></div><div class="menu_overlay"></div></aside>');
+    // _body.prepend('<aside class="sidebar"><div class="m_area"><button type="button" class="sidebarClose">關閉</button></div><div class="menu_overlay"></div></aside>');
     $('header .container').prepend('<button type="button" class="sidebarCtrl">側欄選單</button><button type="button" class="searchCtrl">search</button>');
+    $('header .container .sidebarCtrl').after('<aside class="sidebar"><div class="m_area"><button type="button" class="sidebarClose">關閉</button></div><div class="menu_overlay"></div></aside>');
     var menu_status = false;
     var _sidebar = $('.sidebar'),
         _search = $('.search'),
@@ -107,15 +108,15 @@ $(function() {
             /////////////// 手機版設定 /////////////
             /*-----------------------------------*/
             menu_status = false;
-            _sidebar.hide();
-            _overlay.hide();
+            //_sidebar.hide();
+            //_overlay.hide();
             _nav.prependTo(_mArea);
             _menu.prependTo(_mArea);
             //_search.prependTo(_body);
             _search.addClass('m_search');
-            _mArea.css({
-                'margin-left': _mArea.width() * -1 + 'px'
-            });
+            // _mArea.css({
+            //     'margin-left': _mArea.width() * -1 + 'px'
+            // });
             liHasChild.on({
                 mouseenter: function() {
                     $(this).children('ul').stop(true, true).slideDown('600', 'easeOutQuint');
@@ -270,7 +271,7 @@ $(function() {
             // });
         });
     });
-   /*-----------------------------------*/
+    /*-----------------------------------*/
     /////////////fatfooter開關/////////////
     /*-----------------------------------*/
     $('.btn-fatfooter').attr('aria-label', 'Fatfooter menu collapse');
