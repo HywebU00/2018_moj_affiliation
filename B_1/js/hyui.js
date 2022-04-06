@@ -65,6 +65,7 @@ $(function() {
         _overlay.fadeIn();
         $('.m_search').hide();
         search_mode = false;
+
     }
     // 縮合選單 function
     function hideSidebar() {
@@ -85,6 +86,13 @@ $(function() {
     _overlay.add(_sidebarClose).off().click(function() {
         hideSidebar();
     });
+    if (_sidebar.length > 0) {
+        _body.keydown(function(e) {
+            if (e.keyCode == 27) {
+                hideSidebar();
+            }
+        })
+    }
     _overlay.off("mouseenter");
     // 無障礙tab設定
     liHasChild.keyup(function() {
