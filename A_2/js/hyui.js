@@ -40,12 +40,12 @@ $(function() {
     /*-----------------------------------*/
     ////////////// 行動版選單切換////////////
     /*-----------------------------------*/
-    _body.prepend('<aside class="sidebar"><div class="m_area"><button type="button" class="sidebarClose">關閉</button></div><div class="menu_overlay"></div></aside>');
+    //_body.prepend('<aside class="sidebar"><div class="m_area"><button type="button" class="sidebarClose">關閉</button></div><div class="menu_overlay"></div></aside>');
     $('header .container').prepend('<button type="button" class="sidebarCtrl">側欄選單</button><button type="button" class="searchCtrl">查詢</button>');
-
+    $('header .container .sidebarCtrl').after('<aside class="sidebar"><div class="m_area"><button type="button" class="sidebarClose">關閉</button></div><div class="menu_overlay"></div></aside>');
     $('#aC').prependTo('.moj_link .col+.col');
     $('.innerpage').find('#aC').prependTo('.main_menu~.content');
-    
+
     var menu_status = false;
     var _sidebar = $('.sidebar'),
         _search = $('.search'),
@@ -88,6 +88,13 @@ $(function() {
     _overlay.add(_sidebarClose).off().click(function() {
         hideSidebar();
     });
+    if (_sidebar.length > 0) {
+        _body.keydown(function(e) {
+            if (e.keyCode == 27) {
+                hideSidebar();
+            }
+        })
+    }
     _overlay.off("mouseenter");
     // 無障礙tab設定
     liHasChild.keyup(function() {
@@ -111,16 +118,16 @@ $(function() {
             /////////////// 手機版設定 /////////////
             /*-----------------------------------*/
             menu_status = false;
-            _sidebar.hide();
-            _overlay.hide();
+            // _sidebar.hide();
+            // _overlay.hide();
             _nav.prependTo(_mArea);
             //_nav.prependTo('.header .container');
             _menu.prependTo(_mArea);
-            _search.prependTo(_body);
+            //_search.prependTo(_body);
             _search.addClass('m_search');
-            _mArea.css({
-                'margin-left': _mArea.width() * -1 + 'px'
-            });
+            // _mArea.css({
+            //     'margin-left': _mArea.width() * -1 + 'px'
+            // });
             liHasChild.on({
                 mouseenter: function() {
                     $(this).children('ul').stop(true, true).slideDown('600', 'easeOutQuint');
@@ -179,7 +186,7 @@ $(function() {
             hideSidebar();
             _body.removeClass('noscroll');
             _nav.prependTo('.header .container');
-            _search.appendTo('.header .container');
+            _search.insertAfter('.header .container h1');
             _search.removeClass('m_search');
             _search.show();
             _menu.appendTo(_mainMenu);

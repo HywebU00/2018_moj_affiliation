@@ -1,11 +1,11 @@
 $(function() {
-    var SearchTitle="";
+    var SearchTitle = "";
     //不同語系
     var weblang = $('html').attr('lang');
     if (weblang.substring(0, 2) == 'zh') {
-        SearchTitle="查詢";
+        SearchTitle = "查詢";
     } else if (weblang.substring(0, 2) == 'en') {
-        SearchTitle="search";
+        SearchTitle = "search";
     }
     /*-----------------------------------*/
     ///////////// fix iOS bug /////////////
@@ -48,8 +48,10 @@ $(function() {
     /*-----------------------------------*/
     ////////////// 行動版選單切換////////////
     /*-----------------------------------*/
-    _body.prepend('<aside class="sidebar"><div class="m_area"><button type="button" class="sidebarClose">關閉</button></div><div class="menu_overlay"></div></aside>');
-    $('header .container').prepend('<button type="button" class="sidebarCtrl">側欄選單</button><button type="button" class="searchCtrl" title="'+SearchTitle+'">查詢</button>');
+    // _body.prepend('<aside class="sidebar"><div class="m_area"><button type="button" class="sidebarClose">關閉</button></div><div class="menu_overlay"></div></aside>');
+    $('header .container').prepend('<button type="button" class="sidebarCtrl">側欄選單</button><button type="button" class="searchCtrl" title="' + SearchTitle + '">查詢</button>');
+    $('header .container .sidebarCtrl').after('<aside class="sidebar"><div class="m_area"><button type="button" class="sidebarClose">關閉</button></div><div class="menu_overlay"></div></aside>');
+
     var menu_status = false;
     var _sidebar = $('.sidebar'),
         _search = $('.search'),
@@ -92,6 +94,14 @@ $(function() {
     _overlay.add(_sidebarClose).off().click(function() {
         hideSidebar();
     });
+    //ESC關閉
+    if (_sidebar.length > 0) {
+        _body.keydown(function(e) {
+            if (e.keyCode == 27) {
+                hideSidebar();
+            }
+        })
+    }
     _overlay.off("mouseenter");
     // 無障礙tab設定
     liHasChild.keyup(
@@ -116,15 +126,15 @@ $(function() {
             /////////////// 手機版設定 /////////////
             /*-----------------------------------*/
             menu_status = false;
-            _sidebar.hide();
-            _overlay.hide();
+            // _sidebar.hide();
+            // _overlay.hide();
             _nav.prependTo(_mArea);
             _menu.prependTo(_mArea);
             //_search.prependTo(_body);
             _search.addClass('m_search');
-            _mArea.css({
-                'margin-left': _mArea.width() * -1 + 'px'
-            });
+            // _mArea.css({
+            //     'margin-left': _mArea.width() * -1 + 'px'
+            // });
             liHasChild.on({
                 mouseenter: function() {
                     $(this).children('ul').stop(true, true).slideDown('600', 'easeOutQuint');
@@ -134,7 +144,7 @@ $(function() {
                     $(this).children('ul').stop(true, true).slideUp('600', 'easeOutQuint');
                 }
             });
-             // 副選單點出
+            // 副選單點出
             liHasChild.off().on('mouseenter,mouseleave');
             liHasChild.on('touchstart', function() {
                 $(this).off('mouseenter,mouseleave');
@@ -190,9 +200,9 @@ $(function() {
             _sidebar.appendTo('.header .container');
             $('#aU').prependTo('.header .container');
             $('.searchCtrl').off().click(function(event) {
-                    $('.search').stop(true,true).fadeToggle();
-                     $('.search').find('input[type="text"]').focus();
-                });
+                $('.search').stop(true, true).fadeToggle();
+                $('.search').find('input[type="text"]').focus();
+            });
             // 如果點在外面
             $('.main').off().on('click touchend', function(e) {
                 _search.hide();
@@ -555,7 +565,7 @@ $(function() {
             $(this).closest('.upload_grp').find('.upload_file').attr("value", names);
         }
     });
-        // hitsory
+    // hitsory
     var history = 240; // 超過240個字以"..."取代
     $(".text_block").find('p').each(function(i) {
         if ($(this).text().length > history) {
@@ -602,7 +612,7 @@ $(function() {
             $('.search').hide();
             $('h1 a').focus();
         });
-    }else{
+    } else {
         $('.search').find('.btn_grp input').focusout(function(event) {
             $('.search').hide();
         });
