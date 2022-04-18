@@ -34,10 +34,10 @@ footer {
         a {
             font-size: 1em;
             margin-bottom: .5em;
-            color: lighten($aHover, 0);
+            color: darken($aHover, 10);
             &:hover,
             &:focus {
-                color: darken($aHover, 10);
+                color: darken($aHover, 20);
             }
         }
         * {
@@ -171,7 +171,7 @@ footer {
         margin-right: 5px;
         em {
             font-style: normal;
-            color: darken($aHover, 5);
+            color: darken($aHover, 10);
             padding: .4em 1em;
         }
     }
@@ -179,6 +179,9 @@ footer {
         a {
             display: inline-block;
             vertical-align: top;
+            &:focus{
+                background: none!important;
+            }
         }
         img {
             max-width: 120px;

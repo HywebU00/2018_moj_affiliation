@@ -245,8 +245,10 @@
                 }
                 &:focus {
                     opacity: 1;
-                    box-shadow: 0px 0px 0px 2px $form-focus;
+                    box-shadow: 0px 0px 0px 2px $aFocusBoxline;
                     outline: none;
+                    background:#FCC211 url(../images/icon_search.png) no-repeat center center!important;
+                    background-size: 24px 24px!important;
                 }
             }
         }
@@ -269,7 +271,7 @@
             }
             &:focus {
                 opacity: 1;
-                box-shadow: 0px 0px 0px 2px $form-focus;
+                box-shadow: 0px 0px 0px 2px $aFocusBoxline;
                 outline: none;
             }
         }

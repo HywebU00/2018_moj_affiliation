@@ -17,20 +17,19 @@
     display: block;
     color: #444;
 }
-
 // more有顏色按鈕
 %more_color {
     width: 100%;
     color: #FFF;
-    background: $secondaryColor;
-    border: 1px solid $secondaryColor;
+    background: $secondaryColor2;
+    border: 1px solid $secondaryColor2;
 
     &:focus {
-        background: darken($secondaryColor, 10);
-        border: 1px solid darken($secondaryColor, 10);
-
+        background: darken($secondaryColor2, 10);
+        border: 1px solid darken($secondaryColor2, 10);
         &:before {
-            background: darken($secondaryColor, 20);
+            background: darken($secondaryColor2, 20);
+            border: 2px solid $aFocusBoxline;
         }
     }
 }
@@ -134,7 +133,7 @@
                 &:hover,
                 &:focus {
                     background: url(../images/icon_plus.png) no-repeat right 12px lighten($secondaryColor, 5);
-                    box-shadow: none;
+                    // box-shadow: none;
                 }
 
                 &.active {
@@ -143,7 +142,7 @@
                     &:hover,
                     &:focus {
                         background: url(../images/icon_minus.png) no-repeat right 12px lighten($secondaryColor, 5);
-                        box-shadow: none;
+                        // box-shadow: none;
                     }
                 }
             }
@@ -201,7 +200,7 @@
             }
 
             a {
-
+                display: block;
                 &:hover,
                 &:focus {
                     .pic {
@@ -267,12 +266,8 @@
         li {
             margin: 0px 1em;
 
-            &:focus {
-                outline: 0;
-            }
-
             a {
-
+                display: block;
                 &:hover,
                 &:focus {
                     .pic {
@@ -405,7 +400,7 @@
                     height: 4em;
                     top: 0;
                     left: 0;
-                    background: $secondaryColor;
+                    background: $secondaryColor2;
 
                     img {
                         width: 60%;
@@ -463,9 +458,8 @@
                 padding-bottom: 1em;
                 background: #FFF;
 
-                &:hover,
-                &:focus {
-                    background: $secondaryColor;
+                &:hover{
+                    background: $secondaryColor2;
 
                     h3,
                     .heading-3 {
@@ -474,6 +468,17 @@
 
                     span {
                         color: #FFF;
+                    }
+                }
+                &:focus {
+
+                    h3,
+                    .heading-3 {
+                        color: $aFocusTxt;
+                    }
+
+                    span {
+                        color: $aFocusTxt;
                     }
                 }
 
@@ -518,7 +523,7 @@
 
 // fast_link
 .fastlink {
-    background: RGBA(0, 0, 0, .6);
+    background: RGBA(0, 0, 0, .8);
     width: 50px;
     min-height: 200px;
     position: fixed;
@@ -540,8 +545,8 @@
                 display: block;
                 padding: 0;
                 height: 50px;
-                position: relative;
                 text-align: center;
+                position: relative;
                 font-weight: bold;
                 transition: .3s ease-out;
 
@@ -554,7 +559,7 @@
                     padding: 0 1em 0 1em;
                     height: 50px;
                     line-height: 50px;
-                    background: $secondaryColor;
+                    background: $secondaryColor2;
                     color: #FFF;
                     font-size: .938em;
                     @include box-sizing;
@@ -563,11 +568,17 @@
                     transition: .3s ease-out;
                 }
 
-                &:hover,
+                &:hover{
+                    &:before {
+                        display: block;
+                        right: 0;
+                    }
+                }
                 &:focus {
                     &:before {
                         display: block;
                         right: 0;
+                        box-shadow: 0 0px 0px 3px $aFocusBoxline;
                     }
                 }
             }
@@ -778,11 +789,13 @@
         display: block;
 
         &:focus {
+            background: none!important;
+            box-shadow: none!important;
             &:before {
                 position: absolute;
                 width: 100%;
                 height: 100%;
-                box-shadow: 0 0px 0px 2px $aHover inset;
+                box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
                 content: "";
                 z-index: 1;
                 top: 0;
@@ -872,7 +885,7 @@
                         position: absolute;
                         width: 100%;
                         height: 100%;
-                        box-shadow: 0 0px 0px 3px $aHover inset;
+                        box-shadow: 0 0px 0px 3px $aFocusBoxline inset;
                         content: "";
                         z-index: 1;
                         top: 0;
@@ -906,11 +919,11 @@
             width: 90%;
 
             a {
-                color: darken($secondaryColor, 15);
+                color: darken($secondaryColor2, 0);
 
                 &:hover,
                 &:focus {
-                    color: darken($secondaryColor, 20);
+                    color: darken($secondaryColor2, 20);
                 }
             }
         }
@@ -945,21 +958,18 @@
                     height: 3em;
                     margin: .5em auto;
                     line-height: 1.5em;
-                    color: darken($secondaryColor, 15);
+                    color: darken($secondaryColor2, 0);
                     text-align: left;
-
-                    &:hover,
-                    &:focus {
-
-                        h3,
-                        .heading-3 {
-                            color: darken($secondaryColor, 20);
-                        }
-                    }
                 }
-
                 p {
                     @extend %paragraph;
+                }
+                &:focus {
+
+                    h3,
+                    .heading-3 {
+                        color: $aFocusTxt;
+                    }
                 }
             }
 
@@ -973,6 +983,14 @@
                     height: 100%;
                 }
             }
+            &:hover{
+                color: darken($secondaryColor2, 20);
+                h3,
+                .heading-3 {
+                    color: darken($secondaryColor2, 20);
+                }
+            }
+
         }
     }
 
@@ -1058,11 +1076,11 @@
         width: 90%;
 
         a {
-            color: darken($secondaryColor, 15);
+            color: darken($secondaryColor2, 0);
 
             &:hover,
             &:focus {
-                color: darken($secondaryColor, 20);
+                color: darken($secondaryColor2, 20);
             }
         }
     }
@@ -1073,10 +1091,10 @@
 
     a {
         &:focus {
-            box-shadow: 0px 0px 3px $color-orange inset;
+            box-shadow: 0px 0px 3px $aFocusBoxline inset!important;
 
             .pic {
-                outline: 2px solid $color-orange;
+                outline: 2px solid $aFocusBoxline;
             }
 
         }
@@ -1148,8 +1166,8 @@
                 display: block;
                 height: 3em;
                 margin: .5em auto;
-                line-height: 1.5em;
                 text-align: left;
+                line-height: 1.5em;
 
                 a {
                     color: darken($secondaryColor, 15);
@@ -1168,7 +1186,7 @@
             a {
                 &:focus {
                     .pic {
-                        outline: 2px solid $aHover;
+                        outline: 2px solid $aFocusBoxline;
                     }
                 }
             }
@@ -1516,8 +1534,10 @@
                 }
 
                 &:focus {
+                    background: none!important;
+                    box-shadow: none!important;
                     &:before {
-                        box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aHover, 10), 36), -2) inset;
+                        box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aFocusBoxline, 0), 0), -2) inset;
                     }
                 }
             }
@@ -1562,7 +1582,7 @@
 
                 &:focus {
                     &:before {
-                        box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aHover, 10), 36), -2) inset;
+                        box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aFocusBoxline, 0), 0), -2) inset;
                     }
                 }
             }
@@ -1751,7 +1771,7 @@
 
             &:focus {
                 &:before {
-                    box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aHover, 10), 36), -2) inset;
+                    box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aFocusBoxline, 0), 0), -2) inset;
                 }
             }
 
@@ -1878,11 +1898,11 @@
                 margin-bottom: 1em;
 
                 a {
-                    color: darken($secondaryColor, 15);
+                    color: darken($secondaryColor2, 0);
 
                     &:hover,
                     &:focus {
-                        color: darken($secondaryColor, 20);
+                        color: darken($secondaryColor2, 20);
                     }
                 }
             }
@@ -1954,7 +1974,7 @@
 
                 &:hover,
                 &:focus {
-                    border: 1px solid darken($secondaryColor, 5);
+                    border: 1px solid darken($secondaryColor2, 0);
                 }
 
                 &:after {
@@ -1962,16 +1982,22 @@
                 }
 
                 &:before {
-                    background: darken($secondaryColor, 5);
+                    background: darken($secondaryColor2, 10);
                 }
+                &:focus {
+                 &:before {
+                    background: darken($secondaryColor2, 10);
+                    border: 2px solid $aFocusBoxline;
+                } 
+            }
 
-                @include screen('mobile') {
-                    width: 80%;
-                    margin: 0 auto;
-                }
+            @include screen('mobile') {
+                width: 80%;
+                margin: 0 auto;
             }
         }
     }
+}
 }
 
 // news_card 最新消息卡片式
@@ -2015,11 +2041,11 @@
             display: block;
 
             a {
-                color: $secondaryColor;
+                color: $secondaryColor2;
 
                 &:hover,
                 &:focus {
-                    color: darken($secondaryColor, 10);
+                    color: darken($secondaryColor2, 10);
                 }
             }
         }
@@ -2088,13 +2114,13 @@
             left: 50%;
             margin-left: -37%;
             bottom: 1em;
-            background: $secondaryColor;
+            background: $secondaryColor2;
             color: #FFF;
-            border: 1px solid $secondaryColor;
+            border: 1px solid $secondaryColor2;
 
             &:hover,
             &:focus {
-                border: 1px solid darken($secondaryColor, 5);
+                border: 1px solid darken($secondaryColor2, 10);
             }
 
             &:after {
@@ -2102,10 +2128,15 @@
             }
 
             &:before {
-                background: darken($secondaryColor, 5);
+                background: darken($secondaryColor2, 5);
             }
+            &:focus {
+               &:before {
+                border: 2px solid $aFocusBoxline;
+            }  
         }
     }
+}
 }
 
 // 快速服務 quick_service
@@ -2129,6 +2160,11 @@
                 font-size: 1em;
                 white-space: nowrap;
             }
+            &:focus {
+                box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+                background: $aFocusBg!important;
+                color:$aFocusTxt!important;
+            }
         }
     }
 
@@ -2140,7 +2176,7 @@
     h3,
     .heading-3 {
         display: block;
-        height: 3em;
+        height: 4em;
         font-size: 1em;
         line-height: 1.5em;
         display: block;
@@ -2165,7 +2201,7 @@
         @include make-sm-column(3); //768px  width:33.3%
         @include make-md-column(3); //992px  width:33.3%
         @include make-lg-column(3); //1400px width:33.3%
-        @include gutter();
+        @include gutter(0);
         min-height: 250px;
 
         @include screen('mobile') {
@@ -2173,31 +2209,36 @@
         }
 
         &:nth-child(n) {
-            background: lighten($primaryColor, 2);
+            background: lighten($primaryColor, 0);
             @extend %small_block;
 
             &:hover,
             &:focus {
                 cursor: pointer;
-                background: lighten($primaryColor, 8);
+                background: lighten($primaryColor, 5);
                 box-shadow: 2px 2px 5px RGBA(0, 0, 0, .7) inset;
+            }
+            &:focus {
+                box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+                background: $aFocusBg!important;
+                color:$aFocusTxt!important;
             }
         }
 
         &:nth-child(2n) {
-            background: darken($secondaryColor, 2);
+            background: darken($secondaryColor2, 0);
             @extend %small_block;
 
             &:hover,
             &:focus {
                 cursor: pointer;
-                background: lighten($secondaryColor, 8);
+                background: lighten($secondaryColor, 2);
                 box-shadow: 2px 2px 5px RGBA(0, 0, 0, .7) inset;
             }
         }
 
         &:nth-child(3n) {
-            background: darken($third-color, 5);
+            background: darken($third-color, 0);
             @extend %small_block;
 
             &:hover,
@@ -2346,6 +2387,7 @@
 }
 
 //卡片式條列
+//卡片式條列
 .multi_cards {
     margin: 1em 0;
 
@@ -2422,7 +2464,7 @@
         h2,
         h2.title {
             position: relative;
-            background: darken($secondaryColor, 10);
+            background: darken($secondaryColor2, 0);
             color: #fff;
             font-size: 1em;
             padding: .85em 1em;

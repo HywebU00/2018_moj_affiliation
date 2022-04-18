@@ -151,10 +151,18 @@ body {
                 min-height: 1.5em;
                 max-height: 15em;
                 border-bottom: 1px solid RGBA(255, 255, 255, 0.4);
-                &:hover,
-                &:focus {
+                &:hover{
                     color:#FFF !important;
                     background: RGBA(0,0,0,.5) !important;
+                    &:before {
+                        border: 2px solid #FFF;
+                        border-left: none;
+                        border-top: none;
+                    }
+                }
+                &:focus {
+                    color:$aFocusTxt!important;
+                    background: $aFocusBg!important;
                     &:before {
                         border: 2px solid #FFF;
                         border-left: none;
@@ -198,8 +206,7 @@ body {
                     color: #FFF;
                     transition: .3s ease-out;
                     line-height: 1.45em;
-                    &:hover,
-                    &:focus {
+                    &:hover {
                         background: darken($aHover, 0);
                     }
                 }
@@ -305,7 +312,7 @@ body {
         padding: .4em 0;
         font-size: 1.25em;
         text-align: center;
-        color: $secondaryColor;
+        color: $secondaryColor2;
         position: relative;
         margin: .2em;
     }

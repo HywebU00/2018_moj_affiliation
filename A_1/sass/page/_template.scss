@@ -10,7 +10,6 @@ body {
         padding: 0;
     }
 }
-
 // 最外圍預設為100%
 .wrapper {
     width: 100%;
@@ -19,14 +18,12 @@ body {
         background: #FFF;
     }
 }
-
 // 整體共用container樣式，請注意首頁切版頁面的整齊
 .container {
     padding: 0;
     margin: 0 auto;
     max-width: $container-max; //請看_variable.scss
 }
-
 .main {
     position: relative;
     margin: 0 auto;
@@ -34,7 +31,8 @@ body {
     // 可先設定一個中央區塊最大寬，限制accesskey對齊
     @include screen('tablet') {
         padding-top: 55px;
-    } // 內頁標題設定
+    }
+    // 內頁標題設定
     h2 {
         line-height: 1.25em;
     }
@@ -54,11 +52,10 @@ body {
             position: relative;
         }
     }
-    button,input[type="button"]{
-        box-shadow:none;
+    button, input[type="button"] {
+        box-shadow: none;
     }
 }
-
 ////////////////////////////////////////////////////////////
 // 為了與首頁區隔，請在內頁加上innerpage ClassName
 .innerpage {
@@ -71,7 +68,6 @@ body {
         @include gutter(); //gutter 代表左右要留白
     }
 }
-
 .innerpage .main_menu {
     @include make-xs-column(12);
     @include make-sm-column(12);
@@ -81,7 +77,8 @@ body {
     margin-top: 1em;
     @include screen('tablet') {
         display: none;
-    } // @include gutter();
+    }
+    // @include gutter();
     &~.content {
         @include make-xs-column(12);
         @include make-sm-column(12);
@@ -138,7 +135,6 @@ body {
                 left: auto;
                 top: 0em;
             }
-
             li {
                 display: block;
                 text-align: left;
@@ -152,14 +148,20 @@ body {
                     color: #FFF;
                     transition: .3s ease-out;
                     line-height: 1.45em;
-                    &:hover,
-                    &:focus {
+                    &:hover {
                         background: darken($primaryColor, 0);
                     }
-                }
-            }
-        }
-    } // ul {
+                    &:focus{
+                     background: $aFocusBg!important;
+                     // border: dotted 2px $aFocusBoxline!important;
+                     color:$aFocusTxt!important;  
+                     box-shadow: 0 0px 0px 2px $aFocusBoxline inset; 
+                 }
+             }
+         }
+     }
+ }
+    // ul {
     //     padding: 0;
     //     margin: 0;
     //     list-style: none;
@@ -185,7 +187,6 @@ body {
     //     }
     // }
 }
-
 .content {
     @include make-xs-column(12);
     @include make-sm-column(12);
@@ -253,7 +254,6 @@ body {
         margin: .2em;
     }
 }
-
 .inner_image {
     width: 100%;
     min-height: 150px;
@@ -315,7 +315,6 @@ body {
         // }
     }
 }
-
 .cp,
 .lp,
 .qp,

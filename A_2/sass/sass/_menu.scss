@@ -134,6 +134,7 @@
             line-height: 3em;
             @include box-sizing;
         }
+        margin-left: -280px;
         width:280px;
         padding-top: 3em;
         position:absolute;
@@ -255,7 +256,9 @@
     .navigation {
         position: relative;
         display: block;
-        text-align: left; // margin-bottom: 70px;
+        text-align: left;
+        padding-right: 0;
+         // margin-bottom: 70px;
         // outline:1px solid red;
         // nav
         ul {
@@ -274,6 +277,7 @@
             //width: 50%;
             margin: 0;
             padding: 0;
+            float: none;
             @include box-sizing;
             // &:nth-child(odd):last-child {
             //     width: 100%;
@@ -293,8 +297,7 @@
                     border-left: none;
                     border-top: none;
                 }
-                &:hover,
-                &:focus {
+                &:hover {
                     background: darken($primaryColor, 20);
                 }
             }

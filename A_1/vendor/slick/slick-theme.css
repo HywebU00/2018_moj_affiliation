@@ -31,19 +31,29 @@
     background-size: 30px 30px;
 }
 
-.slick-prev:hover,
-.slick-prev:focus {
+.slick-prev:hover{
     color: transparent;
     border: none;
     background: url(icon_arrow_left_inverse.png) center center no-repeat RGBA(255,255,255,.8);
     background-size: 30px 30px;
 }
+.slick-prev:focus {
+    color: transparent;
+    border: none;
+    background:#FCC211 url(icon_arrow_left_inverse.png) center center no-repeat;
+    background-size: 30px 30px;
+}
 
-.slick-next:hover,
-.slick-next:focus {
+.slick-next:hover {
     color: transparent;
     border: none;
     background: url(icon_arrow_right_inverse.png) center center no-repeat RGBA(255,255,255,.8);
+    background-size: 30px 30px;
+}
+.slick-next:focus {
+    color: transparent;
+    border: none;
+    background:#FCC211 url(icon_arrow_right_inverse.png) center center no-repeat;
     background-size: 30px 30px;
 }
 
@@ -153,6 +163,9 @@
 .slick-dots li button:focus:before {
     opacity: 1;
     background: #21baff;
+}
+.slick-dots li button:focus:before {
+    border: dotted 2px #0033ff!important;
 }
 .slick-dots li button:before {
     font-size: 0em;

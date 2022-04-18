@@ -16,6 +16,7 @@
     color: #444;
 }
 
+
 // more有顏色按鈕
 %more_color {
     width: 100%;
@@ -132,7 +133,7 @@
                 &:hover,
                 &:focus {
                     background: url(../images/icon_plus.png) no-repeat right 12px lighten($secondaryColor, 5);
-                    box-shadow: none;
+                    box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
                 }
 
                 &.active {
@@ -141,7 +142,7 @@
                     &:hover,
                     &:focus {
                         background: url(../images/icon_minus.png) no-repeat right 12px lighten($secondaryColor, 5);
-                        box-shadow: none;
+                        box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
                     }
                 }
             }
@@ -198,15 +199,18 @@
             }
 
             a {
-
+                display: block;
                 &:hover,
                 &:focus {
                     .pic {
                         background: darken($secondaryColor, 5);
                     }
 
-                    h3 a {
-                        color: $secondaryColor;
+                    h3,
+                    .heading-3 {
+                        a {
+                            color: $secondaryColor;
+                        }
                     }
                 }
             }
@@ -262,9 +266,9 @@
             margin: 0px 1em;
 
             a {
+                display: block;
 
-                &:hover,
-                &:focus {
+                &:hover, &:focus{
                     .pic {
                         background: $secondaryColor;
                     }
@@ -453,17 +457,27 @@
                 padding-bottom: 1em;
                 background: #FFF;
 
-                &:hover,
-                &:focus {
+                &:hover {
                     background: $secondaryColor;
 
                     h3,
                     .heading-3 {
-                        color: #FFF;
+                        color: #FFF!important;
                     }
 
                     span {
                         color: #FFF;
+                    }
+                }
+                &:focus {
+
+                    h3,
+                    .heading-3 {
+                        color:$aFocusTxt;
+                    }
+
+                    span {
+                        color:$aFocusTxt;
                     }
                 }
 
@@ -532,8 +546,8 @@
                 padding: 0;
                 height: 50px;
                 position: relative;
-                text-align: center;
                 font-weight: bold;
+                text-align: center;
                 transition: .3s ease-out;
 
                 &:before {
@@ -554,11 +568,17 @@
                     transition: .3s ease-out;
                 }
 
-                &:hover,
+                &:hover{
+                    &:before {
+                        display: block;
+                        right: 0;
+                    }
+                }
                 &:focus {
                     &:before {
                         display: block;
                         right: 0;
+                        box-shadow: 0 0px 0px 3px $aFocusBoxline;
                     }
                 }
             }
@@ -592,13 +612,6 @@
         padding-bottom: 0em !important;
     }
 
-    // .col-4-8{
-    //     &.col:nth-child(1){
-    //         @include screen('tablet') {
-    //             display:none !important;
-    //         }
-    //     }
-    // }
     .container {
         position: absolute;
         width: 100%;
@@ -613,7 +626,7 @@
         @include screen('mobile'){
             flex-wrap: wrap;
         }
-        
+
         .col {
             @include gutter(0);
             position: relative;
@@ -642,9 +655,9 @@
             position: relative;
             padding-top: 1em;
             height: 100%;
+            @include box-sizing;
             max-width: 280px;
             display: block;
-            @include box-sizing;
 
             @include screen('tablet') {
                 display: none;
@@ -661,9 +674,14 @@
                         padding-left: 1.8em !important;
                         transition: .3s ease-out;
 
-                        &:hover,
-                        &:focus {
+                        &:hover{
                             background: RGBA(0, 0, 0, .5) !important;
+                        }
+                        &:focus{
+                            background: $aFocusBg!important;
+                            box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+                            // border: dotted 2px $aFocusBoxline!important;
+                            color:$aFocusTxt!important;
                         }
 
                         &:before {
@@ -794,11 +812,14 @@
         display: block;
 
         &:focus {
+            box-shadow: none;
+            background: none!important;
+
             &:before {
+                box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
                 position: absolute;
                 width: 100%;
                 height: 100%;
-                box-shadow: 0 0px 0px 2px $aHover inset;
                 content: "";
                 z-index: 1;
                 top: 0;
@@ -888,7 +909,7 @@
                         position: absolute;
                         width: 100%;
                         height: 100%;
-                        box-shadow: 0 0px 0px 3px $aHover inset;
+                        box-shadow: 0 0px 0px 3px $aFocusBoxline inset;
                         content: "";
                         z-index: 1;
                         top: 0;
@@ -914,7 +935,7 @@
         }
 
         &+h3,
-        &+.heading-3 {
+        &.heading-3 {
             display: block;
             margin: .5em auto;
             line-height: 1.5em;
@@ -961,22 +982,22 @@
                     height: 3em;
                     margin: .5em auto;
                     line-height: 1.5em;
-                    text-align: left;
                     color: $secondaryColor;
-
-                    &:hover,
-                    &:focus {
-
-                        h3,
-                        .heading-3 {
-                            color: darken($secondaryColor, 10);
-                        }
-                    }
+                    text-align: left;
                 }
 
                 p {
                     @extend %paragraph;
                 }
+
+                &:hover, &:focus {
+
+                    h3,
+                    .heading-3 {
+                        color: darken($secondaryColor, 20);
+                    }
+                }
+
             }
 
             .pic {
@@ -1071,6 +1092,7 @@
         margin: .5em auto;
         line-height: 1.5em;
         text-align: left;
+        width: 90%;
 
         a {
             color: $secondaryColor;
@@ -1109,7 +1131,7 @@
             @include box-shadow(0px 0px 10px RGBA(0, 0, 0, .15));
 
             .youtube {
-                @include aspect-ratio(4, 3);
+                @include aspect-ratio(16, 9);
 
                 iframe {
                     position: absolute;
@@ -1168,7 +1190,7 @@
 
                     &:hover,
                     &:focus {
-                        color: darken($secondaryColor, 10);
+                        color: darken($secondaryColor, 20);
                     }
                 }
             }
@@ -1382,6 +1404,10 @@
             height: 100%;
             top: 0;
             left: 0;
+            // &:focus{
+            //     width: 99.4%;
+            //     height: 99%;
+            // }
         }
 
         @include screen('mobile') {
@@ -1533,7 +1559,7 @@
 
                 &:focus {
                     &:before {
-                        box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aHover, 10), 36), -2) inset;
+                        box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aFocusBoxline, 0), 36), -2) inset;
                     }
                 }
             }
@@ -1578,7 +1604,7 @@
 
                 &:focus {
                     &:before {
-                        box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aHover, 10), 36), -2) inset;
+                        box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aFocusBoxline, 10), 36), -2) inset;
                     }
                 }
             }
@@ -1767,7 +1793,7 @@
 
             &:focus {
                 &:before {
-                    box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aHover, 10), 36), -2) inset;
+                    box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aFocusBoxline, 10), 36), -2) inset;
                 }
             }
 
@@ -2145,6 +2171,7 @@
                 font-size: 1em;
                 white-space: nowrap;
             }
+
         }
     }
 
@@ -2156,7 +2183,7 @@
     h3,
     .heading-3 {
         display: block;
-        height: 3em;
+        height: 5em;
         font-size: 1em;
         line-height: 1.5em;
         display: block;
@@ -2184,7 +2211,7 @@
         @include make-sm-column(3); //768px  width:33.3%
         @include make-md-column(3); //992px  width:33.3%
         @include make-lg-column(3); //1400px width:33.3%
-        @include gutter();
+        @include gutter(0);
         min-height: 250px;
 
         @include screen('mobile') {
@@ -2239,6 +2266,10 @@
             }
         }
     }
+    &:focus{
+        background: $aFocusBg!important;
+        border: dotted 2px $aFocusBoxline!important;
+    }
 }
 
 // 查扣物查詢
@@ -2290,23 +2321,25 @@
 
     .show-calendar-toggle {
         position: relative;
-        padding: .5em 1.5em;
-        // &:after{
-        //     content: "";
-        //     width: 6px;
-        //     height: 6px;
-        //     border: 2px solid #FFF;
-        //     transform: rotate(45deg);
-        //     position: absolute;
-        //     right: 10px;
-        //     top: 15px;
-        //     border-left: none;
-        //     border-bottom: none;
-        //     transition: .3s ease-out;
-        // }
-        // @include screen('mobile'){
-        //     display:none;
-        // }
+        padding: .5em 2em .5em 1em;
+
+        &:after {
+            content: "";
+            width: 6px;
+            height: 6px;
+            border: 2px solid #FFF;
+            transform: rotate(45deg);
+            position: absolute;
+            right: 10px;
+            top: 15px;
+            border-left: none;
+            border-bottom: none;
+            transition: .3s ease-out;
+        }
+
+        @include screen('mobile') {
+            display: none;
+        }
     }
 
     .calendar-container {
@@ -2440,7 +2473,7 @@
         h2,
         h2.title {
             position: relative;
-            background: darken($secondaryColor, 10);
+            background: darken($secondaryColor, 5);
             color: #fff;
             font-size: 1em;
             padding: .85em 1em;
@@ -2451,18 +2484,6 @@
             overflow: hidden;
             text-overflow: ellipsis;
             z-index: 2;
-
-            // &:before{
-            //     content:"";
-            //     display: block;
-            //     position: absolute;
-            //     top: 0;
-            //     left: 0;
-            //     height: 50px;
-            //     width: 100%;
-            //     background: darken($secondaryColor, 10);
-            //     z-index: 0;
-            // }
             &:after {
                 content: none;
             }
@@ -2470,24 +2491,24 @@
 
         &:nth-child(3n+2) {
             h2 {
-                background: $third-color;
+                background: darken($third-color, 0);
             }
 
             >.card_content {
                 &:after {
-                    border-color: $third-color transparent transparent transparent;
+                    border-color: darken($third-color, 0) transparent transparent transparent;
                 }
             }
         }
 
         &:nth-child(3n+3) {
             h2 {
-                background: $fourth-color;
+                background: darken($fourth-color, 0);
             }
 
             >.card_content {
                 &:after {
-                    border-color: $fourth-color transparent transparent transparent;
+                    border-color: darken($fourth-color, 0) transparent transparent transparent;
                 }
             }
         }
@@ -2531,5 +2552,28 @@
 
     .ad_more {
         display: none;
+    }
+}
+
+// 修正格線排版
+.col-4-4-4,
+.col-3-3-3-3 {
+    .col {
+        .news_list {
+            ul {
+                li {
+
+                    h3,
+                    .heading-3 {
+                        display: block !important;
+                    }
+
+                    .pic {
+                        float: none !important;
+                        margin: 0px auto .5em !important;
+                    }
+                }
+            }
+        }
     }
 }

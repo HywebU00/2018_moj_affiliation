@@ -7,15 +7,15 @@ $primaryColor:				#4a367c;				//主色
 $secondaryColor:			#7158aa; 				//輔色
 $lightColor:				#ffca27;				//點綴
 $linkColor:					#a444a1;				//連結
-$importantColor:			#FF3E4D;				//重要
+$importantColor:			#EB0012;				//重要
 // 但注意真實顏色與語意的關聯必須易於辨識
 
-$color-blue: 				#21BAFF;
-$color-green:				#5CB85C;
-$color-orange: 				#F77810;
-$color-red: 				#FF3E4D;
+$color-blue: 				#007BB3;
+$color-green:				#398339;
+$color-orange: 				#BC5806;
+$color-red: 				#EB0012;
 $color-yellow: 				#FCC211;
-$color-purple: 				#AA5AC5;
+$color-purple: 				#A651C2;
 $color-gray: 				#CCC;
 $color-dark: 				#333;
 $color-hr:					#666;		  			 //hr顏色
@@ -23,6 +23,9 @@ $color-word:				#222;                    //一般字的顏色
 // 連結顏色
 $aColor:					#222;
 $aHover:					#c42ea6;
+$aFocusBg:					#FCC211;
+$aFocusTxt:					#000;
+$aFocusBoxline:				#0033ff;
 
 // 表單focus顏色
 $form-focus:				darken(#AA5AC5,15);				//表單
@@ -33,7 +36,7 @@ $footer-color:				#312435;				//footer底色
 $footer-btn:				#4a367c;				//footer按鈕
 
 $third-color:				#FCC211; 				//3th
-$fourth-color:				#1699a8; 				//4th
+$fourth-color:				#127F8C; 				//4th
 
 
 $more:						#7158aa;				//more

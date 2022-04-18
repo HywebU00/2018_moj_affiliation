@@ -148,9 +148,13 @@ body {
                     color: #FFF;
                     transition: .3s ease-out;
                     line-height: 1.45em;
-                    &:hover,
-                    &:focus {
+                    &:hover {
                         background: darken($primaryColor, 0);
+                    }
+                    &:focus{
+                        background: $aFocusBg!important;
+                        box-shadow: 0 0px 0px 2px $aFocusBoxline inset!important;
+                        color:$aFocusTxt!important;
                     }
                 }
             }

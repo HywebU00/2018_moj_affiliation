@@ -1,4 +1,4 @@
-$function_color:#888;
+$function_color:#666;
 //可自訂顏色，或是自帶既有變數，但請注意背景色與字的對比度
 //範例：$function_color:#000;
 //icon基本設定
@@ -45,14 +45,14 @@ $function_color:#888;
                 }
             } // 友善列印
             &.icon_print {
-                 @include screen('mobile') {
-                    display:none;
-                }
-                a:before {
-                    @extend %function_before;
-                    background: url(../images/basic/icon_print.svg) no-repeat center center;
-                    background-size: cover;
-                }
+               @include screen('mobile') {
+                display:none;
+            }
+            a:before {
+                @extend %function_before;
+                background: url(../images/basic/icon_print.svg) no-repeat center center;
+                background-size: cover;
+            }
             } // 轉寄友人
             &.icon_forward {
                 a:before {

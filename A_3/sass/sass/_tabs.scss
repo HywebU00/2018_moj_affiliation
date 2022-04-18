@@ -17,7 +17,7 @@
     }
     &>.tabItem {
         &.active>a {
-            background-color: lighten($primaryColor, 10);
+            background-color: lighten($primaryColor, 5);
             color: #FFF;
         }
         float: left;

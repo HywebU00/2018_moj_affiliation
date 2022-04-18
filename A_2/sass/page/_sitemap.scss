@@ -27,58 +27,60 @@
              vertical-align: top;
              &:nth-child(3n){
                 margin-right: 0;
-             };
-             a {
-                 margin: 1em 0 0;
-                 color: #222;
-                 padding: .5em 0;
-                 display: block;
-                 font-size: 1.25em;
-                 font-weight: bold;
-                 border-bottom: 2px solid $secondaryColor;
-                 &:hover,
-                 &:focus {
-                     color: $secondaryColor !important;
-                     text-decoration: none;
-                 }
+            };
+            a {
+             margin: 1em 0 0;
+             color: #222;
+             padding: .5em 0;
+             display: block;
+             font-size: 1.25em;
+             font-weight: bold;
+             border-bottom: 2px solid $secondaryColor;
+             &:hover{
+                 color: $secondaryColor !important;
+                 text-decoration: none;
              }
-             ul {
-                 margin-left: 1em;
-                 padding-left: 0%;
-                 li {
-                     width: 100%;
-                     display: block !important;
-                     margin-bottom: 0;
-                     font-size:.938em;
-                     &:nth-child(2n) {
-                         margin-right: 0;
-                     }
-                     li{
-                        font-size:1em;
-                     }
-                     a {
-                         margin-top: 0px;
-                         margin-bottom: 0px;
-                         display: block;
-                         padding-left: .5em;
-                         font-size: 1em;
-                         border-bottom: 1px dotted #ccc;
-                         background-color: transparent;
-                         color: #333;
-                         font-weight: bold;
-                     }
-                 }
+             &:focus {
+                 color:$aFocusTxt!important;
              }
          }
-         @include screen('mobile') {
-             width: 95%;
-             margin: 0px auto;
+         ul {
+             margin-left: 1em;
+             padding-left: 0%;
              li {
                  width: 100%;
-                 &:nth-child(3n) {
+                 display: block !important;
+                 margin-bottom: 0;
+                 font-size:.938em;
+                 &:nth-child(2n) {
                      margin-right: 0;
                  }
+                 li{
+                    font-size:1em;
+                }
+                a {
+                 margin-top: 0px;
+                 margin-bottom: 0px;
+                 display: block;
+                 padding-left: .5em;
+                 font-size: 1em;
+                 border-bottom: 1px dotted #ccc;
+                 background-color: transparent;
+                 color: #333;
+                 font-weight: bold;
              }
          }
      }
  }
+ @include screen('mobile') {
+     width: 95%;
+     margin: 0px auto;
+     li {
+         width: 100%;
+         &:nth-child(3n) {
+             margin-right: 0;
+         }
+     }
+ }
+}
+}

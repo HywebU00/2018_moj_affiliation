@@ -71,7 +71,7 @@ $fatTextColor: #FFF; //fatFooter 連結顏色
                 display: inline-block; // outline: 1px solid red;
                 text-align: left;
                 vertical-align: top;
-              margin: 0 0 1em -3px;
+                margin: 0 0 1em -3px;
                 line-height: 2.6em; // margin:$fatFooterliMargin;
                 @include box-sizing(border-box);
                 &:nth-child(7n+1){
@@ -96,8 +96,11 @@ $fatTextColor: #FFF; //fatFooter 連結顏色
                         // background: $aHover;
                         // @include border-radius(3px);
                     }
-                     &:focus {
+                    &:focus {
                         background: rgba(255, 255, 255, .5);
+                        &:focus{
+                            box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+                        }
                     }
                 }
                 ul {
@@ -128,6 +131,9 @@ $fatTextColor: #FFF; //fatFooter 連結顏色
                             background: none;
                             @include box-sizing(border-box);
                             border-bottom: none;
+                            &:focus{
+                                box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+                            }
                         }
                     }
                     ul {

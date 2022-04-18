@@ -71,6 +71,9 @@ body {
             @include gutter(0);
         }
     }
+    // .mp_content{
+    //     display:none;
+    // }
 }
 .innerpage .main_menu {
     @include make-xs-column(12);
@@ -144,15 +147,22 @@ body {
                 transition: .3s ease-out;
                 margin-bottom: 0;
                 color: #333 !important;
-                border-bottom: 1px solid RGBA(255, 255, 255, 0.4);
                 height: auto;
                 min-height: 1.5em;
                 max-height: 15em;
-                &:hover,
-                &:focus {
+                border-bottom: 1px solid RGBA(255, 255, 255, 0.4);
+                &:hover{
                     color:#FFF !important;
-                    // color:#FFF !important;
-                    background: $aHover !important;
+                    background: RGBA(0,0,0,.5) !important;
+                    &:before {
+                        border: 2px solid #FFF;
+                        border-left: none;
+                        border-top: none;
+                    }
+                }
+                &:focus {
+                    color:$aFocusTxt!important;
+                    background: $aFocusBg!important;
                     &:before {
                         border: 2px solid #FFF;
                         border-left: none;
@@ -196,8 +206,7 @@ body {
                     color: #FFF;
                     transition: .3s ease-out;
                     line-height: 1.45em;
-                    &:hover,
-                    &:focus {
+                    &:hover {
                         background: darken($aHover, 0);
                     }
                 }
@@ -252,7 +261,7 @@ body {
     background: #FFF;
     padding-top: 1em;
     padding-bottom: 3em;
-    margin-top: 0em;
+    // margin-top: 1em;
     min-height: 500px;
     @include screen('desktop') {
         min-height: 650px;
@@ -303,7 +312,7 @@ body {
         padding: .4em 0;
         font-size: 1.25em;
         text-align: center;
-        color: $secondaryColor;
+        color: $secondaryColor2;
         position: relative;
         margin: .2em;
     }

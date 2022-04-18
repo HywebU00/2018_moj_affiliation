@@ -135,10 +135,13 @@ input[type="text"]:focus,
 input[type="reset"]:focus,
 input[type="file"]:focus,
 input[type="password"]:focus,
+input[type="submit"]:focus,
+input[type="button"]:focus,
+button:focus,
 textarea:focus,
 select:focus {
-    border: 1px solid lighten($form-focus, 20);
-    @include box-shadow(0px 0px 0px 2px lighten($form-focus, 20));
+    border: 2px solid lighten($aFocusBoxline, 0);
+    // @include box-shadow(0px 0px 0px 2px $aFocusBoxline);
     outline: none;
 }
 
@@ -166,7 +169,7 @@ select {
 //---------------------------------------------reset--------//
 input[type="reset"] {
     @extend %btn;
-    @include btn_setting(darken($color-gray, 20), #FFF);
+    @include btn_setting(darken($color-gray, 30), #FFF);
     text-shadow: none;
 }
 
@@ -214,10 +217,12 @@ input[disable] {
     &~label {
         color: darken($color-gray, 10);
     }
-    &:hover,
-    &:focus {
+    &:hover {
         border-color: darken($color-gray, 10);
         box-shadow: none; // cursor: not-allowed;
+    }
+    &:focus {
+        box-shadow: 0 0px 0px 0px $aFocusBoxline inset!important;
     }
 }
 

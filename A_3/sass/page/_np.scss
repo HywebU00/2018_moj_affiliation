@@ -46,7 +46,7 @@
             }
             &:hover,
             &:focus {
-                border: 2px solid $secondaryColor;
+                box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
                 background:$secondaryColor;
                 color:#FFF;
             }

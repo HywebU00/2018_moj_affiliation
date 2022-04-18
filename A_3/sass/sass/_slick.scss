@@ -2,18 +2,23 @@
 .slick-prev, .slick-next {
     transition: .3s ease-out;
     &:focus {
-        box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aHover, 7), 18), -17);
+        box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aFocusBoxline, 0), 18), -17);
     }
 }
 // slick dots
 .slick-dots {
     li {
         button {
-            &:hover,
-            &:focus {
+            &:hover {
                 &:before {
                     background: adjust_hue(saturate(lighten($aHover, 7), 18), -17);
                     box-shadow: 0px 0px 0px 1px adjust_hue(saturate(lighten($aHover, 7), 18), -17);
+                }
+            }
+            &:focus {
+                &:before {
+                    background: adjust_hue(saturate(lighten($aHover, 7), 18), -17);
+                    box-shadow: 0px 0px 0px 2px adjust_hue(saturate(lighten($aFocusBoxline, 0), 18), -17);
                 }
             }
             &:before {
@@ -25,12 +30,18 @@
                 &:before {
                     background: $aHover;
                 }
-                &:hover,
-                &:focus {
+                &:hover{
                     &:before {
                         opacity: .9;
                         color: black;
                         background: adjust_hue(saturate(lighten($aHover, 7), 18), -17);
+                    }
+                }
+                &:focus{
+                    &:before {
+                        opacity: .9;
+                        color: black;
+                        background: adjust_hue(saturate(lighten($aHover, 0), 18), -17);
                     }
                 }
             }
@@ -281,7 +292,7 @@
         @include aspect-ratio(4, 3);
         p {
             position: absolute;
-            background: RGBA(0, 0, 0, .4);
+            background: RGBA(0, 0, 0, .6);
             text-align: center;
             color: #FFF;
             padding: .5em;

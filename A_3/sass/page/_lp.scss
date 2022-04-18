@@ -122,9 +122,14 @@
                             display: inline-block;
                         }
                     }
-                    &:hover, &:focus {
+                    &:hover {
                         .title {
                             color: darken($aHover, 0);
+                        }
+                    }
+                    &:focus {
+                        .title {
+                            color: darken($aFocusTxt, 0);
                         }
                     }
                 }
@@ -239,6 +244,7 @@
                         @include box-shadow(1px 1px 5px RGBA(0, 0, 0, .4));
                     }
                     &:focus {
+                        border: none!important;
                         &:before {
                             position: absolute;
                             width: 100%;
@@ -311,6 +317,10 @@
                     margin-bottom:1em;
                     @include border-radius(4px);
                     @include box-shadow(0px 0px 10px RGBA(0, 0, 0, .15));
+                    &:focus{
+                        border:1px dotted $aFocusBoxline!important;
+                        box-shadow: 0 0 0 2px $aFocusBoxline;
+                    }
                 }
                 h3{
                     height: 4.5em;
@@ -364,10 +374,14 @@
         border-color: $primaryColor;
         color: #FFF;
         @include border-radius(4px);
-        &:hover,
-        &:focus {
+        &:hover{
             background: lighten($primaryColor, 10);
             border-color: lighten($primaryColor, 10);
+        }
+        &:focus{
+            box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+            background: $aFocusBg!important;
+            color:$aFocusTxt!important;
         }
         @include screen('mobile') {
             width: 100%;

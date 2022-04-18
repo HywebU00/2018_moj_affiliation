@@ -2,83 +2,87 @@
 
  .sitemap {
     margin: 0em auto 1em;
-     color: #666;
-     @include border-radius(8px);
-     @include clearfix;
-     .accesskeyDefine {
-         padding: 1em 2em;
-         background: #EEE;
-         @include border-radius(6px);
-     }
- }
+    color: #666;
+    @include border-radius(8px);
+    @include clearfix;
+    .accesskeyDefine {
+       padding: 1em 2em;
+       background: #EEE;
+       @include border-radius(6px);
+   }
+}
 
- .cascading {
-     ul {
-         @include li-reset;
-         @include box-sizing;
-         list-style-type: none;
-         li {
-             margin: 0 1% 0 0;
-             line-height: 1.5em;
-             font-size: 1em;
-             list-style: none;
-             width: 48.5%;
-             display: inline-block;
-             vertical-align: top;
-             &:nth-child(3n){
-                margin-right: 0;
-             };
-             a {
-                 margin: 1em 0 0;
-                 color: #222;
-                 padding: .5em 0;
-                 display: block;
-                 font-size: 1.25em;
-                 font-weight: bold;
-                 border-bottom: 2px solid $secondaryColor;
-                 &:hover,
-                 &:focus {
-                     color: $aHover !important;
-                     text-decoration: none;
-                 }
-             }
-             ul {
-                 margin-left: 1em;
-                 padding-left: 0%;
-                 li {
-                     width: 100%;
-                     display: block !important;
-                     margin-bottom: 0;
-                     font-size:.938em;
-                     &:nth-child(2n) {
-                         margin-right: 0;
-                     }
-                     li{
-                        font-size:1em;
-                     }
-                     a {
-                         margin-top: 0px;
-                         margin-bottom: 0px;
-                         display: block;
-                         padding-left: .5em;
-                         font-size: 1em;
-                         border-bottom: 1px dotted #ccc;
-                         background-color: transparent;
-                         color: #333;
-                         font-weight: bold;
-                     }
-                 }
-             }
-         }
-         @include screen('mobile') {
-             width: 95%;
-             margin: 0px auto;
-             li {
-                 width: 100%;
-                 &:nth-child(3n) {
-                     margin-right: 0;
-                 }
-             }
-         }
-     }
- }
+.cascading {
+   ul {
+       @include li-reset;
+       @include box-sizing;
+       list-style-type: none;
+       li {
+           margin: 0 1% 0 0;
+           line-height: 1.5em;
+           font-size: 1em;
+           list-style: none;
+           width: 48.5%;
+           display: inline-block;
+           vertical-align: top;
+           &:nth-child(3n){
+            margin-right: 0;
+        };
+        a {
+           margin: 1em 0 0;
+           color: #222;
+           padding: .5em 0;
+           display: block;
+           font-size: 1.25em;
+           font-weight: bold;
+           border-bottom: 2px solid $secondaryColor;
+           &:hover {
+               color: $aHover !important;
+               text-decoration: none;
+           }
+           &:focus {
+               color:$aFocusTxt!important;
+               text-decoration: none;
+           }
+       }
+       ul {
+           margin-left: 1em;
+           padding-left: 0%;
+           li {
+               width: 100%;
+               display: block !important;
+               margin-bottom: 0;
+               font-size:.938em;
+               &:nth-child(2n) {
+                   margin-right: 0;
+               }
+               li{
+                font-size:1em;
+            }
+            a {
+               margin-top: 0px;
+               margin-bottom: 0px;
+               display: block;
+               padding-left: .5em;
+               font-size: 1em;
+               border-bottom: 1px dotted #ccc;
+               background-color: transparent;
+               color: #333;
+               font-weight: bold;
+           }
+       }
+   }
+}
+@include screen('mobile') {
+   width: 95%;
+   margin: 0px auto;
+   li {
+       width: 100%;
+       &:nth-child(3n) {
+           margin-right: 0;
+       }
+   }
+}
+
+}
+}
