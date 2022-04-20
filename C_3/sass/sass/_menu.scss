@@ -136,6 +136,7 @@
             line-height: 3em;
             @include box-sizing;
         }
+        margin-left: -280px;
         width:280px;
         padding-top: 3em;
         position:absolute;
@@ -201,7 +202,7 @@
                 li {
                     background: #FFF;
                     a {
-                        padding: .7em 1em .7em 2em !important;
+                        padding: .3em 1em .3em 2em !important;
                         background: rgba(0, 0, 0, .05);
                         &:hover,
                         &:focus {
@@ -215,7 +216,7 @@
                     &.hasChild {
                         a {
                             background: rgba(0, 0, 0, .05);
-                            padding: .7em 1em .7em 2em !important;
+                            padding: .3em 1em .3em 2em !important;
                             line-height: 1.5em;
                             min-height: 1.5em;
                             &:hover,
@@ -250,14 +251,15 @@
             }
             ul {
                 display: none;
-                left: 0;
             }
         }
     }
     .navigation {
         position: relative;
         display: block;
-        text-align: left; // margin-bottom: 70px;
+        text-align: left;
+        padding-right: 0;
+        // margin-bottom: 70px;
         // outline:1px solid red;
         // nav
         ul {
@@ -276,6 +278,7 @@
             // width: 50%;
             margin: 0;
             padding: 0;
+            float: none;
             @include box-sizing;
             // &:nth-child(odd):last-child {
             //     width: 100%;
@@ -295,9 +298,11 @@
                     border-left: none;
                     border-top: none;
                 }
-                &:hover,
-                &:focus {
+                &:hover {
                     background: darken($primaryColor, 20);
+                }
+                &:focus {
+                    background: darken($aFocusBg, 0);
                 }
             }
         }

@@ -1,4 +1,4 @@
-$function_color:#888;
+$function_color:#666;
 //可自訂顏色，或是自帶既有變數，但請注意背景色與字的對比度
 //範例：$function_color:#000;
 //icon基本設定
@@ -10,6 +10,7 @@ $function_color:#888;
     margin-right: .2em;
     display: inline-block;
 }
+
 .function {
     margin: 0px;
     overflow: hidden;
@@ -19,9 +20,9 @@ $function_color:#888;
         margin: 0;
         li {
             list-style: none;
-            display: block;
+            display:block;
             float: left;
-            margin: 0 3px 3px 0;
+            margin:0 3px 3px 0;
             button,
             a {
                 font-size: .813em;
@@ -29,34 +30,31 @@ $function_color:#888;
                 padding: .2em 1em;
                 background: $function_color;
                 border-color: $function_color;
-                color: #FFF;
+                color:#FFF;
                 @include border-radius(4px);
                 &:hover,
                 &:focus {
                     background: darken($function_color, 10);
                     border-color: darken($function_color, 10);
                 }
-            }
-            // 回上一頁
+            } // 回上一頁
             &.icon_back {
                 a:before {
                     @extend %function_before;
                     background: url(../images/basic/icon_back.svg) no-repeat center center;
                     background-size: cover;
                 }
-            }
-            // 友善列印
+            } // 友善列印
             &.icon_print {
-                @include screen('mobile') {
-                    display: none;
-                }
-                a:before {
-                    @extend %function_before;
-                    background: url(../images/basic/icon_print.svg) no-repeat center center;
-                    background-size: cover;
-                }
+               @include screen('mobile') {
+                display:none;
             }
-            // 轉寄友人
+            a:before {
+                @extend %function_before;
+                background: url(../images/basic/icon_print.svg) no-repeat center center;
+                background-size: cover;
+            }
+            } // 轉寄友人
             &.icon_forward {
                 a:before {
                     @extend %function_before;
