@@ -109,6 +109,13 @@
                 left: 0;
                 z-index: 1;
             }
+            &:focus{
+                &:after {
+                    box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+                    background: $aFocusBg!important;
+                }
+            }
+
         }
     }
     h1 {
@@ -265,7 +272,7 @@
                 width: 30px !important;
                 height: 30px;
                 max-width: 100%;
-                min-width: 36px;
+                min-width: 30px;
                 background: url(../images/icon_search.png) no-repeat center center;
                 background-size: 24px;
                 border: none;
@@ -338,7 +345,7 @@
     &.m_search {
         width: 100% !important;
         max-width: 100% !important;
-        min-width: auto;
+        min-width: 100%;
         padding: .2em .3em 1em;
         display: block;
         height: auto;

@@ -91,8 +91,10 @@ $fatTextColor: #333; //fatFooter 連結顏色
                         // background: $aHover;
                         // @include border-radius(3px);
                     }
-                     &:focus {
-                        background: rgba(255, 255, 255, .85);
+                    &:focus {
+                        box-shadow: 0 0px 0px 2px $aFocusBoxline inset!important;
+                        background: $aFocusBg!important;
+                        color:$aFocusTxt!important;
                     }
                 }
                 ul {
@@ -110,7 +112,7 @@ $fatTextColor: #333; //fatFooter 連結顏色
                         display: block; // outline: 1px solid red;
                         text-align: left;
                         vertical-align: top;
-                         padding: 2px 0;
+                        padding: 2px 0;
                         line-height: 2.6em; // margin:$fatFooterliMargin;
                         @include box-sizing(border-box);
                         &:nth-child(7n+1) {

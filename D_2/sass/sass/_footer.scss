@@ -147,7 +147,7 @@ footer {
                 color: #FFF;
                 @include border-radius(3px);
                 @include transition(all, .3s, ease-out);
-                color: lighten($aHover, 15);
+                color: lighten($aHover, 35);
                 &:hover,
                 &:focus {
                     color: lighten($color-yellow, 0);
@@ -165,7 +165,7 @@ footer {
         margin-right: 5px;
         em {
             font-style: normal;
-            color: $primaryColor;
+            color: lighten($primaryColor, 35);
             padding: 0 .5em;
         }
     }
