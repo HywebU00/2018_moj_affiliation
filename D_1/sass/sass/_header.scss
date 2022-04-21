@@ -109,6 +109,13 @@
                 left: 0;
                 z-index: 1;
             }
+            &:focus{
+                &:after {
+                    box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+                    background: $aFocusBg!important;
+                }
+            }
+
         }
     }
     h1 {
