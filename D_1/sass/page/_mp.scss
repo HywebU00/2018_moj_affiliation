@@ -138,6 +138,7 @@
                 }
                 &:focus {
                     box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+                    background: url(../images/icon_minus.png) no-repeat right 12px lighten($aFocusBg, 0)!important;
                 }
 
                 &.active {
@@ -150,6 +151,7 @@
                     }
                     &:focus {
                         box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+                        background: url(../images/icon_minus.png) no-repeat right 12px lighten($aFocusBg, 0)!important;
                     }
                 }
             }
@@ -626,7 +628,7 @@
             background: rgba(0, 0, 0, .5);
         }
         &:focus{
-           &:before {
+         &:before {
             box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
             background: $aFocusBg!important;
             color:$aFocusTxt!important;
@@ -848,15 +850,15 @@ h2.title {
                     background: rgba(0, 0, 0, .5);
                 }
                 &:focus{
-                 &:before {
-                     box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
-                     background: $aFocusBg!important;
-                     color:$aFocusTxt!important;
-                 } 
-             }
-         }
+                   &:before {
+                       box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+                       background: $aFocusBg!important;
+                       color:$aFocusTxt!important;
+                   } 
+               }
+           }
 
-         &~.mp_slider {
+           &~.mp_slider {
             .img-container {
                 height: 300px;
 
