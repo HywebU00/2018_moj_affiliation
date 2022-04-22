@@ -191,7 +191,7 @@ input[type="checkbox"]:checked,
 input[type="radio"]:checked {
     border-color: $form-focus;
     background-color: $form-focus;
-    outline: none;
+    // outline: none;
 }
 
 input[type="checkbox"]:checked {

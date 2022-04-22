@@ -27,8 +27,8 @@
     }
     a.close{
     	position:absolute;
-    	width:16px;
-    	height: 16px;
+    	width:20px;
+    	height: 20px;
     	top:.4em;
     	right:1em;
     	@include opacity(.5);
@@ -38,7 +38,8 @@
     	img{
     		width: 12px;
     		height: 12px;
-    	}
+            margin-left:4px;
+        }
     }
 }
 
