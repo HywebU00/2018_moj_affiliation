@@ -17,7 +17,7 @@
     }
     &>.tabItem {
         &.active>a {
-            background-color: lighten($primaryColor, 10);
+            background-color: lighten($primaryColor, 0);
             color: #FFF;
         }
         float: left;
@@ -47,7 +47,7 @@
             @include text-overflow();
             @include box-sizing();
             &:hover {
-                background: lighten($primaryColor, 10);
+                background: lighten($primaryColor, 20);
             }
             position:relative;
         }
@@ -87,7 +87,7 @@
     }
     li {
         margin: 0 0 1.3em 0;
-        padding: 0 0 0 15px;
+        padding: 0;
         position: relative;
         border-bottom: 1px #CCC dashed;
         @include screen('mobile') {
@@ -133,10 +133,7 @@
             width: 100px;
             position: absolute;
             right: 0;
-            top: 2px;
-            // @include screen('mobile') {
-            //     text-align: right;
-            // }
+            top: 0;
         }
     }
     // .more {
