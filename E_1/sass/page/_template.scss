@@ -93,9 +93,9 @@ body {
     @include make-lg-column(3);
     background-image: url(../images/menu_bg.png),linear-gradient(to bottom, $primaryColor,$secondaryColor);
     background-repeat: no-repeat,
-                       no-repeat;
+    no-repeat;
     background-position: top left,
-                         left;
+    left;
     margin: 1em 0 3em;
     flex:0 0 290px;
     @include screen('tablet') {
@@ -173,9 +173,13 @@ body {
                     color: #FFF;
                     transition: .3s ease-out;
                     line-height: 1.45em;
-                    &:hover,
-                    &:focus {
+                    &:hover {
                         background: darken($primaryColor, 0);
+                    }
+                    &:focus {
+                        box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+                        background: $aFocusBg!important;
+                        color:$aFocusTxt!important;
                     }
                 }
             }

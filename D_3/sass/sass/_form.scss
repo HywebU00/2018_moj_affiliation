@@ -136,6 +136,8 @@ input[type="file"]:focus,
 input[type="password"]:focus,
 input[type="submit"]:focus,
 input[type="button"]:focus,
+input[type="checkbox"]:focus,
+input[type="radio"]:focus,
 input:focus,
 button:focus,
 textarea:focus,
@@ -190,8 +192,8 @@ input[type="radio"] {
 
 input[type="checkbox"]:checked,
 input[type="radio"]:checked {
-    border-color: $form-focus;
-    background-color: $form-focus;
+    border-color: $secondaryColor;
+    background-color: $secondaryColor;
     // outline: none;
 }
 
@@ -200,12 +202,19 @@ input[type="checkbox"]:checked {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 98%;
-    box-shadow: $aFocusBoxline 0 0 0 2px;
+    box-shadow: $secondaryColor 0 0 0 1px;
     @include border-radius(2px);
+    &:focus{
+     box-shadow: $aFocusBoxline 0 0 0 3px; 
+ }
 }
 
 input[type="radio"]:checked {
-    box-shadow: #fff 0 0 0 3px inset, $aFocusBoxline 0 0 0 2px;
+    box-shadow: #fff 0 0 0 3px inset, $secondaryColor 0 0 0 1px;
+    &:focus{
+        box-shadow:#fff 0 0 0 2px inset, $aFocusBoxline 0 0 0 2px; 
+    }
+
 }
 
 //---------------------------------------------readonly disable -------//
