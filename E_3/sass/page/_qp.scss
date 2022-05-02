@@ -5,11 +5,10 @@
 }
 .q_title {
     background: $primaryColor;
-    color: #FFF;
+    color: $color-word;
     @include border-radius(6px);
     padding: 1em;
     font-size: 1em;
-    color: #FFF;
     margin: .5em 0;
 }
 .q_content {
@@ -40,14 +39,14 @@
         animation: progress-bar-stripes 1s linear infinite;
     }
 }
- @keyframes progress-bar-stripes {
-     from {
-         background-position: 1rem 0;
-     }
-     to {
-         background-position: 0 0;
-     }
+@keyframes progress-bar-stripes {
+ from {
+     background-position: 1rem 0;
  }
- .text-right{
- 	text-align: right;
+ to {
+     background-position: 0 0;
  }
+}
+.text-right{
+  text-align: right;
+}

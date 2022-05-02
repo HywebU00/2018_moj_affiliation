@@ -128,18 +128,24 @@
                 color: #fff;
                 position: relative;
 
-                &:hover,
-                &:focus {
+                &:hover {
                     background: url(../images/icon_plus.png) no-repeat right 12px darken($linkColor, 10);
+                    box-shadow: none;
+                }
+                &:focus {
+                    background: url(../images/icon_plus.png) no-repeat right 12px darken($aFocusBg, 0)!important;
                     box-shadow: none;
                 }
 
                 &.active {
                     background: url(../images/icon_minus.png) no-repeat right 12px $color-hr;
 
-                    &:hover,
-                    &:focus {
+                    &:hover {
                         background: url(../images/icon_minus.png) no-repeat right 12px darken($linkColor, 10);
+                        box-shadow: none;
+                    }
+                    &:focus {
+                        background: url(../images/icon_minus.png) no-repeat right 12px darken($aFocusBg, 0)!important;
                         box-shadow: none;
                     }
                 }
@@ -202,7 +208,7 @@
             }
 
             a {
-
+                display: block;
                 &:hover,
                 &:focus {
                     .pic {
@@ -273,7 +279,7 @@
             margin: 0px 1em;
 
             a {
-
+                display: block;
                 &:hover,
                 &:focus {
                     .pic {
@@ -506,8 +512,7 @@
                 padding-bottom: 1em;
                 background: #FFF;
 
-                &:hover,
-                &:focus {
+                &:hover {
                     background: $secondaryColor;
 
                     h3,
@@ -517,6 +522,18 @@
 
                     span {
                         color: $aHover;
+                    }
+                }
+                &:focus {
+                    background: $aFocusBg!important;;
+
+                    h3,
+                    .heading-3 {
+                        color: $aFocusTxt;
+                    }
+
+                    span {
+                        color: $aFocusTxt;
                     }
                 }
 
@@ -607,11 +624,17 @@
                     transition: .3s ease-out;
                 }
 
-                &:hover,
+                &:hover {
+                    &:before {
+                        display: block;
+                        right: 0;
+                    }
+                }
                 &:focus {
                     &:before {
                         display: block;
                         right: 0;
+                        box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
                     }
                 }
             }
@@ -732,11 +755,11 @@
 
         .main_menu {
             background-image: url(../images/menu_bg01.png),
-                linear-gradient(to bottom, $primaryColor, $secondaryColor);
+            linear-gradient(to bottom, $primaryColor, $secondaryColor);
             background-repeat: no-repeat,
-                no-repeat;
+            no-repeat;
             background-position: top left,
-                left;
+            left;
             position: relative;
             height: 100%;
             min-height: 500px;
@@ -799,9 +822,13 @@
                             transition: .3s ease-out;
                             line-height: 1.45em;
 
-                            &:hover,
-                            &:focus {
+                            &:hover {
                                 background: darken($primaryColor, 0);
+                            }
+                            &:focus {
+                                box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+                                background: $aFocusBg!important;
+                                color:$aFocusTxt!important;
                             }
                         }
 
@@ -905,24 +932,24 @@ section {
         .container {
             max-width: 1200px !important;
             &>.col:nth-child(1){
-               &+.col{
+             &+.col{
+                padding-right: 0;
+                display: block;
+                @media screen and (max-width: 1200px) {
                     padding-right: 0;
-                    display: block;
-                    @media screen and (max-width: 1200px) {
-                        padding-right: 0;
-                    }
-               } 
-            }
-            @include screen('mobile') {
-                @include gutter;
-            }
+                }
+            } 
+        }
+        @include screen('mobile') {
+            @include gutter;
+        }
 
-        }
-        .main_img {
-            left: 0;
-            width: 100%;
-        }
     }
+    .main_img {
+        left: 0;
+        width: 100%;
+    }
+}
 }
 
 // 靜態圖static_banner
@@ -933,11 +960,13 @@ section {
         display: block;
 
         &:focus {
+            background: none!important;
+            box-shadow: none!important;
             &:before {
                 position: absolute;
                 width: 100%;
                 height: 100%;
-                box-shadow: 0 0px 0px 2px $aHover inset;
+                box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
                 content: "";
                 z-index: 1;
                 top: 0;
@@ -1013,12 +1042,19 @@ section {
             a {
                 display: block;
 
-                &:hover,
+                &:hover {
+
+                    h3,
+                    .heading-3 {
+                        background: darken($primaryColor, 50);
+                    }
+                }
                 &:focus {
 
                     h3,
                     .heading-3 {
-                        background: darken($primaryColor, 10);
+                        background: $aFocusBg!important;
+                        color:$aFocusTxt!important;
                     }
                 }
 
@@ -1027,7 +1063,7 @@ section {
                         position: absolute;
                         width: 100%;
                         height: 100%;
-                        box-shadow: 0 0px 0px 3px $aHover inset;
+                        box-shadow: 0 0px 0px 3px $aFocusBoxline inset;
                         content: "";
                         z-index: 1;
                         top: 0;
@@ -1063,17 +1099,19 @@ section {
             a {
                 color: $color-word;
 
-                &:hover,
-                &:focus {
+                &:hover {
                     color: $aHover;
                 }
+
             }
         }
 
         &~p {
             @extend %paragraph;
         }
+
     }
+
 }
 
 .multi_photo {
@@ -1116,6 +1154,13 @@ section {
 
                 p {
                     @extend %paragraph;
+                }
+                &:focus {
+
+                    h3,
+                    .heading-3 {
+                        color: $aFocusTxt;
+                    }
                 }
             }
 
@@ -1230,7 +1275,8 @@ section {
     a {
         &:focus {
             .pic {
-                outline: 2px solid $aHover;
+                outline: 2px solid $aFocusBoxline;
+                color:$aFocusTxt!important;
             }
         }
     }
@@ -1307,9 +1353,11 @@ section {
                 a {
                     color: $secondaryColor;
 
-                    &:hover,
-                    &:focus {
+                    &:hover {
                         color: darken($secondaryColor, 10);
+                    }
+                    &:focus {
+                        color:$aFocusTxt!important;
                     }
                 }
             }
@@ -1319,9 +1367,12 @@ section {
             }
 
             a {
+                display: block;
                 &:focus {
                     .pic {
-                        outline: 2px solid $aHover;
+                        box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+                        background: $aFocusBg!important;
+                        color:$aFocusTxt!important;
                     }
                 }
             }
@@ -1703,7 +1754,7 @@ section {
 
                 &:focus {
                     &:before {
-                        box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aHover, 10), 36), -2) inset;
+                        box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aFocusBoxline, 0), 0), -2) inset;
                     }
                 }
             }
@@ -1748,7 +1799,7 @@ section {
 
                 &:focus {
                     &:before {
-                        box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aHover, 10), 36), -2) inset;
+                        box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aFocusBoxline, 0), 0), -2) inset;
                     }
                 }
             }
@@ -1937,7 +1988,7 @@ section {
 
             &:focus {
                 &:before {
-                    box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aHover, 10), 36), -2) inset;
+                    box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aFocusBoxline, 0), 0), -2) inset;
                 }
             }
 
@@ -2145,7 +2196,7 @@ section {
                 &:hover,
                 &:focus {
                     border: 1px solid darken($secondaryColor, 5);
-                    color: #fff;
+                    color: $color-word;
                 }
 
                 &:after {

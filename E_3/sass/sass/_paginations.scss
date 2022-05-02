@@ -34,11 +34,15 @@
                 @include filter-gradient(#f7f7f7, #eaeaea, vertical); // IE6-9
                 @include background-image(linear-gradient(top, rgba(247, 247, 247, 1) 0%, rgba(234, 234, 234, 1) 100%));
                 border: #ccc solid 1px;
-                &:hover,
-                &:focus {
+                &:hover {
                     background: $primaryColor;
                     color: #fff!important;
                     border: $primaryColor solid 1px;
+                }
+                &:focus{
+                    background: $aFocusBg!important;
+                    box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+                    color:$aFocusTxt!important;
                 }
             }
             &.active {
@@ -46,6 +50,11 @@
                     color: #fff!important;
                     background: $linkColor;
                     border: $linkColor solid 1px;
+                    &:focus{
+                        background: $aFocusBg!important;
+                        box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+                        color:$aFocusTxt!important;
+                    }
                 }
             }
             &.first,

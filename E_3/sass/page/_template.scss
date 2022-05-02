@@ -92,14 +92,14 @@ body {
     @include make-md-column(3);
     @include make-lg-column(3);
     background-image:url(../images/menu_bg01.png),
-                             url(../images/menu_bg02.png),
-                             linear-gradient(to bottom, $primaryColor,$secondaryColor);
+    url(../images/menu_bg02.png),
+    linear-gradient(to bottom, $primaryColor,$secondaryColor);
     background-repeat: no-repeat,
-                               no-repeat,
-                               no-repeat;
+    no-repeat,
+    no-repeat;
     background-position: top left,
-                        bottom left,
-                        left;
+    bottom left,
+    left;
     //background-size:contain,contain,auto;
     margin: 1em 0 3em;
     flex:0 0 290px;
@@ -174,9 +174,13 @@ body {
                     color: $color-word;
                     transition: .3s ease-out;
                     line-height: 1.45em;
-                    &:hover,
-                    &:focus {
+                    &:hover {
                         background: darken($primaryColor, 0);
+                    }
+                    &:focus {
+                        box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+                        background: $aFocusBg!important;
+                        color:$aFocusTxt!important;
                     }
                 }
                 ul {
@@ -276,7 +280,7 @@ body {
         padding: .4em 0;
         font-size: 1.25em;
         text-align: center;
-        color: $secondaryColor;
+        color: $linkColor;
         position: relative;
         margin: .2em;
     }
