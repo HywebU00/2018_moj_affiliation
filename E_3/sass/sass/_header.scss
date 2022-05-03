@@ -60,7 +60,7 @@
             @extend %mobileCtrlBtn;
             span {
                 position: absolute;
-                background: $primaryColor;
+                background: darken($secondaryColor, 25);
                 width: 50%;
                 height: 4px;
                 top: 35%;
