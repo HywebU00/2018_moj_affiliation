@@ -98,7 +98,9 @@ $fatTextColor: #FFF; //fatFooter 連結顏色
                         // @include border-radius(3px);
                     }
                     &:focus {
-                        background: rgba(255, 255, 255, .5);
+                        box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+                        background: $aFocusBg!important;
+                        color:$aFocusTxt!important;
                     }
                 }
                 ul {

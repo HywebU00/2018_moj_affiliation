@@ -18,12 +18,14 @@
     width: 100%;
     color: #FFF;
     background: $primaryColor;
-    border: 1px solid $primaryColor;
+    border: 2px solid $primaryColor;
     &:focus {
-        background: darken($secondaryColor, 10);
-        border: 1px solid darken($secondaryColor, 10);
+        background: darken($aFocusBg, 0);
+        // box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+        border: 2px solid darken($aFocusBoxline, 10);
+        color:$aFocusTxt!important;
         &:before {
-            background: darken($secondaryColor, 20);
+            background: darken($aFocusBg, 0);
         }
     }
 }
@@ -109,17 +111,23 @@
                 padding: 1em 1.5em 1em 1em;
                 color: #FFF;
                 position: relative;
-                &:hover,
-                &:focus {
+                &:hover {
                     background: url(../images/icon_plus.png) no-repeat right 12px darken($primaryColor, 5);
                     box-shadow: none;
                 }
+                &:focus {
+                    background: url(../images/icon_plus.png) no-repeat right 12px darken($aFocusBg, 0)!important;
+                    box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+                }
                 &.active {
                     background: url(../images/icon_minus.png) no-repeat right 12px darken($primaryColor, 10);
-                    &:hover,
-                    &:focus {
+                    &:hover {
                         background: url(../images/icon_minus.png) no-repeat right 12px lighten($primaryColor, 5);
                         box-shadow: none;
+                    }
+                    &:focus {
+                        background: url(../images/icon_minus.png) no-repeat right 12px darken($aFocusBg, 0)!important;
+                        box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
                     }
                 }
             }
@@ -167,6 +175,7 @@
                 width: 49%; // outline: 1px solid red;
             }
             a {
+                display: block;
                 &:hover,
                 &:focus {
                     .pic {
@@ -174,8 +183,8 @@
                     }
                     h3,.heading-3{
                         a {
-                        color: $secondaryColor;
-                    }
+                            color: $secondaryColor;
+                        }
                     } 
                 }
             }            text-align: center;
@@ -221,43 +230,44 @@
             margin: 0px 1em;
             a {
                 color:$color-word;
+                display: block;
                 &:hover,
                 &:focus {
                     .pic {
                         background: $secondaryColor;
                     }
                     h3,.heading-3{
-                         a {
+                     a {
                         color: $secondaryColor;
                     }
-                    }
                 }
-            }
-            text-align: center;
-            .pic {
-                width: 100px;
-                height: 100px;
-                margin: 0 auto 1em;
-                @include border-radius(50%);
-                background: $lightColor;
-                img {
-                    margin: 20px auto 0;
-                    width: 60px;
-                    height: 60px;
-                }
-            }
-            h3,.heading-3 {
-                font-size: 1em;
-                text-align: center;
-                width: 80%;
-                line-height: 1.5em;
-                display: block;
-                height: 4.5em;
-                margin: 0px auto;
-                overflow: hidden;
             }
         }
+        text-align: center;
+        .pic {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 1em;
+            @include border-radius(50%);
+            background: $lightColor;
+            img {
+                margin: 20px auto 0;
+                width: 60px;
+                height: 60px;
+            }
+        }
+        h3,.heading-3 {
+            font-size: 1em;
+            text-align: center;
+            width: 80%;
+            line-height: 1.5em;
+            display: block;
+            height: 4.5em;
+            margin: 0px auto;
+            overflow: hidden;
+        }
     }
+}
 }
 // 重點業務 focus
 .focus {
@@ -340,7 +350,7 @@
                         width: 100%;
                         height: 100%;
                         z-index: 9;
-                        box-shadow:0px 0px 0px 3px lighten($color-yellow,20) inset;
+                        box-shadow:0px 0px 0px 3px lighten($aFocusBoxline,0) inset;
                         top:0;
                         left: 0;
                         bottom:0;
@@ -409,14 +419,22 @@
                 height: 100%;
                 padding-bottom: 1em;
                 background: #FFF;
-                &:hover,
-                &:focus {
+                &:hover {
                     background: $secondaryColor;
                     h3,.heading-3 {
                         color: #FFF;
                     }
                     span {
                         color: #FFF;
+                    }
+                }
+                &:focus {
+                    background: $aFocusBg!important;
+                    h3,.heading-3 {
+                        color: $aFocusTxt;
+                    }
+                    span {
+                        color: $aFocusTxt;
                     }
                 }
                 .pic {
@@ -441,7 +459,7 @@
                     font-size: .938em;
                     height: 3em;
                     line-height: 1.5em;
-                    color: #888;
+                    color: #666;
                     width: 90%;
                     display: block;
                     text-align: left;
@@ -494,13 +512,20 @@
                     display: none;
                     transition: .3s ease-out;
                 }
-                &:hover,
-                &:focus {
+                &:hover {
                     &:before {
                         display: block;
                         right: 0;
                     }
                 }
+                &:focus {
+                    &:before {
+                        display: block;
+                        right: 0;
+                        box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+                    }
+                }
+
             }
             img {
                 width: 24px;
@@ -842,11 +867,14 @@
     a {
         display: block;
         &:focus {
+            background: none!important;
+            box-shadow: none!important;
+
             &:before {
                 position: absolute;
                 width: 100%;
                 height: 100%;
-                box-shadow: 0 0px 0px 2px $aHover inset;
+                box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
                 content: "";
                 z-index: 1;
                 top: 0;
@@ -920,7 +948,7 @@
                         position: absolute;
                         width: 100%;
                         height: 100%;
-                        box-shadow: 0 0px 0px 3px $aHover inset;
+                        box-shadow: 0 0px 0px 3px $aFocusBoxline inset;
                         content: "";
                         z-index: 1;
                         top: 0;
@@ -994,6 +1022,13 @@
                 }
                 p {
                     @extend %paragraph;
+                }
+                &:focus {
+
+                    h3,
+                    .heading-3 {
+                        color: $aFocusTxt;
+                    }
                 }
             }
             .pic {
@@ -1092,7 +1127,7 @@
     a {
         &:focus {
             .pic {
-                outline: 2px solid $aHover;
+                outline: 2px solid $aFocusBoxline;
             }
         }
     }
@@ -1171,7 +1206,7 @@
             a {
                 &:focus {
                     .pic {
-                        outline: 2px solid $aHover;
+                        outline: 2px solid $aFocusBoxline;
                     }
                 }
             }
@@ -1481,8 +1516,9 @@
                     @include box-shadow(0px 0px 0px 1px #CCC inset);
                 }
                 &:focus {
+                    background: none!important;
                     &:before {
-                        box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aHover, 10), 36), -2) inset;
+                        box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aFocusBoxline, 0), 0), -2) inset;
                     }
                 }
             }
@@ -1521,7 +1557,7 @@
                 }
                 &:focus {
                     &:before {
-                        box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aHover, 10), 36), -2) inset;
+                        box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aFocusBoxline, 0), 0), -2) inset;
                     }
                 }
             }
@@ -1697,7 +1733,7 @@
             position: relative;
             &:focus {
                 &:before {
-                    box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aHover, 10), 36), -2) inset;
+                    box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aFocusBoxline, 0), 0), -2) inset;
                 }
             }
             &:before {
@@ -1857,9 +1893,7 @@
                     min-height: 260px;
                     float: none;
                 }
-                a {
-                    display: block;
-                }
+
             }
             a.more {
                 margin: 0px 0px 0px auto;
@@ -1870,9 +1904,11 @@
                 min-width: 4em;
                 width: 4em;
                 border: 1px solid #CCC;
-                &:hover,
-                &:focus {
+                &:hover {
                     border: 1px solid darken($secondaryColor, 5);
+                }
+                &:focus {
+                    border: 2px solid darken($aFocusBoxline, 0);
                 }
                 &:after {
                     display: none;
@@ -1987,9 +2023,15 @@
             color: #FFF;
             border: 1px solid $secondaryColor;
             border-radius: 4px;
-            &:hover,
-            &:focus {
+            &:hover {
                 border: 1px solid $aHover;
+            }
+            &:focus {
+                border: 2px solid $aFocusBoxline;
+                color:$aFocusTxt!important;
+                &:before {
+                    background: $aFocusBg!important;
+                }
             }
             &:after {
                 display: none;
