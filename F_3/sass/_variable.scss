@@ -10,10 +10,10 @@ $linkColor:					#22223B;				//連結
 $importantColor:			#F2E9E4;				//重要
 // 但注意真實顏色與語意的關聯必須易於辨識
 
-$color-blue: 				#21BAFF;
-$color-green:				#5CB85C;
-$color-orange: 				#F77810;
-$color-red: 				#FF3E4D;
+$color-blue: 				#0B7EB1;
+$color-green:				#468146;
+$color-orange: 				#BD5B0A;
+$color-red: 				#EB0012;
 $color-yellow: 				#FCC211;
 $color-purple: 				#AA5AC5;
 $color-gray: 				#CCC;
@@ -21,18 +21,20 @@ $color-dark: 				#262626;
 $color-hr:					#666;		  			 //hr顏色
 $color-word:				#222;                    //一般字的顏色
 // 連結顏色
-$aColor:					#D2691E;
+$aColor:					#B75B1A;
 $aHover:					darken($aColor, 10);
-
+$aFocusBg:					#FCC211;
+$aFocusTxt:					#000;
+$aFocusBoxline:				#0033ff;
 // 表單focus顏色
 $form-focus:				#844331;				//表單
 //-------------------------------------------------------------法務部專屬設定------//
 
 $fatfooter-color:			#dcdcdc;				//fatfooter底色
 $footer-color:				#382A26;				//footer底色
-$footer-btn:				#C9ADA7;				//footer按鈕
+$footer-btn:				#844331;				//footer按鈕
 
-$third-color:				#B85D44; 				//3th
+$third-color:				#A0513B; 				//3th
 $fourth-color:				#784A56; 				//4th
 
 $more:						#D2691E;				//more
