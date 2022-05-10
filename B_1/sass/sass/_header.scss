@@ -279,7 +279,7 @@
                 }
                 &:focus {
                     opacity: 1;
-                    box-shadow: 0px 0px 0px 2px $form-focus;
+                    box-shadow: 0px 0px 0px 2px $aFocusBoxline;
                     outline: none;
                 }
             }
@@ -303,7 +303,7 @@
             }
             &:focus {
                 opacity: 1;
-                box-shadow: 0px 0px 0px 2px $form-focus;
+                box-shadow: 0px 0px 0px 2px $aFocusBoxline;
                 outline: none;
             }
         }

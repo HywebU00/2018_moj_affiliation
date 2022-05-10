@@ -37,8 +37,7 @@ $fatTextColor: #FFF; //fatFooter 連結顏色
         font-weight: bold;
         top: .5em;
         @include border-radius(4px);
-        &:hover,
-        &:focus {
+        &:hover {
             background: darken($color-yellow, 0);
             text-decoration: none;
             cursor: pointer;
@@ -46,6 +45,11 @@ $fatTextColor: #FFF; //fatFooter 連結顏色
             outline: none;
             border: none;
             color:#000;
+        }
+        &:focus {
+            box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+            background: $aFocusBg!important;
+            color:$aFocusTxt!important;
         }
     }
     nav {
@@ -89,8 +93,7 @@ $fatTextColor: #FFF; //fatFooter 連結顏色
                     padding: 1%;
                     border-radius: 4px;
                     color:lighten($color-yellow,21);
-                    &:hover,
-                    &:focus {
+                    &:hover {
                         color:lighten($color-yellow,40);
                         text-decoration: none;
                         box-shadow: none;
@@ -98,7 +101,7 @@ $fatTextColor: #FFF; //fatFooter 連結顏色
                         // @include border-radius(3px);
                     }
                     &:focus {
-                        background: rgba(0, 0, 0, .5);
+                        box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
                     }
                 }
                 ul {
