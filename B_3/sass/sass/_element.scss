@@ -9,7 +9,7 @@ body {
                 position: absolute;
                 width: 100%;
                 height: 100%;
-                box-shadow: 0 0px 0px 3px $aHover inset;
+                box-shadow: 0 0px 0px 3px $aFocusBoxline inset;
                 content: "";
                 z-index: 1;
                 top: 0;
@@ -26,7 +26,7 @@ body {
                 position: absolute;
                 width: 100%;
                 height: 100%;
-                box-shadow: 0 0px 0px 3px $aHover inset;
+                box-shadow: 0 0px 0px 3px $aFocusBoxline inset;
                 content: "";
                 z-index: 1;
                 top: 0;
@@ -39,7 +39,9 @@ body {
 // tab的外框線
 a:focus {
     outline: none;
-    box-shadow: 0 0px 0px 1px $aHover inset;
+    box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+    background: $aFocusBg!important;
+    color:$aFocusTxt!important;
     // @include screen('mobile') {
     //     box-shadow: none;
     // }
@@ -48,9 +50,9 @@ a:focus {
 .btn:focus {
     outline: none;
     box-shadow: 0 0px 0px 3px $form-focus;
-    @include screen('mobile') {
-        box-shadow: none;
-    }
+    // @include screen('mobile') {
+    //     box-shadow: none;
+    // }
 }
 
 // 導盲磚
@@ -96,19 +98,19 @@ a:focus {
         width: auto;
         min-width: 3em;
         font-style: italic;
-        background: darken($color-red, 25);
+        background: darken($color-red, 0);
     }
     &.red {
-        background: darken($color-red, 10);
+        background: darken($color-red, 0);
     }
     &.green {
-        background: darken($color-green, 10);
+        background: darken($color-green, 0);
     }
     &.blue {
-        background: darken($color-blue, 15);
+        background: darken($color-blue, 0);
     }
     &.orange {
-        background: darken($color-orange, 10);
+        background: darken($color-orange, 0);
     }
     &.purple {
         background: darken($color-purple, 10);
@@ -123,7 +125,7 @@ a.more {
     height: 2.5em;
     margin: .5em auto .5em;
     line-height: 2.5;
-    color: #666;
+    color: #333;
     border: 1px solid #AAA;
     text-align: center;
     overflow: hidden;
@@ -168,8 +170,7 @@ a.more {
         transition-timing-function: ease-out;
     }
     &:hover,
-    &:focus,
-    &.active {
+    &.active{
         border: 1px solid $more;
         color: white;
         &:before {
@@ -180,6 +181,12 @@ a.more {
             right: 15px;
         }
     }
+    &:focus{
+        border: 1px solid $aFocusBoxline!important;
+        box-shadow: 0 0px 0px 1px $aFocusBoxline inset; 
+        background: $aFocusBg!important;
+        color:$aFocusTxt!important;
+    }
 }
 
 // scrollTop
@@ -187,7 +194,7 @@ a.more {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: url(../images/basic/top.png) no-repeat center top rgba(0, 0, 0, .6);
+    background: url(../images/basic/top.png) no-repeat center top $color-orange;
     opacity: .8;
     text-align: center;
     color: #FFF;
@@ -200,10 +207,13 @@ a.more {
     display: none;
     z-index: 99999999;
     text-indent: -999999px;
-    &:hover,
+    &:hover {
+        opacity: 1;
+        background: url(../images/basic/top.png) no-repeat center top darken($color-yellow, 0);
+    }
     &:focus {
         opacity: 1;
-        background: url(../images/basic/top.png) no-repeat center top darken($color-purple, 10);
+        background: url(../images/basic/top.png) no-repeat center top darken($aFocusBg, 0)!important;
     }
 }
 
@@ -398,9 +408,11 @@ img.img-responsive {
             &[href$="zip"]:after {
                 background: url(../images/basic/icon_zip.jpg);
             }
-            &:hover,
-            &:focus {
+            &:hover {
                 color: $aHover !important;
+            }
+            &:focus {
+                color: $aFocusTxt !important;
             }
         }
     }
