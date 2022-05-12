@@ -97,40 +97,46 @@
                 display: block;
                 filter: invert(1);
             }
-        }
+            &:focus{
+              box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+
+              &:before {
+              }  
+          }
+      }
+  }
+  h1 {
+    float: left;
+    width: 420px;
+    height: 100px;
+    margin: 0;
+    padding: 0;
+    @include box-sizing;
+    a {
+        display: inline-block;
     }
-    h1 {
-        float: left;
-        width: 420px;
-        height: 100px;
-        margin: 0;
-        padding: 0;
-        @include box-sizing;
-        a {
-            display: inline-block;
-        }
+    img {
+        display: block;
+        max-width: 420px;
+        max-height: 100px;
+        margin-top:20px;
+    }
+    @include screen('tablet') {
+        padding: 0px 60px;
+        width: 100%;
+        text-align: center;
+        height: 60px;
         img {
-            display: block;
-            max-width: 420px;
-            max-height: 100px;
-            margin-top:20px;
-        }
-        @include screen('tablet') {
-            padding: 0px 60px;
+            object-fit: contain;
+            margin: 0px auto;
             width: 100%;
-            text-align: center;
             height: 60px;
-            img {
-                object-fit: contain;
-                margin: 0px auto;
-                width: 100%;
-                height: 60px;
-                max-height: 60px;
-                max-width: 100%;
-                transform: scale(.9);
-            }
+            max-height: 60px;
+            max-width: 100%;
+            transform: scale(.9);
         }
     }
+}
     // 導覽列
     .navigation {
         @include clearfix;
@@ -167,7 +173,7 @@
                 text-decoration: none;
                 &:hover,
                 &:focus {
-                    color:$aHover;
+                    color: $aHover;
                 }
                 &:after {
                     @extend %slash;
@@ -195,7 +201,7 @@
                         display: block;
                         &:hover,
                         &:focus {
-                            color: $primaryColor;
+                            color: $color-word;
                             @include border-radius(6px);
                             background: rgba(0,0,0,.2);
                         }
@@ -221,9 +227,11 @@
     position: absolute;
     right:60px;
     top:40px;
+    //bottom:0;
+    //height:60px;
     float: right;
     vertical-align: middle;
-    padding: .85em 1em;
+    padding: .82em 1em;
     background: rgba(0,0,0,.8);
     z-index: 9999;
     @include box-sizing;
@@ -259,7 +267,7 @@
                 }
                 &:focus {
                     opacity: 1;
-                    box-shadow: 0px 0px 0px 2px $form-focus;
+                    box-shadow: 0px 0px 0px 2px $aFocusBoxline;
                     outline: none;
                 }
             }
@@ -283,7 +291,7 @@
             }
             &:focus {
                 opacity: 1;
-                box-shadow: 0px 0px 0px 2px $form-focus;
+                box-shadow: 0px 0px 0px 2px $aFocusBoxline;
                 outline: none;
             }
         }
@@ -342,10 +350,12 @@
             padding:0 15px;
         }
         .form_grp {
+            //width: 65%;
             height: auto;
             padding: 0 !important;
             margin-top: 0;
             text-align: right;
+            //float: left;
             height: 50px;
             position: relative;
             flex:1 0 auto;

@@ -17,7 +17,7 @@
     }
     &>.tabItem {
         &.active>a {
-            background-color: $primaryColor;
+            background-color: lighten($primaryColor, 0);
             color: #FFF;
         }
         float: left;
@@ -34,21 +34,20 @@
                 border-bottom: 1px solid #FFF;
             }
             &.active>a {
-                border-color: #b1b1b1;
+                border-color: #bbb;
             }
         }
         &>a {
             display: block;
             padding: 16px 0 20px;
             text-align: center;
-            background-color: #ddd;
-            color: $color-word;
+            background-color: $secondaryColor;
+            color: #fff;
             text-decoration: none;
             @include text-overflow();
             @include box-sizing();
             &:hover {
-                background: lighten($primaryColor, 10);
-                color:#fff;
+                background: lighten($primaryColor, 20);
             }
             position:relative;
         }
@@ -69,11 +68,12 @@
 }
 .tabContent {
     position: absolute;
+    background: #f6f6f6;
     top: auto;
     left: 0;
     right: 0;
     clear: both;
-    padding: 0;
+    padding: 30px 20px;
     display: none;
     text-align: left;
     @include screen('mobile') {
@@ -82,8 +82,7 @@
     ul {
         list-style-type: none;
         margin: 0;
-        padding: 30px 20px;
-        background: #f6f6f6;
+        padding: 0;
         line-height: 1.6;
     }
     li {
@@ -96,7 +95,7 @@
         }
         a {
             @include text-overflow;
-            //margin-right: 100px;
+            //margin-right: 120px;
             max-width: calc(100% - 150px);
             text-align: left;
             display: inline-block;

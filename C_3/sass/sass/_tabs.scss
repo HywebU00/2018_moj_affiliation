@@ -17,7 +17,7 @@
     }
     &>.tabItem {
         &.active>a {
-            background-color: lighten($primaryColor, 10);
+            background-color: lighten($primaryColor, 0);
             color: #FFF;
         }
         float: left;
@@ -41,13 +41,13 @@
             display: block;
             padding: 16px 0 20px;
             text-align: center;
-            background-color: $secondaryColor;
+            background-color: $secondaryColor2;
             color: #fff;
             text-decoration: none;
             @include text-overflow();
             @include box-sizing();
             &:hover {
-                background: lighten($primaryColor, 10);
+                background: lighten($primaryColor, 20);
             }
             position:relative;
         }

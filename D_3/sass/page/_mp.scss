@@ -126,27 +126,32 @@
 
             a {
                 display: block;
-                background: url(../images/icon_plus.png) no-repeat right 12px lighten($primaryColor, 10);
+                background: url(../images/icon_plus.png) no-repeat right 12px lighten($primaryColor, 0);
                 padding: 1em 1.5em 1em 1em;
                 color: #FFF;
                 position: relative;
 
                 &:hover,
                 &:focus {
-                    color: #FFF;
                     background: url(../images/icon_plus.png) no-repeat right 12px lighten($secondaryColor, 5);
                     box-shadow: none;
                 }
+                &:focus {
+                    box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+                    background: url(../images/icon_plus.png) no-repeat right 12px lighten($aFocusBg, 0)!important;
+                }
 
                 &.active {
-                    color: #FFF;
                     background: url(../images/icon_minus.png) no-repeat right 12px lighten($primaryColor, 10);
 
                     &:hover,
                     &:focus {
-                        color: #FFF;
                         background: url(../images/icon_minus.png) no-repeat right 12px lighten($secondaryColor, 5);
                         box-shadow: none;
+                    }
+                    &:focus {
+                        box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+                        background: url(../images/icon_minus.png) no-repeat right 12px lighten($aFocusBg, 0)!important;
                     }
                 }
             }
@@ -156,11 +161,6 @@
                 padding: 1em 1em 2em 1em;
                 background: #FFF;
                 line-height: 1.65em;
-                color: $color-word;
-
-                p {
-                    color: $color-word;
-                }
             }
         }
     }
@@ -208,7 +208,7 @@
             }
 
             a {
-
+                display: block;
                 &:hover,
                 &:focus {
                     .pic {
@@ -251,6 +251,7 @@
                 height: 4.5em;
                 margin: 0px auto;
                 overflow: hidden;
+                font-weight: bold;
             }
         }
     }
@@ -275,6 +276,7 @@
             margin: 0px 1em;
 
             a {
+                display: block;
 
                 &:hover,
                 &:focus {
@@ -308,7 +310,8 @@
             }
 
             h3,
-            .heading-3 {
+            .heading-3,
+            {
                 font-size: 1em;
                 text-align: center;
                 width: 80%;
@@ -317,6 +320,7 @@
                 height: 4.5em;
                 margin: 0px auto;
                 overflow: hidden;
+                font-weight: bold;
             }
         }
     }
@@ -466,13 +470,7 @@
                 padding-bottom: 1em;
                 background: #FFF;
 
-                h3,
-                .heading-3 {
-                    color: #222;
-                }
-
-                &:hover,
-                &:focus {
+                &:hover {
                     background: $secondaryColor;
 
                     h3,
@@ -482,6 +480,18 @@
 
                     span {
                         color: #FFF;
+                    }
+                }
+                &:focus {
+                    ox-shadow: 0 0px 0px 3px $aFocusBoxline inset;
+
+                    h3,
+                    .heading-3 {
+                        color: $aFocusTxt;
+                    }
+
+                    span {
+                        color: $aFocusTxt;
                     }
                 }
 
@@ -505,7 +515,6 @@
                     width: 90%;
                     display: block;
                     margin: 0px auto .5em;
-                    text-align: left;
                 }
 
                 span {
@@ -578,6 +587,11 @@
                         right: 0;
                     }
                 }
+                &:focus{
+                    &:before {
+                        box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+                    }
+                }
             }
 
             img {
@@ -605,7 +619,7 @@
     padding-bottom: 3em;
 
     a.more {
-        background: rgba(0, 0, 0, .3);
+        background: rgba(0, 0, 0, .6);
         color: #FFF;
         margin-top: 2em;
         border: 1px solid #FFF;
@@ -613,135 +627,142 @@
         &:before {
             background: rgba(0, 0, 0, .5);
         }
+        &:focus{
+           &:before {
+            box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+            background: $aFocusBg!important;
+            color:$aFocusTxt!important;
+        } 
+    }
+}
+
+h2.title {
+    color: #222;
+    margin-top: 1em;
+    font-size: 2em;
+    padding-bottom: 1em;
+    margin-bottom: .5em;
+    text-shadow: 0px 0px 2px #FFF, 0px 0px 3px #FFF, 0px 0px 5px #FFF, 0px 0px 7px #FFF, 0px 0px 8px #FFF;
+
+    &:before {
+        content: "";
+        border-bottom: none !important;
+        width: 50%;
+        left: 50%;
+        height: 4px;
+        margin-left: -25%;
+        position: absolute;
+        bottom: .15em;
+        @include gradient($color-red, $color-yellow, horizontal);
     }
 
-    h2.title {
-        color: #222;
-        margin-top: 1em;
-        font-size: 2em;
-        padding-bottom: 1em;
-        margin-bottom: .5em;
-        text-shadow: 0px 0px 2px #FFF, 0px 0px 3px #FFF, 0px 0px 5px #FFF, 0px 0px 7px #FFF, 0px 0px 8px #FFF;
-
-        &:before {
-            content: "";
-            border-bottom: none !important;
-            width: 50%;
-            left: 50%;
-            height: 4px;
-            margin-left: -25%;
-            position: absolute;
-            bottom: .15em;
-            @include gradient($color-red, $color-yellow, horizontal);
-        }
-
-        &:after {
-            display: none;
-        }
-
-        @include screen('mobile') {
-            font-size: 2em;
-        }
-    }
-
-    &+.main_banner {
-        margin-top: 0;
+    &:after {
+        display: none;
     }
 
     @include screen('mobile') {
+        font-size: 2em;
+    }
+}
+
+&+.main_banner {
+    margin-top: 0;
+}
+
+@include screen('mobile') {
+    @include gutter(0);
+    min-height: 460px;
+}
+
+.container {
+    position: absolute;
+    width: 100%;
+    @include box-sizing;
+    max-width: 1200px;
+    @include gutter(0);
+    height: 100%;
+    z-index: 1;
+    line-height: 1.65em;
+
+    .col {
         @include gutter(0);
-        min-height: 460px;
+        position: relative;
+        height: 100%;
+        @include box-sizing;
     }
 
-    .container {
-        position: absolute;
-        width: 100%;
-        @include box-sizing;
-        max-width: 1200px;
-        @include gutter(0);
-        height: 100%;
-        z-index: 1;
-        line-height: 1.65em;
+    @include screen('mobile') {
+        @include gutter;
 
-        .col {
+        .col:nth-child(2) {
             @include gutter(0);
-            position: relative;
-            height: 100%;
-            @include box-sizing;
         }
+
+        .col:nth-child(3) {
+            @include gutter(0);
+        }
+
+        .col:nth-child(4) {
+            @include gutter(0);
+        }
+    }
+
+    .main_menu {
+        @include gradient($primaryColor, $secondaryColor, vertical);
+        position: relative;
+        padding-top: 1em;
+        height: 100%;
+        @include box-sizing;
 
         @include screen('mobile') {
-            @include gutter;
-
-            .col:nth-child(2) {
-                @include gutter(0);
-            }
-
-            .col:nth-child(3) {
-                @include gutter(0);
-            }
-
-            .col:nth-child(4) {
-                @include gutter(0);
-            }
+            display: none;
         }
 
-        .main_menu {
-            @include gradient($primaryColor, $secondaryColor, vertical);
-            position: relative;
-            padding-top: 1em;
-            height: 100%;
-            @include box-sizing;
+        .menu {
+            display: block;
 
-            @include screen('mobile') {
-                display: none;
-            }
+            &>ul {
+                &>li>a {
+                    height: 1.5em;
+                    line-height: 1.5em;
+                    position: relative;
+                    padding-left: 1.8em !important;
+                    transition: .3s ease-out;
 
-            .menu {
-                display: block;
+                    &:hover,
+                    &:focus {
+                        background: RGBA(0, 0, 0, .2) !important;
+                    }
 
-                &>ul {
-                    &>li>a {
-                        height: 1.5em;
-                        line-height: 1.5em;
-                        position: relative;
-                        padding-left: 1.8em !important;
-                        transition: .3s ease-out;
-
-                        &:hover,
-                        &:focus {
-                            background: RGBA(0, 0, 0, .2) !important;
-                        }
-
-                        &:before {
-                            position: absolute;
-                            width: 4px;
-                            height: 4px;
-                            top: 1.2em;
-                            left: .7em;
-                            border: 2px solid #FFF;
-                            border-left: none;
-                            border-top: none;
-                            transform: rotate(315deg);
-                            content: "";
-                        }
+                    &:before {
+                        position: absolute;
+                        width: 4px;
+                        height: 4px;
+                        top: 1.2em;
+                        left: .7em;
+                        border: 2px solid #FFF;
+                        border-left: none;
+                        border-top: none;
+                        transform: rotate(315deg);
+                        content: "";
                     }
                 }
+            }
+
+            ul {
+                padding: 0;
+                margin: 0;
+                list-style: none;
 
                 ul {
-                    padding: 0;
-                    margin: 0;
-                    list-style: none;
+                    display: none;
+                    right: -200px;
+                    left: auto;
+                    top: 0em;
+                }
 
-                    ul {
-                        display: none;
-                        right: -200px;
-                        left: auto;
-                        top: 0em;
-                    }
-
-                    li {
-                        display: block;
+                li {
+                    display: block;
                         text-align: left; // margin-bottom: 1px;
 
                         &:last-child {
@@ -828,23 +849,30 @@
                 &:before {
                     background: rgba(0, 0, 0, .5);
                 }
-            }
+                &:focus{
+                 &:before {
+                     box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+                     background: $aFocusBg!important;
+                     color:$aFocusTxt!important;
+                 } 
+             }
+         }
 
-            &~.mp_slider {
-                .img-container {
-                    height: 300px;
-
-                    @include screen('mobile') {
-                        height: auto;
-                    }
-                }
+         &~.mp_slider {
+            .img-container {
+                height: 300px;
 
                 @include screen('mobile') {
-                    background: #FFF;
+                    height: auto;
                 }
+            }
+
+            @include screen('mobile') {
+                background: #FFF;
             }
         }
     }
+}
 
     // .slogan{
     //     width:
@@ -872,11 +900,13 @@
         display: block;
 
         &:focus {
+            background: none!important;
+            box-shadow: none!important;
             &:before {
                 position: absolute;
                 width: 100%;
                 height: 100%;
-                box-shadow: 0 0px 0px 2px $aHover inset;
+                box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
                 content: "";
                 z-index: 1;
                 top: 0;
@@ -966,7 +996,7 @@
                         position: absolute;
                         width: 100%;
                         height: 100%;
-                        box-shadow: 0 0px 0px 3px $aHover inset;
+                        box-shadow: 0 0px 0px 3px $aFocusBoxline inset;
                         content: "";
                         z-index: 1;
                         top: 0;
@@ -980,7 +1010,7 @@
 
 // 活動花絮
 .single_photo {
-    // background: #FFF;
+    background: #FFF;
     padding-bottom: .5em;
     text-align: left;
 
@@ -1010,6 +1040,10 @@
                 }
             }
         }
+
+        &~p {
+            @extend %paragraph;
+        }
     }
 }
 
@@ -1020,16 +1054,15 @@
         li {
             margin: 0px 1em;
             padding: .5em;
-            text-align: left;
             min-height: 250px;
             border: 1px solid #DDD;
             background: #FFF;
+            text-align: left;
             @include border-radius(4px);
             @include box-shadow(0px 0px 10px RGBA(0, 0, 0, .15));
 
             a {
                 display: block;
-
                 h3,
                 .heading-3 {
                     width: 90%;
@@ -1038,8 +1071,8 @@
                     height: 3em;
                     margin: .5em auto;
                     line-height: 1.5em;
-                    text-align: left;
                     color: $secondaryColor;
+                    text-align: left;
 
                     &:hover,
                     &:focus {
@@ -1053,7 +1086,13 @@
 
                 p {
                     @extend %paragraph;
-                    text-align: left;
+                }
+                &:focus {
+
+                    h3,
+                    .heading-3 {
+                        color: $aFocusTxt;
+                    }
                 }
             }
 
@@ -1097,8 +1136,8 @@
 
 // 影音專區
 .single_video {
-    padding-bottom: .5em;
     background: #FFF;
+    padding-bottom: .5em;
     text-align: left;
 
     .youtube {
@@ -1164,7 +1203,6 @@
     }
 
     p {
-        color: $color-word;
         @extend %paragraph;
     }
 
@@ -1243,8 +1281,8 @@
                 display: block;
                 height: 3em;
                 margin: .5em auto;
-                text-align: left;
                 line-height: 1.5em;
+                text-align: left;
 
                 a {
                     color: $secondaryColor;
@@ -1375,13 +1413,7 @@
         line-height: 40px;
         margin-right: 3em;
         font-weight: bold;
-        color: #333 !important;
         @include text-overflow;
-
-        &:hover,
-        &:focus {
-            color: $aHover;
-        }
     }
 }
 
@@ -1534,12 +1566,6 @@
     a.more {
         @extend %more_color;
     }
-
-    h2.title {
-        &:after {
-            border-bottom: 1px solid #FFF;
-        }
-    }
 }
 
 // text_link (大事記)
@@ -1550,7 +1576,7 @@
         li {
             text-align: left;
             display: block;
-            border-bottom: 1px dashed #999;
+            border-bottom: 1px dashed #BBB;
 
             a {
                 display: block;
@@ -1563,7 +1589,7 @@
                     height: 4px;
                     top: 1em;
                     left: .2em;
-                    border: 2px solid #666;
+                    border: 2px solid #999;
                     border-left: none;
                     border-bottom: none;
                     transform: rotate(45deg);
@@ -1627,8 +1653,10 @@
                 }
 
                 &:focus {
+                    background: none!important;
+                    box-shadow: none!important;
                     &:before {
-                        box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aHover, 10), 36), -2) inset;
+                        box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aFocusBoxline, 0), 0), -2) inset;
                     }
                 }
             }
@@ -1673,7 +1701,7 @@
 
                 &:focus {
                     &:before {
-                        box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aHover, 10), 36), -2) inset;
+                        box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aFocusBoxline, 0), 0), -2) inset;
                     }
                 }
             }
@@ -1862,7 +1890,7 @@
 
             &:focus {
                 &:before {
-                    box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aHover, 10), 36), -2) inset;
+                    box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aFocusBoxline, 0), 0), -2) inset;
                 }
             }
 
@@ -1920,7 +1948,7 @@
         padding: 0;
         position: relative;
         text-align: left;
-        border-bottom: 1px #999 dashed;
+        border-bottom: 1px #CCC dashed;
 
         @include screen('mobile') {
             @include text-overflow();
@@ -2001,6 +2029,7 @@
             p {
                 margin-top: .3em;
                 font-size: .938em;
+                color: #444;
             }
 
             span {
@@ -2202,9 +2231,15 @@
             color: #FFF;
             border: 1px solid $secondaryColor;
 
-            &:hover,
-            &:focus {
+            &:hover {
                 border: 1px solid darken($secondaryColor, 5);
+            }
+            &:focus {
+                &:before {
+                    box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+                    background: $aFocusBg!important;
+                    color:$aFocusTxt!important;
+                }
             }
 
             &:after {
@@ -2229,22 +2264,6 @@
             width: 100%;
             color: #FFF;
             font-size: 1.25em;
-            position: relative;
-
-            &:focus {
-                &:before {
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    display: block;
-                    content: "";
-                    box-shadow: 0px 0px 0px 3px #FFF inset;
-                }
-            }
 
             img {
                 display: block;
@@ -2266,11 +2285,12 @@
     h3,
     .heading-3 {
         display: block;
-        height: 3em;
+        height: 4em;
         font-size: 1em;
         line-height: 1.5em;
         display: block;
         overflow: hidden;
+        font-weight: bold;
     }
 
     .pic {
@@ -2291,7 +2311,7 @@
         @include make-sm-column(3); //768px  width:33.3%
         @include make-md-column(3); //992px  width:33.3%
         @include make-lg-column(3); //1400px width:33.3%
-        @include gutter();
+        @include gutter(0);
         min-height: 250px;
 
         @include screen('mobile') {
@@ -2311,7 +2331,7 @@
         }
 
         &:nth-child(2n) {
-            background: darken($secondaryColor, 2);
+            background: darken($secondaryColor, 5);
             @extend %small_block;
 
             &:hover,
@@ -2323,45 +2343,29 @@
         }
 
         &:nth-child(3n) {
-            background: darken($third-color, 5);
+            background: darken($third-color, 15);
             @extend %small_block;
 
             &:hover,
             &:focus {
                 cursor: pointer;
-                background: lighten($third-color, 2);
+                background: darken($third-color, 5);
                 box-shadow: 2px 2px 5px RGBA(0, 0, 0, .7) inset;
             }
         }
 
         &:nth-child(4n) {
-            background: darken($fourth-color, 5);
+            background: darken($fourth-color, 15);
             @extend %small_block;
 
             &:hover,
             &:focus {
                 cursor: pointer;
-                background: lighten($fourth-color, 2);
+                background: darken($fourth-color, 5);
                 box-shadow: 2px 2px 5px RGBA(0, 0, 0, .7) inset;
             }
         }
     }
-}
-
-.bg_style {
-    background: #fff100 !important;
-    // color: #FFF;
-    // overflow: hidden;
-    // padding: 3em 0;
-    // h2, h2.title, h3, .heading-3, p {
-    //     color: #FFF;
-    // }
-    // a {
-    //     color: #FFF;
-    //     &:hover, &:focus {
-    //         color: lighten($aHover, 10);
-    //     }
-    // }
 }
 
 // 查扣物查詢
@@ -2524,7 +2528,7 @@
                 height: 0;
                 border-style: solid;
                 border-width: 8px 6px 0 6px;
-                border-color: darken($primaryColor, 5) transparent transparent transparent;
+                border-color: lighten($primaryColor, 0) transparent transparent transparent;
             }
 
             >ul {
@@ -2564,7 +2568,7 @@
         h2,
         h2.title {
             position: relative;
-            background: darken($primaryColor, 5);
+            background: lighten($primaryColor, 0);
             color: #fff;
             font-size: 1em;
             padding: .85em 1em;
@@ -2582,24 +2586,24 @@
 
         &:nth-child(3n+2) {
             h2 {
-                background: darken($third-color, 5);
+                background: darken($secondaryColor, 0);
             }
 
             >.card_content {
                 &:after {
-                    border-color: darken($third-color, 5) transparent transparent transparent;
+                    border-color: darken($secondaryColor, 0) transparent transparent transparent;
                 }
             }
         }
 
         &:nth-child(3n+3) {
             h2 {
-                background: darken($fourth-color, 5);
+                background: darken($secondaryColor, 10);
             }
 
             >.card_content {
                 &:after {
-                    border-color: darken($fourth-color, 5) transparent transparent transparent;
+                    border-color: darken($secondaryColor, 10) transparent transparent transparent;
                 }
             }
         }

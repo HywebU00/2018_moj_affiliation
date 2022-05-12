@@ -122,9 +122,14 @@
                             display: inline-block;
                         }
                     }
-                    &:hover, &:focus {
+                    &:hover {
                         .title {
                             color: darken($aHover, 0);
+                        }
+                    }
+                    &:focus {
+                        .title {
+                            color: darken($aFocusTxt, 0);
                         }
                     }
                 }
@@ -181,7 +186,6 @@
                     display: block;
                     float: left;
                     margin: .5em .5em .5em 0;
-
                     a{
                         width: 240px;
                         height: 160px;
@@ -244,7 +248,7 @@
                             position: absolute;
                             width: 100%;
                             height: 100%;
-                            box-shadow: 0 0px 0px 3px $aHover inset;
+                            box-shadow: 0 0px 0px 3px $aFocusBoxline inset;
                             content: "";
                             z-index: 1;
                             top: 0;
@@ -312,6 +316,9 @@
                     margin-bottom:1em;
                     @include border-radius(4px);
                     @include box-shadow(0px 0px 10px RGBA(0, 0, 0, .15));
+                    &:focus{
+                        box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+                    }
                 }
                 h3{
                     height: 4.5em;
@@ -365,10 +372,14 @@
         border-color: $primaryColor;
         color: #FFF;
         @include border-radius(4px);
-        &:hover,
-        &:focus {
+        &:hover {
             background: lighten($primaryColor, 10);
             border-color: lighten($primaryColor, 10);
+        }
+        &:focus {
+            background: $aFocusBg!important;
+            box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+            color:$aFocusTxt!important;
         }
         @include screen('mobile') {
             width: 100%;
@@ -399,3 +410,4 @@
         padding: .2em 0;
     }
 }
+

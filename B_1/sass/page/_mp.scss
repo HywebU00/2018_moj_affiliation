@@ -24,11 +24,12 @@
     border: 1px solid $secondaryColor;
 
     &:focus {
-        background: darken($secondaryColor, 10);
-        border: 1px solid darken($secondaryColor, 10);
+        background: darken($aFocusBg, 0);
+        border: 2px solid darken($aFocusBoxline, 0);
+        color:$aFocusTxt!important;
 
         &:before {
-            background: darken($secondaryColor, 20);
+            background: darken($aFocusBg, 0);
         }
     }
 }
@@ -129,19 +130,25 @@
                 color: #FFF;
                 position: relative;
 
-                &:hover,
-                &:focus {
-                    background: url(../images/icon_plus.png) no-repeat right 12px lighten($secondaryColor, 5);
+                &:hover {
+                    background: url(../images/icon_plus.png) no-repeat right 12px lighten($secondaryColor, 0);
                     box-shadow: none;
+                }
+                &:focus {
+                    background: url(../images/icon_plus.png) no-repeat right 12px lighten($aFocusBg, 0)!important;
+                    box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
                 }
 
                 &.active {
-                    background: url(../images/icon_minus.png) no-repeat right 12px lighten($primaryColor, 10);
+                    background: url(../images/icon_minus.png) no-repeat right 12px lighten($primaryColor, 5);
 
-                    &:hover,
-                    &:focus {
+                    &:hover {
                         background: url(../images/icon_minus.png) no-repeat right 12px lighten($secondaryColor, 5);
                         box-shadow: none;
+                    }
+                    &:focus {
+                        background: url(../images/icon_minus.png) no-repeat right 12px lighten($aFocusBg, 0);
+                        box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
                     }
                 }
             }
@@ -198,7 +205,7 @@
             }
 
             a {
-
+                display: block;
                 &:hover,
                 &:focus {
                     .pic {
@@ -265,7 +272,7 @@
             margin: 0px 1em;
 
             a {
-
+                display: block;
                 &:hover,
                 &:focus {
                     .pic {
@@ -400,7 +407,7 @@
                         width: 100%;
                         height: 100%;
                         z-index: 9;
-                        box-shadow: 0px 0px 0px 3px lighten($color-yellow, 20) inset;
+                        box-shadow: 0px 0px 0px 3px lighten($aFocusBoxline, 0) inset;
                         top: 0;
                         left: 0;
                         bottom: 0;
@@ -477,8 +484,7 @@
                 padding-bottom: 1em;
                 background: #FFF;
 
-                &:hover,
-                &:focus {
+                &:hover {
                     background: $secondaryColor;
 
                     h3,
@@ -488,6 +494,20 @@
 
                     span {
                         color: #FFF;
+                    }
+                }
+                &:focus {
+                    box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+                    background: $aFocusBg!important;
+                    color:$aFocusTxt!important;
+
+                    h3,
+                    .heading-3 {
+                        color: $aFocusTxt;
+                    }
+
+                    span {
+                        color: $aFocusTxt;
                     }
                 }
 
@@ -578,11 +598,17 @@
                     transition: .3s ease-out;
                 }
 
-                &:hover,
+                &:hover {
+                    &:before {
+                        display: block;
+                        right: 0;
+                    }
+                }
                 &:focus {
                     &:before {
                         display: block;
                         right: 0;
+                        box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
                     }
                 }
             }
@@ -605,7 +631,6 @@
         @include gutter(0);
         position: absolute;
         bottom: 0;
-
         ul {
             @include li-reset;
 
@@ -638,8 +663,7 @@
                     background: darken($primaryColor, 10);
                 }
 
-                &:hover,
-                &:focus {
+                &:hover {
                     &:nth-child(2) {
                         background: darken($third-color, 10);
                     }
@@ -994,11 +1018,13 @@
         display: block;
 
         &:focus {
+            background:none!important;
+            box-shadow:none!important;
             &:before {
                 position: absolute;
                 width: 100%;
                 height: 100%;
-                box-shadow: 0 0px 0px 2px $aHover inset;
+                box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
                 content: "";
                 z-index: 1;
                 top: 0;
@@ -1088,7 +1114,7 @@
                         position: absolute;
                         width: 100%;
                         height: 100%;
-                        box-shadow: 0 0px 0px 3px $aHover inset;
+                        box-shadow: 0 0px 0px 3px $aFocusBoxline inset;
                         content: "";
                         z-index: 1;
                         top: 0;
@@ -1294,7 +1320,7 @@
     a {
         &:focus {
             .pic {
-                outline: 2px solid $aHover;
+                outline: 2px solid $aFocusBoxline;
             }
         }
     }
@@ -1386,7 +1412,7 @@
             a {
                 &:focus {
                     .pic {
-                        outline: 2px solid $aHover;
+                        outline: 2px solid $aFocusBoxline;
                     }
                 }
             }
@@ -1453,11 +1479,15 @@
         filter: invert(100%);
         box-shadow: none;
 
-        &:hover,
-        &:focus {
+        &:hover{
             opacity: 1;
         }
-
+        &:focus {
+            opacity: 1;
+            box-shadow: 0 0px 0px 3px $aFocusBoxline;
+            background: $aFocusBg url(../vendor/slick/icon_arrow_up_s.png) no-repeat center center!important;
+            filter: invert(0%);
+        }
         &:before {
             width: 10px !important;
             height: 10px !important;
@@ -1479,11 +1509,15 @@
         box-shadow: none;
         filter: invert(100%);
 
-        &:hover,
-        &:focus {
+        &:hover {
             opacity: 1;
         }
-
+        &:focus {
+            opacity: 1;
+            box-shadow: 0 0px 0px 3px $aFocusBoxline;
+            background: $aFocusBg url(../vendor/slick/icon_arrow_up_s.png) no-repeat center center!important;
+            filter: invert(0%);
+        }
         &:before {
             width: 10px !important;
             height: 10px !important;
@@ -1743,8 +1777,9 @@
                 }
 
                 &:focus {
+                    background: none!important;
                     &:before {
-                        box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aHover, 10), 36), -2) inset;
+                        box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aFocusBoxline, 0), 0), -2) inset;
                     }
                 }
             }
@@ -1789,7 +1824,7 @@
 
                 &:focus {
                     &:before {
-                        box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aHover, 10), 36), -2) inset;
+                        box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aFocusBoxline, 0), 0), -2) inset;
                     }
                 }
             }
@@ -1978,7 +2013,7 @@
 
             &:focus {
                 &:before {
-                    box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aHover, 10), 36), -2) inset;
+                    box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aFocusBoxline, 0), 0), -2) inset;
                 }
             }
 
@@ -2315,9 +2350,9 @@
             left: 50%;
             margin-left: -37%;
             bottom: 1em;
-            background: #888;
+            background: #666;
             color: #FFF;
-            border: 1px solid #888;
+            border: 1px solid #666;
 
             &:hover,
             &:focus {

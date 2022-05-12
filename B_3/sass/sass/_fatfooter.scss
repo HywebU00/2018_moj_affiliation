@@ -12,7 +12,7 @@ $fatTextColor: #FFF; //fatFooter 連結顏色
     position: relative;
     padding-bottom: 2em;
     margin-left: auto;
-    background: $fatBgColor;
+    background: darken($fatBgColor,10);
     margin-right: auto; // 右上方切換收合按鈕設定
     padding-top: .5em;
     clear: both;
@@ -30,23 +30,26 @@ $fatTextColor: #FFF; //fatFooter 連結顏色
         width: 140px;
         color: #FFF;
         border: none;
-        background: darken($footer-btn, 15);
+        background: $footer-btn;
         position: absolute;
         right: 1%;
-        z-index: 2;
+        z-index: 990;
         font-weight: bold;
         top: .5em;
         @include border-radius(4px);
-        &:hover,
-        &:focus {
-            background: lighten($color-yellow, 10);
+        &:hover {
+            background: darken($color-yellow, 0);
             text-decoration: none;
             cursor: pointer;
             border: none;
             outline: none;
             border: none;
             color:#000;
-            text-shadow: none;
+        }
+        &:focus {
+            box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+            background: $aFocusBg!important;
+            color:$aFocusTxt!important;
         }
     }
     nav {
@@ -83,23 +86,22 @@ $fatTextColor: #FFF; //fatFooter 連結顏色
                     display: block;
                 }
                 a {
-                    color: #FFF;
                     text-align: left;
                     line-height: 1.65em;
                     display: block;
                     font-weight: 800;
                     padding: 1%;
                     border-radius: 4px;
-                    &:hover,
-                    &:focus {
-                        color: lighten($color-yellow, 0);
+                    color:#fff;
+                    &:hover {
+                        color:lighten($color-yellow,0);
                         text-decoration: none;
                         box-shadow: none;
                         // background: $aHover;
                         // @include border-radius(3px);
                     }
                     &:focus {
-                        background: rgba(0, 0, 0, .5);
+                        box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
                     }
                 }
                 ul {

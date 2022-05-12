@@ -129,18 +129,24 @@
                 color: #FFF;
                 position: relative;
 
-                &:hover,
-                &:focus {
+                &:hover {
                     background: url(../images/icon_plus.png) no-repeat right 12px lighten($secondaryColor, 5);
+                    box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+                }
+                &:focus {
+                    background: url(../images/icon_plus.png) no-repeat right 12px lighten($aFocusBg, 0)!important;
                     box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
                 }
 
                 &.active {
                     background: url(../images/icon_minus.png) no-repeat right 12px lighten($primaryColor, 10);
 
-                    &:hover,
-                    &:focus {
+                    &:hover {
                         background: url(../images/icon_minus.png) no-repeat right 12px lighten($secondaryColor, 5);
+                        box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+                    }
+                    &:focus {
+                        background: url(../images/icon_minus.png) no-repeat right 12px lighten($aFocusBg, 0)!important;
                         box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
                     }
                 }

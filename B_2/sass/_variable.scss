@@ -3,17 +3,17 @@
 
 //-------------------------------------------------------------顏色---------//
 // 定義顏色 此顏色可自由變換
-$primaryColor:				#749308;				//主色
+$primaryColor:				#637E07;				//主色
 $secondaryColor:			#5d641e; 				//輔色
 $lightColor:				#FCC211;				//點綴
 $linkColor:					#4d8307;				//連結
-$importantColor:			#FF3E4D;				//重要
+$importantColor:			#EB0012;				//重要
 // 但注意真實顏色與語意的關聯必須易於辨識
 
-$color-blue: 				#21BAFF;
-$color-green:				#5CB85C;
-$color-orange: 				#F77810;
-$color-red: 				#FF3E4D;
+$color-blue: 				#0B7EB1;
+$color-green:				#468146;
+$color-orange: 				#BD5B0A;
+$color-red: 				#EB0012;
 $color-yellow: 				#FCC211;
 $color-purple: 				#AA5AC5;
 $color-gray: 				#CCC;
@@ -23,7 +23,9 @@ $color-word:				#222;                    //一般字的顏色
 // 連結顏色
 $aColor:					#222;
 $aHover:					$secondaryColor;
-
+$aFocusBg:					#FCC211;
+$aFocusTxt:					#000;
+$aFocusBoxline:				#0033ff;
 // 表單focus顏色
 $form-focus:				#F77810;				//表單
 //-------------------------------------------------------------法務部專屬設定------//
@@ -32,10 +34,10 @@ $fatfooter-color:			#4a5e03;			//fatfooter底色
 $footer-color:				#DEDEDE;				//footer底色
 $footer-btn:				#749308;					//footer按鈕
 
-$third-color:				#927f68; 				//3th
-$fourth-color:				#c5baa4; 				//4th
+$third-color:				#83725D; 				//3th
+$fourth-color:				#837353; 				//4th
 
-$more:						#ad9c88;				//more
+$more:						#837353;				//more
 $baseline:					#b1c335;				//h2底線
 $gotoTop:					#9aba28;					//gotoTop
 //-------------------------------------------------------------字型--------//

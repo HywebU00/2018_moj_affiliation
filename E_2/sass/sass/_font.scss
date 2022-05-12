@@ -14,7 +14,6 @@
     font-weight: normal;
     src: local(微軟正黑體);
 }
-
 @mixin fontSetting($FONT-SIZE:$font-size, $WEIGHT:normal) {
     font-size: $FONT-SIZE;
     font-weight: $WEIGHT;

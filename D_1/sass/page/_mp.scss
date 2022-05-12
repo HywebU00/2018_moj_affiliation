@@ -136,6 +136,10 @@
                     background: url(../images/icon_plus.png) no-repeat right 12px lighten($secondaryColor, 5);
                     box-shadow: none;
                 }
+                &:focus {
+                    box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+                    background: url(../images/icon_minus.png) no-repeat right 12px lighten($aFocusBg, 0)!important;
+                }
 
                 &.active {
                     background: url(../images/icon_minus.png) no-repeat right 12px lighten($primaryColor, 10);
@@ -144,6 +148,10 @@
                     &:focus {
                         background: url(../images/icon_minus.png) no-repeat right 12px lighten($secondaryColor, 5);
                         box-shadow: none;
+                    }
+                    &:focus {
+                        box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+                        background: url(../images/icon_minus.png) no-repeat right 12px lighten($aFocusBg, 0)!important;
                     }
                 }
             }
@@ -200,7 +208,7 @@
             }
 
             a {
-
+                display: block;
                 &:hover,
                 &:focus {
                     .pic {
@@ -268,6 +276,7 @@
             margin: 0px 1em;
 
             a {
+                display: block;
 
                 &:hover,
                 &:focus {
@@ -302,7 +311,7 @@
 
             h3,
             .heading-3,
-                {
+            {
                 font-size: 1em;
                 text-align: center;
                 width: 80%;
@@ -461,8 +470,7 @@
                 padding-bottom: 1em;
                 background: #FFF;
 
-                &:hover,
-                &:focus {
+                &:hover {
                     background: $secondaryColor;
 
                     h3,
@@ -472,6 +480,18 @@
 
                     span {
                         color: #FFF;
+                    }
+                }
+                &:focus {
+                    ox-shadow: 0 0px 0px 3px $aFocusBoxline inset;
+
+                    h3,
+                    .heading-3 {
+                        color: $aFocusTxt;
+                    }
+
+                    span {
+                        color: $aFocusTxt;
                     }
                 }
 
@@ -567,6 +587,11 @@
                         right: 0;
                     }
                 }
+                &:focus{
+                    &:before {
+                        box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+                    }
+                }
             }
 
             img {
@@ -594,7 +619,7 @@
     padding-bottom: 3em;
 
     a.more {
-        background: rgba(0, 0, 0, .3);
+        background: rgba(0, 0, 0, .6);
         color: #FFF;
         margin-top: 2em;
         border: 1px solid #FFF;
@@ -602,135 +627,142 @@
         &:before {
             background: rgba(0, 0, 0, .5);
         }
+        &:focus{
+         &:before {
+            box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+            background: $aFocusBg!important;
+            color:$aFocusTxt!important;
+        } 
+    }
+}
+
+h2.title {
+    color: #222;
+    margin-top: 1em;
+    font-size: 2em;
+    padding-bottom: 1em;
+    margin-bottom: .5em;
+    text-shadow: 0px 0px 2px #FFF, 0px 0px 3px #FFF, 0px 0px 5px #FFF, 0px 0px 7px #FFF, 0px 0px 8px #FFF;
+
+    &:before {
+        content: "";
+        border-bottom: none !important;
+        width: 50%;
+        left: 50%;
+        height: 4px;
+        margin-left: -25%;
+        position: absolute;
+        bottom: .15em;
+        @include gradient($color-red, $color-yellow, horizontal);
     }
 
-    h2.title {
-        color: #222;
-        margin-top: 1em;
-        font-size: 2em;
-        padding-bottom: 1em;
-        margin-bottom: .5em;
-        text-shadow: 0px 0px 2px #FFF, 0px 0px 3px #FFF, 0px 0px 5px #FFF, 0px 0px 7px #FFF, 0px 0px 8px #FFF;
-
-        &:before {
-            content: "";
-            border-bottom: none !important;
-            width: 50%;
-            left: 50%;
-            height: 4px;
-            margin-left: -25%;
-            position: absolute;
-            bottom: .15em;
-            @include gradient($color-red, $color-yellow, horizontal);
-        }
-
-        &:after {
-            display: none;
-        }
-
-        @include screen('mobile') {
-            font-size: 2em;
-        }
-    }
-
-    &+.main_banner {
-        margin-top: 0;
+    &:after {
+        display: none;
     }
 
     @include screen('mobile') {
+        font-size: 2em;
+    }
+}
+
+&+.main_banner {
+    margin-top: 0;
+}
+
+@include screen('mobile') {
+    @include gutter(0);
+    min-height: 460px;
+}
+
+.container {
+    position: absolute;
+    width: 100%;
+    @include box-sizing;
+    max-width: 1200px;
+    @include gutter(0);
+    height: 100%;
+    z-index: 1;
+    line-height: 1.65em;
+
+    .col {
         @include gutter(0);
-        min-height: 460px;
+        position: relative;
+        height: 100%;
+        @include box-sizing;
     }
 
-    .container {
-        position: absolute;
-        width: 100%;
-        @include box-sizing;
-        max-width: 1200px;
-        @include gutter(0);
-        height: 100%;
-        z-index: 1;
-        line-height: 1.65em;
+    @include screen('mobile') {
+        @include gutter;
 
-        .col {
+        .col:nth-child(2) {
             @include gutter(0);
-            position: relative;
-            height: 100%;
-            @include box-sizing;
         }
+
+        .col:nth-child(3) {
+            @include gutter(0);
+        }
+
+        .col:nth-child(4) {
+            @include gutter(0);
+        }
+    }
+
+    .main_menu {
+        @include gradient($primaryColor, $secondaryColor, vertical);
+        position: relative;
+        padding-top: 1em;
+        height: 100%;
+        @include box-sizing;
 
         @include screen('mobile') {
-            @include gutter;
-
-            .col:nth-child(2) {
-                @include gutter(0);
-            }
-
-            .col:nth-child(3) {
-                @include gutter(0);
-            }
-
-            .col:nth-child(4) {
-                @include gutter(0);
-            }
+            display: none;
         }
 
-        .main_menu {
-            @include gradient($primaryColor, $secondaryColor, vertical);
-            position: relative;
-            padding-top: 1em;
-            height: 100%;
-            @include box-sizing;
+        .menu {
+            display: block;
 
-            @include screen('mobile') {
-                display: none;
-            }
+            &>ul {
+                &>li>a {
+                    height: 1.5em;
+                    line-height: 1.5em;
+                    position: relative;
+                    padding-left: 1.8em !important;
+                    transition: .3s ease-out;
 
-            .menu {
-                display: block;
+                    &:hover,
+                    &:focus {
+                        background: RGBA(0, 0, 0, .2) !important;
+                    }
 
-                &>ul {
-                    &>li>a {
-                        height: 1.5em;
-                        line-height: 1.5em;
-                        position: relative;
-                        padding-left: 1.8em !important;
-                        transition: .3s ease-out;
-
-                        &:hover,
-                        &:focus {
-                            background: RGBA(0, 0, 0, .2) !important;
-                        }
-
-                        &:before {
-                            position: absolute;
-                            width: 4px;
-                            height: 4px;
-                            top: 1.2em;
-                            left: .7em;
-                            border: 2px solid #FFF;
-                            border-left: none;
-                            border-top: none;
-                            transform: rotate(315deg);
-                            content: "";
-                        }
+                    &:before {
+                        position: absolute;
+                        width: 4px;
+                        height: 4px;
+                        top: 1.2em;
+                        left: .7em;
+                        border: 2px solid #FFF;
+                        border-left: none;
+                        border-top: none;
+                        transform: rotate(315deg);
+                        content: "";
                     }
                 }
+            }
+
+            ul {
+                padding: 0;
+                margin: 0;
+                list-style: none;
 
                 ul {
-                    padding: 0;
-                    margin: 0;
-                    list-style: none;
+                    display: none;
+                    right: -200px;
+                    left: auto;
+                    top: 0em;
+                }
 
-                    ul {
-                        display: none;
-                        right: -200px;
-                        left: auto;
-                        top: 0em;
-                    }
-
-                    li {
-                        display: block;
+                li {
+                    display: block;
                         text-align: left; // margin-bottom: 1px;
 
                         &:last-child {
@@ -817,23 +849,30 @@
                 &:before {
                     background: rgba(0, 0, 0, .5);
                 }
-            }
+                &:focus{
+                   &:before {
+                       box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+                       background: $aFocusBg!important;
+                       color:$aFocusTxt!important;
+                   } 
+               }
+           }
 
-            &~.mp_slider {
-                .img-container {
-                    height: 300px;
-
-                    @include screen('mobile') {
-                        height: auto;
-                    }
-                }
+           &~.mp_slider {
+            .img-container {
+                height: 300px;
 
                 @include screen('mobile') {
-                    background: #FFF;
+                    height: auto;
                 }
+            }
+
+            @include screen('mobile') {
+                background: #FFF;
             }
         }
     }
+}
 
     // .slogan{
     //     width:
@@ -861,11 +900,13 @@
         display: block;
 
         &:focus {
+            background: none!important;
+            box-shadow: none!important;
             &:before {
                 position: absolute;
                 width: 100%;
                 height: 100%;
-                box-shadow: 0 0px 0px 2px $aHover inset;
+                box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
                 content: "";
                 z-index: 1;
                 top: 0;
@@ -955,7 +996,7 @@
                         position: absolute;
                         width: 100%;
                         height: 100%;
-                        box-shadow: 0 0px 0px 3px $aHover inset;
+                        box-shadow: 0 0px 0px 3px $aFocusBoxline inset;
                         content: "";
                         z-index: 1;
                         top: 0;
@@ -1022,7 +1063,6 @@
 
             a {
                 display: block;
-
                 h3,
                 .heading-3 {
                     width: 90%;
@@ -1046,6 +1086,13 @@
 
                 p {
                     @extend %paragraph;
+                }
+                &:focus {
+
+                    h3,
+                    .heading-3 {
+                        color: $aFocusTxt;
+                    }
                 }
             }
 
@@ -1606,8 +1653,10 @@
                 }
 
                 &:focus {
+                    background: none!important;
+                    box-shadow: none!important;
                     &:before {
-                        box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aHover, 10), 36), -2) inset;
+                        box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aFocusBoxline, 0), 0), -2) inset;
                     }
                 }
             }
@@ -1652,7 +1701,7 @@
 
                 &:focus {
                     &:before {
-                        box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aHover, 10), 36), -2) inset;
+                        box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aFocusBoxline, 0), 0), -2) inset;
                     }
                 }
             }
@@ -1841,7 +1890,7 @@
 
             &:focus {
                 &:before {
-                    box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aHover, 10), 36), -2) inset;
+                    box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aFocusBoxline, 0), 0), -2) inset;
                 }
             }
 
@@ -2182,9 +2231,15 @@
             color: #FFF;
             border: 1px solid $secondaryColor;
 
-            &:hover,
-            &:focus {
+            &:hover {
                 border: 1px solid darken($secondaryColor, 5);
+            }
+            &:focus {
+                &:before {
+                    box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+                    background: $aFocusBg!important;
+                    color:$aFocusTxt!important;
+                }
             }
 
             &:after {
@@ -2230,7 +2285,7 @@
     h3,
     .heading-3 {
         display: block;
-        height: 3em;
+        height: 4em;
         font-size: 1em;
         line-height: 1.5em;
         display: block;
@@ -2256,7 +2311,7 @@
         @include make-sm-column(3); //768px  width:33.3%
         @include make-md-column(3); //992px  width:33.3%
         @include make-lg-column(3); //1400px width:33.3%
-        @include gutter();
+        @include gutter(0);
         min-height: 250px;
 
         @include screen('mobile') {
@@ -2276,7 +2331,7 @@
         }
 
         &:nth-child(2n) {
-            background: darken($secondaryColor, 2);
+            background: darken($secondaryColor, 5);
             @extend %small_block;
 
             &:hover,
@@ -2531,25 +2586,25 @@
 
         &:nth-child(3n+2) {
             h2 {
-                background: darken($secondaryColor, 10);
+                background: darken($secondaryColor, 0);
             }
 
             >.card_content {
                 &:after {
-                border-color: darken($secondaryColor, 10) transparent transparent transparent;
-            }
+                    border-color: darken($secondaryColor, 0) transparent transparent transparent;
+                }
             }
         }
 
         &:nth-child(3n+3) {
             h2 {
-                background: darken($secondaryColor, 20);
+                background: darken($secondaryColor, 5);
             }
 
             >.card_content {
                 &:after {
-                border-color: darken($secondaryColor, 20) transparent transparent transparent;
-            }
+                    border-color: darken($secondaryColor, 5) transparent transparent transparent;
+                }
             }
         }
 

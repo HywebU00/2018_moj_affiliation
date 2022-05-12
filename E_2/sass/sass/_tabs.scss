@@ -102,19 +102,23 @@
             display: inline-block;
             position:relative;
             padding:0 0 0 15px;
-            &:before {
-                content: "";
-                position: absolute;
-                width: 4px;
-                height: 4px;
-                transform: rotate(45deg);
-                border: 2px solid #666;
-                border-left: none;
-                border-bottom: none;
-                top: .5em;
-                left: 0;
-            }
-            @include screen('mobile') {
+            color:darken($aColor, 5);
+            &:hover{
+              color:darken($aColor, 15);  
+          }
+          &:before {
+            content: "";
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            transform: rotate(45deg);
+            border: 2px solid #666;
+            border-left: none;
+            border-bottom: none;
+            top: .5em;
+            left: 0;
+        }
+        @include screen('mobile') {
                 //width: 75%;
             }
             span{

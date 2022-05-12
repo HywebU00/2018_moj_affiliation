@@ -134,6 +134,7 @@
             line-height: 3em;
             @include box-sizing;
         }
+        margin-left: -280px;
         width:280px;
         padding-top: 3em;
         position:absolute;
@@ -255,7 +256,9 @@
     .navigation {
         position: relative;
         display: block;
-        text-align: left; // margin-bottom: 70px;
+        text-align: left;
+        padding-right: 0;
+        // margin-bottom: 70px;
         // outline:1px solid red;
         // nav
         ul {
@@ -265,7 +268,7 @@
             padding: 0;
             overflow: hidden;
             list-style: none;
-            border: 1px solid rgba(255, 255, 255, .5);
+            border: 1px solid rgba(0, 0, 0, .3);
             border-bottom: none;
             border-right: none;
         }
@@ -274,6 +277,7 @@
             // width: 50%;
             margin: 0;
             padding: 0;
+            float: none;
             @include box-sizing;
             // &:nth-child(odd):last-child {
             //     width: 100%;
@@ -287,15 +291,17 @@
                 color: $color-word;
                 font-weight: bold;
                 text-decoration: none;
-                border: 1px solid rgba(255, 255, 255, .5);
+                border: 1px solid rgba(0, 0, 0, .3);
                 @include box-sizing;
                 &:nth-child(odd) {
                     border-left: none;
                     border-top: none;
                 }
-                &:hover,
-                &:focus {
-                    background: darken($primaryColor, 20);
+                &:hover {
+                    background: darken($linkColor, 20);
+                }
+                &:focus{
+
                 }
             }
         }
@@ -318,7 +324,7 @@
             position: absolute;
             width: 15px;
             height: 15px;
-            border: 3px solid #eee;
+            border: 3px solid $linkColor;
             content: "";
             top: 15px;
             right: 10px;

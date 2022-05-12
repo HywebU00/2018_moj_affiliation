@@ -4,16 +4,16 @@
 //-------------------------------------------------------------顏色---------//
 // 定義顏色 此顏色可自由變換
 $primaryColor:				#007c75;				//主色
-$secondaryColor:			#aa8d4b; 				//輔色
-$lightColor:				#0c98ba;				//點綴
-$linkColor:					#0c98ba;				//連結
+$secondaryColor:			#8A723D; 				//輔色
+$lightColor:				#0A819E;				//點綴
+$linkColor:					#0A819E;				//連結
 $importantColor:			#fff;				//重要
 // 但注意真實顏色與語意的關聯必須易於辨識
 
-$color-blue: 				#21BAFF;
-$color-green:				#5CB85C;
-$color-orange: 				#F77810;
-$color-red: 				#FF3E4D;
+$color-blue: 				#0B7EB1;
+$color-green:				#468146;
+$color-orange: 				#BD5B0A;
+$color-red: 				#EB0012;
 $color-yellow: 				#FCC211;
 $color-purple: 				#AA5AC5;
 $color-gray: 				#CCC;
@@ -23,6 +23,9 @@ $color-word:				#222;                    //一般字的顏色
 // 連結顏色
 $aColor:					#077594;
 $aHover:					darken($aColor, 10);
+$aFocusBg:					#FCC211;
+$aFocusTxt:					#000;
+$aFocusBoxline:				#0033ff;
 
 // 表單focus顏色
 $form-focus:				#077594;				//表單

@@ -130,18 +130,24 @@
                 color: #FFF;
                 position: relative;
 
-                &:hover,
-                &:focus {
+                &:hover {
                     background: url(../images/icon_plus.png) no-repeat right 12px lighten($secondaryColor, 5);
+                    box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+                }
+                &:focus {
+                    background: url(../images/icon_plus.png) no-repeat right 12px lighten($aFocusBg, 0)!important;
                     box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
                 }
 
                 &.active {
                     background: url(../images/icon_minus.png) no-repeat right 12px lighten($primaryColor, 10);
 
-                    &:hover,
-                    &:focus {
+                    &:hover {
                         background: url(../images/icon_minus.png) no-repeat right 12px lighten($secondaryColor, 5);
+                        box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+                    }
+                    &:focus {
+                        background: url(../images/icon_minus.png) no-repeat right 12px lighten($aFocusBg, 0)!important;
                         box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
                     }
                 }
@@ -2433,7 +2439,7 @@
                 height: 0;
                 border-style: solid;
                 border-width: 8px 6px 0 6px;
-                border-color: darken($secondaryColor, 10) transparent transparent transparent;
+                border-color: darken($secondaryColor, 5) transparent transparent transparent;
             }
 
             >ul {

@@ -12,7 +12,6 @@
     @include transition(border, .2s, ease-out);
     @include transition(box-shadow, .2s, ease-out);
 }
-
 .form_grid {
     margin: .5em;
     .form_grp {
@@ -20,7 +19,7 @@
         overflow: hidden;
         padding: .5em 0;
     }
-    .form_title,.form_title_th {
+    .form_title {
         @include make-xs-column(12);
         @include make-sm-column(3);
         @include make-md-column(3);
@@ -28,14 +27,13 @@
         @include gutter();
         padding-top: 5px;
     }
-    .form_content,.form_content_th {
+    .form_content {
         @include make-xs-column(12);
         @include make-sm-column(9);
         @include make-md-column(9);
         @include make-lg-column(9);
         @include gutter();
     }
-
 }
 
 .form_content{
@@ -136,10 +134,16 @@ input[type="text"]:focus,
 input[type="reset"]:focus,
 input[type="file"]:focus,
 input[type="password"]:focus,
+input[type="submit"]:focus,
+input[type="button"]:focus,
+input[type="checkbox"]:focus,
+input[type="radio"]:focus,
+input:focus,
+button:focus,
 textarea:focus,
 select:focus {
-    border: 1px solid lighten($form-focus, 20);
-    @include box-shadow(0px 0px 0px 2px lighten($form-focus, 20));
+    border: 2px solid lighten($aFocusBoxline, 0);
+    // @include box-shadow(0px 0px 0px 2px $aFocusBoxline);
     outline: none;
 }
 
@@ -167,7 +171,7 @@ select {
 //---------------------------------------------reset--------//
 input[type="reset"] {
     @extend %btn;
-    @include btn_setting(darken($color-gray, 20), #FFF);
+    @include btn_setting(darken($color-gray, 30), #FFF);
     text-shadow: none;
 }
 
@@ -188,9 +192,9 @@ input[type="radio"] {
 
 input[type="checkbox"]:checked,
 input[type="radio"]:checked {
-    border-color: $form-focus;
-    background-color: $form-focus;
-    outline: none;
+    border-color: $secondaryColor;
+    background-color: $secondaryColor;
+    // outline: none;
 }
 
 input[type="checkbox"]:checked {
@@ -198,12 +202,19 @@ input[type="checkbox"]:checked {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 98%;
-    box-shadow: $form-focus 0 0 0 1px;
+    box-shadow: $secondaryColor 0 0 0 1px;
     @include border-radius(2px);
+    &:focus{
+       box-shadow: $aFocusBoxline 0 0 0 3px; 
+   }
 }
 
 input[type="radio"]:checked {
-    box-shadow: #fff 0 0 0 3px inset, $form-focus 0 0 0 1px;
+    box-shadow: #fff 0 0 0 3px inset, $secondaryColor 0 0 0 1px;
+    &:focus{
+        box-shadow:#fff 0 0 0 2px inset, $aFocusBoxline 0 0 0 2px; 
+    }
+
 }
 
 //---------------------------------------------readonly disable -------//
@@ -215,10 +226,12 @@ input[disable] {
     &~label {
         color: darken($color-gray, 10);
     }
-    &:hover,
-    &:focus {
+    &:hover {
         border-color: darken($color-gray, 10);
         box-shadow: none; // cursor: not-allowed;
+    }
+    &:focus {
+        box-shadow: 0 0px 0px 0px $aFocusBoxline inset!important;
     }
 }
 
@@ -240,11 +253,15 @@ input[disable] {
         @include btn_setting($form-focus, #FFF);
         padding: .2em 1em !important;
         @include border-radius(4px);
-        &:hover,
-        &:focus {
+        &:hover {
             cursor: pointer !important;
         }
-    }
+        &:focus {
+         box-shadow: 0 0px 0px 2px $aFocusBoxline inset!important;
+         background: $aFocusBg!important;
+         color:$aFocusTxt!important;
+     }
+ }
 }
 
 input[type="file"] {
@@ -263,7 +280,7 @@ input[type="file"] {
 //---------------------------------------------form setting--------//
 form {
     .attention{
-        color:#555;
+        color:#777;
         font-size:.813em;
         margin:.1em 0;
     }
