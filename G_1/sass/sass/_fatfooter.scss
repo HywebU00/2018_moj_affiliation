@@ -1,5 +1,5 @@
 $fatBgColor: $fatfooter-color; //fatFooter 底色
-$fatTextColor: #FFF; //fatFooter 連結顏色
+$fatTextColor: #333; //fatFooter 連結顏色
 .fatfooter {
     @include make-fatfooter(7, 100%); // 如需要手機版顯示，把以下註解即可，或改為visible
     @media (max-width: 767px) {
@@ -12,9 +12,8 @@ $fatTextColor: #FFF; //fatFooter 連結顏色
     position: relative;
     padding-bottom: 2em;
     margin-left: auto;
-    background: $fatfooter-color;
+    background: $fatBgColor;
     margin-right: auto; // 右上方切換收合按鈕設定
-    padding-top: .5em;
     clear: both;
     .container {
         position: relative;
@@ -27,24 +26,25 @@ $fatTextColor: #FFF; //fatFooter 連結顏色
         font-size: .813em;
         cursor: pointer;
         display: inline-block;
-        width: 80px;
+        width: 140px;
         color: #FFF;
         border: none;
-        background: rgba(0,0,0,.5);
+        background: $footer-btn;
         position: absolute;
-        left: 50%;
-        z-index: 990;
-        font-weight: bold;
-        top: 0;
-        margin-left: -40px;
-        @include border-radius(0px);
+        right: 1%;
+        z-index: 2;
+        top: .5em;
+        @include border-radius(4px);
         &:hover,
         &:focus {
-            background: rgba(0,0,0,.8);
+            background: darken($color-orange,10);
             text-decoration: none;
             cursor: pointer;
             border: none;
             outline: none;
+            border: none;
+            color:#FFF;
+            text-shadow: none;
         }
     }
     nav {
@@ -53,8 +53,7 @@ $fatTextColor: #FFF; //fatFooter 連結顏色
         overflow: hidden;
         display: block;
         position: relative;
-        padding: 0;
-        padding-top: 60px;
+        padding-top: 40px;
         @include box-sizing(border-box);
         ul {
             list-style: none;
@@ -71,23 +70,19 @@ $fatTextColor: #FFF; //fatFooter 連結顏色
                 display: inline-block; // outline: 1px solid red;
                 text-align: left;
                 vertical-align: top;
-                margin: 0 0 1em -3px;
                 line-height: 2.6em; // margin:$fatFooterliMargin;
                 @include box-sizing(border-box);
-                &:nth-child(7n+1){
-                    margin-left: 0;
-                }
                 @media (max-width: 767px) {
                     display: block;
                 }
                 a {
+                    color:darken($primaryColor,5);
                     text-align: left;
                     line-height: 1.65em;
                     display: block;
                     font-weight: 800;
                     padding: 1%;
                     border-radius: 4px;
-                    color:$primaryColor;
                     &:hover,
                     &:focus {
                         color:darken($primaryColor,10);
@@ -97,24 +92,35 @@ $fatTextColor: #FFF; //fatFooter 連結顏色
                         // @include border-radius(3px);
                     }
                     &:focus {
-                        background: rgba(0, 0, 0, .5);
+                        box-shadow: 0 0px 0px 2px $aFocusBoxline inset!important;
+                        background: $aFocusBg!important;
+                        color:$aFocusTxt!important;
                     }
                 }
                 ul {
-                    padding: 0;
-                    margin-top: 5px;
+                    list-style: none;
+                    margin: 0;
                     overflow: hidden;
+                    width: 100%;
+                    padding: 0;
                     @media (max-width: 767px) {
-                        width: auto;
-                        padding-left: 5%;
+                        width: 100%;
+                        display: block;
+                        margin: 0px auto;
                     }
                     li {
-                        display: block;
-                        margin: 0;
+                        display: block; // outline: 1px solid red;
+                        text-align: left;
+                        vertical-align: top;
                         padding: 2px 0;
-                        border: none;
-                        background: none;
-                        width: 100%;
+                        line-height: 2.6em; // margin:$fatFooterliMargin;
+                        @include box-sizing(border-box);
+                        &:nth-child(7n+1) {
+                            margin-left: 0;
+                        }
+                        @media (max-width: 767px) {
+                            display: block;
+                        }
                         a {
                             display: block;
                             color: $color-word;
