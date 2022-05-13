@@ -124,13 +124,13 @@
 
             a {
                 display: block;
-                background: url(../images/icon_plus.png) no-repeat right 12px lighten($primaryColor, 10);
+                background: url(../images/icon_plus.png) no-repeat right 12px lighten($primaryColor, 0);
                 padding: 1em 1.5em 1em 1em;
                 color: #FFF;
                 position: relative;
 
                 &:hover {
-                    background: url(../images/icon_plus.png) no-repeat right 12px lighten($secondaryColor, 5);
+                    background: url(../images/icon_plus.png) no-repeat right 12px lighten($secondaryColor, 0);
                     box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
                 }
                 &:focus {
@@ -139,7 +139,7 @@
                 }
 
                 &.active {
-                    background: url(../images/icon_minus.png) no-repeat right 12px lighten($primaryColor, 10);
+                    background: url(../images/icon_minus.png) no-repeat right 12px lighten($primaryColor, 0);
 
                     &:hover {
                         background: url(../images/icon_minus.png) no-repeat right 12px lighten($secondaryColor, 5);
@@ -172,6 +172,21 @@
         overflow-y: hidden !important;
         -webkit-overflow-scrolling: touch;
         -webkit-transform: translate3d(0, 0, 0);
+    }
+    a{
+        display: block;
+        &:focus{
+            box-shadow: none!important;
+            background: none!important;
+            outline: solid 3px $aFocusBoxline;
+        }
+    }
+    div{
+        &:focus{
+            box-shadow: none!important;
+            background: none!important;
+            outline: solid 3px $aFocusBoxline;
+        }  
     }
 }
 
@@ -513,7 +528,7 @@
                     font-size: .938em;
                     height: 3em;
                     line-height: 1.5em;
-                    color: #888;
+                    color: #666;
                     width: 90%;
                     display: block;
                     text-align: left;
@@ -2224,25 +2239,25 @@
         }
 
         &:nth-child(n) {
-            background: lighten($primaryColor, 2);
+            background: darken($primaryColor, 5);
             @extend %small_block;
 
             &:hover,
             &:focus {
                 cursor: pointer;
-                background: lighten($primaryColor, 8);
+                background: darken($primaryColor, 10);
                 box-shadow: 2px 2px 5px RGBA(0, 0, 0, .7) inset;
             }
         }
 
         &:nth-child(2n) {
-            background: darken($secondaryColor, 2);
+            background: darken($secondaryColor, 5);
             @extend %small_block;
 
             &:hover,
             &:focus {
                 cursor: pointer;
-                background: lighten($secondaryColor, 8);
+                background: darken($secondaryColor, 10);
                 box-shadow: 2px 2px 5px RGBA(0, 0, 0, .7) inset;
             }
         }
@@ -2254,7 +2269,7 @@
             &:hover,
             &:focus {
                 cursor: pointer;
-                background: lighten($third-color, 2);
+                background: darken($third-color, 10);
                 box-shadow: 2px 2px 5px RGBA(0, 0, 0, .7) inset;
             }
         }
@@ -2266,7 +2281,7 @@
             &:hover,
             &:focus {
                 cursor: pointer;
-                background: lighten($fourth-color, 2);
+                background: darken($fourth-color, 10);
                 box-shadow: 2px 2px 5px RGBA(0, 0, 0, .7) inset;
             }
         }

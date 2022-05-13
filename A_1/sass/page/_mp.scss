@@ -125,13 +125,13 @@
 
             a {
                 display: block;
-                background: url(../images/icon_plus.png) no-repeat right 12px lighten($primaryColor, 10);
+                background: url(../images/icon_plus.png) no-repeat right 12px lighten($primaryColor, 0);
                 padding: 1em 1.5em 1em 1em;
                 color: #FFF;
                 position: relative;
 
                 &:hover {
-                    background: url(../images/icon_plus.png) no-repeat right 12px lighten($secondaryColor, 5);
+                    background: url(../images/icon_plus.png) no-repeat right 12px lighten($secondaryColor, 0);
                     box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
                 }
                 &:focus {
@@ -140,10 +140,10 @@
                 }
 
                 &.active {
-                    background: url(../images/icon_minus.png) no-repeat right 12px lighten($primaryColor, 10);
+                    background: url(../images/icon_minus.png) no-repeat right 12px lighten($primaryColor, 0);
 
                     &:hover {
-                        background: url(../images/icon_minus.png) no-repeat right 12px lighten($secondaryColor, 5);
+                        background: url(../images/icon_minus.png) no-repeat right 12px lighten($secondaryColor, 0);
                         box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
                     }
                     &:focus {
@@ -173,6 +173,21 @@
         overflow-y: hidden !important;
         -webkit-overflow-scrolling: touch;
         -webkit-transform: translate3d(0, 0, 0);
+    }
+    a{
+        display: block;
+        &:focus{
+            box-shadow: none!important;
+            background: none!important;
+            outline: solid 3px $aFocusBoxline;
+        }
+    }
+    div{
+        &:focus{
+            box-shadow: none!important;
+            background: none!important;
+            outline: solid 3px $aFocusBoxline;
+        }  
     }
 }
 

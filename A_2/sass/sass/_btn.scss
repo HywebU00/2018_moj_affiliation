@@ -17,17 +17,17 @@ $btn-radius:4px;
     @include border-radius($btn-radius);
     &:hover,
     &:focus {
-        background: lighten($btn-bg, 5);
+        background: darken($btn-bg, 10);
         // @include box-shadow(0px 2px 2px RGBA(0, 0, 0, .15));
         cursor: pointer;
         color: #FFF;
     }
     &.active {
-        background: lighten($btn-bg, 5);
+        background: darken($btn-bg, 10);
         cursor: pointer;
     }
     &:focus {
-        background: darken($btn-bg, 10);
+        background: darken($btn-bg, 15);
         outline: none;
         // box-shadow: 0px 0px 0px 3px lighten($form-focus, 20);
     }
@@ -65,8 +65,8 @@ $btn-radius:4px;
         border: none!important;
     }
     &:focus {
-       box-shadow: 0 0px 0px 2px $aFocusBoxline inset!important;
-   }
+     box-shadow: 0 0px 0px 2px $aFocusBoxline inset!important;
+ }
 }
 //按鈕顏色
 //@include btn_setting(按鈕顏色,字的顏色);
