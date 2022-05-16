@@ -177,6 +177,21 @@
         -webkit-overflow-scrolling: touch;
         -webkit-transform: translate3d(0, 0, 0);
     }
+    a{
+        display: block;
+        &:focus{
+            box-shadow: none!important;
+            background: none!important;
+            outline: solid 3px $aFocusBoxline;
+        }
+    }
+    div{
+        &:focus{
+            box-shadow: none!important;
+            background: none!important;
+            outline: solid 3px $aFocusBoxline;
+        }  
+    }
 }
 
 // 常用服務熱區
@@ -483,7 +498,7 @@
                     }
                 }
                 &:focus {
-                    ox-shadow: 0 0px 0px 3px $aFocusBoxline inset;
+                    box-shadow: 0 0px 0px 3px $aFocusBoxline inset;
 
                     h3,
                     .heading-3 {
@@ -521,7 +536,7 @@
                     font-size: .938em;
                     height: 3em;
                     line-height: 1.5em;
-                    color: #888;
+                    color: #666;
                     width: 90%;
                     display: block;
                     text-align: left;
