@@ -1196,47 +1196,52 @@
     var day = document.getElementById("day");
     var a = document.getElementById("a"); 
     if(b == 0){
-       day.style.display = 'none';
-       a.style.display = 'flex';
-   } else { 
-       day.style.display = 'flex';
-       a.style.display = 'none';
-   }
+     day.style.display = 'none';
+     a.style.display = 'flex';
+ } else { 
+     day.style.display = 'flex';
+     a.style.display = 'none';
+ }
 }
 /*
   利用剩餘日期判斷是否顯示當日或剩餘天數
   */
 }, 1000);
 </script>
-<div id="ckd">距離下次聯合拍賣日</div>
-<div id="day" style="display: flex;">還有&nbsp;&nbsp;<strong><t id="bb"></t></strong>&nbsp;&nbsp;天&nbsp;</div>
-<div id="a" style="display: none;">就在<strong>今天</strong></div>
-<div id="stop" style="display: none;"><strong>暫停拍賣</strong></div>
+<div tabindex="0">
+    <div id="ckd">距離下次聯合拍賣日</div>
+    <div id="day" style="display: flex;">還有&nbsp;&nbsp;<strong><t id="bb"></t></strong>&nbsp;&nbsp;天&nbsp;</div>
+    <div id="a" style="display: none;">就在<strong>今天</strong></div>
+    <div id="stop" style="display: none;"><strong>暫停拍賣</strong></div>
 
-<div class="auction-table" tabindex="0">
-    <div style="background-color:#F1F1F1;" class="auction-table-title">110年聯合拍賣日期</div>
+    <div class="auction-table">
+        <div style="background-color:#F1F1F1;" class="auction-table-title">110年聯合拍賣日期</div>
 
-    <div style="background-color:#F1F1F1;" class="auction-table-row">
-      <div style="background-color:#F1F1F1;" class="auction-table-cell auction-table-cell-right"><t></t></div>
-      <div style="background-color:#F1F1F1;" class="auction-table-cell auction-table-cell-right"><t></t></div>
-      <div style="background-color:#F1F1F1;" class="auction-table-cell auction-table-cell-right"><t></t></div>
-      <div style="background-color:#F1F1F1;" class="auction-table-cell"><t></t></div>
+        <div style="background-color:#F1F1F1;" class="auction-table-row">
+          <div style="background-color:#F1F1F1;" class="auction-table-cell auction-table-cell-right"><t></t></div>
+          <div style="background-color:#F1F1F1;" class="auction-table-cell auction-table-cell-right"><t></t></div>
+          <div style="background-color:#F1F1F1;" class="auction-table-cell auction-table-cell-right"><t></t></div>
+          <div style="background-color:#F1F1F1;" class="auction-table-cell"><t></t></div>
+      </div>
+
+      <div style="background-color:#F1F1F1;" class="auction-table-row">
+          <div style="background-color:#F1F1F1;" class="auction-table-cell auction-table-cell-right"><t></t></div>
+          <div style="background-color:#F1F1F1;" class="auction-table-cell auction-table-cell-right"><t></t></div>
+          <div style="background-color:#F1F1F1;" class="auction-table-cell auction-table-cell-right"><t></t></div>
+          <div style="background-color:#F1F1F1;" class="auction-table-cell"><t></t></div>
+      </div>
+
+      <div style="background-color:#F1F1F1;" class="auction-table-row a-t-r-e">
+          <div style="background-color:#F1F1F1;" class="auction-table-cell auction-table-cell-right"><t></t></div>
+          <div style="background-color:#F1F1F1;" class="auction-table-cell auction-table-cell-right"><t></t></div>
+          <div style="background-color:#F1F1F1;" class="auction-table-cell auction-table-cell-right"><t></t></div>
+          <div style="background-color:#F1F1F1;" class="auction-table-cell"><t></t></div>
+      </div>
   </div>
+</div>
 
-  <div style="background-color:#F1F1F1;" class="auction-table-row">
-      <div style="background-color:#F1F1F1;" class="auction-table-cell auction-table-cell-right"><t></t></div>
-      <div style="background-color:#F1F1F1;" class="auction-table-cell auction-table-cell-right"><t></t></div>
-      <div style="background-color:#F1F1F1;" class="auction-table-cell auction-table-cell-right"><t></t></div>
-      <div style="background-color:#F1F1F1;" class="auction-table-cell"><t></t></div>
-  </div>
-
-  <div style="background-color:#F1F1F1;" class="auction-table-row a-t-r-e">
-      <div style="background-color:#F1F1F1;" class="auction-table-cell auction-table-cell-right"><t></t></div>
-      <div style="background-color:#F1F1F1;" class="auction-table-cell auction-table-cell-right"><t></t></div>
-      <div style="background-color:#F1F1F1;" class="auction-table-cell auction-table-cell-right"><t></t></div>
-      <div style="background-color:#F1F1F1;" class="auction-table-cell"><t></t></div>
-  </div>
-</div></div></div>
+</div>
+</div>
 </div>
 </section>
 <section class="col-4-4-4 " >
@@ -1251,12 +1256,12 @@
                       google.charts.setOnLoadCallback(drawChart);
                       function drawChart() {
                         var data = google.visualization.arrayToDataTable([
-                           ['Task', 'Hours per Day'],
-                           ['財稅案件',     16105],
-                           ['健保案件',     9329],
-                           ['罰鍰案件',  102305],
-                           ['費用案件', 80962],
-                           ]);
+                         ['Task', 'Hours per Day'],
+                         ['財稅案件',     16105],
+                         ['健保案件',     9329],
+                         ['罰鍰案件',  102305],
+                         ['費用案件', 80962],
+                         ]);
 
                         var options = {
                             title:'單位：件數',
@@ -1301,22 +1306,22 @@
           ]);
         var view = new google.visualization.DataView(data);
         view.setColumns([0, 1,
-           { calc: "stringify",
-           sourceColumn: 1,
-           type: "string",
-           role: "annotation" },2
-           ]);
+         { calc: "stringify",
+         sourceColumn: 1,
+         type: "string",
+         role: "annotation" },2
+         ]);
         var options = {
-         title: "單位：萬元",
-         titleTextStyle: { fontSize: 15 },
-         legend: { position: 'none' ,alignment:'Center'},
-         bar: {groupWidth: "40%"},
-         seriesType: 'bars',
-         vAxis: {
-          ticks: [0, 20000, 40000, 60000, 80000]
-      },
-      hAxis : { 
-        textStyle : {
+           title: "單位：萬元",
+           titleTextStyle: { fontSize: 15 },
+           legend: { position: 'none' ,alignment:'Center'},
+           bar: {groupWidth: "40%"},
+           seriesType: 'bars',
+           vAxis: {
+              ticks: [0, 20000, 40000, 60000, 80000]
+          },
+          hAxis : { 
+            textStyle : {
             fontSize: 15 // or the number you want
         }
     }
@@ -1363,11 +1368,11 @@ chart.draw(view, options);
             ]);
         var view = new google.visualization.DataView(data);
         view.setColumns([0, 1,
-           { calc: "stringify",
-           sourceColumn: 1,
-           type: "string",
-           role: "annotation" },2
-           ]);
+         { calc: "stringify",
+         sourceColumn: 1,
+         type: "string",
+         role: "annotation" },2
+         ]);
         var options = {
           title : '單位：萬元(左)\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0單位：件(右)',
           titleTextStyle: { fontSize: 12 },
@@ -1741,12 +1746,12 @@ chart.draw(data, options);
     var day = document.getElementById("day");
     var a = document.getElementById("a"); 
     if(b == 0){
-       day.style.display = 'none';
-       a.style.display = 'flex';
-   } else { 
-       day.style.display = 'flex';
-       a.style.display = 'none';
-   }
+     day.style.display = 'none';
+     a.style.display = 'flex';
+ } else { 
+     day.style.display = 'flex';
+     a.style.display = 'none';
+ }
 }
 /*
   利用剩餘日期判斷是否顯示當日或剩餘天數
