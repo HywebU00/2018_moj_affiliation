@@ -189,6 +189,13 @@
             outline: solid 3px $aFocusBoxline;
         }  
     }
+    iframe{
+        &:focus{
+            box-shadow: none!important;
+            background: none!important;
+            outline: solid 3px $aFocusBoxline;
+        }  
+    }
 }
 
 // 常用服務熱區

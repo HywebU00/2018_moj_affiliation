@@ -188,6 +188,13 @@
             outline: solid 3px $aFocusBoxline;
         }  
     }
+    iframe{
+        &:focus{
+            box-shadow: none!important;
+            background: none!important;
+            outline: solid 3px $aFocusBoxline;
+        }  
+    }
 }
 
 // 常用服務熱區
@@ -2005,7 +2012,7 @@
                     background: darken($secondaryColor2, 10);
                 }
                 &:focus {
-                 &:before {
+                   &:before {
                     background: darken($secondaryColor2, 10);
                     border: 2px solid $aFocusBoxline;
                 } 
@@ -2151,7 +2158,7 @@
                 background: darken($secondaryColor2, 5);
             }
             &:focus {
-               &:before {
+             &:before {
                 border: 2px solid $aFocusBoxline;
             }  
         }
