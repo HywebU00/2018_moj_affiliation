@@ -173,6 +173,28 @@
         -webkit-overflow-scrolling: touch;
         -webkit-transform: translate3d(0, 0, 0);
     }
+    a{
+        display: block;
+        &:focus{
+            box-shadow: none!important;
+            background: none!important;
+            outline: solid 3px $aFocusBoxline;
+        }
+    }
+    div{
+        &:focus{
+            box-shadow: none!important;
+            background: none!important;
+            outline: solid 3px $aFocusBoxline;
+        }  
+    }
+    iframe{
+        &:focus{
+            box-shadow: none!important;
+            background: none!important;
+            outline: solid 3px $aFocusBoxline;
+        }  
+    }
 }
 
 .seizure {
@@ -932,7 +954,7 @@ section {
         .container {
             max-width: 1200px !important;
             &>.col:nth-child(1){
-             &+.col{
+               &+.col{
                 padding-right: 0;
                 display: block;
                 @media screen and (max-width: 1200px) {
