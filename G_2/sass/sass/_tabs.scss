@@ -17,7 +17,7 @@
     }
     &>.tabItem {
         &.active>a {
-            background-color: $secondaryColor;
+            background-color: darken($secondaryColor,5);
             color: #FFF;
         }
         float: left;
@@ -88,7 +88,7 @@
     }
     li {
         margin: 0 0 1.3em 0;
-        padding: 0 0 0 15px;
+        padding: 0;
         position: relative;
         border-bottom: 1px #CCC dashed;
         @include screen('mobile') {
@@ -134,7 +134,7 @@
             width: 100px;
             position: absolute;
             right: 0;
-            top: 2px;
+            top: 0;
         }
     }
     // .more {
@@ -158,3 +158,4 @@
     //     }
     // }
 }
+
