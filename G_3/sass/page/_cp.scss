@@ -27,6 +27,7 @@
         clear: both;
         min-height:2.5em;
     }
+    
     .share {
         @include make-xs-column(12);
         @include make-sm-column(6);
@@ -35,6 +36,11 @@
         @include gutter(0);
         ul {
             @include li-reset;
+            li{
+                a{
+                    display: block;
+                }
+            }
         }
         margin-bottom: 1em;
         &+.function {
@@ -102,12 +108,12 @@
             color: $aColor;
             word-break: break-all;
             &:hover {
-                color: $aHover;
+                color: lighten($aHover, 10);
             }
             &.download {
                 color: #FFF;
                 font-weight: bold;
-                text-shadow: -1px 1px 5px RGBA(0, 0, 0, .5);
+                // text-sshadow: -1px 1px 5px RGBA(0, 0, 0, .5);
                 background: $secondaryColor;
                 border: 1px solid $secondaryColor;
                 transition: .3s ease;
@@ -157,3 +163,5 @@
             }
         }
     }
+    
+    

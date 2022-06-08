@@ -9,7 +9,7 @@ $btn-radius:4px;
     padding: 1em 0;
 }
 // 按鈕的共用設定
-@mixin btn_setting($btn-bg:#DDD, $btn-font-color:$btn-font-color) {
+@mixin btn_setting($btn-bg:#666, $btn-font-color:$btn-font-color) {
     background: $btn-bg;
     border: 1px solid darken($btn-bg, 10);
     color: $btn-font-color;
@@ -17,17 +17,17 @@ $btn-radius:4px;
     @include border-radius($btn-radius);
     &:hover,
     &:focus {
-        background: lighten($btn-bg, 5);
+        background: darken($btn-bg, 10);
         // @include box-shadow(0px 2px 2px RGBA(0, 0, 0, .15));
         cursor: pointer;
         color: #FFF;
     }
     &.active {
-        background: lighten($btn-bg, 5);
+        background: darken($btn-bg, 10);
         cursor: pointer;
     }
     &:focus {
-        background: darken($btn-bg, 10);
+        background: darken($btn-bg, 15);
         outline: none;
         // box-shadow: 0px 0px 0px 3px lighten($form-focus, 20);
     }

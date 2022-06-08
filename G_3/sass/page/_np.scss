@@ -44,12 +44,17 @@
                     display:inline-block;
                 }
             }
-            &:hover,
-            &:focus {
+            &:hover {
                 border: 2px solid $secondaryColor;
+                background:$secondaryColor;
+                color:#FFF;
+            }
+            &:focus {
+                border: 2px solid rgba(0, 0, 0, 0);
                 background:$secondaryColor;
                 color:#FFF;
             }
         }
     }
 }
+

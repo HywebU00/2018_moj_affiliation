@@ -8,7 +8,7 @@
     background: $primaryColor;
     @include gradient($primaryColor, $lightColor, vertical);
     padding:1em 0;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.2) inset;
+    box-shadow: 2px 2px 5px rgba(0,0,0,.2) inset;
     @include gutter();
     @include screen('tablet') {
         padding: 0;
@@ -95,7 +95,6 @@
                 &:focus {
                     background: $lightColor;
                     color:$color-word;
-
                 }
             }
         }
@@ -170,6 +169,7 @@
             line-height: 3em;
             @include box-sizing;
         }
+        margin-left: -280px;
         width:280px;
         padding-top: 3em;
         position:absolute;
@@ -291,7 +291,9 @@
     .navigation {
         position: relative;
         display: block;
-        text-align: left; // margin-bottom: 70px;
+        text-align: left;
+        padding-right: 0;
+        // margin-bottom: 70px;
         // outline:1px solid red;
         // nav
         ul {
@@ -310,6 +312,7 @@
             // width: 50%;
             margin: 0;
             padding: 0;
+            float: none;
             @include box-sizing;
             // &:nth-child(odd):last-child {
             //     width: 100%;
@@ -320,7 +323,7 @@
                 line-height: 2em;
                 padding: .5em 1em;
                 font-size: .938em;
-                color: $color-word;
+                color: #FFF;
                 font-weight: bold;
                 text-decoration: none;
                 border: 1px solid rgba(255, 255, 255, .5);

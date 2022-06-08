@@ -1,5 +1,5 @@
 $fatBgColor: $fatfooter-color; //fatFooter 底色
-$fatTextColor: #FFF; //fatFooter 連結顏色
+$fatTextColor: #333; //fatFooter 連結顏色
 .fatfooter {
     @include make-fatfooter(7, 100%); // 如需要手機版顯示，把以下註解即可，或改為visible
     @media (max-width: 767px) {
@@ -12,10 +12,10 @@ $fatTextColor: #FFF; //fatFooter 連結顏色
     position: relative;
     padding-bottom: 2em;
     margin-left: auto;
-    background: $fatfooter-color;
+    background: $fatBgColor;
     margin-right: auto; // 右上方切換收合按鈕設定
-    padding-top: .5em;
     clear: both;
+    padding-top: .5em;
     .container {
         position: relative;
         overflow: hidden;
@@ -53,7 +53,6 @@ $fatTextColor: #FFF; //fatFooter 連結顏色
         overflow: hidden;
         display: block;
         position: relative;
-        padding: 0;
         padding-top: 60px;
         @include box-sizing(border-box);
         ul {
@@ -71,16 +70,13 @@ $fatTextColor: #FFF; //fatFooter 連結顏色
                 display: inline-block; // outline: 1px solid red;
                 text-align: left;
                 vertical-align: top;
-                margin: 0 0 1em -3px;
                 line-height: 2.6em; // margin:$fatFooterliMargin;
                 @include box-sizing(border-box);
-                &:nth-child(7n+1){
-                    margin-left: 0;
-                }
                 @media (max-width: 767px) {
                     display: block;
                 }
                 a {
+                    color:darken($primaryColor,5);
                     text-align: left;
                     line-height: 1.65em;
                     display: block;
@@ -97,7 +93,9 @@ $fatTextColor: #FFF; //fatFooter 連結顏色
                         // @include border-radius(3px);
                     }
                     &:focus {
-                        background: rgba(255, 255, 255, .5);
+                        box-shadow: 0 0px 0px 2px $aFocusBoxline inset!important;
+                        background: $aFocusBg!important;
+                        color:$aFocusTxt!important;
                     }
                 }
                 ul {

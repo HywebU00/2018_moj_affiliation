@@ -61,7 +61,7 @@
             @extend %mobileCtrlBtn;
             span {
                 position: absolute;
-                background: $secondaryColor;
+                background: $primaryColor;
                 width: 50%;
                 height: 4px;
                 top: 35%;
@@ -193,7 +193,6 @@
                         display: block;
                         &:hover,
                         &:focus {
-                            color: $aColor;
                             @include border-radius(6px);
                             background: $color-gray;
                         }
@@ -259,7 +258,7 @@
                 }
                 &:focus {
                     opacity: 1;
-                    box-shadow: 0px 0px 0px 2px $form-focus;
+                    box-shadow: 0px 0px 0px 2px $aFocusBoxline;
                     outline: none;
                 }
             }
@@ -280,11 +279,10 @@
             &:hover {
                 background: $primaryColor;
                 border-color: $primaryColor;
-                color:#000;
             }
             &:focus {
                 opacity: 1;
-                box-shadow: 0px 0px 0px 2px $form-focus;
+                box-shadow: 0px 0px 0px 2px $aFocusBoxline;
                 outline: none;
             }
         }

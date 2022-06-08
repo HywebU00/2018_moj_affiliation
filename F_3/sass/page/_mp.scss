@@ -150,6 +150,28 @@
         -webkit-overflow-scrolling: touch;
         -webkit-transform: translate3d(0, 0, 0);
     }
+    a{
+        display: block;
+        &:focus{
+            box-shadow: none!important;
+            background: none!important;
+            outline: solid 3px $aFocusBoxline;
+        }
+    }
+    div{
+        &:focus{
+            box-shadow: none!important;
+            background: none!important;
+            outline: solid 3px $aFocusBoxline;
+        }  
+    }
+    iframe{
+        &:focus{
+            box-shadow: none!important;
+            background: none!important;
+            outline: solid 3px $aFocusBoxline;
+        }  
+    }
 }
 // 常用服務熱區
 .hot_service {
@@ -237,7 +259,7 @@
                         background: $secondaryColor;
                     }
                     h3,.heading-3{
-                     a {
+                       a {
                         color: $secondaryColor;
                     }
                 }
