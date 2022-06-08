@@ -208,24 +208,105 @@ $(function() {
                 search_mode = false;
             });
             // _menu.appendTo(_mainMenu);
+
             // 副選單滑出
-            liHasChild.on({
-                mouseenter: function() {
-                    $(this).children('ul').stop(true, false).fadeIn();
-                },
-                mouseleave: function() {
-                    $(this).parent().siblings('ul').hide();
-                    $(this).children('ul').stop(true, false).fadeOut();
-                }
-            });
+            // liHasChild.on({
+            //     mouseenter: function() {
+            //         $(this).children('ul').stop(true, false).fadeIn();
+
+            //     },
+            //     mouseleave: function() {
+            //         $(this).parent().siblings('ul').hide();
+            //         $(this).children('ul').stop(true, false).fadeOut();
+            //     }
+            // });
             // 如果點在外面
-            $(document).on('touchend click', function(e) {
-                var target = e.target;
-                if (!$(target).is('.menu li a')) {
-                    $('.menu').find('li ul').hide();
-                }
-            });
+            // $(document).on('touchend click', function(e) {
+            //     var target = e.target;
+            //     if (!$(target).is('.menu li a')) {
+            //         $('.menu').find('li ul').hide();
+            //     }
+            // });
             //手機版第第一層點了不會進入內頁，拿掉第一層的連結無作用
+
+            _menu.each(function() {
+                let _this = $(this);
+                let _hasChild = _this.find('.hasChild');
+                let _topItem = _this.children('ul').children('li');
+                let _hasChildA = _hasChild.children('a');
+                let liA = _this.find('li>a');
+
+                _hasChild.hover(
+                    function() {
+                        let _this = $(this);
+                        let _thisSubMenu = _this.children('ul');
+
+                        if (_this.is(_topItem)) {
+                            _thisSubMenu.stop(true, false).slideDown(300);
+                        } else {
+                            _this.addClass('here');
+                            if (_this.offset().left + _this.innerWidth() + _thisSubMenu.innerWidth() > _window.innerWidth()) {
+                                _this.addClass('invert');
+                                _thisSubMenu.css('left', -1 * (_thisSubMenu.innerWidth()));
+
+                            } //else {
+                            //_thisSubMenu.css('left', _thisSubMenu.parent().innerWidth());
+                            //_this.removeClass('invert');
+                            //}
+                            _thisSubMenu.stop(true, false).slideDown(300);
+                        }
+                    },
+                    function() {
+                        $(this).removeClass('here').children('ul').stop(true, false).slideUp(200, function() {
+                            $(this).removeAttr('style');
+                        });
+                    }
+                );
+
+                _hasChildA.focus(function() {
+                    let _this = $(this);
+                    let _thisSubMenu = $(this).next('ul');
+
+                    if (_this.parent().is(_topItem)) {
+                        _thisSubMenu.show();
+                    } else {
+                        if (_this.parent().offset().left + _this.innerWidth() + _thisSubMenu.innerWidth() > _window.innerWidth()) {
+                            _thisSubMenu.css('left', -1 * (_thisSubMenu.innerWidth()));
+                        } else {
+                            _thisSubMenu.css('left', _thisSubMenu.parent().innerWidth());
+                        }
+                        _thisSubMenu.show();
+                    }
+                    _this.parent().addClass('here');
+                })
+
+                liA.focus(function() {
+                    $(this).parent('li').siblings().removeClass('here').find('ul').hide();
+                })
+
+
+                // let mt = 0;
+                // liA.mouseenter(
+                //   function(e){
+                //     // console.log( e.pageY, e.clientY )
+                //     let moveUp = $(this).innerHeight();
+                //     if ( e.clientY > wh - moveUp*1.5) {
+                //       console.log('yes');
+                //       $(this).parent('li').parent('ul').animate({
+                //         'margin-top' : mt - moveUp
+                //       }, 600, function(){
+                //         mt = mt - moveUp;
+                //       });
+                //     } else {
+                //       console.log('no');
+                //       $(this).parent('li').parent('ul').css({
+                //         'margin-top' : 0
+                //       });
+                //     }
+                //   }
+                // )
+
+            })
         }
     }
     //設定resize 計時器

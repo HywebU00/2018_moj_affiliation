@@ -7,7 +7,7 @@
     clear: both;
     @include screen('tablet') {
         padding: 0;
-        display:none;
+        display: none;
     }
     // &:before {
     //     height: 1px;
@@ -54,7 +54,7 @@
             display: none;
             overflow: visible;
             width: 200px;
-            background: darken($primaryColor,10);
+            background: darken($primaryColor, 10);
             padding: 0;
             z-index: 999999;
             position: absolute;
@@ -65,7 +65,7 @@
             ul {
                 top: 0;
                 left: 170px;
-                animation:none;
+                animation: none;
             }
         }
     } // 預設選單 li
@@ -90,6 +90,7 @@
         li.hasChild {
             >ul {
                 z-index: 999;
+                box-shadow: 0 2px 8px RGBA(0, 0, 0, .4);
             }
             >a {
                 padding-right: 2em;
@@ -194,7 +195,7 @@
                     background: #FFF;
                     line-height: 2em;
                     min-height: 2em;
-                    height:auto;
+                    height: auto;
                     border-bottom: 1px solid #CCC;
                 }
                 &.hasChild {
@@ -283,7 +284,7 @@
         display: block;
         text-align: left;
         padding: 0 0 0 15px;
-        width:90%;
+        width: 90%;
         // margin-bottom: 70px;
         // outline:1px solid red;
         // nav
@@ -360,6 +361,7 @@
         }
     }
 }
+
 //animation
 @keyframes showMenu {
     0% {
