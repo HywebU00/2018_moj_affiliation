@@ -542,7 +542,7 @@
                 &:hover {
                     background: $secondaryColor;
 
-                    h3,
+                    .subtitle,
                     .heading-3 {
                         color: #FFF;
                     }
@@ -553,7 +553,7 @@
                 }
                 &:focus {
                     background: $aFocusBg!important;
-                    h3,
+                    .subtitle,
                     .heading-3 {
                         color:$aFocusTxt!important;
                     }
@@ -575,7 +575,7 @@
                     margin-bottom: 1em;
                 }
 
-                h3,
+                .subtitle,
                 .heading-3 {
                     height: 3em;
                     line-height: 1.5em;
@@ -1100,7 +1100,7 @@ section {
             height: 100%;
         }
 
-        &+h3,
+        &+.subtitle,
         &+.heading-3 {
             display: block;
             margin: .5em auto;
@@ -1140,7 +1140,7 @@ section {
             a {
                 display: block;
 
-                h3,
+                .subtitle,
                 .heading-3 {
                     width: 90%;
                     overflow: hidden;
@@ -1154,7 +1154,7 @@ section {
                     &:hover,
                     &:focus {
 
-                        h3,
+                        .subtitle,
                         .heading-3 {
                             color: darken($secondaryColor, 10);
                         }
@@ -1166,7 +1166,7 @@ section {
                 }
                 &:focus {
 
-                    h3,
+                    .subtitle,
                     .heading-3 {
                         color: $aFocusTxt;
                     }
@@ -1259,7 +1259,7 @@ section {
         }
     }
 
-    h3,
+    .subtitle,
     .heading-3 {
         display: block;
         margin: .5em auto;
@@ -1348,7 +1348,7 @@ section {
                 }
             }
 
-            h3,
+            .subtitle,
             .heading-3 {
                 width: 90%;
                 overflow: hidden;
@@ -1659,6 +1659,10 @@ section {
                 &:before {
                     content: none;
                 }
+            }
+            .subtitle{
+                font-size: 1.125em;
+                font-weight: bold;
             }
         }
     }
@@ -2252,7 +2256,7 @@ section {
             }
         }
 
-        h3,
+        .subtitle,
         .heading-3 {
             margin: 1em auto .5em;
             width: 90%;
@@ -2296,12 +2300,12 @@ section {
             // height: 200px;
             margin-bottom: .5em;
 
-            &.hidden~h3,
+            &.hidden~.subtitle,
             &.hidden~.heading-3 {
                 margin: 1em auto;
             }
 
-            &~h3,
+            &~.subtitle,
             &~.heading-3 {
                 height: 3em;
             }

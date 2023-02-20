@@ -411,3 +411,10 @@
         padding: .2em 0;
     }
 }
+
+#datestart, #dateend{
+    width: 35%;
+    @include screen('mobile') {
+        width: 100%;
+    }
+}
