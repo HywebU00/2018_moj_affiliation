@@ -42,6 +42,8 @@ body {
         clear: both; // &+section {
         //     padding-top: 2em;
         // }
+        position: relative;
+
         &:first-of-type {
             padding-top: 0;
             @extend %clearfix;

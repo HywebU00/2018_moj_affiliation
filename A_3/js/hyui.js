@@ -43,7 +43,7 @@ $(function() {
     //_body.prepend('<aside class="sidebar"><div class="m_area"><button type="button" class="sidebarClose">關閉</button></div><div class="menu_overlay"></div></aside>');
     $('header .container').prepend('<button type="button" class="sidebarCtrl">側欄選單</button><button type="button" class="searchCtrl">查詢</button>');
     $('header .container .sidebarCtrl').after('<aside class="sidebar"><div class="m_area"><button type="button" class="sidebarClose">關閉</button></div><div class="menu_overlay"></div></aside>');
-    $('#aC').prependTo('.moj_link .col+.col');
+    // $('#aC').prependTo('.moj_link .col+.col');
     $('.innerpage').find('#aC').prependTo('.main_menu~.content');
 
     var menu_status = false;

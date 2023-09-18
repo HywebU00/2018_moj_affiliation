@@ -1,11 +1,11 @@
 <!doctype html>
-    <html lang="zh-Hant" class="no-js">
+<html lang="zh-Hant" class="no-js">
 
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>法務部全球資訊網</title>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>法務部全球資訊網</title>
     <!--HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries [if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
@@ -155,7 +155,7 @@
         <!-- header End -->
         <!-- main Start -->
         <div id="center" class="main">
-            <a class="accesskey" href="#aC" id="aC" accesskey="C" title="主要內容區">:::</a>
+
             <section class="col-12">
                 <!-- 模組：主視覺靜態  main_banner 為此版必要存在結構-->
                 <div class="main_banner">
@@ -203,6 +203,10 @@
                     </div>
                 </div>
             </section>
+
+            <!-- 無障礙新增區塊 -->
+            <section class="accBlock"><a class="accesskey" href="#aC" id="aC" accesskey="C" title="主要內容區">:::</a></section>
+            
             <section class="col-4-4-4">
                 <div class="container">
                     <div class="col">
@@ -375,8 +379,8 @@
 
             <section class="col-12">
                 <div class="container">
-                   <!-- 卡片式條列 (三個一組) -->
-                   <div class="multi_cards">
+                 <!-- 卡片式條列 (三個一組) -->
+                 <div class="multi_cards">
                     <ul>
                         <li class="list_card">
                             <h2 class="title">新聞稿新聞稿新聞稿新聞稿 新聞稿新聞稿新聞稿新聞稿新聞稿新聞稿新聞稿新聞稿</h2>
@@ -2580,43 +2584,43 @@
     /////click event to scroll to top//////
     /*-----------------------------------*/
     // 右側快速連結
-    $('#goto_A').click(function(e) {
-        $(this).blur();
-        $('html, body').stop(true, true).animate({ scrollTop: $('#A').offset().top }, 800, 'easeOutExpo');
-        e.preventDefault();
-    });
-    $('#goto_B').click(function(e) {
-        $(this).blur();
-        $('html, body').stop(true, true).animate({ scrollTop: $('#B').offset().top }, 800, 'easeOutExpo');
-        e.preventDefault();
-    });
-</script>
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript">
-  google.charts.load('current', {'packages':['bar']});
-  google.charts.setOnLoadCallback(drawChart);
+                        $('#goto_A').click(function(e) {
+                            $(this).blur();
+                            $('html, body').stop(true, true).animate({ scrollTop: $('#A').offset().top }, 800, 'easeOutExpo');
+                            e.preventDefault();
+                        });
+                        $('#goto_B').click(function(e) {
+                            $(this).blur();
+                            $('html, body').stop(true, true).animate({ scrollTop: $('#B').offset().top }, 800, 'easeOutExpo');
+                            e.preventDefault();
+                        });
+                    </script>
+                    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                    <script type="text/javascript">
+                      google.charts.load('current', {'packages':['bar']});
+                      google.charts.setOnLoadCallback(drawChart);
 
-  function drawChart() {
-    var data = google.visualization.arrayToDataTable([
-      ['Year', 'Sales', 'Expenses', 'Profit'],
-      ['2014', 1000, 400, 200],
-      ['2015', 1170, 460, 250],
-      ['2016', 660, 1120, 300],
-      ['2017', 1030, 540, 350]
-      ]);
+                      function drawChart() {
+                        var data = google.visualization.arrayToDataTable([
+                          ['Year', 'Sales', 'Expenses', 'Profit'],
+                          ['2014', 1000, 400, 200],
+                          ['2015', 1170, 460, 250],
+                          ['2016', 660, 1120, 300],
+                          ['2017', 1030, 540, 350]
+                          ]);
 
-    var options = {
-      chart: {
-        title: 'Company Performance',
-        subtitle: 'Sales, Expenses, and Profit: 2014-2017',
-    }
-};
+                        var options = {
+                          chart: {
+                            title: 'Company Performance',
+                            subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+                        }
+                    };
 
-var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+                    var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
 
-chart.draw(data, google.charts.Bar.convertOptions(options));
-}
-</script>
-</body>
+                    chart.draw(data, google.charts.Bar.convertOptions(options));
+                }
+            </script>
+        </body>
 
-</html>
+        </html>
