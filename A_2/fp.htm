@@ -9,7 +9,7 @@
     <!--HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries [if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
-    <![endif]-->
+<![endif]-->
     <!-- slick css-->
     <link rel="stylesheet" type="text/css" href="vendor/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="vendor/slick/slick-theme.css" />
@@ -19,7 +19,7 @@
 
 <body>
     <!-- 直接跳主內容區 -->
-    <a class="goCenter" href="#center" tabindex="1">按 Enter 到主內容區</a>
+    <a class="goCenter" href="#aC" tabindex="1">按 Enter 到主內容區</a>
     <!-- wrapper 最大寬度 -->
     <div class="wrapper">
         <!-- header Start -->
@@ -156,76 +156,76 @@
         <div id="center" class="main innerpage">
             <a class="accesskey" href="#aC" id="aC" accesskey="C" title="主要內容區">:::</a>
             <div class="container">
-                 <!-- .main_menu 不可刪除，JS clone menu放置用 -->
-                <div class="main_menu">
+               <!-- .main_menu 不可刪除，JS clone menu放置用 -->
+               <div class="main_menu">
+               </div>
+               <!-- content為一定要存在之內容區 -->
+               <div class="content">
+                <!-- breadcrumb路徑 -->
+                <div class="breadcrumb">
+                    <ul>
+                        <li><a href="#">首頁</a></li>
+                        <li><a href="#">節點</a></li>
+                        <li>節點</li>
+                    </ul>
                 </div>
-                <!-- content為一定要存在之內容區 -->
-                <div class="content">
-                    <!-- breadcrumb路徑 -->
-                    <div class="breadcrumb">
-                        <ul>
-                            <li><a href="#">首頁</a></li>
-                            <li><a href="#">節點</a></li>
-                            <li>節點</li>
-                        </ul>
+                <!-- h2節點 -->
+                <h2 class="title">FP 轉寄友人</h2>
+                <!-- function功能區塊 -->
+                <div class="function">
+                    <ul>
+                        <li class="back icon_back"><a href="#">回上一頁</a></li>
+                        <li class="print icon_print"><a href="#">友善列印</a></li>
+                        <li class="forward icon_forward"><a href="#">轉寄友人</a></li>
+                    </ul>
+                </div>
+                <!-- FP Start -->
+                <section class="fp">
+                    <p>註:<span class="necessary">*</span>為必填(選)欄位, 不能為空白。</p>
+                    <form action=" " class="form_grid ">
+                        <div class="form_grp ">
+                         <label for="" class="form_title"><abbr class="necessary" title="為必填(選)欄位,不能為空白。">*</abbr>您的電子信箱：</label>
+                         <div class="form_content">
+                            <input type="text" id="" value="">
+                            <div class="notice_warning">這似乎不是一個正常的格式
+                                <a href="javascript:;" class="close"><img src="images/basic/icon_close.svg" alt=""></a>
+                            </div>
+                        </div>
                     </div>
-                    <!-- h2節點 -->
-                    <h2 class="title">FP 轉寄友人</h2>
-                    <!-- function功能區塊 -->
-                    <div class="function">
-                        <ul>
-                            <li class="back icon_back"><a href="#">回上一頁</a></li>
-                            <li class="print icon_print"><a href="#">友善列印</a></li>
-                            <li class="forward icon_forward"><a href="#">轉寄友人</a></li>
-                        </ul>
-                    </div>
-                    <!-- FP Start -->
-                    <section class="fp">
-                        <p>註:<span class="necessary">*</span>為必填(選)欄位, 不能為空白。</p>
-    <form action=" " class="form_grid ">
-        <div class="form_grp ">
-           <label for="" class="form_title"><abbr class="necessary" title="為必填(選)欄位,不能為空白。">*</abbr>您的電子信箱：</label>
-                            <div class="form_content">
-                                <input type="text" id="" value="">
-                                <div class="notice_warning">這似乎不是一個正常的格式
-                                    <a href="javascript:;" class="close"><img src="images/basic/icon_close.svg" alt=""></a>
+                    <div class="form_grp">
+                        <label for="" class="form_title">
+                            <abbr class="necessary" title="為必填(選)欄位,不能為空白。">*</abbr>收件者電子信箱：</label>
+                            <div class="form_content ">
+                                <input name=" " id=" " type="text ">
+                                <div class="notice_info ">請輸入Email，多個帳號請用 ; 隔開。
+                                    <a href="javascript:; " class="close "><img src="images/basic/icon_close.svg " alt=" "></a>
                                 </div>
                             </div>
-                </div>
-                <div class="form_grp">
-                    <label for="" class="form_title">
-                        <abbr class="necessary" title="為必填(選)欄位,不能為空白。">*</abbr>收件者電子信箱：</label>
-            <div class="form_content ">
-                <input name=" " id=" " type="text ">
-                <div class="notice_info ">請輸入Email，多個帳號請用 ; 隔開。
-                    <a href="javascript:; " class="close "><img src="images/basic/icon_close.svg " alt=" "></a>
-                </div>
-            </div>
-        </div>
-        <div class="form_grp ">
-            <label for=" " class="form_title "><abbr class="necessary" title="為必填(選)欄位,不能為空白。">*</abbr>內容：</label>
-                    <div class="form_content">
-                        <textarea name="" id="" cols="30" rows="70"></textarea>
-                    </div>
-                </div>
-                <div class="form_grp">
-                    <label class="form_title">
-                        <abbr class="necessary" title=" 為必填(選)欄位,不能為空白。 ">*</abbr>驗證碼：</label>
-            <div class="form_content ">
-                <img src="images/basic/captcha.gif " alt=" " class="captcha ">
-                <input type="text " id=" " value=" ">
-                <div class="notice_error ">您輸入的驗證碼錯誤
-                    <a href="javascript:; " class="close "><img src="images/basic/icon_close.svg " alt=" "></a>
-                </div>
-             </div>
-        </div>
-       <div class="btn_grp">
-        <input name="" type="reset" value="清除" />
-        <input name="" type="submit" value="送出" />
-    </div>
-    </form>
-</section>
-<!-- FP End -->
+                        </div>
+                        <div class="form_grp ">
+                            <label for=" " class="form_title "><abbr class="necessary" title="為必填(選)欄位,不能為空白。">*</abbr>內容：</label>
+                            <div class="form_content">
+                                <textarea name="" id="" cols="30" rows="70"></textarea>
+                            </div>
+                        </div>
+                        <div class="form_grp">
+                            <label class="form_title">
+                                <abbr class="necessary" title=" 為必填(選)欄位,不能為空白。 ">*</abbr>驗證碼：</label>
+                                <div class="form_content ">
+                                    <img src="images/basic/captcha.gif " alt=" " class="captcha ">
+                                    <input type="text " id=" " value=" ">
+                                    <div class="notice_error ">您輸入的驗證碼錯誤
+                                        <a href="javascript:; " class="close "><img src="images/basic/icon_close.svg " alt=" "></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btn_grp">
+                                <input name="" type="reset" value="清除" />
+                                <input name="" type="submit" value="送出" />
+                            </div>
+                        </form>
+                    </section>
+                    <!-- FP End -->
                 </div>
             </div>
         </div>
@@ -309,62 +309,62 @@
                     <p>電話總機：<a href="tel:(03)320-6361">(02)1234-5678</a>
                         <br> 傳真電話：
                         <a href="tel:(03)320-0043">(02)320-0043</a></p>
+                    </div>
+                    <hr>
+                    <div class="qrcode">
+                        <img src="images/qrcode.jpg" alt="" class="img-responsive">
+                    </div>
+                    <div class="footer_info">
+                        <ul class="footer_link">
+                            <li><a href="#">隱私權政策</a></li>
+                            <li><a href="#">網站安全政策</a></li>
+                            <li><a href="#">政府網站資料開放宣告</a></li>
+                        </ul>
+                        <p class="copyright">版權所有©Copyright (機關單位)</p>
+                        <p>瀏覽器建議使用IE9+,Firefox,Chrome,Safari　最佳觀看解析度1024x768.
+                            <br> 最佳瀏覽解析度為1024*768以上 建議瀏覽器：Chrome 31、Firefox 31、IE 11以上版本
+                        </p>
+                    </div>
+                    <div class="footer_icon">
+                        <a target="_blank" href="#" title="">
+                            <img src="images/basic/accessibility.jpg" alt="">
+                        </a>
+                        <a target="_blank" href="#" title="">
+                            <img src="images/basic/egov.png" alt="">
+                        </a>
+                        <a target="_blank" href="#" title="">
+                            <img src="images/icon_youtube.png" alt="">
+                        </a>
+                        <a target="_blank" href="#" title="">
+                            <img src="images/icon_flickr.png" alt="">
+                        </a>
+                        <a target="_blank" href="#" title="">
+                            <img src="images/icon_fb.png" alt="">
+                        </a>
+                        <a target="_blank" href="#" title="">
+                            <img src="images/icon_twitter.png" alt="">
+                        </a>
+                        <a target="_blank" href="#" title="">
+                            <img src="images/basic/icon_rss.png" alt="">
+                        </a>
+                        <span class="update">更新日期:<em>2018/01/01</em></span>
+                        <span class="counter">累計瀏覽人次:<em>46476653</em></span>
+                    </div>
                 </div>
-                <hr>
-                <div class="qrcode">
-                    <img src="images/qrcode.jpg" alt="" class="img-responsive">
-                </div>
-                <div class="footer_info">
-                    <ul class="footer_link">
-                        <li><a href="#">隱私權政策</a></li>
-                        <li><a href="#">網站安全政策</a></li>
-                        <li><a href="#">政府網站資料開放宣告</a></li>
-                    </ul>
-                    <p class="copyright">版權所有©Copyright (機關單位)</p>
-                    <p>瀏覽器建議使用IE9+,Firefox,Chrome,Safari　最佳觀看解析度1024x768.
-                        <br> 最佳瀏覽解析度為1024*768以上 建議瀏覽器：Chrome 31、Firefox 31、IE 11以上版本
-                    </p>
-                </div>
-                <div class="footer_icon">
-                    <a target="_blank" href="#" title="">
-                        <img src="images/basic/accessibility.jpg" alt="">
-                    </a>
-                    <a target="_blank" href="#" title="">
-                        <img src="images/basic/egov.png" alt="">
-                    </a>
-                    <a target="_blank" href="#" title="">
-                        <img src="images/icon_youtube.png" alt="">
-                    </a>
-                    <a target="_blank" href="#" title="">
-                        <img src="images/icon_flickr.png" alt="">
-                    </a>
-                    <a target="_blank" href="#" title="">
-                        <img src="images/icon_fb.png" alt="">
-                    </a>
-                    <a target="_blank" href="#" title="">
-                        <img src="images/icon_twitter.png" alt="">
-                    </a>
-                    <a target="_blank" href="#" title="">
-                        <img src="images/basic/icon_rss.png" alt="">
-                    </a>
-                    <span class="update">更新日期:<em>2018/01/01</em></span>
-                    <span class="counter">累計瀏覽人次:<em>46476653</em></span>
-                </div>
-            </div>
-        </footer>
-    </div>
-    <a href="javascript:; " class="scrollToTop ">回頁首</a>
-    <script src="js/jquery-3.3.1.min.js "></script>
-    <script src="vendor/jquery.easing.min.js "></script>
-    <!-- lazyload -->
-    <script src="vendor/lazyload/lazyload.min.js"></script>
-    <!-- slick js -->
-    <script src="vendor/slick/slick.min.js "></script>
-    <script src="vendor/slick/slick-lightbox.js "></script>
-    <!-- hyUI -->
-    <script src="js/hyui.js "></script>
-    <!-- 客製js -->
-    <script src="js/customize.js "></script>
-</body>
+            </footer>
+        </div>
+        <a href="javascript:; " class="scrollToTop ">回頁首</a>
+        <script src="js/jquery-3.3.1.min.js "></script>
+        <script src="vendor/jquery.easing.min.js "></script>
+        <!-- lazyload -->
+        <script src="vendor/lazyload/lazyload.min.js"></script>
+        <!-- slick js -->
+        <script src="vendor/slick/slick.min.js "></script>
+        <script src="vendor/slick/slick-lightbox.js "></script>
+        <!-- hyUI -->
+        <script src="js/hyui.js "></script>
+        <!-- 客製js -->
+        <script src="js/customize.js "></script>
+    </body>
 
-</html>
+    </html>
