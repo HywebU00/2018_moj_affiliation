@@ -45,14 +45,14 @@
                 }
             }
             &:hover {
-                border: 2px solid $secondaryColor;
+                border: 2px solid darken($secondaryColor, 2);
                 background:$secondaryColor;
-                color:#FFF;
+                color:#222;
             }
             &:focus {
                 border: 2px solid rgba(0, 0, 0, 0);
                 background:$secondaryColor;
-                color:#FFF;
+                color:#222;
             }
         }
     }
