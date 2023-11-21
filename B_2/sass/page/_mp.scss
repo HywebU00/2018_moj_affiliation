@@ -1439,6 +1439,7 @@
             }
 
             a {
+                display: block;
                 &:focus {
                     .pic {
                         outline: 2px solid $aFocusBoxline;
@@ -2294,7 +2295,20 @@
                 margin-left: $grid-gutter-width/2;
                 float: left
             }
+            a {
+                color: $secondaryColor;
+                display: block;
+
+                &:hover,
+                &:focus {
+                    color: darken($secondaryColor, 10);
+                }
+                &:focus{
+                    border: solid 1px $aFocusBoxline;
+                }
+            }
         }
+
 
         h3,
         .heading-3 {
@@ -2307,6 +2321,7 @@
 
             a {
                 color: $secondaryColor;
+                display: block;
 
                 &:hover,
                 &:focus {

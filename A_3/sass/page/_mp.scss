@@ -1081,6 +1081,16 @@
             right: 0;
         }
     }
+    a{
+        display: block;
+        &:focus{
+            outline: solid 2px $aFocusBoxline;
+            box-shadow: 0 0px 0px 2px $aFocusBoxline;
+            background: $aFocusBg!important;
+            color:$aFocusTxt!important;
+
+        }
+    }
 
     .pic {
         @include aspect-ratio(16, 9);
@@ -1138,7 +1148,7 @@
     a {
         &:focus {
             .pic {
-                outline: 2px solid $aHover;
+                outline: 2px solid $aFocusBoxline;
             }
         }
     }
