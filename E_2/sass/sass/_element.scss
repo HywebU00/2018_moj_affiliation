@@ -3,7 +3,7 @@ body {
 }
 .img-container{
     a{
-        &:focus{
+        &:focus-visible{
             &:before{
                 position:absolute;
                 width: 100%;
@@ -19,7 +19,7 @@ body {
 }
 .vertical_picture_link{
     a{
-        &:focus{
+        &:focus-visible{
             &:before{
                 position:absolute;
                 width: 100%;
@@ -34,7 +34,7 @@ body {
     }
 }
 // tab的外框線
-a:focus{
+a:focus-visible{
     outline: none;
     box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
     background: $aFocusBg!important;
@@ -43,7 +43,7 @@ a:focus{
         // box-shadow: none;
     }
 }
-.btn:focus{
+.btn:focus-visible{
     outline: none;
     box-shadow: 0 0px 0px 3px $aFocusBoxline;
     @include screen('mobile') {
@@ -56,7 +56,7 @@ a:focus{
     top: 5px;
     left: 5px;
     z-index: 9;
-    color: $color-word;
+    color: #fff;
     font-size: $font-size;
     display:block;
     padding: .3em .5em .5em;
@@ -69,6 +69,17 @@ a:focus{
     @include screen("tablet") {
         display: none;
     }
+}
+.main_banner{
+ .accesskey{
+    left:-160px!important;
+    color:rgba(255, 255, 255, .7);
+} 
+}
+footer{
+   .accesskey{
+    color:#111;
+} 
 }
 // tag
 [class^="col"] span {
@@ -187,7 +198,7 @@ a.more{
         right: 15px;
     }  
 }
-&:focus{
+&:focus-visible{
   color:$aFocusTxt!important;
   &:before {
     -webkit-transform: scale(1);
@@ -222,7 +233,7 @@ a.more{
         opacity: 1;
         background: url(../images/basic/top.png) no-repeat center top $color-orange;
     }
-    &:focus{
+    &:focus-visible{
         opacity: 1;
         background: url(../images/basic/top.png) no-repeat center top $color-orange!important;
     }
