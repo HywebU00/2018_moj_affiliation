@@ -47,7 +47,7 @@
             var $items, createItem, links;
             if (this.options.images) {
                 links = $.map(this.options.images, function(img) {
-                    return '<div class="slick-lightbox-slick-item"><div class="slick-lightbox-slick-item-inner"><img class="slick-lightbox-slick-img" src="' + img + '" /></div></div>';
+                    return '<div class="slick-lightbox-slick-item"><div class="slick-lightbox-slick-item-inner"><img class="slick-lightbox-slick-img" src="' + img + '" alt="" /></div></div>';
                 });
             } else {
                 createItem = function(_this) {
@@ -55,7 +55,7 @@
                         var caption, src;
                         caption = _this.getElementCaption(el);
                         src = _this.getElementSrc(el);
-                        return '<div class="slick-lightbox-slick-item"><div class="slick-lightbox-slick-item-inner"><img class="slick-lightbox-slick-img" src="' + src + '" />' + caption + '</div></div>';
+                        return '<div class="slick-lightbox-slick-item"><div class="slick-lightbox-slick-item-inner"><img class="slick-lightbox-slick-img" src="' + src + '" alt="" />' + caption + '</div></div>';
                     };
                 }(this);
                 $items = this.filterOutSlickClones(this.$element.find(this.options.itemSelector));
@@ -208,10 +208,10 @@
             }
             c = function() {
                 switch (typeof this.options.caption) {
-                    case 'function':
-                        return this.options.caption(el);
-                    case 'string':
-                        return $(el).data(this.options.caption);
+                case 'function':
+                    return this.options.caption(el);
+                case 'string':
+                    return $(el).data(this.options.caption);
                 }
             }.call(this);
             return '<span class="slick-lightbox-slick-caption">' + c + '</span>';
@@ -219,12 +219,12 @@
         SlickLightbox.prototype.getElementSrc = function(el) {
             /* Returns src for each slide image based on the type of `options.src`. */
             switch (typeof this.options.src) {
-                case 'function':
-                    return this.options.src(el);
-                case 'string':
-                    return $(el).attr(this.options.src);
-                default:
-                    return el.href;
+            case 'function':
+                return this.options.src(el);
+            case 'string':
+                return $(el).attr(this.options.src);
+            default:
+                return el.href;
             }
         };
         SlickLightbox.prototype.unbindEvents = function() {
