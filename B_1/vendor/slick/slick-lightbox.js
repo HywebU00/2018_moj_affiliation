@@ -47,7 +47,7 @@
             var $items, createItem, links;
             if (this.options.images) {
                 links = $.map(this.options.images, function(img) {
-                    return '<div class="slick-lightbox-slick-item"><div class="slick-lightbox-slick-item-inner"><img class="slick-lightbox-slick-img" src=" ' + img + '" alt=""/></div></div>';
+                    return '<div class="slick-lightbox-slick-item"><div class="slick-lightbox-slick-item-inner"><img class="slick-lightbox-slick-img" src=" ' + img + '" alt="圖片說明"/></div></div>';
                 });
             } else {
                 createItem = function(_this) {
@@ -55,7 +55,7 @@
                         var caption, src;
                         caption = _this.getElementCaption(el);
                         src = _this.getElementSrc(el);
-                        return '<div class="slick-lightbox-slick-item"><div class="slick-lightbox-slick-item-inner"><img class="slick-lightbox-slick-img" src="' + src + '" alt="" />' + caption + '</div></div>';
+                        return '<div class="slick-lightbox-slick-item"><div class="slick-lightbox-slick-item-inner"><img class="slick-lightbox-slick-img" src="' + src + '" alt="圖片說明" />' + caption + '</div></div>';
                     };
                 }(this);
                 $items = this.filterOutSlickClones(this.$element.find(this.options.itemSelector));
