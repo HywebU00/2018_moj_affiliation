@@ -486,7 +486,9 @@ $(function() {
             $(this).parents('.tabSet').height(tabContentHeight + tabItemHeight);
         });
         $(this).parent('.tabItem').siblings().removeClass('active');
+        $(this).parent('.tabItem').siblings().children().removeAttr("aria-selected");
         $(this).parent('.tabItem').addClass('active');
+        $(this).attr('aria-selected', true);
         return false;
     }
     $('.tabs>.tabItem>a').focus(tabs);
