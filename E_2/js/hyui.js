@@ -17,13 +17,13 @@ $(function() {
     ///////////////// 變數 ////////////////
     /*-----------------------------------*/
     var _window = $(window),
-        ww = _window.outerWidth(),
-        wh = _window.height(),
-        _body = $('body'),
-        wwNormal = 1400,
-        wwMedium = 992,
-        wwSmall = 992,
-        wwxs = 576;
+    ww = _window.outerWidth(),
+    wh = _window.height(),
+    _body = $('body'),
+    wwNormal = 1400,
+    wwMedium = 992,
+    wwSmall = 992,
+    wwxs = 576;
     /*-----------------------------------*/
     //////////// nojs 先移除////////////////
     /*-----------------------------------*/
@@ -41,10 +41,10 @@ $(function() {
     var _menu = $('.menu');
     _menu.find('li').has('ul').addClass('hasChild');
     var liHasChild = _menu.find('li.hasChild'),
-        liHasChild_level1 = $('.menu ul').children('li.hasChild'),
-        liHasChild_level2 = $('.menu ul ul').children('li.hasChild'),
-        liHasChild_level3 = $('.menu ul ul ul').children('li.hasChild'),
-        subMenuWidth = liHasChild.first().children('ul').outerWidth();
+    liHasChild_level1 = $('.menu ul').children('li.hasChild'),
+    liHasChild_level2 = $('.menu ul ul').children('li.hasChild'),
+    liHasChild_level3 = $('.menu ul ul ul').children('li.hasChild'),
+    subMenuWidth = liHasChild.first().children('ul').outerWidth();
     /*-----------------------------------*/
     ////////////// 行動版選單切換////////////
     /*-----------------------------------*/
@@ -58,14 +58,14 @@ $(function() {
 
     var menu_status = false;
     var _sidebar = $('.sidebar'),
-        _search = $('.search'),
-        _searchCtrl = $('.searchCtrl'),
-        _nav = $('.navigation'),
-        _sidebarClose = $('.sidebarClose'),
-        _sidebarCtrl = $('.sidebarCtrl'),
-        _overlay = $('.menu_overlay'),
-        _mainMenu = $('.main_menu'),
-        _mArea = $('.m_area');
+    _search = $('.search'),
+    _searchCtrl = $('.searchCtrl'),
+    _nav = $('.navigation'),
+    _sidebarClose = $('.sidebarClose'),
+    _sidebarCtrl = $('.sidebarCtrl'),
+    _overlay = $('.menu_overlay'),
+    _mainMenu = $('.main_menu'),
+    _mArea = $('.m_area');
     _sidebarCtrl.append('<span></span><span></span><span></span>');
     var search_mode = false;
     // 打開選單 function
@@ -321,14 +321,14 @@ $(function() {
     $(window).bind('resize load', function(e) {
         $('.imgOuter').each(function(index, el) {
             var _imgContainer = $(this),
-                cWidth = _imgContainer.width(),
-                cHeight = _imgContainer.height(),
-                ratioC = cWidth / cHeight,
-                _img = _imgContainer.find('img');
+            cWidth = _imgContainer.width(),
+            cHeight = _imgContainer.height(),
+            ratioC = cWidth / cHeight,
+            _img = _imgContainer.find('img');
             var iWidth = $(this).find('img').width(),
-                iHeight = $(this).find('img').height(),
-                ratioImg = iWidth / iHeight,
-                scaleRatio;
+            iHeight = $(this).find('img').height(),
+            ratioImg = iWidth / iHeight,
+            scaleRatio;
             if (ratioC > ratioImg) {
                 scaleRatio = cWidth / iWidth;
                 _img.width(cWidth).height(iHeight * scaleRatio).css('top', -.5 * (iHeight * scaleRatio - cHeight));
@@ -346,14 +346,14 @@ $(function() {
     $(window).bind('resize load', function(e) {
         $('.imgOuter').each(function(index, el) {
             var _imgContainer = $(this),
-                cWidth = _imgContainer.width(),
-                cHeight = _imgContainer.height(),
-                ratioC = cWidth / cHeight,
-                _img = _imgContainer.find('img');
+            cWidth = _imgContainer.width(),
+            cHeight = _imgContainer.height(),
+            ratioC = cWidth / cHeight,
+            _img = _imgContainer.find('img');
             var iWidth = $(this).find('img').width(),
-                iHeight = $(this).find('img').height(),
-                ratioImg = iWidth / iHeight,
-                scaleRatio;
+            iHeight = $(this).find('img').height(),
+            ratioImg = iWidth / iHeight,
+            scaleRatio;
             if (ratioC > ratioImg) {
                 scaleRatio = cWidth / iWidth;
                 _img.width(cWidth).height(iHeight * scaleRatio).css('top', -.5 * (iHeight * scaleRatio - cHeight));
@@ -497,7 +497,9 @@ $(function() {
             $(this).parents('.tabSet').height(tabContentHeight + tabItemHeight);
         });
         $(this).parent('.tabItem').siblings().removeClass('active');
+        $(this).parent('.tabItem').siblings().children().removeAttr("aria-selected");
         $(this).parent('.tabItem').addClass('active');
+        $(this).attr('aria-selected', true);
         return false;
     }
     $('.tabs>.tabItem>a').focus(tabs);
