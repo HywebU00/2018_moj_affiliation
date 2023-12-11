@@ -86,13 +86,14 @@ $(function() {
     _overlay.add(_sidebarClose).off().click(function() {
         hideSidebar();
     });
+    //ESC關閉
     if (_sidebar.length > 0) {
         _body.keydown(function(e) {
             if (e.keyCode == 27) {
                 hideSidebar();
             }
         })
-    }
+    };
     _overlay.off("mouseenter");
     // 無障礙tab設定
     liHasChild.keyup(function() {
@@ -484,7 +485,9 @@ $(function() {
             $(this).parents('.tabSet').height(tabContentHeight + tabItemHeight);
         });
         $(this).parent('.tabItem').siblings().removeClass('active');
+        $(this).parent('.tabItem').siblings().children().removeAttr("aria-selected");
         $(this).parent('.tabItem').addClass('active');
+        $(this).attr('aria-selected', true);
         return false;
     }
     $('.tabs>.tabItem>a').focus(tabs);
