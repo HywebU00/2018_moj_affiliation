@@ -613,7 +613,7 @@ $(function() {
     if ($('.search .keywordHot').length > 0) {
         $('.search').find('a:last').focusout(function(event) {
             $('.search').hide();
-            $('h1 a').focus();
+            // $('h1 a').focus();
         });
     } else {
         $('.search').find('.btn_grp input').focusout(function(event) {
