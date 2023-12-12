@@ -203,18 +203,22 @@ $(function() {
             hideSidebar();
             _body.removeClass('noscroll');
             _nav.prependTo('.header .container');
+            $('h1').prependTo('.header .container');
             _menu.appendTo('.header .container');
             _searchCtrl.appendTo('.header .container');
+
             _search.appendTo('.header .container');
             _search.removeClass('m_search');
             _menu.appendTo(_mainMenu);
             _search.hide();
             _sidebar.appendTo('.header .container');
+
             $('#aU').prependTo('.header .container');
             $('.searchCtrl').off().click(function(event) {
                 $('.search').stop(true, true).fadeToggle();
                 $('.search').find('input[type="text"]').focus();
             });
+            
             // 如果點在外面
             $('.main').off().on('click touchend', function(e) {
                 _search.hide();
