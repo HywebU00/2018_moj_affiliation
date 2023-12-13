@@ -37,10 +37,12 @@ footer {
         a {
             font-size: 1em;
             margin-bottom: .5em;
-            color: lighten($aHover, 25);
+            // color: lighten($aHover, 25);
+            color: lighten($color-yellow, 0);
             &:hover,
             &:focus {
-                color: lighten($color-yellow, 0);
+                // color: lighten($color-yellow, 0);
+                color:#fff;
             }
         }
         * {
@@ -164,7 +166,7 @@ footer {
             margin: 0px 15px 5px 0px;
             a {
                 display: block; // padding: .5em 1em;
-                color: #FFF;
+                // color: #FFF;
                 @include border-radius(3px);
                 @include transition(all, .3s, ease-out);
                 color: lighten($color-yellow, 0);

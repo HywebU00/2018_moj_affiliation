@@ -37,7 +37,7 @@ footer {
         a {
             font-size: 1em;
             margin-bottom: .5em;
-            color: lighten($aHover, 25);
+            color: lighten($aHover, 20);
             &:hover,
             &:focus {
                 color: lighten($color-yellow, 0);

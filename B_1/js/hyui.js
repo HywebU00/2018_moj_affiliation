@@ -9,13 +9,13 @@ $(function() {
     ///////////////// 變數 ////////////////
     /*-----------------------------------*/
     var _window = $(window),
-        ww = _window.outerWidth(),
-        wh = _window.height(),
-        _body = $('body'),
-        wwNormal = 1400,
-        wwMedium = 992,
-        wwSmall = 992,
-        wwxs = 576;
+    ww = _window.outerWidth(),
+    wh = _window.height(),
+    _body = $('body'),
+    wwNormal = 1400,
+    wwMedium = 992,
+    wwSmall = 992,
+    wwxs = 576;
     /*-----------------------------------*/
     //////////// nojs 先移除////////////////
     /*-----------------------------------*/
@@ -33,7 +33,7 @@ $(function() {
     var _menu = $('.menu');
     _menu.find('li').has('ul').addClass('hasChild');
     var liHasChild = _menu.find('li.hasChild'),
-        liHasChild_level1 = $('.menu>ul').children('li.hasChild');
+    liHasChild_level1 = $('.menu>ul').children('li.hasChild');
     liHasChild_level2 = $('.menu ul ul').children('li.hasChild');
     liHasChild_level3 = $('.menu ul ul ul').children('li.hasChild');
     subMenuWidth = liHasChild.first().children('ul').outerWidth();
@@ -45,13 +45,13 @@ $(function() {
     $('header .container .sidebarCtrl').after('<aside class="sidebar"><div class="m_area"><button type="button" class="sidebarClose">關閉</button></div><div class="menu_overlay"></div></aside>');
     var menu_status = false;
     var _sidebar = $('.sidebar'),
-        _search = $('.search'),
-        _nav = $('.navigation'),
-        _sidebarClose = $('.sidebarClose'),
-        _sidebarCtrl = $('.sidebarCtrl'),
-        _overlay = $('.menu_overlay'),
-        _mainMenu = $('.main_menu'),
-        _mArea = $('.m_area');
+    _search = $('.search'),
+    _nav = $('.navigation'),
+    _sidebarClose = $('.sidebarClose'),
+    _sidebarCtrl = $('.sidebarCtrl'),
+    _overlay = $('.menu_overlay'),
+    _mainMenu = $('.main_menu'),
+    _mArea = $('.m_area');
     _sidebarCtrl.append('<span></span><span></span><span></span>');
     var search_mode = false;
     // 打開選單 function
@@ -223,8 +223,8 @@ $(function() {
         }
     }
     liHasChild.children('a').attr('title', function(i, origValue) {
-            return origValue + "（自動展開子選單）";
-        })
+        return origValue + "（自動展開子選單）";
+    })
         //設定resize 計時器
     var resizeTimer;
     _window.bind("load resize", function(event) {
@@ -236,8 +236,8 @@ $(function() {
     mobileMenu();
     // 固定版頭
     var hh = $('.header').outerHeight(true),
-        menuH = _menu.outerHeight(),
-        navH = $('.navbar').height();
+    menuH = _menu.outerHeight(),
+    navH = $('.navbar').height();
     $(window).bind("load scroll resize", function(e) {
         ww = _window.outerWidth();
         if (ww >= wwSmall && $(this).scrollTop() > hh - menuH) {
@@ -287,7 +287,7 @@ $(function() {
     /*-----------------------------------*/
     /////////////fatfooter開關/////////////
     /*-----------------------------------*/
-    $('.btn-fatfooter').attr('aria-label', '底部選單區塊收合');
+    $('.btn-fatfooter').attr('aria-label', '底部選單區塊');
     $('.btn-fatfooter').attr('aria-expanded', 'true');
     $('.btn-fatfooter').click(function(e) {
         $(this).parent('.container').find('nav>ul>li>ul').stop(true, true).slideToggle(function() {
@@ -309,14 +309,14 @@ $(function() {
     $(window).bind('resize load', function(e) {
         $('.imgOuter').each(function(index, el) {
             var _imgContainer = $(this),
-                cWidth = _imgContainer.width(),
-                cHeight = _imgContainer.height(),
-                ratioC = cWidth / cHeight,
-                _img = _imgContainer.find('img');
+            cWidth = _imgContainer.width(),
+            cHeight = _imgContainer.height(),
+            ratioC = cWidth / cHeight,
+            _img = _imgContainer.find('img');
             var iWidth = $(this).find('img').width(),
-                iHeight = $(this).find('img').height(),
-                ratioImg = iWidth / iHeight,
-                scaleRatio;
+            iHeight = $(this).find('img').height(),
+            ratioImg = iWidth / iHeight,
+            scaleRatio;
             if (ratioC > ratioImg) {
                 scaleRatio = cWidth / iWidth;
                 _img.width(cWidth).height(iHeight * scaleRatio).css('top', -.5 * (iHeight * scaleRatio - cHeight));
@@ -334,14 +334,14 @@ $(function() {
     $(window).bind('resize load', function(e) {
         $('.imgOuter').each(function(index, el) {
             var _imgContainer = $(this),
-                cWidth = _imgContainer.width(),
-                cHeight = _imgContainer.height(),
-                ratioC = cWidth / cHeight,
-                _img = _imgContainer.find('img');
+            cWidth = _imgContainer.width(),
+            cHeight = _imgContainer.height(),
+            ratioC = cWidth / cHeight,
+            _img = _imgContainer.find('img');
             var iWidth = $(this).find('img').width(),
-                iHeight = $(this).find('img').height(),
-                ratioImg = iWidth / iHeight,
-                scaleRatio;
+            iHeight = $(this).find('img').height(),
+            ratioImg = iWidth / iHeight,
+            scaleRatio;
             if (ratioC > ratioImg) {
                 scaleRatio = cWidth / iWidth;
                 _img.width(cWidth).height(iHeight * scaleRatio).css('top', -.5 * (iHeight * scaleRatio - cHeight));
