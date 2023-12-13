@@ -33,10 +33,10 @@ footer {
         a {
             font-size: 1em;
             margin-bottom: .5em;
-           color: lighten($secondaryColor, 0);
+            color: $aHover;
             &:hover,
             &:focus {
-                color: lighten($secondaryColor, 10);
+                color:lighten($color-blue,0);
             }
         }
         * {
@@ -155,34 +155,34 @@ footer {
                 &:hover,
                 &:focus {
                    color:lighten($color-blue,0);
-                }
-            }
-        }
+               }
+           }
+       }
+   }
+   p {
+    line-height: 1.65em;
+    margin: .3em 0;
+}
+.update,
+.counter {
+    display: inline-block;
+    margin-right: 5px;
+    em {
+        font-style: normal;
+        color: $lightColor;
+        padding: 0 .5em;
     }
-    p {
-        line-height: 1.65em;
-        margin: .3em 0;
-    }
-    .update,
-    .counter {
+}
+.footer_icon {
+    a {
         display: inline-block;
-        margin-right: 5px;
-        em {
-            font-style: normal;
-            color: $lightColor;
-            padding: 0 .5em;
-        }
+        vertical-align: top;
     }
-    .footer_icon {
-        a {
-            display: inline-block;
-            vertical-align: top;
-        }
-        img {
-            max-width: 120px;
-        }
+    img {
+        max-width: 120px;
     }
-    hr {
-        border-top: 1px solid RGBA(0, 0, 0, .1);
-    }
+}
+hr {
+    border-top: 1px solid RGBA(0, 0, 0, .1);
+}
 }

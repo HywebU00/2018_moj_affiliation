@@ -56,7 +56,8 @@ a:focus {
     top: 5px;
     left: 5px;
     z-index: 9;
-    color: $color-word;
+    // color: $color-word;
+    color:#fff;
     font-size: $font-size;
     display: block;
     padding: .3em .5em .5em;
@@ -69,6 +70,16 @@ a:focus {
     @include screen("tablet") {
         display: none;
     }
+}
+.main .accesskey{
+    position: relative;
+    top: 0;
+    left: 5px;
+    padding: 0;
+    width: 1.5em;
+}
+footer .accesskey{
+    color:#413630;
 }
 // tag
 [class^="col"] span {

@@ -34,10 +34,10 @@ footer {
         a {
             font-size: 1em;
             margin-bottom: .5em;
-            color: lighten($secondaryColor, 0);
+            color: lighten($aHover, 15);
             &:hover,
             &:focus {
-                color: lighten($secondaryColor, 10);
+                color: lighten($color-yellow, 0);
             }
         }
         * {
