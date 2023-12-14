@@ -33,7 +33,7 @@ footer {
         a {
             font-size: 1em;
             margin-bottom: .5em;
-            color: $aHover;
+            color: darken($importantColor,10);
             &:hover,
             &:focus {
                 color: lighten($color-yellow, 0);
@@ -149,7 +149,7 @@ footer {
                 color: darken($importantColor,10);
                 &:hover,
                 &:focus {
-                    color: #FFF;
+                    color: lighten($color-yellow, 0);
                 }
             }
         }
