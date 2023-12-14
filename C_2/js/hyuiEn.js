@@ -282,7 +282,7 @@ $(function() {
     /*-----------------------------------*/
     /////////////fatfooter開關/////////////
     /*-----------------------------------*/
-    $('.btn-fatfooter').attr('aria-label', 'Fatfooter menu collapse');
+    $('.btn-fatfooter').attr('aria-label', 'Fatfooter menu');
     $('.btn-fatfooter').attr('aria-expanded', 'true');
     $('.btn-fatfooter').html("CLOSE");
     $('.btn-fatfooter').click(function(e) {
