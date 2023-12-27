@@ -927,6 +927,14 @@
 // 活動花絮
 .single_photo {
     text-align: left;
+    >a {
+        color: darken($secondaryColor2, 0);
+
+        &:hover,
+        &:focus {
+            color: darken($secondaryColor2, 20);
+        }
+    }
 
     .pic {
         @include aspect-ratio(4, 3);
@@ -1913,6 +1921,14 @@
             @include screen('mobile') {
                 padding: 1em 1.5em 1em;
             }
+            >a {
+                color: darken($secondaryColor2, 0);
+
+                &:hover,
+                &:focus {
+                    color: darken($secondaryColor2, 20);
+                }
+            }
 
             time {
                 @extend %time;
@@ -2012,7 +2028,7 @@
                     background: darken($secondaryColor2, 10);
                 }
                 &:focus {
-                   &:before {
+                 &:before {
                     background: darken($secondaryColor2, 10);
                     border: 2px solid $aFocusBoxline;
                 } 
@@ -2049,6 +2065,14 @@
             @include screen('mobile') {
                 min-height: auto;
                 margin: 0px 1.5em;
+            }
+            >a {
+                color: darken($secondaryColor2, 0);
+
+                &:hover,
+                &:focus {
+                    color: darken($secondaryColor2, 20);
+                }
             }
 
             time {
@@ -2158,7 +2182,7 @@
                 background: darken($secondaryColor2, 5);
             }
             &:focus {
-             &:before {
+               &:before {
                 border: 2px solid $aFocusBoxline;
             }  
         }
