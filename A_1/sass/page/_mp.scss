@@ -955,6 +955,8 @@
 
     .pic {
         @include aspect-ratio(4, 3);
+        margin-bottom: .5em;
+
 
         img {
             object-fit: cover;
@@ -983,6 +985,17 @@
         &~p {
             @extend %paragraph;
         }
+    }
+    >a {
+        color: $secondaryColor;
+
+        &:hover,
+        &:focus {
+            color: darken($secondaryColor, 10);
+        }
+    }
+    p{
+        margin: .5em 0;
     }
 }
 
@@ -1237,6 +1250,14 @@
 
             p {
                 @extend %paragraph;
+            }
+            >a {
+                color: $secondaryColor;
+
+                &:hover,
+                &:focus {
+                    color: darken($secondaryColor, 20);
+                }
             }
 
             a {
@@ -2084,6 +2105,14 @@
                 @extend %time;
                 margin-left: $grid-gutter-width/2;
                 float: left
+            }
+            >a {
+                color: $secondaryColor;
+
+                &:hover,
+                &:focus {
+                    color: darken($secondaryColor, 10);
+                }
             }
         }
 

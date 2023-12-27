@@ -951,6 +951,14 @@
 // 活動花絮
 .single_photo {
     text-align: left;
+    >a {
+        color: $secondaryColor;
+
+        &:hover,
+        &:focus {
+            color: darken($secondaryColor, 10);
+        }
+    }
 
     .pic {
         @include aspect-ratio(4, 3);
@@ -1945,6 +1953,14 @@
             @include screen('mobile') {
                 padding: 1em 1.5em 1em;
             }
+            >a {
+                color: $secondaryColor;
+
+                &:hover,
+                &:focus {
+                    color: darken($secondaryColor, 10);
+                }
+            }
 
             time {
                 @extend %time;
@@ -2075,6 +2091,14 @@
             @include screen('mobile') {
                 min-height: auto;
                 margin: 0px 1.5em;
+            }
+            >a {
+                color: $secondaryColor;
+
+                &:hover,
+                &:focus {
+                    color: darken($secondaryColor, 10);
+                }
             }
 
             time {
