@@ -1035,7 +1035,19 @@ h2.title {
     background: #FFF;
     padding-bottom: .5em;
     text-align: left;
-
+    a {
+        color: $secondaryColor;
+        display: block;
+        &:hover,
+        &:focus {
+            color: darken($secondaryColor, 10);
+        }
+    }
+    a.more{
+        &:hover{
+            color:#fff;
+        }
+    }
     .pic {
         @include aspect-ratio(4, 3);
 
@@ -2027,6 +2039,14 @@ h2.title {
             @include screen('mobile') {
                 padding: 1em 1.5em 1em;
             }
+            a {
+                color: $secondaryColor;
+                display: block;
+                &:hover,
+                &:focus {
+                    color: darken($secondaryColor, 10);
+                }
+            }
 
             time {
                 @extend %time;
@@ -2116,6 +2136,7 @@ h2.title {
                 &:hover,
                 &:focus {
                     border: 1px solid darken($secondaryColor, 5);
+                    color:#fff;
                 }
 
                 &:after {
@@ -2166,6 +2187,14 @@ h2.title {
             }
             a{
                 display: block;
+            }
+            a {
+                color: $secondaryColor;
+
+                &:hover,
+                &:focus {
+                    color: darken($secondaryColor, 10);
+                }
             }
         }
 
@@ -2258,6 +2287,7 @@ h2.title {
 
             &:hover {
                 border: 1px solid darken($secondaryColor, 5);
+                color:#fff;
             }
             &:focus {
                 &:before {

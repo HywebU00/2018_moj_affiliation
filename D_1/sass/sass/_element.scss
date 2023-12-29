@@ -181,7 +181,7 @@ a.more {
     &:focus,
     &.active {
         border: 1px solid $more;
-        color: white;
+        color: #fff;
         &:before {
             -webkit-transform: scale(1);
             transform: scale(1);
@@ -191,12 +191,12 @@ a.more {
         }
     }
     &:focus{
-       &:before {
-         box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
-         background: $aFocusBg!important;
-         color:$aFocusTxt!important;
-     } 
- }
+     &:before {
+       box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+       background: $aFocusBg!important;
+       color:$aFocusTxt!important;
+   } 
+}
 }
 // scrollTop
 .scrollToTop {

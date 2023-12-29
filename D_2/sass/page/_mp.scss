@@ -650,7 +650,7 @@
             background: rgba(0, 0, 0, .5);
         }
         &:focus{
-         &:before {
+           &:before {
             box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
             background: $aFocusBg!important;
             color:$aFocusTxt!important;
@@ -872,15 +872,15 @@ h2.title {
                     background: rgba(0, 0, 0, .5);
                 }
                 &:focus{
-                   &:before {
-                       box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
-                       background: $aFocusBg!important;
-                       color:$aFocusTxt!important;
-                   } 
-               }
-           }
+                 &:before {
+                     box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+                     background: $aFocusBg!important;
+                     color:$aFocusTxt!important;
+                 } 
+             }
+         }
 
-           &~.mp_slider {
+         &~.mp_slider {
             .img-container {
                 height: 300px;
 
@@ -1035,6 +1035,19 @@ h2.title {
     background: #FFF;
     padding-bottom: .5em;
     text-align: left;
+    a {
+        color: $secondaryColor;
+        display: block;
+        &:hover,
+        &:focus {
+            color: darken($secondaryColor, 10);
+        }
+    }
+    a.more{
+        &:hover{
+            color:#fff;
+        }
+    }
 
     .pic {
         @include aspect-ratio(4, 3);
@@ -2027,6 +2040,15 @@ h2.title {
             @include screen('mobile') {
                 padding: 1em 1.5em 1em;
             }
+            a {
+                color: $secondaryColor;
+                display: block;
+                &:hover,
+                &:focus {
+                    color: darken($secondaryColor, 10);
+                }
+
+            }
 
             time {
                 @extend %time;
@@ -2116,6 +2138,7 @@ h2.title {
                 &:hover,
                 &:focus {
                     border: 1px solid darken($secondaryColor, 5);
+                    color:#fff;
                 }
 
                 &:after {
