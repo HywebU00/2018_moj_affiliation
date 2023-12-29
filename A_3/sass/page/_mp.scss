@@ -951,13 +951,18 @@
 // 活動花絮
 .single_photo {
     text-align: left;
-    >a {
+    a {
         color: $secondaryColor;
-
+        display: block;
         &:hover,
         &:focus {
             color: darken($secondaryColor, 10);
         }
+    }
+    a.more{
+        &:hover{
+            color:#fff!important;
+        } 
     }
 
     .pic {
@@ -991,6 +996,7 @@
             @extend %paragraph;
         }
     }
+
 }
 
 .multi_photo {
@@ -1034,6 +1040,12 @@
                 }
 
             }
+            a.more{
+                &:hover{
+                    color:#fff!important;
+                } 
+            }
+
 
             .pic {
                 @include aspect-ratio(4, 3);
@@ -1955,7 +1967,7 @@
             }
             >a {
                 color: $secondaryColor;
-
+                display: block;
                 &:hover,
                 &:focus {
                     color: darken($secondaryColor, 10);
@@ -2050,6 +2062,7 @@
                 &:hover,
                 &:focus {
                     border: 1px solid darken($secondaryColor, 5);
+                    color:#fff;
                 }
 
                 &:after {
@@ -2094,7 +2107,7 @@
             }
             >a {
                 color: $secondaryColor;
-
+                display: block;
                 &:hover,
                 &:focus {
                     color: darken($secondaryColor, 10);
@@ -2198,6 +2211,9 @@
             &:hover,
             &:focus {
                 border: 1px solid darken($secondaryColor, 5);
+            }
+            &:hover{
+                color:#fff;
             }
 
             &:after {

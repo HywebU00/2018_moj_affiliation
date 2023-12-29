@@ -953,10 +953,15 @@
     text-align: left;
     >a {
         color: $secondaryColor;
-
+        display: block;
         &:hover,
         &:focus {
             color: darken($secondaryColor, 10);
+        }
+    }
+    a.more{
+        &:hover{
+            color:#fff;
         }
     }
 
@@ -1950,7 +1955,7 @@
             }
             >a {
                 color: $secondaryColor;
-
+                display: block;
                 &:hover,
                 &:focus {
                     color: darken($secondaryColor, 10);
@@ -2045,6 +2050,7 @@
                 &:hover,
                 &:focus {
                     border: 1px solid darken($secondaryColor, 5);
+                    color:#fff;
                 }
 
                 &:after {
@@ -2095,7 +2101,7 @@
             }
             >a {
                 color: $secondaryColor;
-
+                display: block;
                 &:hover,
                 &:focus {
                     color: darken($secondaryColor, 10);
@@ -2193,6 +2199,7 @@
             &:hover,
             &:focus {
                 border: 1px solid darken($secondaryColor, 5);
+                color:#fff;
             }
 
             &:after {

@@ -2158,6 +2158,13 @@
             @include screen('mobile') {
                 padding: 1em 1.5em 1em;
             }
+            a {
+                color: $secondaryColor;
+                display: block;
+                &:hover {
+                    color: darken($secondaryColor, 10);
+                }
+            }
 
             time {
                 @extend %time;
@@ -2247,6 +2254,7 @@
                 &:hover,
                 &:focus {
                     border: 1px solid darken($secondaryColor, 5);
+                    color:#fff;
                 }
 
                 &:after {
@@ -2399,6 +2407,7 @@
             &:hover,
             &:focus {
                 border: 1px solid darken($color-orange, 0);
+                color:#fff;
             }
 
             &:after {

@@ -952,7 +952,19 @@
 // 活動花絮
 .single_photo {
     text-align: left;
-
+    a {
+        color: $secondaryColor;
+        display: block;
+        &:hover,
+        &:focus {
+            color: darken($secondaryColor, 10);
+        }
+    }
+    a.more{
+        &:hover{
+            color:#fff;
+        }
+    }
     .pic {
         @include aspect-ratio(4, 3);
         margin-bottom: .5em;
@@ -986,14 +998,7 @@
             @extend %paragraph;
         }
     }
-    >a {
-        color: $secondaryColor;
 
-        &:hover,
-        &:focus {
-            color: darken($secondaryColor, 10);
-        }
-    }
     p{
         margin: .5em 0;
     }
@@ -1082,7 +1087,20 @@
 // 影音專區
 .single_video {
     text-align: left;
+    a {
+        color: $secondaryColor;
+        display: block;
 
+        &:hover,
+        &:focus {
+            color: darken($secondaryColor, 10);
+        }
+    }
+    a.more{
+        &:hover{
+            color:#fff;
+        }
+    }
     .youtube {
         @include aspect-ratio(4, 3);
         width: 100%;
@@ -1095,16 +1113,16 @@
             right: 0;
         }
     }
-    a{
-        display: block;
-        &:focus{
-            outline: solid 2px $aFocusBoxline;
-            box-shadow: 0 0px 0px 2px $aFocusBoxline;
-            background: $aFocusBg!important;
-            color:$aFocusTxt!important;
+    // a{
+    //     display: block;
+    //     &:focus{
+    //         outline: solid 2px $aFocusBoxline;
+    //         box-shadow: 0 0px 0px 2px $aFocusBoxline;
+    //         background: $aFocusBg!important;
+    //         color:$aFocusTxt!important;
 
-        }
-    }
+    //     }
+    // }
 
     .pic {
         @include aspect-ratio(16, 9);
@@ -1194,6 +1212,14 @@
                     bottom: 0;
                     width: 100%;
                     height: 100%;
+                }
+            }
+            a {
+                color: $secondaryColor;
+                display: block;
+                &:hover,
+                &:focus {
+                    color: darken($secondaryColor, 20);
                 }
             }
 
@@ -1969,7 +1995,14 @@
             @include screen('mobile') {
                 padding: 1em 1.5em 1em;
             }
-
+            a {
+                color: $secondaryColor;
+                display: block;
+                &:hover,
+                &:focus {
+                    color: darken($secondaryColor, 10);
+                }
+            }
             time {
                 @extend %time;
                 display: inline-block;
@@ -2058,6 +2091,7 @@
                 &:hover,
                 &:focus {
                     border: 1px solid darken($secondaryColor, 5);
+                    color:#fff;
                 }
 
                 &:after {
@@ -2108,7 +2142,7 @@
             }
             >a {
                 color: $secondaryColor;
-
+                display: block;
                 &:hover,
                 &:focus {
                     color: darken($secondaryColor, 10);
@@ -2206,6 +2240,7 @@
             &:hover,
             &:focus {
                 border: 1px solid darken($secondaryColor, 5);
+                color:#fff;
             }
 
             &:after {

@@ -2160,6 +2160,14 @@
                 @extend %time;
                 display: inline-block;
             }
+            >a {
+                color: $secondaryColor;
+                display: block;
+                &:hover,
+                &:focus {
+                    color: darken($secondaryColor, 10);
+                }
+            }
 
             h3,
             .heading-3 {
@@ -2244,6 +2252,7 @@
                 &:hover,
                 &:focus {
                     border: 1px solid darken($secondaryColor, 5);
+                    color:#fff;
                 }
 
                 &:after {
@@ -2396,6 +2405,7 @@
             &:hover,
             &:focus {
                 border: 1px solid darken($color-orange, 0);
+                color:#fff;
             }
 
             &:after {

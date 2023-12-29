@@ -168,7 +168,7 @@ a.more {
     &:hover,
     &.active {
         border: 1px solid $more;
-        color: white;
+        color: #fff;
         &:before {
             -webkit-transform: scale(1);
             transform: scale(1);
