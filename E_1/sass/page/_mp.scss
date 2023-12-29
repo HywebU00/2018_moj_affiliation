@@ -23,7 +23,7 @@
     background: $secondaryColor;
     border: 1px solid $secondaryColor;
 
-    &:focus {
+    &:focus-visible {
         background: darken($secondaryColor, 10);
         border: 1px solid darken($secondaryColor, 10);
 
@@ -106,7 +106,7 @@
         }
 
         &:hover,
-        &:focus {
+        &:focus-visible {
             img {
                 transform: none;
             }
@@ -132,7 +132,7 @@
                     background: url(../images/icon_plus.png) no-repeat right 12px lighten($secondaryColor, 5);
                     box-shadow: none;
                 }
-                &:focus {
+                &:focus-visible {
                     background: url(../images/icon_plus.png) no-repeat right 12px lighten($aFocusBg, 5)!important;
                     box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
                 }
@@ -144,7 +144,7 @@
                         background: url(../images/icon_minus.png) no-repeat right 12px lighten($secondaryColor, 5);
                         box-shadow: none;
                     }
-                    &:focus {
+                    &:focus-visible {
                         background: url(../images/icon_minus.png) no-repeat right 12px lighten($aFocusBg, 5)!important;
                         box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
                     }
@@ -175,21 +175,21 @@
     }
     a{
         display: block;
-        &:focus{
+        &:focus-visible{
             box-shadow: none!important;
             background: none!important;
             outline: solid 3px $aFocusBoxline;
         }
     }
     div{
-        &:focus{
+        &:focus-visible{
             box-shadow: none!important;
             background: none!important;
             outline: solid 3px $aFocusBoxline;
         }  
     }
     iframe{
-        &:focus{
+        &:focus-visible{
             box-shadow: none!important;
             background: none!important;
             outline: solid 3px $aFocusBoxline;
@@ -232,7 +232,7 @@
             a {
                 display: block;
                 &:hover,
-                &:focus {
+                &:focus-visible {
                     .pic {
                         background: darken($secondaryColor, 5);
                     }
@@ -303,7 +303,7 @@
             a {
                 display: block;
                 &:hover,
-                &:focus {
+                &:focus-visible {
                     .pic {
                         background: $secondaryColor;
                     }
@@ -546,7 +546,7 @@
                         color: #FFF;
                     }
                 }
-                &:focus {
+                &:focus-visible {
                     background: $aFocusBg!important;
                     .subtitle,
                     .heading-3 {
@@ -650,7 +650,7 @@
                         right: 0;
                     }
                 }
-                &:focus {
+                &:focus-visible {
                     &:before {
                         display: block;
                         right: 0;
@@ -806,7 +806,7 @@
                         &:hover {
                             background: RGBA(0, 0, 0, .5) !important;
                         }
-                        &:focus {
+                        &:focus-visible {
                             background: $aFocusBg!important;
                             color:$aFocusTxt!important;
                         }
@@ -853,7 +853,7 @@
                             line-height: 1.45em;
 
                             &:hover,
-                            &:focus {
+                            &:focus-visible {
                                 background: darken($primaryColor, 0);
                             }
 
@@ -973,7 +973,7 @@ section {
     a {
         display: block;
 
-        &:focus {
+        &:focus-visible {
             background: none!important;
             box-shadow: none!important;
             &:before {
@@ -1057,7 +1057,7 @@ section {
                 display: block;
 
                 &:hover,
-                &:focus {
+                &:focus-visible {
 
                     h3,
                     .heading-3 {
@@ -1065,7 +1065,7 @@ section {
                     }
                 }
 
-                &:focus {
+                &:focus-visible {
                     &:before {
                         position: absolute;
                         width: 100%;
@@ -1107,7 +1107,7 @@ section {
                 color: $secondaryColor;
 
                 &:hover,
-                &:focus {
+                &:focus-visible {
                     color: darken($secondaryColor, 10);
                 }
             }
@@ -1134,76 +1134,78 @@ section {
 
             a {
                 display: block;
+                color: $secondaryColor;
+                &:hover {
+                 color: darken($secondaryColor, 10); 
+             }
+             .subtitle,
+             .heading-3 {
+                width: 90%;
+                overflow: hidden;
+                display: block;
+                height: 3em;
+                margin: .5em auto;
+                line-height: 1.5em;
+                text-align: left;
+                // color: $secondaryColor;
 
-                .subtitle,
-                .heading-3 {
-                    width: 90%;
-                    overflow: hidden;
-                    display: block;
-                    height: 3em;
-                    margin: .5em auto;
-                    line-height: 1.5em;
-                    text-align: left;
-                    color: $secondaryColor;
+                // &:hover {
 
-                    &:hover,
-                    &:focus {
-
-                        .subtitle,
-                        .heading-3 {
-                            color: darken($secondaryColor, 10);
-                        }
-                    }
-                }
-
-                p {
-                    @extend %paragraph;
-                }
-                &:focus {
-
-                    h3,
-                    .heading-3 {
-                        color: $aFocusTxt;
-                    }
-                }
+                //     .subtitle,
+                //     .heading-3 {
+                //         color: darken($secondaryColor, 10);
+                //     }
+                // }
             }
 
-            .pic {
-                @include aspect-ratio(4, 3);
+            p {
+                @extend %paragraph;
+            }
+            // &:focus-visible {
+
+            //     h3,
+            //     .heading-3 {
+            //         color: $aFocusTxt;
+            //     }
+            // }
+        }
+
+        .pic {
+            @include aspect-ratio(4, 3);
+            width: 100%;
+
+            img {
+                object-fit: cover;
                 width: 100%;
-
-                img {
-                    object-fit: cover;
-                    width: 100%;
-                    height: 100%;
-                }
+                height: 100%;
             }
         }
     }
+}
 
-    .slick-prev {
-        left: 3px;
-        background: url(../vendor/slick/icon_arrow_left.png) center center no-repeat RGBA(0, 0, 0, .5) !important;
+.slick-prev {
+    left: 3px;
+    background: url(../vendor/slick/icon_arrow_left.png) center center no-repeat RGBA(0, 0, 0, .5) !important;
+    background-size: 30px 30px !important;
+
+    &:hover,
+    &:focus-visible {
+        background: url(../vendor/slick/icon_arrow_left.png) center center no-repeat RGBA(0, 0, 0, .8) !important;
         background-size: 30px 30px !important;
-
-        &:hover,
-        &:focus {
-            background: url(../vendor/slick/icon_arrow_left.png) center center no-repeat RGBA(0, 0, 0, .8) !important;
-            background-size: 30px 30px !important;
-        }
     }
+}
 
-    .slick-next {
-        right: 3px;
-        background: url(../vendor/slick/icon_arrow_right.png) center center no-repeat RGBA(0, 0, 0, .5) !important;
+.slick-next {
+    right: 3px;
+    background: url(../vendor/slick/icon_arrow_right.png) center center no-repeat RGBA(0, 0, 0, .5) !important;
+    background-size: 30px 30px !important;
+
+    &:hover,
+    &:focus-visible {
+        background: url(../vendor/slick/icon_arrow_right.png) center center no-repeat RGBA(0, 0, 0, .8) !important;
         background-size: 30px 30px !important;
-
-        &:hover,
-        &:focus {
-            background: url(../vendor/slick/icon_arrow_right.png) center center no-repeat RGBA(0, 0, 0, .8) !important;
-            background-size: 30px 30px !important;
-        }
     }
+}
 }
 
 // 影音專區
@@ -1266,7 +1268,7 @@ section {
             color: $secondaryColor;
 
             &:hover,
-            &:focus {
+            &:focus-visible {
                 color: darken($secondaryColor, 10);
             }
         }
@@ -1277,7 +1279,7 @@ section {
     }
 
     a {
-        &:focus {
+        &:focus-visible {
             .pic {
                 outline: 2px solid $aFocusBoxline;
             }
@@ -1297,25 +1299,32 @@ section {
             text-align: left;
             @include border-radius(4px);
             @include box-shadow(0px 0px 10px RGBA(0, 0, 0, .15));
-
-            .youtube {
-                @include aspect-ratio(4, 3);
-
-                iframe {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    width: 100%;
-                    height: 100%;
-                }
-            }
-
-            .pic {
-                @include aspect-ratio(16, 9);
-                width: 100%;
+            a {
                 display: block;
+                color: $secondaryColor;
+                &:hover {
+                   color: darken($secondaryColor, 10); 
+               }
+           }
+
+           .youtube {
+            @include aspect-ratio(4, 3);
+
+            iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .pic {
+            @include aspect-ratio(16, 9);
+            width: 100%;
+            display: block;
 
                 // height: 200px;
                 img {
@@ -1357,7 +1366,7 @@ section {
                     color: $secondaryColor;
 
                     &:hover,
-                    &:focus {
+                    &:focus-visible {
                         color: darken($secondaryColor, 10);
                     }
                 }
@@ -1369,7 +1378,7 @@ section {
 
             a {
                 display: block;
-                &:focus {
+                &:focus-visible {
                     .pic {
                         outline: 2px solid $aFocusBoxline;
                     }
@@ -1385,7 +1394,7 @@ section {
         background-size: 30px 30px !important;
 
         &:hover,
-        &:focus {
+        &:focus-visible {
             background: url(../vendor/slick/icon_arrow_left.png) center center no-repeat RGBA(0, 0, 0, .8) !important;
             background-size: 30px 30px !important;
         }
@@ -1397,7 +1406,7 @@ section {
         background-size: 30px 30px !important;
 
         &:hover,
-        &:focus {
+        &:focus-visible {
             background: url(../vendor/slick/icon_arrow_right.png) center center no-repeat RGBA(0, 0, 0, .8) !important;
             background-size: 30px 30px !important;
         }
@@ -1439,7 +1448,7 @@ section {
         box-shadow: none;
 
         &:hover,
-        &:focus {
+        &:focus-visible {
             opacity: 1;
         }
 
@@ -1464,7 +1473,7 @@ section {
         box-shadow: none;
 
         &:hover,
-        &:focus {
+        &:focus-visible {
             opacity: 1;
         }
 
@@ -1502,7 +1511,7 @@ section {
         margin-top: -10px;
 
         &:hover,
-        &:focus {
+        &:focus-visible {
             opacity: 1;
         }
 
@@ -1520,7 +1529,7 @@ section {
         margin-top: -10px;
 
         &:hover,
-        &:focus {
+        &:focus-visible {
             opacity: 1;
         }
 
@@ -1589,7 +1598,7 @@ section {
         position: relative;
 
         &:hover,
-        &:focus {
+        &:focus-visible {
             .caption {
                 bottom: 0;
             }
@@ -1744,7 +1753,7 @@ section {
                     @include box-shadow(0px 0px 0px 1px #CCC inset);
                 }
 
-                &:focus {
+                &:focus-visible {
                     &:before {
                         box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aFocusBoxline, 0), 0), -2) inset;
                     }
@@ -1789,7 +1798,7 @@ section {
                     @include box-shadow(0px 0px 0px 1px #CCC inset);
                 }
 
-                &:focus {
+                &:focus-visible {
                     &:before {
                         box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aFocusBoxline, 0), 0), -2) inset;
                     }
@@ -1838,14 +1847,14 @@ section {
 //                 color: #FFF;
 //                 position: relative;
 //                 &:hover,
-//                 &:focus {
+//                 &:focus-visible {
 //                     background: url(../images/icon_plus.png) no-repeat right 12px lighten($secondaryColor, 5);
 //                     box-shadow: none;
 //                 }
 //                 &.active {
 //                     background: url(../images/icon_minus.png) no-repeat right 12px lighten($primaryColor, 10);
 //                     &:hover,
-//                     &:focus {
+//                     &:focus-visible {
 //                         background: url(../images/icon_minus.png) no-repeat right 12px lighten($secondaryColor, 5);
 //                         box-shadow: none;
 //                     }
@@ -1910,7 +1919,7 @@ section {
 //             text-align: center;
 //             position: relative;
 //             &:hover,
-//             &:focus {
+//             &:focus-visible {
 //                 &:before {
 //                     box-shadow: 0px 0px 0px 1px $aHover inset;
 //                 }
@@ -1978,7 +1987,7 @@ section {
             text-align: center;
             position: relative;
 
-            &:focus {
+            &:focus-visible {
                 &:before {
                     box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aFocusBoxline, 0), 0), -2) inset;
                 }
@@ -2096,69 +2105,76 @@ section {
             @include screen('mobile') {
                 padding: 1em 1.5em 1em;
             }
-
-            time {
-                @extend %time;
-                display: inline-block;
-            }
-
-            h3,
-            .heading-3 {
-                margin-top: 0;
-                margin-bottom: 1em;
-
-                a {
-                    color: $color-word;
-
-                    &:hover,
-                    &:focus {
-                        color: darken($secondaryColor, 10);
-                    }
-                }
-            }
-
-            p {
-                margin-top: .3em;
-                font-size: .938em;
-                color: #444;
-            }
-
-            span {
-                display: inline-block;
-                @include border-radius(10px);
-            }
-
-            .pic {
-                width: 240px;
-                height: 160px;
-                overflow: hidden;
+            a {
                 display: block;
-                float: left;
-                border: 1px solid #DDD;
-                margin: 0px .5em .5em 0;
+                color: $secondaryColor;
+                &:hover {
+                   color: darken($secondaryColor, 10); 
+               }
+           }
 
-                a {
-                    display: block;
-                    width: 240px;
-                    overflow: hidden;
-                    height: 160px;
+           time {
+            @extend %time;
+            display: inline-block;
+        }
 
-                    @include screen('mobile') {
-                        width: 100%;
-                        height: 100%;
-                    }
+        h3,
+        .heading-3 {
+            margin-top: 0;
+            margin-bottom: 1em;
+
+            a {
+                color: $color-word;
+
+                &:hover,
+                &:focus-visible {
+                    color: darken($secondaryColor, 10);
                 }
+            }
+        }
 
-                img {
-                    object-fit: cover;
+        p {
+            margin-top: .3em;
+            font-size: .938em;
+            color: #444;
+        }
+
+        span {
+            display: inline-block;
+            @include border-radius(10px);
+        }
+
+        .pic {
+            width: 240px;
+            height: 160px;
+            overflow: hidden;
+            display: block;
+            float: left;
+            border: 1px solid #DDD;
+            margin: 0px .5em .5em 0;
+
+            a {
+                display: block;
+                width: 240px;
+                overflow: hidden;
+                height: 160px;
+
+                @include screen('mobile') {
                     width: 100%;
                     height: 100%;
-
-                    @include screen('mobile') {
-                        width: 100%;
-                        height: 100%;
-                    }
                 }
+            }
+
+            img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+
+                @include screen('mobile') {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
 
                 // @include aspect-ratio(4, 3);
                 @include screen('mobile') {
@@ -2186,7 +2202,7 @@ section {
                 color: $color-word;
 
                 &:hover,
-                &:focus {
+                &:focus-visible {
                     border: 1px solid darken($secondaryColor, 5);
                     color: #fff;
                 }
@@ -2233,6 +2249,15 @@ section {
                 margin: 0px 1.5em 1.5em;
             }
 
+            a {
+                color: $secondaryColor;
+                display: block;
+                &:hover,
+                &:focus-visible {
+                    color: darken($secondaryColor, 10);
+                }
+            }
+
             time {
                 @extend %time;
                 margin-left: $grid-gutter-width/2;
@@ -2253,7 +2278,7 @@ section {
                 color: $primaryColor;
 
                 &:hover,
-                &:focus {
+                &:focus-visible {
                     color: darken($primaryColor, 10);
                 }
             }
@@ -2328,7 +2353,7 @@ section {
 
             //border: 1px solid $secondaryColor;
             &:hover,
-            &:focus {}
+            &:focus-visible {}
 
             &:before {
                 background: $secondaryColor;
@@ -2409,7 +2434,7 @@ section {
             @extend %small_block;
 
             &:hover,
-            &:focus {
+            &:focus-visible {
                 cursor: pointer;
                 background: lighten($third-color, 5);
                 box-shadow: 2px 2px 5px RGBA(0, 0, 0, .7) inset;
@@ -2421,7 +2446,7 @@ section {
             @extend %small_block;
 
             &:hover,
-            &:focus {
+            &:focus-visible {
                 cursor: pointer;
                 background: darken($third-color, 5);
                 box-shadow: 2px 2px 5px RGBA(0, 0, 0, .7) inset;
@@ -2433,7 +2458,7 @@ section {
             @extend %small_block;
 
             &:hover,
-            &:focus {
+            &:focus-visible {
                 cursor: pointer;
                 background: lighten($fourth-color, 0);
                 box-shadow: 2px 2px 5px RGBA(0, 0, 0, .7) inset;
@@ -2445,7 +2470,7 @@ section {
             @extend %small_block;
 
             &:hover,
-            &:focus {
+            &:focus-visible {
                 cursor: pointer;
                 background: darken($fourth-color, 5);
                 box-shadow: 2px 2px 5px RGBA(0, 0, 0, .7) inset;
@@ -2734,7 +2759,7 @@ section {
         }
         a{
             display: block;
-            &:focus {
+            &:focus-visible {
                 &:before {
                     box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aFocusBoxline, 0), 0), -2) inset;
                 }
