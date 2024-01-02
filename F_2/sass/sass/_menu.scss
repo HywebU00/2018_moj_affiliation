@@ -85,7 +85,7 @@
                 color: #FFF;
                 font-size:.938em;
                 &:hover,
-                &:focus {
+                &:focus-visible {
                     background: $primaryColor;
                 }
             }
@@ -97,7 +97,7 @@
             >a {
                 padding-right: 2em;
                 &:hover,
-                &:focus {
+                &:focus-visible {
                     background: $primaryColor;
                 }
                 &:after {
@@ -230,7 +230,7 @@
                         padding: .7em 1em .7em 2em !important;
                         background: rgba(0, 0, 0, .05);
                         &:hover,
-                        &:focus {
+                        &:focus-visible {
                             color: #000;
                             background: rgba(0, 0, 0, .15);
                         }
@@ -245,7 +245,7 @@
                             line-height: 1.5em;
                             min-height: 1.5em;
                             &:hover,
-                            &:focus {
+                            &:focus-visible {
                                 background: rgba(0, 0, 0, .15);
                             }
                         }
@@ -327,7 +327,7 @@
                 &:hover {
                     background: darken($primaryColor, 20);
                 }
-                &:focus {
+                &:focus-visible {
                     background: darken($primaryColor, 20);
                 }
             }
