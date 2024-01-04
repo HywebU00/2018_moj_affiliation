@@ -3,7 +3,7 @@ body {
 }
 .img-container {
     a {
-        &:focus {
+        &:focus-visible {
             &:before {
                 position: absolute;
                 width: 100%;
@@ -19,7 +19,7 @@ body {
 }
 .vertical_picture_link {
     a {
-        &:focus {
+        &:focus-visible {
             &:before {
                 position: absolute;
                 width: 100%;
@@ -34,7 +34,7 @@ body {
     }
 }
 // tab的外框線
-a:focus {
+a:focus-visible {
     outline: none;
     box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
     background: $aFocusBg!important;
@@ -43,7 +43,7 @@ a:focus {
     //     box-shadow: none;
     // }
 }
-.btn:focus {
+.btn:focus-visible {
     outline: none;
     box-shadow: 0 0px 0px 3px $aFocusBoxline;
     // @include screen('mobile') {
@@ -63,7 +63,7 @@ a:focus {
     padding: .3em .5em .5em;
     border-radius: 4px;
     line-height: 1em;
-    &:hover, &:focus {
+    &:hover, &:focus-visible {
         background: rgba(0, 0, 0, .5);
         color: #FFF;
     }
@@ -179,7 +179,7 @@ a.more {
         transition-timing-function: ease-out;
     }
     &:hover,
-    &:focus,
+    &:focus-visible,
     &.active {
         border: 1px solid $more;
         color: white;
@@ -191,7 +191,7 @@ a.more {
             right: 15px;
         }
     }
-    &:focus{
+    &:focus-visible{
        &:before {
          box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
          background: $aFocusBg!important;
@@ -221,7 +221,7 @@ a.more {
         opacity: 1;
         background: url(../images/basic/top.png) no-repeat center top lighten($secondaryColor,0);
     }
-    &:focus{
+    &:focus-visible{
         opacity: 1;
         background: url(../images/basic/top.png) no-repeat center top lighten($secondaryColor,0)!important;
         box-shadow: 0 0px 0px 3px $aFocusBoxline inset;
@@ -411,7 +411,7 @@ img.img-responsive {
             &:hover {
                 color: $aHover !important;
             }
-            &:focus {
+            &:focus-visible {
                 color:$aFocusTxt!important;
             }
         }
@@ -469,7 +469,7 @@ img.img-responsive {
         transition: .3s ease-out;
     }
     &:hover,
-    &:focus {
+    &:focus-visible {
         img {
             transform: scale(1.1);
         }

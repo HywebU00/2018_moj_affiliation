@@ -25,7 +25,7 @@
     background: $secondaryColor;
     border: 1px solid $secondaryColor;
 
-    &:focus {
+    &:focus-visible {
         background: darken($secondaryColor, 10);
         border: 1px solid darken($secondaryColor, 10);
 
@@ -109,7 +109,7 @@
         }
 
         &:hover,
-        &:focus {
+        &:focus-visible {
             img {
                 transform: none;
             }
@@ -132,11 +132,11 @@
                 position: relative;
 
                 &:hover,
-                &:focus {
+                &:focus-visible {
                     background: url(../images/icon_plus.png) no-repeat right 12px lighten($secondaryColor, 5);
                     box-shadow: none;
                 }
-                &:focus {
+                &:focus-visible {
                     box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
                     background: url(../images/icon_plus.png) no-repeat right 12px lighten($aFocusBg, 0)!important;
                 }
@@ -145,11 +145,11 @@
                     background: url(../images/icon_minus.png) no-repeat right 12px lighten($primaryColor, 10);
 
                     &:hover,
-                    &:focus {
+                    &:focus-visible {
                         background: url(../images/icon_minus.png) no-repeat right 12px lighten($secondaryColor, 5);
                         box-shadow: none;
                     }
-                    &:focus {
+                    &:focus-visible {
                         box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
                         background: url(../images/icon_minus.png) no-repeat right 12px lighten($aFocusBg, 0)!important;
                     }
@@ -179,21 +179,21 @@
     }
     a{
         display: block;
-        &:focus{
+        &:focus-visible{
             box-shadow: none!important;
             background: none!important;
             outline: solid 3px $aFocusBoxline;
         }
     }
     div{
-        &:focus{
+        &:focus-visible{
             box-shadow: none!important;
             background: none!important;
             outline: solid 3px $aFocusBoxline;
         }  
     }
     iframe{
-        &:focus{
+        &:focus-visible{
             box-shadow: none!important;
             background: none!important;
             outline: solid 3px $aFocusBoxline;
@@ -232,7 +232,7 @@
             a {
                 display: block;
                 &:hover,
-                &:focus {
+                &:focus-visible {
                     .pic {
                         background: darken($secondaryColor, 5);
                     }
@@ -301,7 +301,7 @@
                 display: block;
 
                 &:hover,
-                &:focus {
+                &:focus-visible {
                     .pic {
                         background: $secondaryColor;
                     }
@@ -504,7 +504,7 @@
                         color: #FFF;
                     }
                 }
-                &:focus {
+                &:focus-visible {
                     box-shadow: 0 0px 0px 3px $aFocusBoxline inset;
 
                     h3,
@@ -603,13 +603,13 @@
                 }
 
                 &:hover,
-                &:focus {
+                &:focus-visible {
                     &:before {
                         display: block;
                         right: 0;
                     }
                 }
-                &:focus{
+                &:focus-visible{
                     &:before {
                         box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
                     }
@@ -649,8 +649,8 @@
         &:before {
             background: rgba(0, 0, 0, .5);
         }
-        &:focus{
-           &:before {
+        &:focus-visible{
+         &:before {
             box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
             background: $aFocusBg!important;
             color:$aFocusTxt!important;
@@ -752,7 +752,7 @@ h2.title {
                     transition: .3s ease-out;
 
                     &:hover,
-                    &:focus {
+                    &:focus-visible {
                         background: RGBA(0, 0, 0, .2) !important;
                     }
 
@@ -799,7 +799,7 @@ h2.title {
                             line-height: 1.45em;
 
                             &:hover,
-                            &:focus {
+                            &:focus-visible {
                                 background: darken($primaryColor, 0);
                             }
                         }
@@ -871,16 +871,16 @@ h2.title {
                 &:before {
                     background: rgba(0, 0, 0, .5);
                 }
-                &:focus{
-                 &:before {
-                     box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
-                     background: $aFocusBg!important;
-                     color:$aFocusTxt!important;
-                 } 
-             }
-         }
+                &:focus-visible{
+                   &:before {
+                       box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+                       background: $aFocusBg!important;
+                       color:$aFocusTxt!important;
+                   } 
+               }
+           }
 
-         &~.mp_slider {
+           &~.mp_slider {
             .img-container {
                 height: 300px;
 
@@ -921,7 +921,7 @@ h2.title {
     a {
         display: block;
 
-        &:focus {
+        &:focus-visible {
             background: none!important;
             box-shadow: none!important;
             &:before {
@@ -1005,7 +1005,7 @@ h2.title {
                 display: block;
 
                 &:hover,
-                &:focus {
+                &:focus-visible {
 
                     h3,
                     .heading-3 {
@@ -1013,7 +1013,7 @@ h2.title {
                     }
                 }
 
-                &:focus {
+                &:focus-visible {
                     &:before {
                         position: absolute;
                         width: 100%;
@@ -1039,7 +1039,7 @@ h2.title {
         color: $secondaryColor;
         display: block;
         &:hover,
-        &:focus {
+        &:focus-visible {
             color: darken($secondaryColor, 10);
         }
     }
@@ -1070,7 +1070,7 @@ h2.title {
                 color: $secondaryColor;
 
                 &:hover,
-                &:focus {
+                &:focus-visible {
                     color: darken($secondaryColor, 10);
                 }
             }
@@ -1110,19 +1110,19 @@ h2.title {
                     text-align: left;
 
                     &:hover,
-                    &:focus {
-
-                        h3,
-                        .heading-3 {
-                            color: darken($secondaryColor, 10);
-                        }
+                    &:focus-visible {
+                        color: darken($secondaryColor, 10);
+                        // h3,
+                        // .heading-3 {
+                        //     color: darken($secondaryColor, 10);
+                        // }
                     }
                 }
 
                 p {
                     @extend %paragraph;
                 }
-                &:focus {
+                &:focus-visible {
 
                     h3,
                     .heading-3 {
@@ -1150,7 +1150,7 @@ h2.title {
         background-size: 30px 30px !important;
 
         &:hover,
-        &:focus {
+        &:focus-visible {
             background: url(../vendor/slick/icon_arrow_left.png) center center no-repeat RGBA(0, 0, 0, .8) !important;
             background-size: 30px 30px !important;
         }
@@ -1162,7 +1162,7 @@ h2.title {
         background-size: 30px 30px !important;
 
         &:hover,
-        &:focus {
+        &:focus-visible {
             background: url(../vendor/slick/icon_arrow_right.png) center center no-repeat RGBA(0, 0, 0, .8) !important;
             background-size: 30px 30px !important;
         }
@@ -1231,7 +1231,7 @@ h2.title {
             color: $secondaryColor;
 
             &:hover,
-            &:focus {
+            &:focus-visible {
                 color: darken($secondaryColor, 10);
             }
         }
@@ -1242,7 +1242,7 @@ h2.title {
     }
 
     a {
-        &:focus {
+        &:focus-visible {
             .pic {
                 outline: 2px solid $aHover;
             }
@@ -1323,7 +1323,7 @@ h2.title {
                     color: $secondaryColor;
 
                     &:hover,
-                    &:focus {
+                    &:focus-visible {
                         color: darken($secondaryColor, 10);
                     }
                 }
@@ -1334,7 +1334,7 @@ h2.title {
             }
 
             a {
-                &:focus {
+                &:focus-visible {
                     .pic {
                         outline: 2px solid $aHover;
                     }
@@ -1349,7 +1349,7 @@ h2.title {
         background-size: 30px 30px !important;
 
         &:hover,
-        &:focus {
+        &:focus-visible {
             background: url(../vendor/slick/icon_arrow_left.png) center center no-repeat RGBA(0, 0, 0, .8) !important;
             background-size: 30px 30px !important;
         }
@@ -1361,7 +1361,7 @@ h2.title {
         background-size: 30px 30px !important;
 
         &:hover,
-        &:focus {
+        &:focus-visible {
             background: url(../vendor/slick/icon_arrow_right.png) center center no-repeat RGBA(0, 0, 0, .8) !important;
             background-size: 30px 30px !important;
         }
@@ -1403,7 +1403,7 @@ h2.title {
         box-shadow: none;
 
         &:hover,
-        &:focus {
+        &:focus-visible {
             opacity: 1;
         }
 
@@ -1428,7 +1428,7 @@ h2.title {
         box-shadow: none;
 
         &:hover,
-        &:focus {
+        &:focus-visible {
             opacity: 1;
         }
 
@@ -1466,7 +1466,7 @@ h2.title {
         margin-top: -10px;
 
         &:hover,
-        &:focus {
+        &:focus-visible {
             opacity: 1;
         }
 
@@ -1484,7 +1484,7 @@ h2.title {
         margin-top: -10px;
 
         &:hover,
-        &:focus {
+        &:focus-visible {
             opacity: 1;
         }
 
@@ -1553,7 +1553,7 @@ h2.title {
         position: relative;
 
         &:hover,
-        &:focus {
+        &:focus-visible {
             .caption {
                 bottom: 0;
             }
@@ -1687,7 +1687,7 @@ h2.title {
                     @include box-shadow(0px 0px 0px 1px #CCC inset);
                 }
 
-                &:focus {
+                &:focus-visible {
                     background: none!important;
                     box-shadow: none!important;
                     &:before {
@@ -1734,7 +1734,7 @@ h2.title {
                     @include box-shadow(0px 0px 0px 1px #CCC inset);
                 }
 
-                &:focus {
+                &:focus-visible {
                     &:before {
                         box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aFocusBoxline, 0), 0), -2) inset;
                     }
@@ -1783,14 +1783,14 @@ h2.title {
 //                 color: #FFF;
 //                 position: relative;
 //                 &:hover,
-//                 &:focus {
+//                 &:focus-visible {
 //                     background: url(../images/icon_plus.png) no-repeat right 12px lighten($secondaryColor, 5);
 //                     box-shadow: none;
 //                 }
 //                 &.active {
 //                     background: url(../images/icon_minus.png) no-repeat right 12px lighten($primaryColor, 10);
 //                     &:hover,
-//                     &:focus {
+//                     &:focus-visible {
 //                         background: url(../images/icon_minus.png) no-repeat right 12px lighten($secondaryColor, 5);
 //                         box-shadow: none;
 //                     }
@@ -1855,7 +1855,7 @@ h2.title {
 //             text-align: center;
 //             position: relative;
 //             &:hover,
-//             &:focus {
+//             &:focus-visible {
 //                 &:before {
 //                     box-shadow: 0px 0px 0px 1px $aHover inset;
 //                 }
@@ -1923,7 +1923,7 @@ h2.title {
             text-align: center;
             position: relative;
 
-            &:focus {
+            &:focus-visible {
                 &:before {
                     box-shadow: 0px 0px 0px 3px adjust_hue(saturate(lighten($aFocusBoxline, 0), 0), -2) inset;
                 }
@@ -2044,7 +2044,7 @@ h2.title {
                 color: $secondaryColor;
                 display: block;
                 &:hover,
-                &:focus {
+                &:focus-visible {
                     color: darken($secondaryColor, 10);
                 }
 
@@ -2064,7 +2064,7 @@ h2.title {
                     color: $secondaryColor;
 
                     &:hover,
-                    &:focus {
+                    &:focus-visible {
                         color: darken($secondaryColor, 10);
                     }
                 }
@@ -2136,7 +2136,7 @@ h2.title {
                 border: 1px solid #CCC;
 
                 &:hover,
-                &:focus {
+                &:focus-visible {
                     border: 1px solid darken($secondaryColor, 5);
                     color:#fff;
                 }
@@ -2205,7 +2205,7 @@ h2.title {
                 color: $secondaryColor;
 
                 &:hover,
-                &:focus {
+                &:focus-visible {
                     color: darken($secondaryColor, 10);
                 }
             }
@@ -2282,7 +2282,7 @@ h2.title {
             &:hover {
                 border: 1px solid darken($secondaryColor, 5);
             }
-            &:focus {
+            &:focus-visible {
                 &:before {
                     box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
                     background: $aFocusBg!important;
@@ -2371,7 +2371,7 @@ h2.title {
             @extend %small_block;
 
             &:hover,
-            &:focus {
+            &:focus-visible {
                 cursor: pointer;
                 background: lighten($primaryColor, 8);
                 box-shadow: 2px 2px 5px RGBA(0, 0, 0, .7) inset;
@@ -2383,7 +2383,7 @@ h2.title {
             @extend %small_block;
 
             &:hover,
-            &:focus {
+            &:focus-visible {
                 cursor: pointer;
                 background: lighten($secondaryColor, 8);
                 box-shadow: 2px 2px 5px RGBA(0, 0, 0, .7) inset;
@@ -2395,7 +2395,7 @@ h2.title {
             @extend %small_block;
 
             &:hover,
-            &:focus {
+            &:focus-visible {
                 cursor: pointer;
                 background: lighten($third-color, 2);
                 box-shadow: 2px 2px 5px RGBA(0, 0, 0, .7) inset;
@@ -2407,7 +2407,7 @@ h2.title {
             @extend %small_block;
 
             &:hover,
-            &:focus {
+            &:focus-visible {
                 cursor: pointer;
                 background: lighten($fourth-color, 2);
                 box-shadow: 2px 2px 5px RGBA(0, 0, 0, .7) inset;

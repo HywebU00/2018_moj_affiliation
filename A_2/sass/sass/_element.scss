@@ -3,7 +3,7 @@ body {
 }
 .img-container{
     a{
-        &:focus{
+        &:focus-visible{
             &:before{
                 position:absolute;
                 width: 100%;
@@ -19,7 +19,7 @@ body {
 }
 .vertical_picture_link{
     a{
-        &:focus{
+        &:focus-visible{
             &:before{
                 position:absolute;
                 width: 100%;
@@ -34,7 +34,7 @@ body {
     }
 }
 // tab的外框線
-a:focus {
+a:focus-visible {
     outline: none;
     box-shadow: 0 0px 0px 2px $aFocusBoxline inset!important;
     background: $aFocusBg!important;
@@ -43,7 +43,7 @@ a:focus {
         // box-shadow: none;
     }
 }
-.btn:focus{
+.btn:focus-visible{
     outline: none;
     box-shadow: 0 0px 0px 3px $form-focus;
     @include screen('mobile') {
@@ -62,7 +62,7 @@ a:focus {
     padding: .3em .5em .5em;
     border-radius:4px;
     line-height: 1em;
-    &:hover,&:focus{
+    &:hover,&:focus-visible{
         background:rgba(0,0,0,.5);
         color:#FFF;
     }
@@ -176,7 +176,7 @@ a.more {
             right: 15px;
         }
     }
-    &:focus{
+    &:focus-visible{
      background: $aFocusBg!important;
      box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
      color:$aFocusTxt!important; 
@@ -204,7 +204,7 @@ a.more {
         opacity: 1;
         background: url(../images/basic/top.png) no-repeat center top $color-purple;
     }
-    &:focus{
+    &:focus-visible{
         opacity: 1;
         background:#FCC211 url(../images/basic/top.png) no-repeat center top!important;
         // border: dotted 2px $aFocusBoxline!important;
@@ -454,7 +454,7 @@ img.img-responsive {
         transition: .3s ease-out;
     }
     &:hover,
-    &:focus {
+    &:focus-visible {
         img {
             transform: scale(1.1);
         }

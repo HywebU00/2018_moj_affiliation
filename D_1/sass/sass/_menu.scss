@@ -7,7 +7,7 @@
     clear: both;
     @include screen('tablet') {
         padding: 0;
-        display: none;
+        display:none;
     }
     // &:before {
     //     height: 1px;
@@ -54,7 +54,7 @@
             display: none;
             overflow: visible;
             width: 200px;
-            background: darken($primaryColor, 10);
+            background: darken($primaryColor,10);
             padding: 0;
             z-index: 999999;
             position: absolute;
@@ -65,7 +65,7 @@
             ul {
                 top: 0;
                 left: 170px;
-                animation: none;
+                animation:none;
             }
         }
     } // 預設選單 li
@@ -82,7 +82,7 @@
                 padding: .5em 1.2em;
                 color: #FFF;
                 &:hover,
-                &:focus {
+                &:focus-visible {
                     background: $primaryColor;
                 }
             }
@@ -90,12 +90,11 @@
         li.hasChild {
             >ul {
                 z-index: 999;
-                box-shadow: 0 2px 8px RGBA(0, 0, 0, .4);
             }
             >a {
                 padding-right: 2em;
                 &:hover,
-                &:focus {
+                &:focus-visible {
                     background: $primaryColor;
                 }
                 &:after {
@@ -195,7 +194,7 @@
                     background: #FFF;
                     line-height: 2em;
                     min-height: 2em;
-                    height: auto;
+                    height:auto;
                     border-bottom: 1px solid #CCC;
                 }
                 &.hasChild {
@@ -229,7 +228,7 @@
                         padding: .7em 1em .7em 2em !important;
                         background: rgba(0, 0, 0, .05);
                         &:hover,
-                        &:focus {
+                        &:focus-visible {
                             color: #000;
                             background: rgba(0, 0, 0, .15);
                         }
@@ -244,7 +243,7 @@
                             line-height: 1.5em;
                             min-height: 1.5em;
                             &:hover,
-                            &:focus {
+                            &:focus-visible {
                                 background: rgba(0, 0, 0, .15);
                             }
                         }
@@ -284,7 +283,7 @@
         display: block;
         text-align: left;
         padding: 0 0 0 15px;
-        width: 90%;
+        width:90%;
         // margin-bottom: 70px;
         // outline:1px solid red;
         // nav
@@ -327,7 +326,7 @@
                 &:hover {
                     background: darken($primaryColor, 20);
                 }
-                &:focus {
+                &:focus-visible {
                     background: darken($primaryColor, 20);
                 }
             }
@@ -361,7 +360,6 @@
         }
     }
 }
-
 //animation
 @keyframes showMenu {
     0% {

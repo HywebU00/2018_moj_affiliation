@@ -4,7 +4,7 @@ body {
 
 .img-container {
     a {
-        &:focus {
+        &:focus-visible {
             &:before {
                 position: absolute;
                 width: 100%;
@@ -21,7 +21,7 @@ body {
 
 .vertical_picture_link {
     a {
-        &:focus {
+        &:focus-visible {
             &:before {
                 position: absolute;
                 width: 100%;
@@ -37,7 +37,7 @@ body {
 }
 
 // tab的外框線
-a:focus {
+a:focus-visible {
     outline: none;
     box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
     background: $aFocusBg!important;
@@ -47,7 +47,7 @@ a:focus {
     // }
 }
 
-.btn:focus {
+.btn:focus-visible {
     outline: none;
     box-shadow: 0 0px 0px 3px $form-focus;
     // @include screen('mobile') {
@@ -68,7 +68,7 @@ a:focus {
     border-radius: 4px;
     line-height: 1em;
     &:hover,
-    &:focus {
+    &:focus-visible {
         background: rgba(0, 0, 0, .5);
         color: #FFF;
     }
@@ -181,7 +181,7 @@ a.more {
             right: 15px;
         }
     }
-    &:focus{
+    &:focus-visible{
         border: 1px solid $aFocusBoxline!important;
         box-shadow: 0 0px 0px 1px $aFocusBoxline inset; 
         background: $aFocusBg!important;
@@ -211,7 +211,7 @@ a.more {
         opacity: 1;
         background: url(../images/basic/top.png) no-repeat center top darken($color-yellow, 0);
     }
-    &:focus {
+    &:focus-visible {
         opacity: 1;
         background: url(../images/basic/top.png) no-repeat center top darken($aFocusBg, 0)!important;
     }
@@ -411,7 +411,7 @@ img.img-responsive {
             &:hover {
                 color: $aHover !important;
             }
-            &:focus {
+            &:focus-visible {
                 color: $aFocusTxt !important;
             }
         }
@@ -472,7 +472,7 @@ img.img-responsive {
         transition: .3s ease-out;
     }
     &:hover,
-    &:focus {
+    &:focus-visible {
         img {
             transform: scale(1.1);
         }
