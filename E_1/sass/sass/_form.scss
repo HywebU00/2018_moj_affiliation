@@ -393,3 +393,14 @@ img.captcha {
         margin-top: 0;
     }
 }
+
+//自訂
+#fileblock{
+    input:disabled{
+        border: solid 1px #cccccc;
+        color:#333;
+        &:hover{
+            background: #ccc;
+        }
+    }
+}

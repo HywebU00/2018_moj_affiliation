@@ -205,8 +205,8 @@ input[type="checkbox"]:checked {
     box-shadow: $form-focus 0 0 0 1px;
     @include border-radius(2px);
     &:focus{
-     box-shadow: $aFocusBoxline 0 0 0 3px; 
- }
+       box-shadow: $aFocusBoxline 0 0 0 3px; 
+   }
 }
 
 input[type="radio"]:checked {
@@ -257,11 +257,11 @@ input[disable] {
             cursor: pointer !important;
         }
         &:focus {
-           box-shadow: 0 0px 0px 2px $aFocusBoxline inset!important;
-           background: $aFocusBg!important;
-           color:$aFocusTxt!important;
-       }
-   }
+         box-shadow: 0 0px 0px 2px $aFocusBoxline inset!important;
+         background: $aFocusBg!important;
+         color:$aFocusTxt!important;
+     }
+ }
 }
 
 input[type="file"] {
@@ -391,5 +391,15 @@ img.captcha {
     }
     &~.btn {
         margin-top: 0;
+    }
+}
+//自訂
+#fileblock{
+    input:disabled{
+        border: solid 1px #cccccc;
+        color:#333;
+        &:hover{
+            background: #ccc;
+        }
     }
 }
