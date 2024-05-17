@@ -1946,12 +1946,12 @@
 
         a {
             @include text-overflow;
-            margin-right: 120px;
-            width: 75%;
+            margin-right: 6em;
+            // width: 75%;
             display: block;
 
             @include screen('mobile') {
-                width: 70%;
+                // width: 70%;
             }
         }
 
@@ -1961,7 +1961,7 @@
             font-size: .813em;
             text-align: center;
             color: #666;
-            width: 120px;
+            width: 6em;
             position: absolute;
             right: 0;
             top: 0;
