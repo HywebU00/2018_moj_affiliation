@@ -1136,10 +1136,10 @@ section {
                 display: block;
                 color: $secondaryColor;
                 &:hover {
-                 color: darken($secondaryColor, 10); 
-             }
-             .subtitle,
-             .heading-3 {
+                   color: darken($secondaryColor, 10); 
+               }
+               .subtitle,
+               .heading-3 {
                 width: 90%;
                 overflow: hidden;
                 display: block;
@@ -1303,11 +1303,11 @@ section {
                 display: block;
                 color: $secondaryColor;
                 &:hover {
-                   color: darken($secondaryColor, 10); 
-               }
-           }
+                 color: darken($secondaryColor, 10); 
+             }
+         }
 
-           .youtube {
+         .youtube {
             @include aspect-ratio(4, 3);
 
             iframe {
@@ -2055,7 +2055,7 @@ section {
 
         a {
             @include text-overflow;
-            margin-right: 6em;
+            margin-right: 4.3em;
             // width: 75%;
             display: block;
             margin-bottom: .6em;
@@ -2067,11 +2067,11 @@ section {
 
         time {
             display: inline-block;
-            margin: 0 0 0 1em;
+            margin: 0 0 0 .5em;
             font-size: .813em;
             text-align: center;
             color: #666;
-            width: 6em;
+            width: 4.5rem;
             position: absolute;
             right: 0;
             top: 0;
@@ -2109,11 +2109,11 @@ section {
                 display: block;
                 color: $secondaryColor;
                 &:hover {
-                   color: darken($secondaryColor, 10); 
-               }
-           }
+                 color: darken($secondaryColor, 10); 
+             }
+         }
 
-           time {
+         time {
             @extend %time;
             display: inline-block;
         }

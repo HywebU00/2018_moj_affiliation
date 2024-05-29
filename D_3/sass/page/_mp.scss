@@ -650,7 +650,7 @@
             background: rgba(0, 0, 0, .5);
         }
         &:focus-visible{
-           &:before {
+         &:before {
             box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
             background: $aFocusBg!important;
             color:$aFocusTxt!important;
@@ -872,15 +872,15 @@ h2.title {
                     background: rgba(0, 0, 0, .5);
                 }
                 &:focus-visible{
-                 &:before {
-                     box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
-                     background: $aFocusBg!important;
-                     color:$aFocusTxt!important;
-                 } 
-             }
-         }
+                   &:before {
+                       box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+                       background: $aFocusBg!important;
+                       color:$aFocusTxt!important;
+                   } 
+               }
+           }
 
-         &~.mp_slider {
+           &~.mp_slider {
             .img-container {
                 height: 300px;
 
@@ -1990,7 +1990,7 @@ h2.title {
 
         a {
             @include text-overflow;
-            margin-right: 6em;
+            margin-right: 4.3rem;
             // width: 75%;
             display: block;
 
@@ -2001,11 +2001,11 @@ h2.title {
 
         time {
             display: inline-block;
-            margin: 0 0 0 1em;
+            margin: 0 0 0 .5em;
             font-size: .813em;
             text-align: center;
             color: #666;
-            width: 6em;
+            width: 4.5rem;
             position: absolute;
             right: 0;
             top: 0;

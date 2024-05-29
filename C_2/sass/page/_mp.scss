@@ -1878,7 +1878,7 @@
 
         a {
             @include text-overflow;
-            margin-right: 6em;
+            margin-right: 4rem;
             // width: 75%;
             display: block;
 
@@ -1889,11 +1889,11 @@
 
         time {
             display: inline-block;
-            margin: 0 0 0 1em;
+            margin: 0 0 0 .5em;
             font-size: .813em;
             text-align: center;
             color: #666;
-            width: 6em;
+            width: 4.5rem;
             position: absolute;
             right: 0;
             top: 0;
@@ -2035,7 +2035,7 @@
                     background: darken($secondaryColor2, 10);
                 }
                 &:focus-visible {
-                   &:before {
+                 &:before {
                     background: darken($secondaryColor2, 10);
                     border: 2px solid $aFocusBoxline;
                 } 
@@ -2190,7 +2190,7 @@
                 background: darken($secondaryColor2, 5);
             }
             &:focus-visible {
-             &:before {
+               &:before {
                 border: 2px solid $aFocusBoxline;
             }  
         }

@@ -954,7 +954,7 @@ section {
         .container {
             max-width: 1200px !important;
             &>.col:nth-child(1){
-             &+.col{
+               &+.col{
                 padding-right: 0;
                 display: block;
                 @media screen and (max-width: 1200px) {
@@ -2076,7 +2076,7 @@ section {
 
         a {
             @include text-overflow;
-            margin-right: 6em;
+            margin-right: 4.3rem;
             // width: 75%;
             display: block;
             margin-bottom: .6em;
@@ -2088,11 +2088,11 @@ section {
 
         time {
             display: inline-block;
-            margin: 0 0 0 1em;
+            margin: 0 0 0 .5em;
             font-size: .813em;
             text-align: center;
             color: #666;
-            width: 6em;
+            width: 4.5rem;
             position: absolute;
             right: 0;
             top: 0;
