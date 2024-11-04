@@ -310,8 +310,8 @@
                                         </a>
                                         <p class="infotxt">第三張圖說</p>
                                     </div>
-                                    <div href="javascript:;" class="imgOuter">
-                                        <a data-src="https://assets.imgix.net/unsplash/bridge.jpg?w=800&h=480&fit=crop&auto=format%2Cenhance&usm=20" data-caption="第四張圖說" data-fancybox="gallery">
+                                    <div class="imgOuter">
+                                        <a href="javascript:;" data-src="https://assets.imgix.net/unsplash/bridge.jpg?w=800&h=480&fit=crop&auto=format%2Cenhance&usm=20" data-caption="第四張圖說" data-fancybox="gallery">
                                             <img src="https://assets.imgix.net/unsplash/bridge.jpg?w=800&h=480&fit=crop&auto=format%2Cenhance&usm=20" alt="圖片說明">
                                         </a>
                                         <p class="infotxt">第四張圖說</p>
@@ -527,18 +527,18 @@
                 <script src="vendor/fancybox/l10n/zh_TW.umd.js"></script>
 
                 <script>
-                  Fancybox.bind('[data-fancybox="gallery"]', {
-        //
-                  });    
-              </script>
+                    Fancybox.bind('[data-fancybox="gallery"]', {
+                        l10n : Fancybox.l10n.zh_TW
+                    });
+                </script>
 
-              <!-- slick js -->
-              <script src="vendor/slick/slick.min.js "></script>
-              <!--移除 <script src="vendor/slick/slick-lightbox.js "></script>
-                  <!-- hyUI --> -->
-                  <script src="js/hyui.js "></script>
-                  <!-- 客製js -->
-                  <script src="js/customize.js "></script>
-              </body>
+                <!-- slick js -->
+                <script src="vendor/slick/slick.min.js "></script>
 
-              </html>
+                <!-- hyUI -->
+                <script src="js/hyui.js "></script>
+                <!-- 客製js -->
+                <script src="js/customize.js "></script>
+            </body>
+
+            </html>
