@@ -82,9 +82,9 @@ body {
     }
     >.container {
         @include gutter(0); //gutter 代表左右要留白
-                @include screen('mobile') {
-                    @include gutter();
-                }
+        @include screen('mobile') {
+            @include gutter();
+        }
 
     }
 }
@@ -249,6 +249,7 @@ body {
         position: relative;
         padding-left: .8em;
         padding-right: .8em;
+        text-align: left;
         @include screen('mobile') {
             padding-right: .8em;
         }

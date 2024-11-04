@@ -81,6 +81,10 @@
                     top: 65%;
                 }
             }
+            &:focus-visible{
+                box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+                background: $aFocusBg!important;
+            }
         }
         // search
         button {
@@ -95,6 +99,9 @@
             height: 60px;
             background: $aHover;
             border-radius: 0 !important;
+            &:focus-visible{
+                border: solid 2px $aFocusBoxline;
+            }
             &:before {
                 width: 40px;
                 height: 40px;
