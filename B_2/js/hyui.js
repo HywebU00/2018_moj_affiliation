@@ -621,4 +621,14 @@ $(function() {
     });
     $('.goCenter').removeAttr('tabindex');
     $('#aU').removeAttr('tabindex');
+
+    // -----------------------------------------------------------------------
+    // -----   fancyBox新增需要綁定才有效果   -----------------------------------
+    // -----------------------------------------------------------------------
+    if (document.querySelectorAll('[data-fancybox]').length > 0) {
+      Fancybox.bind('[data-fancybox]', {
+        l10n: Fancybox.l10n.zh_TW,
+    });
+  }
+
 });
