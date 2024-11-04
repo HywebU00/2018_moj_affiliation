@@ -78,10 +78,17 @@ $grid-background-baseline-color: rgba(187, 187, 187, 0.4);
     }
     img {
         max-width: 100%;
-       @include screen('mobile') {
+        @include screen('mobile') {
             max-width: 100%;
             width: auto;
             clear: both;
+        }
+    }
+    table{
+        th{
+            background: #666;
+            color:#fff;
+            white-space: normal;
         }
     }
 }

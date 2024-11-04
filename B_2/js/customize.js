@@ -125,6 +125,8 @@ $(function() {
             }
         }]
     });
+
+    
     // 跑馬燈
     $('.marquee ul').slick({
         dots: false,
@@ -400,7 +402,7 @@ $(function() {
         //          }
         //      }]
     })
-     $('.Slider-for').on('init reInit afterChange', function(event, slick, currentSlide) {
+    $('.Slider-for').on('init reInit afterChange', function(event, slick, currentSlide) {
         var i = (currentSlide ? currentSlide : 0) + 1;
         $('.controls').html(i + '/' + slick.slideCount);
     });

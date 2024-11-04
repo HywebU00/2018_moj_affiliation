@@ -240,10 +240,15 @@ img.img-responsive {
 }
 
 .necessary {
-    color: red;
+    color: #eb0000;
     margin: 0px .2em;
     border-bottom: none !important;
     text-decoration: none;
+    &:first-child{
+        a{
+          color: #eb0000!important;
+      }
+  }
 }
 
 .tooltip {

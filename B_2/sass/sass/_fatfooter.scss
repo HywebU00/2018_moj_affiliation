@@ -92,7 +92,7 @@ $fatTextColor: #FFF; //fatFooter 連結顏色
                     font-weight: 800;
                     padding: 1%;
                     border-radius: 4px;
-                    color: lighten($aHover,30);
+                    color: lighten($aHover,50);
                     &:hover {
                         color:lighten($color-yellow,0);
                         text-decoration: none;
