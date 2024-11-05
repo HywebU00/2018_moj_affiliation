@@ -205,11 +205,12 @@ $(function() {
             }
         }]
     });
-    $('.cp_slider').slickLightbox({
-        caption: 'caption',
-        useHistoryApi: 'true',
-        lazy: true
-    });
+    // $('.cp_slider').slickLightbox({
+    //     caption: 'caption',
+    //     useHistoryApi: 'true',
+    //     lazy: true
+    // });
+    
     // 垂直圖片輪播
     $('.vertical_picture_link ul').slick({
         dots: false,
@@ -1432,50 +1433,50 @@ $(function() {
 
     //不同語系
     var weblang = $('html').attr('lang');
-        if (weblang.substring(0, 2) == 'zh') {
+    if (weblang.substring(0, 2) == 'zh') {
             // console.log("中文");
-            $('.slick-prev').attr('title', '上一筆');
-            $('.slick-next').attr('title', '下一筆');
-            $('.slick-prev').html('上一筆');
-            $('.slick-next').html('下一筆');
-            $('.slick-prev').removeAttr('aria-label');
-            $('.slick-next').removeAttr('aria-label');
-            $('header').find('.accesskey').attr('title', '上方功能區塊');
-            $('.main').find('.accesskey').attr('title', '中央內容區塊');
-            $('footer').find('.accesskey').attr('title', '下方功能區塊');
-            $('.search').find('.accesskey').attr('title', '關鍵字搜尋：文章關鍵字搜尋');
-            $('.header .searchCtrl').attr('title', '查詢');
-        } else if (weblang.substring(0, 2) == 'en') {
+        $('.slick-prev').attr('title', '上一筆');
+        $('.slick-next').attr('title', '下一筆');
+        $('.slick-prev').html('上一筆');
+        $('.slick-next').html('下一筆');
+        $('.slick-prev').removeAttr('aria-label');
+        $('.slick-next').removeAttr('aria-label');
+        $('header').find('.accesskey').attr('title', '上方功能區塊');
+        $('.main').find('.accesskey').attr('title', '中央內容區塊');
+        $('footer').find('.accesskey').attr('title', '下方功能區塊');
+        $('.search').find('.accesskey').attr('title', '關鍵字搜尋：文章關鍵字搜尋');
+        $('.header .searchCtrl').attr('title', '查詢');
+    } else if (weblang.substring(0, 2) == 'en') {
             // console.log("英文");
-            $('.slick-prev').attr('title', 'previous');
-            $('.slick-next').attr('title', 'next');
-            $('.slick-prev').removeAttr('aria-label');
-            $('.slick-next').removeAttr('aria-label');
-            $('header').find('.accesskey').attr('title', 'header');
-            $('.main').find('.accesskey').attr('title', 'content');
-            $('footer').find('.accesskey').attr('title', 'footer');
-            $('.search').find('.accesskey').attr('title', 'search');
-            $('.header .searchCtrl').attr('title','search');
-        } else if (weblang.substring(0, 2) == 'vi') {
+        $('.slick-prev').attr('title', 'previous');
+        $('.slick-next').attr('title', 'next');
+        $('.slick-prev').removeAttr('aria-label');
+        $('.slick-next').removeAttr('aria-label');
+        $('header').find('.accesskey').attr('title', 'header');
+        $('.main').find('.accesskey').attr('title', 'content');
+        $('footer').find('.accesskey').attr('title', 'footer');
+        $('.search').find('.accesskey').attr('title', 'search');
+        $('.header .searchCtrl').attr('title','search');
+    } else if (weblang.substring(0, 2) == 'vi') {
             // console.log("越南");
-            $('.slick-prev').attr('title', 'Trước');
-            $('.slick-next').attr('title', 'kế tiếp');
-        } else if (weblang.substring(0, 2) == 'id') {
+        $('.slick-prev').attr('title', 'Trước');
+        $('.slick-next').attr('title', 'kế tiếp');
+    } else if (weblang.substring(0, 2) == 'id') {
             // console.log("印尼");
-            $('.slick-prev').attr('title', 'sebelumnya');
-            $('.slick-next').attr('title', 'berikutnya');
-        } else if (weblang.substring(0, 2) == 'km') {
+        $('.slick-prev').attr('title', 'sebelumnya');
+        $('.slick-next').attr('title', 'berikutnya');
+    } else if (weblang.substring(0, 2) == 'km') {
             // console.log("柬埔寨");
-            $('.slick-prev').attr('title', 'មុន');
-            $('.slick-next').attr('title', 'បន្ទាប់');
-        } else if (weblang.substring(0, 2) == 'th') {
+        $('.slick-prev').attr('title', 'មុន');
+        $('.slick-next').attr('title', 'បន្ទាប់');
+    } else if (weblang.substring(0, 2) == 'th') {
             // console.log("泰文");
-            $('.slick-prev').attr('title', 'ก่อน');
-            $('.slick-next').attr('title', 'ต่อไป');
-        } else {
+        $('.slick-prev').attr('title', 'ก่อน');
+        $('.slick-next').attr('title', 'ต่อไป');
+    } else {
             // console.log("沒有判斷");
-            $('.slick-prev').attr('title', 'previous');
-            $('.slick-next').attr('title', 'next');
-        }
+        $('.slick-prev').attr('title', 'previous');
+        $('.slick-next').attr('title', 'next');
+    }
 
 });
