@@ -62,7 +62,7 @@
     .imgOuter {
         margin: 0px 15px;
         @include aspect-ratio(4, 3);
-        height: 200px;
+        // height: 200px;
         overflow: hidden;
         img {
             vertical-align: middle;
@@ -131,6 +131,7 @@
                 z-index: 1;
                 top: 0;
                 left: 0;
+                bottom:0;
             }
         }
     }
