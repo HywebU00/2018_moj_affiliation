@@ -355,11 +355,11 @@ $(function() {
             }
         }]
     });
-    $('.cp_slider').slickLightbox({
-        caption: 'caption',
-        useHistoryApi: 'true',
-        lazy: true
-    });
+    //$('.cp_slider').slickLightbox({
+    //    caption: 'caption',
+    //    useHistoryApi: 'true',
+    //    lazy: true
+    //});
     // 垂直圖片輪播
     $('.vertical_picture_link ul').slick({
         dots: false,

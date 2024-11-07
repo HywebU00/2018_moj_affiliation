@@ -164,7 +164,7 @@
             color: #FFF;
             width: 100%;
             height: 3em;
-            background: $primaryColor;
+            background: darken($primaryColor, 30);
             padding: 0 1em;
             line-height: 3em;
             @include box-sizing;
@@ -177,7 +177,7 @@
         left: 0;
         padding-bottom: 3em;
         height: 100%;
-        background: $primaryColor;
+        background: darken($primaryColor, 30);
         overflow:hidden;
         overflow-y: auto;
         z-index: 9999;
@@ -364,6 +364,10 @@
             transform: rotate(45deg);
             border-right: none;
             border-top: none;
+        }
+        &:focus-visible{
+            box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+            background: $aFocusBg!important;
         }
     }
 }

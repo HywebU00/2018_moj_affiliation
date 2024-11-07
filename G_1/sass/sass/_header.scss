@@ -75,13 +75,23 @@
                     top: 65%;
                 }
             }
+            &:focus-visible{
+                box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+                background: $aFocusBg!important;
+            }
+
         }
+
         // search
         .searchCtrl {
             display: none;
             right: 0px;
             font-size: 0em;
             @extend %mobileCtrlBtn;
+
+            &:focus-visible{
+                border: solid 2px $aFocusBoxline;
+            }             
             &:before {
                 width: 40px;
                 height: 40px;
