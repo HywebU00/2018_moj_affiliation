@@ -41,9 +41,11 @@ $(function() {
     ////////////// 行動版選單切換////////////
     /*-----------------------------------*/
     //_body.prepend('<aside class="sidebar"><div class="m_area"><button type="button" class="sidebarClose">關閉</button></div><div class="menu_overlay"></div></aside>');
-    $('header .container').prepend('<button type="button" class="sidebarCtrl">側欄選單</button><button type="button" class="searchCtrl">查詢</button>');
+    $('header .container').prepend('<button type="button" class="sidebarCtrl" aria-haspopup="true" aria-expanded="false">側欄選單</button><button type="button" class="searchCtrl">查詢</button>');
     $('.main_menu').remove();
     $('header .container .sidebarCtrl').after('<aside class="sidebar"><div class="m_area"><button type="button" class="sidebarClose">關閉</button></div><div class="menu_overlay"></div></aside>');
+    $('header .container .searchCtrl').insertAfter('h1');
+    
     $('.main').removeAttr('id').addClass('innerpage');
     $('.main').append('<div class="main_menu"></div><div id="center" class="mp_content"></div>');
     $('.main').wrapInner('<div class="container"></div>');
@@ -107,6 +109,11 @@ $(function() {
             }
         })
     }
+    //手機版menu離開最後一個選項後關閉
+    _mArea.find('.sidebarClose').focusout(function() {
+        hideSidebar();
+        $('h1>a').focus();
+    });
     _overlay.off("mouseenter");
     // 無障礙tab設定
     liHasChild.keyup(function() {
