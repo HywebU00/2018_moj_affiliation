@@ -95,6 +95,11 @@ $(function() {
             }
         })
     }
+    //手機版menu離開最後一個選項後關閉
+    _mArea.find('.sidebarClose').focusout(function() {
+        hideSidebar();
+        $('h1>a').focus();
+    });
     _overlay.off("mouseenter");
     // 無障礙tab設定
     liHasChild.keyup(function() {

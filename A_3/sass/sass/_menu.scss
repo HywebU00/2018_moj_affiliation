@@ -327,6 +327,10 @@
             border-right: none;
             border-top: none;
         }
+        &:focus-visible{
+            box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
+            background: $aFocusBg!important;
+        }
     }
 }
 //animation
