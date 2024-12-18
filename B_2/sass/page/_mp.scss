@@ -1487,7 +1487,7 @@
     @include border-radius(6px);
     box-shadow: 0px 2px 5px rgba(0, 0, 0, .2) inset;
     // @include gradient(#E1E1E1, #FEFEFE, vertical);
-    background: lighten($primaryColor, 10);
+    background: lighten($primaryColor, 0);
     @include gutter;
 
     ul {
