@@ -315,7 +315,7 @@ $(function() {
     //燈箱slick+lightBox組合
     $('.cp_slider').slick({
         dots: false,
-        infinite: true,
+        infinite: false,
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 1,
@@ -330,7 +330,7 @@ $(function() {
             settings: {
                 slidesToShow: 3,
                 slidesToScroll: 1,
-                infinite: true,
+                infinite: false,
                 dots: true
             }
         }, {

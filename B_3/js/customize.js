@@ -321,7 +321,7 @@ $(function() {
     //燈箱slick+lightBox組合
     $('.cp_slider').slick({
         dots: false,
-        infinite: true,
+        infinite: false,
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 3,
@@ -336,7 +336,7 @@ $(function() {
             settings: {
                 slidesToShow: 3,
                 slidesToScroll: 3,
-                infinite: true,
+                infinite: false,
                 dots: true
             }
         }, {
@@ -400,7 +400,7 @@ $(function() {
         //          }
         //      }]
     })
-     $('.Slider-for').on('init reInit afterChange', function(event, slick, currentSlide) {
+    $('.Slider-for').on('init reInit afterChange', function(event, slick, currentSlide) {
         var i = (currentSlide ? currentSlide : 0) + 1;
         $('.controls').html(i + '/' + slick.slideCount);
     });
