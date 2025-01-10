@@ -1,4 +1,12 @@
 $(function() {
+    var SearchTitle = "";
+    //不同語系
+    var weblang = $('html').attr('lang');
+    if (weblang.substring(0, 2) == 'zh') {
+        SearchTitle = "查詢";
+    } else if (weblang.substring(0, 2) == 'en') {
+        SearchTitle = "search";
+    }
     /*-----------------------------------*/
     ///////////// fix iOS bug /////////////
     /*-----------------------------------*/
@@ -41,7 +49,7 @@ $(function() {
     ////////////// 行動版選單切換////////////
     /*-----------------------------------*/
     // _body.prepend('<aside class="sidebar"><div class="m_area"><button type="button" class="sidebarClose">關閉</button></div><div class="menu_overlay"></div></aside>');
-    $('header .container').prepend('<button type="button" class="sidebarCtrl" aria-haspopup="true" aria-expanded="false">側欄選單</button><button type="button" class="searchCtrl">查詢</button>');
+    $('header .container').prepend('<button type="button" class="sidebarCtrl" aria-haspopup="true" aria-expanded="false">側欄選單</button><button type="button" class="searchCtrl" aria-expanded="false" title="' + SearchTitle + '">查詢</button>');
     $('header .container .sidebarCtrl').after('<aside class="sidebar"><div class="m_area"><button type="button" class="sidebarClose">關閉</button></div><div class="menu_overlay"></div></aside>');
     $('header .container .searchCtrl').insertAfter('h1');
     var menu_status = false;
