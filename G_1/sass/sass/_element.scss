@@ -185,7 +185,7 @@ a.more {
         }
     }
     &:focus-visible{
-       &:before {
+     &:before {
         -webkit-transform: scale(1);
         transform: scale(1);
         box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
@@ -246,10 +246,13 @@ img.img-responsive {
     @include img-responsive();
 }
 .necessary {
-    color: red;
+    color: #E60801;
     margin: 0px .2em;
     border-bottom: none !important;
     text-decoration: none;
+    &:first-child a{
+        color: #E60801!important;
+    }
 }
 .tooltip {
     text-align: center;
