@@ -78,6 +78,7 @@ $(function() {
             'margin-left': 0
         }, 400, 'easeOutQuint');
         _body.addClass('noscroll');
+        $('.m_area .menu ul>li:first-child>a').focus();
         _overlay.fadeIn();
         $('.m_search').hide();
         search_mode = false;
@@ -210,10 +211,11 @@ $(function() {
             hideSidebar();
             _body.removeClass('noscroll');
             _nav.prependTo('.header .container');
-            $('h1').prependTo('.header .container');
-            _menu.appendTo('.header .container');
-            _searchCtrl.appendTo('.header .container');
-            _search.appendTo('.header .container');
+            // $('h1').prependTo('.header .container');
+            // _menu.appendTo('.header .container');
+            // _searchCtrl.appendTo('.header .container');
+            // _search.appendTo('.header .container');
+            _search.insertAfter('.header .container h1');
             _search.removeClass('m_search');
             _menu.appendTo(_mainMenu);
             _search.hide();

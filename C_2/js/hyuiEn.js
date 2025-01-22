@@ -84,6 +84,7 @@ $(function() {
             'margin-left': 0
         }, 400, 'easeOutQuint');
         _body.addClass('noscroll');
+        $('.m_area .menu ul>li:first-child>a').focus();
         _overlay.fadeIn();
         $('.m_search').hide();
         search_mode = false;
