@@ -171,6 +171,29 @@ $(function() {
         speed: 1500,
         focusOnSelect: true,
     });
+    // 停止播放按鈕事件
+    $(".slick-autoplay-toggle").on("click", function () {
+        let slideAutoplayEnabled = $(this).data("autoplay");
+        let slideElement = $(this).data("slide");
+
+        let $parentContainer = $(this).parents().has(slideElement).first();
+        let $slider = $parentContainer.find(slideElement).first();
+
+        if (slideAutoplayEnabled) {
+            $slider.slick("slickPause"); // 停止自動播放
+            $(this).text("▶");
+            $(this).data("autoplay", 0);
+        } else {
+            $slider.slick("slickPlay"); // 啟動自動播放
+            $(this).html(`
+            <svg viewBox="0 0 18 18" width="18"
+              height="14">
+              <rect x="2" y="4" width="4" height="14" fill="white"></rect>
+              <rect x="10" y="4" width="4" height="14" fill="white"></rect>
+                </svg>`);
+            $(this).data("autoplay", 1);
+        }
+    });
     // 圖文卡片式
     // $('.news_card ul').slick({
     //     dots: false,

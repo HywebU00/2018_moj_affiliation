@@ -185,7 +185,7 @@ a.more {
         }
     }
     &:focus-visible{
-     &:before {
+       &:before {
         -webkit-transform: scale(1);
         transform: scale(1);
         box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
@@ -218,7 +218,7 @@ a.more {
     text-indent: -999999px;
     &:hover{
         opacity: 1;
-        background: url(../images/basic/top.png) no-repeat center top darken($color-yellow,0);
+        background: url(../images/basic/top.png) no-repeat center top #896805;
     }
     &:focus-visible{
         opacity: 1;
