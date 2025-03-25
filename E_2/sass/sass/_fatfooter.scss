@@ -38,7 +38,7 @@ $fatTextColor: #FFF; //fatFooter 連結顏色
         top: .5em;
         @include border-radius(4px);
         &:hover {
-            background: darken($footer-btn, 40);
+            background: #BD5B0A;
             color: #fff;
             text-decoration: none;
             cursor: pointer;
@@ -48,9 +48,9 @@ $fatTextColor: #FFF; //fatFooter 連結顏色
             border: none;
         }
         &:focus {
-            box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
-            background: $aFocusBg!important;
-            color:$aFocusTxt!important;
+            box-shadow: 0 0px 0px 2px #fff inset;
+            background: #BD5B0A!important;
+            color:#fff!important;
         }
     }
     nav {

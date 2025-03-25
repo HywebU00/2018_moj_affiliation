@@ -38,18 +38,18 @@ $fatTextColor: #FFF; //fatFooter 連結顏色
         top: .5em;
         @include border-radius(4px);
         &:hover {
-            background: darken($color-yellow, 0);
+            background: #BD5B0A;
             text-decoration: none;
             cursor: pointer;
             border: none;
             outline: none;
             border: none;
-            color:#000;
+            color:#fff;
         }
         &:focus {
-            box-shadow: 0 0px 0px 2px $aFocusBoxline inset;
-            background: $aFocusBg!important;
-            color:$aFocusTxt!important;
+            box-shadow: 0 0px 0px 2px #fff inset;
+            background: #BD5B0A!important;
+            color:#fff!important;
         }
     }
     nav {

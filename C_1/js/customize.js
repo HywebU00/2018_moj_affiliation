@@ -76,6 +76,13 @@ $(function() {
     // 大廣告輪播
     $('.mp_slider').slick({
         dots: true,
+        customPaging: function (slick, index) {
+            var $slide = slick.$slides.eq(index);
+            var imgAlt = $slide.find('img').attr('alt'); // 取得圖片的 alt 屬性
+            var caption = $slide.find('.caption').text().trim(); // 取得 .caption 文字內容
+            var buttonText = caption || imgAlt || '圖片 ' + (index + 1);
+            return '<button type="button"">' + buttonText + '</button>';
+        },
         arrow: true,
         infinite: true,
         speed: 500,

@@ -211,7 +211,7 @@ $(function() {
             hideSidebar();
             _body.removeClass('noscroll');
             _nav.prependTo('.header .container');
-            // $('h1').prependTo('.header .container');
+            $('h1').prependTo('.header .container');
             // _menu.appendTo('.header .container');
             // _searchCtrl.appendTo('.header .container');
             // _search.appendTo('.header .container');
